@@ -91,28 +91,10 @@ namespace ResembleAI
         public bool? ZeroRetentionMode { get; set; }
 
         /// <summary>
-        /// True when Zero Retention Mode is active and media URLs are redacted
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("media_redacted")]
-        public bool? MediaRedacted { get; set; }
-
-        /// <summary>
-        /// True when the source file has been permanently deleted from storage
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("media_deleted")]
-        public bool? MediaDeleted { get; set; }
-
-        /// <summary>
         /// ISO 8601 timestamp of when the file was purged, or null if not yet deleted
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_deleted_at")]
         public global::System.DateTime? FileDeletedAt { get; set; }
-
-        /// <summary>
-        /// Legacy field. May be present on older image/video detects. Ignored for new detections.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pipeline")]
-        public string? Pipeline { get; set; }
 
         /// <summary>
         /// 
@@ -166,17 +148,8 @@ namespace ResembleAI
         /// <param name="zeroRetentionMode">
         /// Whether Zero Retention Mode is enabled for this detect
         /// </param>
-        /// <param name="mediaRedacted">
-        /// True when Zero Retention Mode is active and media URLs are redacted
-        /// </param>
-        /// <param name="mediaDeleted">
-        /// True when the source file has been permanently deleted from storage
-        /// </param>
         /// <param name="fileDeletedAt">
         /// ISO 8601 timestamp of when the file was purged, or null if not yet deleted
-        /// </param>
-        /// <param name="pipeline">
-        /// Legacy field. May be present on older image/video detects. Ignored for new detections.
         /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
@@ -197,10 +170,7 @@ namespace ResembleAI
             string? filename,
             double? duration,
             bool? zeroRetentionMode,
-            bool? mediaRedacted,
-            bool? mediaDeleted,
             global::System.DateTime? fileDeletedAt,
-            string? pipeline,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {
@@ -217,10 +187,7 @@ namespace ResembleAI
             this.Filename = filename;
             this.Duration = duration;
             this.ZeroRetentionMode = zeroRetentionMode;
-            this.MediaRedacted = mediaRedacted;
-            this.MediaDeleted = mediaDeleted;
             this.FileDeletedAt = fileDeletedAt;
-            this.Pipeline = pipeline;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

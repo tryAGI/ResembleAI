@@ -158,6 +158,11 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageSecureUploadsClient SubpackageSecureUploads { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageSpeechToTextClient SubpackageSpeechToText { get; }
 
         /// <summary>

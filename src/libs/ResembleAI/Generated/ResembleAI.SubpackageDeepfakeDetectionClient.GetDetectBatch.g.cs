@@ -6,7 +6,7 @@ namespace ResembleAI
     public partial class SubpackageDeepfakeDetectionClient
     {
 
-        private static readonly global::ResembleAI.AutoSDKServer[] s_CreateDetectionServers = new global::ResembleAI.AutoSDKServer[]
+        private static readonly global::ResembleAI.AutoSDKServer[] s_GetDetectBatchServers = new global::ResembleAI.AutoSDKServer[]
         {            new global::ResembleAI.AutoSDKServer(
                 id: "https-f-cluster-resemble-ai",
                 name: "f.cluster.resemble.ai",
@@ -20,7 +20,7 @@ namespace ResembleAI
         };
 
 
-        private static readonly global::ResembleAI.EndPointSecurityRequirement s_CreateDetectionSecurityRequirement0 =
+        private static readonly global::ResembleAI.EndPointSecurityRequirement s_GetDetectBatchSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::ResembleAI.EndPointAuthorizationRequirement[]
@@ -34,58 +34,53 @@ namespace ResembleAI
                     },
                 },
             };
-        private static readonly global::ResembleAI.EndPointSecurityRequirement[] s_CreateDetectionSecurityRequirements =
+        private static readonly global::ResembleAI.EndPointSecurityRequirement[] s_GetDetectBatchSecurityRequirements =
             new global::ResembleAI.EndPointSecurityRequirement[]
-            {                s_CreateDetectionSecurityRequirement0,
+            {                s_GetDetectBatchSecurityRequirement0,
             };
-        partial void PrepareCreateDetectionArguments(
+        partial void PrepareGetDetectBatchArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::ResembleAI.CreateDetectionRequest request);
-        partial void PrepareCreateDetectionRequest(
+            ref string uuid);
+        partial void PrepareGetDetectBatchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::ResembleAI.CreateDetectionRequest request);
-        partial void ProcessCreateDetectionResponse(
+            string uuid);
+        partial void ProcessGetDetectBatchResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateDetectionResponseContent(
+        partial void ProcessGetDetectBatchResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create deepfake detection<br/>
-        /// Analyze audio, image, and video for deepfake detection.<br/>
-        /// Supply media via one of three intake methods:<br/>
-        /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
-        /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
-        /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
+        /// Get batch status<br/>
+        /// Retrieve the latest aggregate status for a batch. The response shape mirrors<br/>
+        /// the create response — `status`, `completed_count`, and `failed_count` update<br/>
+        /// as child detects progress. Use the `detect_uuids` array to fetch per-file<br/>
+        /// results via `GET /detect/{uuid}`.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="uuid"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.DeepfakeDetectionCreateDetectionResponse200> CreateDetectionAsync(
-
-            global::ResembleAI.CreateDetectionRequest request,
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200> GetDetectBatchAsync(
+            string uuid,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateDetectionArguments(
+            PrepareGetDetectBatchArguments(
                 httpClient: HttpClient,
-                request: request);
+                uuid: ref uuid);
 
 
             var __authorizations = global::ResembleAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateDetectionSecurityRequirements,
-                operationName: "CreateDetectionAsync");
+                securityRequirements: s_GetDetectBatchSecurityRequirements,
+                operationName: "GetDetectBatchAsync");
 
             using var __timeoutCancellationTokenSource = global::ResembleAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -104,9 +99,9 @@ namespace ResembleAI
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
-                                path: "/detect",
+                                path: $"/detect/batch/{uuid}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_CreateDetectionServers,
+                                servers: s_GetDetectBatchServers,
                                 defaultBaseUrl: "https://f.cluster.resemble.ai/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -114,7 +109,7 @@ namespace ResembleAI
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -137,129 +132,6 @@ namespace ResembleAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
-                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
-                                request.Filename is null
-                                    ? "application/octet-stream"
-                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
-                                    {
-                                        ".aac" => "audio/aac",
-                                        ".flac" => "audio/flac",
-                                        ".gif" => "image/gif",
-                                        ".jpeg" => "image/jpeg",
-                                        ".jpg" => "image/jpeg",
-                                        ".json" => "application/json",
-                                        ".m4a" => "audio/mp4",
-                                        ".mp3" => "audio/mpeg",
-                                        ".mp4" => "video/mp4",
-                                        ".mpeg" => "audio/mpeg",
-                                        ".mpga" => "audio/mpeg",
-                                        ".oga" => "audio/ogg",
-                                        ".ogg" => "audio/ogg",
-                                        ".opus" => "audio/ogg",
-                                        ".pdf" => "application/pdf",
-                                        ".png" => "image/png",
-                                        ".txt" => "text/plain",
-                                        ".wav" => "audio/wav",
-                                        ".weba" => "audio/webm",
-                                        ".webm" => "video/webm",
-                                        ".webp" => "image/webp",
-                                        _ => "application/octet-stream",
-                                    });
-                            __httpRequestContent.Add(
-                                content: __contentFile,
-                                name: "\"file\"",
-                                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
-                            if (__contentFile.Headers.ContentDisposition != null)
-                            {
-                                __contentFile.Headers.ContentDisposition.FileNameStar = null;
-                            }
-                            if (request.CallbackUrl != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.CallbackUrl ?? string.Empty),
-                                    name: "\"callback_url\"");
-                            } 
-                            if (request.Visualize != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Visualize, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"visualize\"");
-                            } 
-                            if (request.FrameLength != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.FrameLength, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"frame_length\"");
-                            } 
-                            if (request.StartRegion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.StartRegion, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"start_region\"");
-                            } 
-                            if (request.EndRegion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.EndRegion, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"end_region\"");
-                            } 
-                            if (request.MaxVideoSecs != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxVideoSecs, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"max_video_secs\"");
-                            } 
-                            if (request.ModelTypes != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.ModelTypes).HasValue ? (request.ModelTypes).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"model_types\"");
-                            } 
-                            if (request.Intelligence != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Intelligence, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"intelligence\"");
-                            } 
-                            if (request.AudioSourceTracing != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AudioSourceTracing, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"audio_source_tracing\"");
-                            } 
-                            if (request.UseReverseSearch != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.UseReverseSearch, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"use_reverse_search\"");
-                            } 
-                            if (request.UseOodDetector != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.UseOodDetector, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"use_ood_detector\"");
-                            } 
-                            if (request.ZeroRetentionMode != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ZeroRetentionMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"zero_retention_mode\"");
-                            }
-                            __httpRequest.Content = __httpRequestContent;
                 global::ResembleAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -268,10 +140,10 @@ namespace ResembleAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateDetectionRequest(
+                PrepareGetDetectBatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    uuid: uuid!);
 
                 return __httpRequest;
             }
@@ -288,10 +160,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDetection",
-                                methodName: "CreateDetectionAsync",
-                                pathTemplate: "\"/detect\"",
-                                httpMethod: "POST",
+                                operationId: "GetDetectBatch",
+                                methodName: "GetDetectBatchAsync",
+                                pathTemplate: "$\"/detect/batch/{uuid}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -315,10 +187,10 @@ namespace ResembleAI
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDetection",
-                                methodName: "CreateDetectionAsync",
-                                pathTemplate: "\"/detect\"",
-                                httpMethod: "POST",
+                                operationId: "GetDetectBatch",
+                                methodName: "GetDetectBatchAsync",
+                                pathTemplate: "$\"/detect/batch/{uuid}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -350,10 +222,10 @@ namespace ResembleAI
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDetection",
-                                methodName: "CreateDetectionAsync",
-                                pathTemplate: "\"/detect\"",
-                                httpMethod: "POST",
+                                operationId: "GetDetectBatch",
+                                methodName: "GetDetectBatchAsync",
+                                pathTemplate: "$\"/detect/batch/{uuid}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -389,7 +261,7 @@ namespace ResembleAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateDetectionResponse(
+                ProcessGetDetectBatchResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -397,10 +269,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDetection",
-                                methodName: "CreateDetectionAsync",
-                                pathTemplate: "\"/detect\"",
-                                httpMethod: "POST",
+                                operationId: "GetDetectBatch",
+                                methodName: "GetDetectBatchAsync",
+                                pathTemplate: "$\"/detect/batch/{uuid}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -417,10 +289,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateDetection",
-                                methodName: "CreateDetectionAsync",
-                                pathTemplate: "\"/detect\"",
-                                httpMethod: "POST",
+                                operationId: "GetDetectBatch",
+                                methodName: "GetDetectBatchAsync",
+                                pathTemplate: "$\"/detect/batch/{uuid}\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -432,6 +304,44 @@ namespace ResembleAI
                                 willRetry: false,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Batch not found (or not accessible by the authenticated team).
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::ResembleAI.Error? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::ResembleAI.Error.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::ResembleAI.Error.FromJson(__content_404, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+                                throw new global::ResembleAI.ApiException<global::ResembleAI.Error>(
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_404,
+                                    ResponseObject = __value_404,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -445,7 +355,7 @@ namespace ResembleAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateDetectionResponseContent(
+                                ProcessGetDetectBatchResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -455,7 +365,7 @@ namespace ResembleAI
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::ResembleAI.DeepfakeDetectionCreateDetectionResponse200.FromJson(__content, JsonSerializerContext) ??
+                                        global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -485,7 +395,7 @@ namespace ResembleAI
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::ResembleAI.DeepfakeDetectionCreateDetectionResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -523,107 +433,6 @@ namespace ResembleAI
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create deepfake detection<br/>
-        /// Analyze audio, image, and video for deepfake detection.<br/>
-        /// Supply media via one of three intake methods:<br/>
-        /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
-        /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
-        /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
-        /// </summary>
-        /// <param name="file">
-        /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
-        /// </param>
-        /// <param name="filename">
-        /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
-        /// </param>
-        /// <param name="callbackUrl">
-        /// POST destination when analysis completes
-        /// </param>
-        /// <param name="visualize">
-        /// Generate visualization artifacts
-        /// </param>
-        /// <param name="frameLength">
-        /// Window size in seconds (audio/video)<br/>
-        /// Default Value: 2
-        /// </param>
-        /// <param name="startRegion">
-        /// Start of segment to analyze (seconds)
-        /// </param>
-        /// <param name="endRegion">
-        /// End of segment to analyze (seconds)
-        /// </param>
-        /// <param name="maxVideoSecs">
-        /// Cap processed duration
-        /// </param>
-        /// <param name="modelTypes">
-        /// Use talking_head for face-swaps
-        /// </param>
-        /// <param name="intelligence">
-        /// Run multimodal intelligence analysis on the media<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="audioSourceTracing">
-        /// Enable audio source tracing to identify synthetic audio origin<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="useReverseSearch">
-        /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="useOodDetector">
-        /// Enable out-of-distribution detection<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="zeroRetentionMode">
-        /// Enable Zero Retention Mode to automatically delete submitted media after detection completes.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.DeepfakeDetectionCreateDetectionResponse200> CreateDetectionAsync(
-            byte[] file,
-            string filename,
-            string? callbackUrl = default,
-            bool? visualize = default,
-            int? frameLength = default,
-            double? startRegion = default,
-            double? endRegion = default,
-            double? maxVideoSecs = default,
-            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
-            bool? intelligence = default,
-            bool? audioSourceTracing = default,
-            bool? useReverseSearch = default,
-            bool? useOodDetector = default,
-            bool? zeroRetentionMode = default,
-            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::ResembleAI.CreateDetectionRequest
-            {
-                File = file,
-                Filename = filename,
-                CallbackUrl = callbackUrl,
-                Visualize = visualize,
-                FrameLength = frameLength,
-                StartRegion = startRegion,
-                EndRegion = endRegion,
-                MaxVideoSecs = maxVideoSecs,
-                ModelTypes = modelTypes,
-                Intelligence = intelligence,
-                AudioSourceTracing = audioSourceTracing,
-                UseReverseSearch = useReverseSearch,
-                UseOodDetector = useOodDetector,
-                ZeroRetentionMode = zeroRetentionMode,
-            };
-
-            return await CreateDetectionAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
