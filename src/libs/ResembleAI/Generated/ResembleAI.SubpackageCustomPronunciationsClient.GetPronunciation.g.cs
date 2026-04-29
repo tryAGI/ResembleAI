@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareGetPronunciationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid);
+                    uuid: uuid!);
 
                 return __httpRequest;
             }

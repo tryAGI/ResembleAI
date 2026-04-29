@@ -139,9 +139,37 @@ namespace ResembleAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{voiceUuid}"),
+                                content: new global::System.Net.Http.StringContent(voiceUuid ?? string.Empty),
                                 name: "\"voice_uuid\"");
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Filename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentFile,
                                 name: "\"file\"",
@@ -151,22 +179,22 @@ namespace ResembleAI
                                 __contentFile.Headers.ContentDisposition.FileNameStar = null;
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Name}"),
+                                content: new global::System.Net.Http.StringContent(request.Name ?? string.Empty),
                                 name: "\"name\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Text}"),
+                                content: new global::System.Net.Http.StringContent(request.Text ?? string.Empty),
                                 name: "\"text\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Emotion}"),
+                                content: new global::System.Net.Http.StringContent(request.Emotion ?? string.Empty),
                                 name: "\"emotion\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.IsActive}"),
+                                content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.IsActive, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                 name: "\"is_active\"");
                             if (request.Fill != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Fill}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Fill, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"fill\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
@@ -181,7 +209,7 @@ namespace ResembleAI
                 PrepareCreateRecordingRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    voiceUuid: voiceUuid,
+                    voiceUuid: voiceUuid!,
                     request: request);
 
                 return __httpRequest;

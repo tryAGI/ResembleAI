@@ -159,8 +159,8 @@ namespace ResembleAI
                 PrepareUpdateAgentToolRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentUuid: agentUuid,
-                    toolUuid: toolUuid,
+                    agentUuid: agentUuid!,
+                    toolUuid: toolUuid!,
                     request: request);
 
                 return __httpRequest;

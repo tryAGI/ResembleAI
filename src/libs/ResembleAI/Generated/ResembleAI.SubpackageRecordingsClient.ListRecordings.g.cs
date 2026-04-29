@@ -158,8 +158,8 @@ namespace ResembleAI
                 PrepareListRecordingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    voiceUuid: voiceUuid,
-                    page: page,
+                    voiceUuid: voiceUuid!,
+                    page: page!,
                     pageSize: pageSize);
 
                 return __httpRequest;

@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareGetVoiceSettingsPresetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid);
+                    uuid: uuid!);
 
                 return __httpRequest;
             }

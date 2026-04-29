@@ -159,8 +159,8 @@ namespace ResembleAI
                 PrepareUpdateAgentWebhookRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentUuid: agentUuid,
-                    webhookUuid: webhookUuid,
+                    agentUuid: agentUuid!,
+                    webhookUuid: webhookUuid!,
                     request: request);
 
                 return __httpRequest;

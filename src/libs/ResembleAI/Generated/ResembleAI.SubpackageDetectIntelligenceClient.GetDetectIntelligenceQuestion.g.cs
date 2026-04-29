@@ -145,8 +145,8 @@ namespace ResembleAI
                 PrepareGetDetectIntelligenceQuestionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid,
-                    questionUuid: questionUuid);
+                    uuid: uuid!,
+                    questionUuid: questionUuid!);
 
                 return __httpRequest;
             }

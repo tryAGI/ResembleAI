@@ -159,8 +159,8 @@ namespace ResembleAI
                 PrepareUpdateClipRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectUuid: projectUuid,
-                    clipUuid: clipUuid,
+                    projectUuid: projectUuid!,
+                    clipUuid: clipUuid!,
                     request: request);
 
                 return __httpRequest;

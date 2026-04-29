@@ -158,8 +158,8 @@ namespace ResembleAI
                 PrepareListClipsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectUuid: projectUuid,
-                    page: page,
+                    projectUuid: projectUuid!,
+                    page: page!,
                     pageSize: pageSize);
 
                 return __httpRequest;

@@ -134,7 +134,7 @@ namespace ResembleAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.UserPrompt}"),
+                                content: new global::System.Net.Http.StringContent(request.UserPrompt ?? string.Empty),
                                 name: "\"user_prompt\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::ResembleAI.AutoSDKRequestOptionsSupport.ApplyHeaders(

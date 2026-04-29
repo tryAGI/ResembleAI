@@ -151,7 +151,7 @@ namespace ResembleAI
                 PrepareListAudioSourceTracingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page,
+                    page: page!,
                     pageSize: pageSize);
 
                 return __httpRequest;

@@ -154,7 +154,7 @@ namespace ResembleAI
                 PrepareUpdateProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectUuid: projectUuid,
+                    projectUuid: projectUuid!,
                     request: request);
 
                 return __httpRequest;

@@ -150,7 +150,7 @@ namespace ResembleAI
                 PrepareGetAgentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid,
+                    uuid: uuid!,
                     advanced: advanced);
 
                 return __httpRequest;

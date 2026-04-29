@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareGetIntelligenceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid);
+                    uuid: uuid!);
 
                 return __httpRequest;
             }
