@@ -6,7 +6,7 @@ namespace ResembleAI
     /// <summary>
     /// Use talking_head for face-swaps
     /// </summary>
-    public enum DetectPostRequestBodyContentApplicationJsonSchemaModelTypes
+    public enum DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes
     {
         /// <summary>
         /// 
@@ -21,29 +21,29 @@ namespace ResembleAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class DetectPostRequestBodyContentApplicationJsonSchemaModelTypesExtensions
+    public static class DetectPostRequestBodyContentMultipartFormDataSchemaModelTypesExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this DetectPostRequestBodyContentApplicationJsonSchemaModelTypes value)
+        public static string ToValueString(this DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes value)
         {
             return value switch
             {
-                DetectPostRequestBodyContentApplicationJsonSchemaModelTypes.Image => "image",
-                DetectPostRequestBodyContentApplicationJsonSchemaModelTypes.TalkingHead => "talking_head",
+                DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes.Image => "image",
+                DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes.TalkingHead => "talking_head",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DetectPostRequestBodyContentApplicationJsonSchemaModelTypes? ToEnum(string value)
+        public static DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? ToEnum(string value)
         {
             return value switch
             {
-                "image" => DetectPostRequestBodyContentApplicationJsonSchemaModelTypes.Image,
-                "talking_head" => DetectPostRequestBodyContentApplicationJsonSchemaModelTypes.TalkingHead,
+                "image" => DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes.Image,
+                "talking_head" => DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes.TalkingHead,
                 _ => null,
             };
         }

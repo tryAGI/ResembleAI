@@ -225,6 +225,16 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public SubpackageSecureUploadsClient SubpackageSecureUploads => new SubpackageSecureUploadsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SubpackageSpeechToTextClient SubpackageSpeechToText => new SubpackageSpeechToTextClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

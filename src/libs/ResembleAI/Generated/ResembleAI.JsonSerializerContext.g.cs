@@ -125,9 +125,9 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentApplicationJsonSchemaModelTypesJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypesJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentApplicationJsonSchemaModelTypesNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypesNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
 
@@ -136,6 +136,10 @@ namespace ResembleAI
             typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter),
 
@@ -393,6 +397,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsAgentUuidKnowledgeItemsKnowledgeItemUuidDeleteResponsesContentApplicationJsonSchemaItemsItems))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentKnowledgeBaseDetachKnowledgeItemFromAgentResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.AgentsAgentUuidKnowledgeItemsKnowledgeItemUuidDeleteResponsesContentApplicationJsonSchemaItemsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SecureUploadsCreateSecureUploadResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType), TypeInfoPropertyName = "DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus), TypeInfoPropertyName = "DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAudioMetrics))]
@@ -415,7 +420,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>), TypeInfoPropertyName = "OneOfDetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligenceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionListDetectionsResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItems>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentApplicationJsonSchemaModelTypes), TypeInfoPropertyName = "DetectPostRequestBodyContentApplicationJsonSchemaModelTypes2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes), TypeInfoPropertyName = "DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription), TypeInfoPropertyName = "DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItem))]
@@ -430,6 +435,10 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>), TypeInfoPropertyName = "OneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracingObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>), TypeInfoPropertyName = "OneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionGetDetectionResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectBatchStatus), TypeInfoPropertyName = "DetectBatchStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectBatch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType), TypeInfoPropertyName = "IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType), TypeInfoPropertyName = "IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItem))]
@@ -602,7 +611,10 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreatePhoneNumberRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateKnowledgeItemRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AttachKnowledgeItemToAgentRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateSecureUploadRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateDetectionRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateDetectBatchRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.RunIntelligenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AskDetectIntelligenceQuestionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateIdentityRequest))]
@@ -673,6 +685,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaWebhooksItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {

@@ -9,11 +9,18 @@ namespace ResembleAI
     public sealed partial class CreateDetectionRequest
     {
         /// <summary>
-        /// HTTPS URL to audio, image, or video file
+        /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public required byte[] File { get; set; }
+
+        /// <summary>
+        /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Filename { get; set; }
 
         /// <summary>
         /// POST destination when analysis completes
@@ -47,12 +54,6 @@ namespace ResembleAI
         public double? EndRegion { get; set; }
 
         /// <summary>
-        /// Downsample high-frame-rate media
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_video_fps")]
-        public double? MaxVideoFps { get; set; }
-
-        /// <summary>
         /// Cap processed duration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_video_secs")]
@@ -62,8 +63,8 @@ namespace ResembleAI
         /// Use talking_head for face-swaps
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_types")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentApplicationJsonSchemaModelTypesJsonConverter))]
-        public global::ResembleAI.DetectPostRequestBodyContentApplicationJsonSchemaModelTypes? ModelTypes { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypesJsonConverter))]
+        public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? ModelTypes { get; set; }
 
         /// <summary>
         /// Run multimodal intelligence analysis on the media<br/>
@@ -80,7 +81,7 @@ namespace ResembleAI
         public bool? AudioSourceTracing { get; set; }
 
         /// <summary>
-        /// Enable reverse image search to improve detection accuracy for image files. Searches the web for matching images and uses AI to classify whether the match indicates a known fake. Only applies to image detections.<br/>
+        /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_reverse_search")]
@@ -94,7 +95,7 @@ namespace ResembleAI
         public bool? UseOodDetector { get; set; }
 
         /// <summary>
-        /// Enable Zero Retention Mode to automatically delete submitted media after detection completes. When enabled, media URLs are redacted and the filename is tokenized.<br/>
+        /// Enable Zero Retention Mode to automatically delete submitted media after detection completes.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("zero_retention_mode")]
@@ -109,8 +110,11 @@ namespace ResembleAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDetectionRequest" /> class.
         /// </summary>
-        /// <param name="url">
-        /// HTTPS URL to audio, image, or video file
+        /// <param name="file">
+        /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
+        /// </param>
+        /// <param name="filename">
+        /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
         /// POST destination when analysis completes
@@ -128,9 +132,6 @@ namespace ResembleAI
         /// <param name="endRegion">
         /// End of segment to analyze (seconds)
         /// </param>
-        /// <param name="maxVideoFps">
-        /// Downsample high-frame-rate media
-        /// </param>
         /// <param name="maxVideoSecs">
         /// Cap processed duration
         /// </param>
@@ -146,7 +147,7 @@ namespace ResembleAI
         /// Default Value: false
         /// </param>
         /// <param name="useReverseSearch">
-        /// Enable reverse image search to improve detection accuracy for image files. Searches the web for matching images and uses AI to classify whether the match indicates a known fake. Only applies to image detections.<br/>
+        /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="useOodDetector">
@@ -154,35 +155,35 @@ namespace ResembleAI
         /// Default Value: false
         /// </param>
         /// <param name="zeroRetentionMode">
-        /// Enable Zero Retention Mode to automatically delete submitted media after detection completes. When enabled, media URLs are redacted and the filename is tokenized.<br/>
+        /// Enable Zero Retention Mode to automatically delete submitted media after detection completes.<br/>
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateDetectionRequest(
-            string url,
+            byte[] file,
+            string filename,
             string? callbackUrl,
             bool? visualize,
             int? frameLength,
             double? startRegion,
             double? endRegion,
-            double? maxVideoFps,
             double? maxVideoSecs,
-            global::ResembleAI.DetectPostRequestBodyContentApplicationJsonSchemaModelTypes? modelTypes,
+            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes,
             bool? intelligence,
             bool? audioSourceTracing,
             bool? useReverseSearch,
             bool? useOodDetector,
             bool? zeroRetentionMode)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.CallbackUrl = callbackUrl;
             this.Visualize = visualize;
             this.FrameLength = frameLength;
             this.StartRegion = startRegion;
             this.EndRegion = endRegion;
-            this.MaxVideoFps = maxVideoFps;
             this.MaxVideoSecs = maxVideoSecs;
             this.ModelTypes = modelTypes;
             this.Intelligence = intelligence;
