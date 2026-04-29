@@ -1,9 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+spec_url="https://docs.resemble.ai/openapi.json"
+temp_spec="$(mktemp)"
+
+cleanup() {
+  rm -f "$temp_spec"
+}
+
+trap cleanup EXIT
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl -fsSL -o openapi.yaml https://docs.resemble.ai/openapi.json
+
+if curl -fsSL -o "$temp_spec" "$spec_url"; then
+  mv "$temp_spec" openapi.yaml
+elif [[ ! -f openapi.yaml ]]; then
+  echo "Failed to download $spec_url and no checked-in openapi.yaml exists." >&2
+  exit 1
+else
+  echo "Warning: $spec_url is unavailable; reusing the checked-in openapi.yaml." >&2
+fi
+
 autosdk generate openapi.yaml \
   --namespace ResembleAI \
   --clientClassName ResembleAIClient \
