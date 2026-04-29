@@ -154,7 +154,7 @@ namespace ResembleAI
                 PrepareBuildVoiceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    voiceUuid: voiceUuid,
+                    voiceUuid: voiceUuid!,
                     request: request);
 
                 return __httpRequest;

@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareDeleteVoiceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    voiceUuid: voiceUuid);
+                    voiceUuid: voiceUuid!);
 
                 return __httpRequest;
             }

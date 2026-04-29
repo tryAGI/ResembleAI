@@ -161,7 +161,7 @@ namespace ResembleAI
                 PrepareListVoicesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page,
+                    page: page!,
                     pageSize: pageSize,
                     advanced: advanced);
 

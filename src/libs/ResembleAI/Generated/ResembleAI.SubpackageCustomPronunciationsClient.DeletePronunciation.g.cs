@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareDeletePronunciationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid);
+                    uuid: uuid!);
 
                 return __httpRequest;
             }

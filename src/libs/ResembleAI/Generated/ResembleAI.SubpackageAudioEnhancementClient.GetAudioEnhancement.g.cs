@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareGetAudioEnhancementRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    enhancementUuid: enhancementUuid);
+                    enhancementUuid: enhancementUuid!);
 
                 return __httpRequest;
             }

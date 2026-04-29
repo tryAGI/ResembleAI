@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareGetTeamRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamUuid: teamUuid);
+                    teamUuid: teamUuid!);
 
                 return __httpRequest;
             }

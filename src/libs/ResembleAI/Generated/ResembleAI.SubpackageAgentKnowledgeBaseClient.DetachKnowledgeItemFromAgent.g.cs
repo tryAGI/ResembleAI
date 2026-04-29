@@ -145,8 +145,8 @@ namespace ResembleAI
                 PrepareDetachKnowledgeItemFromAgentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentUuid: agentUuid,
-                    knowledgeItemUuid: knowledgeItemUuid);
+                    agentUuid: agentUuid!,
+                    knowledgeItemUuid: knowledgeItemUuid!);
 
                 return __httpRequest;
             }

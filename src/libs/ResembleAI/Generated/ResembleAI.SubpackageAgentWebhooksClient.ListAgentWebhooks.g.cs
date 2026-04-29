@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareListAgentWebhooksRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentUuid: agentUuid);
+                    agentUuid: agentUuid!);
 
                 return __httpRequest;
             }

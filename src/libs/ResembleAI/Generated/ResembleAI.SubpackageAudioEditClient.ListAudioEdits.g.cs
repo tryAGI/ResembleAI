@@ -145,7 +145,7 @@ namespace ResembleAI
                 PrepareListAudioEditsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page);
+                    page: page!);
 
                 return __httpRequest;
             }

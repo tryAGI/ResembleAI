@@ -140,7 +140,7 @@ namespace ResembleAI
                 PrepareListAgentKnowledgeItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentUuid: agentUuid);
+                    agentUuid: agentUuid!);
 
                 return __httpRequest;
             }

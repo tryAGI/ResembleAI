@@ -159,8 +159,8 @@ namespace ResembleAI
                 PrepareUpdateRecordingRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    voiceUuid: voiceUuid,
-                    recordingId: recordingId,
+                    voiceUuid: voiceUuid!,
+                    recordingId: recordingId!,
                     request: request);
 
                 return __httpRequest;

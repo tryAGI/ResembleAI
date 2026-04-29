@@ -145,8 +145,8 @@ namespace ResembleAI
                 PrepareDeleteAgentToolRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentUuid: agentUuid,
-                    toolUuid: toolUuid);
+                    agentUuid: agentUuid!,
+                    toolUuid: toolUuid!);
 
                 return __httpRequest;
             }

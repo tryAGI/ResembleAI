@@ -158,8 +158,8 @@ namespace ResembleAI
                 PrepareListTranscriptQuestionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid,
-                    page: page,
+                    uuid: uuid!,
+                    page: page!,
                     perPage: perPage);
 
                 return __httpRequest;

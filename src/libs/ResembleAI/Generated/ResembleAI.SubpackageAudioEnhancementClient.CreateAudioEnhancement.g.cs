@@ -135,6 +135,34 @@ namespace ResembleAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentAudioFile = new global::System.Net.Http.ByteArrayContent(request.AudioFile ?? global::System.Array.Empty<byte>());
+                            __contentAudioFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.AudioFilename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.AudioFilename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentAudioFile,
                                 name: "\"audio_file\"",
@@ -147,49 +175,49 @@ namespace ResembleAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EnhancementEngine?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.EnhancementEngine).HasValue ? (request.EnhancementEngine).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"enhancement_engine\"");
                             } 
                             if (request.RemoveNoise != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RemoveNoise}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RemoveNoise, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"remove_noise\"");
                             } 
                             if (request.Normalize != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Normalize}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Normalize, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"normalize\"");
                             } 
                             if (request.StudioSound != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StudioSound}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.StudioSound, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"studio_sound\"");
                             } 
                             if (request.EnhancementLevel != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EnhancementLevel}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.EnhancementLevel, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"enhancement_level\"");
                             } 
                             if (request.LoudnessTargetLevel != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.LoudnessTargetLevel}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.LoudnessTargetLevel, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"loudness_target_level\"");
                             } 
                             if (request.LoudnessPeakLimit != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.LoudnessPeakLimit}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.LoudnessPeakLimit, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"loudness_peak_limit\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
