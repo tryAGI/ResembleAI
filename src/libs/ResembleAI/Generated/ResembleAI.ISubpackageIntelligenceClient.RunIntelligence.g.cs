@@ -33,9 +33,6 @@ namespace ResembleAI
         /// <param name="mediaType">
         /// Explicit media type (auto-detected if not provided)
         /// </param>
-        /// <param name="json">
-        /// Return structured fields instead of prose. Default false for audio/video, true for images.
-        /// </param>
         /// <param name="callbackUrl">
         /// URL that receives the final intelligence payload via HTTP POST. When present, the request runs asynchronously and returns 202 Accepted.
         /// </param>
@@ -47,7 +44,6 @@ namespace ResembleAI
             string? url = default,
             global::System.Guid? detectId = default,
             global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType? mediaType = default,
-            bool? json = default,
             string? callbackUrl = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

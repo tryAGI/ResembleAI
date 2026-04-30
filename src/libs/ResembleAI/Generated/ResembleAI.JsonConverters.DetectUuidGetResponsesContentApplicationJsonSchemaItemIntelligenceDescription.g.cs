@@ -15,7 +15,6 @@ namespace ResembleAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
             var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
@@ -24,45 +23,55 @@ namespace ResembleAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score0++;
-                    }
-                }
-            }
             var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
+            if (__jsonProps.Contains("abnormalities")) __score1++;
+            if (__jsonProps.Contains("context")) __score1++;
+            if (__jsonProps.Contains("dialect")) __score1++;
+            if (__jsonProps.Contains("digitally_altered")) __score1++;
+            if (__jsonProps.Contains("digitally_altered.alterations")) __score1++;
+            if (__jsonProps.Contains("digitally_altered.confidence")) __score1++;
+            if (__jsonProps.Contains("digitally_altered.detected")) __score1++;
+            if (__jsonProps.Contains("emotion")) __score1++;
+            if (__jsonProps.Contains("fraud")) __score1++;
+            if (__jsonProps.Contains("fraud.confidence")) __score1++;
+            if (__jsonProps.Contains("fraud.reasoning")) __score1++;
+            if (__jsonProps.Contains("fraud.type")) __score1++;
+            if (__jsonProps.Contains("language")) __score1++;
+            if (__jsonProps.Contains("liveness")) __score1++;
+            if (__jsonProps.Contains("liveness.assessment")) __score1++;
+            if (__jsonProps.Contains("liveness.confidence")) __score1++;
+            if (__jsonProps.Contains("liveness.indicators")) __score1++;
+            if (__jsonProps.Contains("message")) __score1++;
+            if (__jsonProps.Contains("misinformation")) __score1++;
+            if (__jsonProps.Contains("speaker_info")) __score1++;
+            if (__jsonProps.Contains("speaking_style")) __score1++;
+            if (__jsonProps.Contains("transcription")) __score1++;
+            if (__jsonProps.Contains("translation")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             string? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = default;
-            object? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 = default;
+            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
                 {
                     try
                     {
-
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                         detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -74,15 +83,13 @@ namespace ResembleAI.JsonConverters
                     {
                     }
                 }
-
                 else if (__bestIndex == 1)
                 {
                     try
                     {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1).Name}");
+                        detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,11 +100,10 @@ namespace ResembleAI.JsonConverters
                 }
             }
 
-            if (detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 == null && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 == null)
+            if (detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 == null && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 == null)
             {
                 try
                 {
-
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -111,10 +117,9 @@ namespace ResembleAI.JsonConverters
 
                 try
                 {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1).Name}");
+                    detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -127,7 +132,7 @@ namespace ResembleAI.JsonConverters
             var __value = new global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(
                 detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1,
 
-                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2
+                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
                 );
 
             return __value;
@@ -148,11 +153,11 @@ namespace ResembleAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!, typeInfo);
             }
-            else if (value.IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2)
+            else if (value.IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!, typeInfo);
             }
         }
     }
