@@ -30,18 +30,18 @@ namespace ResembleAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 { get; init; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 { get; init; }
 #else
-        public object? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 { get; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1))]
 #endif
-        public bool IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 => DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 != null;
+        public bool IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 => DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -63,20 +63,38 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 value) => new DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription((global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription @this) => @this.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? value)
+        {
+            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(
             string? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1,
-            object? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2
+            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
             )
         {
             DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1;
-            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 = detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2;
+            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 as object ??
+            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 as object ??
             DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 as object 
             ;
 
@@ -85,7 +103,7 @@ namespace ResembleAI
         /// </summary>
         public override string? ToString() =>
             DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.ToString() ??
-            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2?.ToString() 
+            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.ToString() 
             ;
 
         /// <summary>
@@ -93,7 +111,7 @@ namespace ResembleAI
         /// </summary>
         public bool Validate()
         {
-            return IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 && !IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 || !IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 && IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2;
+            return IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 && !IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 || !IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 && IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
         }
 
         /// <summary>
@@ -101,7 +119,7 @@ namespace ResembleAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string?, TResult>? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
-            global::System.Func<object?, TResult>? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 = null,
+            global::System.Func<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?, TResult>? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
             bool validate = true)
         {
             if (validate)
@@ -113,9 +131,9 @@ namespace ResembleAI
             {
                 return detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!);
             }
-            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 != null)
+            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 != null)
             {
-                return detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2!);
+                return detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!);
             }
 
             return default(TResult);
@@ -126,7 +144,7 @@ namespace ResembleAI
         /// </summary>
         public void Match(
             global::System.Action<string?>? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
-            global::System.Action<object?>? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2 = null,
+            global::System.Action<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?>? detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
             bool validate = true)
         {
             if (validate)
@@ -138,9 +156,9 @@ namespace ResembleAI
             {
                 detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.Invoke(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!);
             }
-            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2)
+            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1)
             {
-                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2?.Invoke(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2!);
+                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.Invoke(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!);
             }
         }
 
@@ -153,8 +171,8 @@ namespace ResembleAI
             {
                 DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1,
                 typeof(string),
-                DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2,
-                typeof(object),
+                DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1,
+                typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -172,7 +190,7 @@ namespace ResembleAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1, other.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2, other.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?>.Default.Equals(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1, other.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1) 
                 ;
         }
 
