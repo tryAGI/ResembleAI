@@ -21,6 +21,19 @@ namespace ResembleAI
         /// Run intelligence<br/>
         /// Analyze audio, image, or video for comprehensive insights. Optionally reference an existing detect to associate.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IntelligenceRunIntelligenceResponse200>> RunIntelligenceAsResponseAsync(
+
+            global::ResembleAI.RunIntelligenceRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Run intelligence<br/>
+        /// Analyze audio, image, or video for comprehensive insights. Optionally reference an existing detect to associate.
+        /// </summary>
         /// <param name="mediaToken">
         /// Token for uploaded media file (from secure upload)
         /// </param>

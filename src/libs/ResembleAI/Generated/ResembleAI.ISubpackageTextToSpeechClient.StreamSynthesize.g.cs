@@ -21,6 +21,32 @@ namespace ResembleAI
         /// Streaming text-to-speech synthesis (HTTP)<br/>
         /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamSynthesizeAsStreamAsync(
+
+            global::ResembleAI.StreamSynthesizeRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Streaming text-to-speech synthesis (HTTP)<br/>
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<byte[]>> StreamSynthesizeAsResponseAsync(
+
+            global::ResembleAI.StreamSynthesizeRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Streaming text-to-speech synthesis (HTTP)<br/>
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
+        /// </summary>
         /// <param name="voiceUuid">
         /// Voice UUID to use for synthesis
         /// </param>
