@@ -29,6 +29,19 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1;
+            return IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1))]
 #endif
         public bool IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 => DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? value)
+        {
+            value = DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
+            return IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace ResembleAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
-            global::System.Func<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?, TResult>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
+            global::System.Func<string, TResult>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
+            global::System.Func<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1, TResult>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace ResembleAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
-            global::System.Action<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
+            global::System.Action<string>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
+
+            global::System.Action<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1)
+            {
+                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.Invoke(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!);
+            }
+            else if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1)
+            {
+                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.Invoke(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
+            global::System.Action<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = null,
             bool validate = true)
         {
             if (validate)
