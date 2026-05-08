@@ -29,6 +29,19 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1;
+            return IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2;
+            return IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3))]
 #endif
         public bool IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 => AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3;
+            return IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,7 +196,7 @@ namespace ResembleAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 = null,
+            global::System.Func<string, TResult>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 = null,
             global::System.Func<double?, TResult>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 = null,
             global::System.Func<bool?, TResult>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 = null,
             bool validate = true)
@@ -187,7 +226,37 @@ namespace ResembleAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 = null,
+            global::System.Action<string>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 = null,
+
+            global::System.Action<double?>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 = null,
+
+            global::System.Action<bool?>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1)
+            {
+                agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1?.Invoke(AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1!);
+            }
+            else if (IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2)
+            {
+                agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2?.Invoke(AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2!);
+            }
+            else if (IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3)
+            {
+                agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3?.Invoke(AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 = null,
             global::System.Action<double?>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 = null,
             global::System.Action<bool?>? agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 = null,
             bool validate = true)

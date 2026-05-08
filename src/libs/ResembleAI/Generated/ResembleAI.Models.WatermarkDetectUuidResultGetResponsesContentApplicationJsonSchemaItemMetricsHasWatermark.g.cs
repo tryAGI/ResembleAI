@@ -29,6 +29,19 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, bool>? value)
+        {
+            value = WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1;
+            return IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2))]
 #endif
         public bool IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 => WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2;
+            return IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +144,7 @@ namespace ResembleAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>?, TResult>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, bool>, TResult>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1 = null,
             global::System.Func<bool?, TResult>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 = null,
             bool validate = true)
         {
@@ -143,7 +169,31 @@ namespace ResembleAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>?>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1 = null,
+
+            global::System.Action<bool?>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1)
+            {
+                watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1?.Invoke(WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1!);
+            }
+            else if (IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2)
+            {
+                watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2?.Invoke(WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, bool>>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1 = null,
             global::System.Action<bool?>? watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 = null,
             bool validate = true)
         {
