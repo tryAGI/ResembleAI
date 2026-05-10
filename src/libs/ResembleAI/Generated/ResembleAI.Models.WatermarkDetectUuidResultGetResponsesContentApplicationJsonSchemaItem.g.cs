@@ -97,5 +97,6 @@ namespace ResembleAI
         public WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

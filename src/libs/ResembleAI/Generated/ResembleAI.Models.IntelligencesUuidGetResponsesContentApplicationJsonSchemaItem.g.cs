@@ -82,5 +82,6 @@ namespace ResembleAI
         public IntelligencesUuidGetResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

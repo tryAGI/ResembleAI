@@ -42,5 +42,6 @@ namespace ResembleAI
         public AskDetectIntelligenceQuestionRequest()
         {
         }
+
     }
 }

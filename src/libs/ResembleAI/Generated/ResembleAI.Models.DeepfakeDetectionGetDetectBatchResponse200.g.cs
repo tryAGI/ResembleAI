@@ -50,5 +50,6 @@ namespace ResembleAI
         public DeepfakeDetectionGetDetectBatchResponse200()
         {
         }
+
     }
 }

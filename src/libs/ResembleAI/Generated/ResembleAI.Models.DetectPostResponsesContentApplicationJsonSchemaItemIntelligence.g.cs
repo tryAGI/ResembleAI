@@ -49,5 +49,6 @@ namespace ResembleAI
         public DetectPostResponsesContentApplicationJsonSchemaItemIntelligence()
         {
         }
+
     }
 }

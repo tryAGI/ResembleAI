@@ -41,5 +41,6 @@ namespace ResembleAI
         public BuildVoiceRequest()
         {
         }
+
     }
 }

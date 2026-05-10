@@ -101,5 +101,6 @@ namespace ResembleAI
         public WatermarkApplyPostResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

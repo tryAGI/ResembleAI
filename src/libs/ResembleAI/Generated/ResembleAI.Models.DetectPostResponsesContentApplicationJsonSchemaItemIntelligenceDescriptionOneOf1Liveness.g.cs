@@ -58,5 +58,6 @@ namespace ResembleAI
         public DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness()
         {
         }
+
     }
 }

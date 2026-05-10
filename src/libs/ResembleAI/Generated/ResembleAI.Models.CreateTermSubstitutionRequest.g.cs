@@ -54,5 +54,6 @@ namespace ResembleAI
         public CreateTermSubstitutionRequest()
         {
         }
+
     }
 }

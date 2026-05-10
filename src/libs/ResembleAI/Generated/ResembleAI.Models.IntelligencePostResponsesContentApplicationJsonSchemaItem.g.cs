@@ -71,5 +71,6 @@ namespace ResembleAI
         public IntelligencePostResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }
