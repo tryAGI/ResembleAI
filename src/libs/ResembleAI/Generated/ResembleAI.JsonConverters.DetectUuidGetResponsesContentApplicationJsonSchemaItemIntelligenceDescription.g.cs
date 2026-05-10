@@ -104,6 +104,7 @@ namespace ResembleAI.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -114,9 +115,13 @@ namespace ResembleAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 == null && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1).Name}");
                     detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

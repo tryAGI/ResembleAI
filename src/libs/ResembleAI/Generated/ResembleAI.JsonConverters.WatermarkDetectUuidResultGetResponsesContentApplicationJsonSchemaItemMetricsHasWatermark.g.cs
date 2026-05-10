@@ -108,7 +108,10 @@ namespace ResembleAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1 == null && watermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 == null)
+            {
                 try
                 {
 
