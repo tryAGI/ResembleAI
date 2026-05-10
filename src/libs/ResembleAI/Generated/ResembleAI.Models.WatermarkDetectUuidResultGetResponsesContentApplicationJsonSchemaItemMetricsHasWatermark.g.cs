@@ -42,6 +42,13 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, bool> PickWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1() => IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1
+            ? WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace ResembleAI
             value = WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2;
             return IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2() => IsWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2
+            ? WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public static WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark FromWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant1(global::System.Collections.Generic.Dictionary<string, bool>? value) => new WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark(bool value) => new WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark((bool?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace ResembleAI
         {
             WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark FromWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkVariant2(bool? value) => new WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark(value);
 
         /// <summary>
         /// 

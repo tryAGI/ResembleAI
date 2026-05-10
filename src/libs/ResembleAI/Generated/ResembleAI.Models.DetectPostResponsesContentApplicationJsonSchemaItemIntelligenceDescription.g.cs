@@ -42,6 +42,13 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public string PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1() => IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1
+            ? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace ResembleAI
             value = DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
             return IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1() => IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
+            ? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public static DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription FromDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(string? value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription((global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace ResembleAI
         {
             DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription FromDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(value);
 
         /// <summary>
         /// 
