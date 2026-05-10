@@ -42,6 +42,13 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public string PickAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1() => IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1
+            ? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public double PickAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2() => IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2
+            ? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace ResembleAI
             value = AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3;
             return IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3() => IsAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3
+            ? AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace ResembleAI
         {
             AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables FromAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1(string? value) => new AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public static AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables FromAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2(double? value) => new AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables(bool value) => new AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables((bool?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace ResembleAI
         {
             AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables FromAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3(bool? value) => new AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables(value);
 
         /// <summary>
         /// 

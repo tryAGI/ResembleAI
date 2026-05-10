@@ -42,6 +42,13 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public string PickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1() => IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1
+            ? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace ResembleAI
             value = DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
             return IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 PickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1() => IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
+            ? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public static DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription FromDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(string? value) => new DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 value) => new DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription((global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace ResembleAI
         {
             DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription FromDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? value) => new DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription(value);
 
         /// <summary>
         /// 
