@@ -40,5 +40,6 @@ namespace ResembleAI
         public SearchIdentitiesRequest()
         {
         }
+
     }
 }

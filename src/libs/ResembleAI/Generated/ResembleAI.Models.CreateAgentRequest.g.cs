@@ -149,5 +149,6 @@ namespace ResembleAI
         public CreateAgentRequest()
         {
         }
+
     }
 }

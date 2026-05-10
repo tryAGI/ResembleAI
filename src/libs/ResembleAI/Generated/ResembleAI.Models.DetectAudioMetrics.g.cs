@@ -89,5 +89,6 @@ namespace ResembleAI
         public DetectAudioMetrics()
         {
         }
+
     }
 }

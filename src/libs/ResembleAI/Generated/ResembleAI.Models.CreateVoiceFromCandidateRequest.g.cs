@@ -60,5 +60,6 @@ namespace ResembleAI
         public CreateVoiceFromCandidateRequest()
         {
         }
+
     }
 }

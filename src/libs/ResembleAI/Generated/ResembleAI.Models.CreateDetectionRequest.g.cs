@@ -199,5 +199,6 @@ namespace ResembleAI
         public CreateDetectionRequest()
         {
         }
+
     }
 }

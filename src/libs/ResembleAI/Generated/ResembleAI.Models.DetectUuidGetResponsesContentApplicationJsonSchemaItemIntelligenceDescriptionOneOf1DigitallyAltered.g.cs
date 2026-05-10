@@ -57,5 +57,6 @@ namespace ResembleAI
         public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered()
         {
         }
+
     }
 }

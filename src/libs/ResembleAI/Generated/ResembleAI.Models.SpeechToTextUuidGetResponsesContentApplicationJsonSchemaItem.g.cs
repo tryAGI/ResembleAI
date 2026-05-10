@@ -121,5 +121,6 @@ namespace ResembleAI
         public SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

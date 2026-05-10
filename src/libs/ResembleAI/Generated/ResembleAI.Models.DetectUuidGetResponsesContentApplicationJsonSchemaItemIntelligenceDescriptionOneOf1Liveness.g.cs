@@ -58,5 +58,6 @@ namespace ResembleAI
         public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness()
         {
         }
+
     }
 }

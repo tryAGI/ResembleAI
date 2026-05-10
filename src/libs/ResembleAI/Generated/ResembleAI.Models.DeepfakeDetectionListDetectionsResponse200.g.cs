@@ -84,5 +84,6 @@ namespace ResembleAI
         public DeepfakeDetectionListDetectionsResponse200()
         {
         }
+
     }
 }

@@ -198,5 +198,6 @@ namespace ResembleAI
         public DetectUuidGetResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

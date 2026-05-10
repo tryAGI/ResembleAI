@@ -128,5 +128,6 @@ namespace ResembleAI
         public StreamSynthesizeRequest()
         {
         }
+
     }
 }

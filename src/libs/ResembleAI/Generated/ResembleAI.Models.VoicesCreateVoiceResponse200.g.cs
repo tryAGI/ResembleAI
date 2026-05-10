@@ -48,5 +48,6 @@ namespace ResembleAI
         public VoicesCreateVoiceResponse200()
         {
         }
+
     }
 }

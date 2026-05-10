@@ -86,5 +86,6 @@ namespace ResembleAI
         public RunIntelligenceRequest()
         {
         }
+
     }
 }
