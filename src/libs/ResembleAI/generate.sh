@@ -22,6 +22,8 @@ else
   echo "Warning: $spec_url is unavailable; reusing the checked-in openapi.yaml." >&2
 fi
 
+./normalize-openapi.sh openapi.yaml
+
 autosdk generate openapi.yaml \
   --namespace ResembleAI \
   --clientClassName ResembleAIClient \
@@ -29,3 +31,5 @@ autosdk generate openapi.yaml \
   --output Generated \
   --exclude-deprecated-operations \
   --security-scheme Http:Header:Bearer
+
+./postprocess-generated.sh Generated

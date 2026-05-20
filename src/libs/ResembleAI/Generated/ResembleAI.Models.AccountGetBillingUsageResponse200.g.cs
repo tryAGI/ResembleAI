@@ -17,8 +17,8 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        public global::ResembleAI.AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem? Item { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
+        public global::ResembleAI.AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem? Items { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace ResembleAI
         /// Initializes a new instance of the <see cref="AccountGetBillingUsageResponse200" /> class.
         /// </summary>
         /// <param name="success"></param>
-        /// <param name="item"></param>
+        /// <param name="items"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AccountGetBillingUsageResponse200(
             bool? success,
-            global::ResembleAI.AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem? item)
+            global::ResembleAI.AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem? items)
         {
             this.Success = success;
-            this.Item = item;
+            this.Items = items;
         }
 
         /// <summary>

@@ -17,17 +17,17 @@ public partial class Tests
 
         //// Load the signed-in account profile.
         var account = await client.SubpackageAccount.GetAccountAsync();
-        var email = account.Item?.AdditionalProperties.GetString("email");
+        var email = account.Item?.Email;
 
         //// Load the first team record returned by the account API.
         var team = await GetFirstTeamAsync(client);
-        var teamName = team.GetString("name");
-        var teamPlan = team.GetString("plan");
+        var teamName = team.Name;
+        var teamPlan = team.Plan;
 
         //// Inspect current usage buckets reported by the billing endpoint.
         var billingUsage = await client.SubpackageAccount.GetBillingUsageAsync();
-        var synthesisUsage = billingUsage.Item?.AdditionalProperties.GetString("synth");
-        var detectionUsage = billingUsage.Item?.AdditionalProperties.GetString("detect");
+        var synthesisUsage = billingUsage.Items?.Synth;
+        var detectionUsage = billingUsage.Items?.Detect;
 
         Console.WriteLine($"Email: {email}");
         Console.WriteLine($"Team: {teamName} ({teamPlan})");

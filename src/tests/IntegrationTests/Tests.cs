@@ -1,13 +1,24 @@
 using System.Net;
-using System.Text.Json;
 
 namespace ResembleAI.IntegrationTests;
 
 [TestClass]
 public partial class Tests
 {
-    private const string SampleAudioFileName = "resembleai-sample.wav";
-    private const string SampleTranscript = "Hello from the Resemble AI SDK integration tests.";
+    private static readonly AudioFixture[] s_audioFixtures =
+    [
+        new(
+            FileName: "resembleai-sample.wav",
+            Transcript: "Hello from the Resemble AI SDK integration tests.",
+            EditedTranscript: "Hello again from the Resemble AI SDK integration tests.",
+            ExpectedTerms: ["hello", "integration", "tests"]),
+        new(
+            FileName: "resembleai-sample-slower.wav",
+            Transcript: "This is the slower second fixture for Resemble AI testing.",
+            EditedTranscript: "This is the updated slower second fixture for Resemble AI testing.",
+            ExpectedTerms: ["slower", "fixture", "testing"]),
+    ];
+
     private static int _isDotEnvLoaded;
 
     private static ResembleAIClient GetAuthenticatedClient()
@@ -28,25 +39,59 @@ public partial class Tests
         var configuredVoiceUuid = Environment.GetEnvironmentVariable("RESEMBLEAI_VOICE_UUID");
         if (configuredVoiceUuid is { Length: > 0 })
         {
-            return new ResembleVoiceInfo(configuredVoiceUuid, "Configured voice", SupportsSync: true, SupportsStreaming: true);
+            return new ResembleVoiceInfo(
+                Uuid: configuredVoiceUuid,
+                Name: "Configured voice",
+                Source: "Configured",
+                SupportsSync: true,
+                SupportsStreaming: true,
+                SupportsVoiceConversion: true);
         }
 
         var voices = await client.SubpackageVoices.ListVoicesAsync(page: 1, pageSize: 25).ConfigureAwait(false);
 
         var voice = voices.Items?
-            .Select(item => ResembleVoiceInfo.FromAdditionalProperties(item.AdditionalProperties))
+            .Where(item => item is { Uuid: { Length: > 0 } })
+            .Select(ResembleVoiceInfo.FromModel)
             .FirstOrDefault(candidate => candidate is { SupportsSync: true, SupportsStreaming: true });
 
         return voice ??
                throw new AssertInconclusiveException("No TTS-capable voice was returned by the ResembleAI account.");
     }
 
-    private static async Task<IDictionary<string, object>> GetFirstTeamAsync(ResembleAIClient client)
+    private static async Task<ResembleVoiceInfo> GetEditableVoiceAsync(ResembleAIClient client)
+    {
+        var configuredVoiceUuid = Environment.GetEnvironmentVariable("RESEMBLEAI_VOICE_UUID");
+        if (configuredVoiceUuid is { Length: > 0 })
+        {
+            return new ResembleVoiceInfo(
+                Uuid: configuredVoiceUuid,
+                Name: "Configured voice",
+                Source: "Configured",
+                SupportsSync: true,
+                SupportsStreaming: true,
+                SupportsVoiceConversion: true);
+        }
+
+        var voices = await client.SubpackageVoices.ListVoicesAsync(page: 1, pageSize: 50, advanced: true).ConfigureAwait(false);
+
+        var voice = voices.Items?
+            .Where(item => item is { Uuid: { Length: > 0 } })
+            .Select(ResembleVoiceInfo.FromModel)
+            .FirstOrDefault(candidate =>
+                candidate.SupportsVoiceConversion &&
+                !string.Equals(candidate.Source, "Resemble Voice", StringComparison.OrdinalIgnoreCase));
+
+        return voice ??
+               throw new AssertInconclusiveException(
+                   "No editable custom voice was returned by the ResembleAI account. Audio edit appears unavailable for this token.");
+    }
+
+    private static async Task<AccountTeamsGetResponsesContentApplicationJsonSchemaItemsItems> GetFirstTeamAsync(ResembleAIClient client)
     {
         var teams = await client.SubpackageAccount.GetTeamsAsync().ConfigureAwait(false);
         var team = teams.Items?
-            .Select(item => item.AdditionalProperties)
-            .FirstOrDefault(properties => properties.Count > 0);
+            .FirstOrDefault(item => item is { Uuid: { Length: > 0 } });
 
         return team ?? throw new AssertInconclusiveException("No team details were returned by the ResembleAI account.");
     }
@@ -76,10 +121,24 @@ public partial class Tests
         throw new AssertInconclusiveException($"Transcript job {transcriptUuid} did not complete within the polling window.");
     }
 
-    private static async Task<byte[]> LoadSampleAudioAsync()
+    private static AudioFixture GetPrimaryAudioFixture() => s_audioFixtures[0];
+
+    private static IReadOnlyList<AudioFixture> GetBundledAudioFixtures() => s_audioFixtures;
+
+    private static async Task<byte[]> LoadAudioFixtureAsync(AudioFixture fixture)
     {
-        var resourcePath = Path.Combine(GetRepositoryRoot(), "src", "tests", "IntegrationTests", "Resources", SampleAudioFileName);
+        var resourcePath = Path.Combine(GetRepositoryRoot(), "src", "tests", "IntegrationTests", "Resources", fixture.FileName);
         return await File.ReadAllBytesAsync(resourcePath).ConfigureAwait(false);
+    }
+
+    private static void AssertTranscriptLooksReasonable(string? transcriptText, AudioFixture fixture)
+    {
+        transcriptText.Should().NotBeNullOrWhiteSpace();
+
+        var normalizedTranscript = transcriptText!.ToLowerInvariant();
+        var matchedTerms = fixture.ExpectedTerms.Count(term => normalizedTranscript.Contains(term, StringComparison.OrdinalIgnoreCase));
+
+        matchedTerms.Should().BeGreaterThanOrEqualTo(Math.Min(2, fixture.ExpectedTerms.Count));
     }
 
     private static string GetRepositoryRoot()
@@ -212,18 +271,29 @@ public partial class Tests
     private sealed record ResembleVoiceInfo(
         string Uuid,
         string Name,
+        string Source,
         bool SupportsSync,
-        bool SupportsStreaming)
+        bool SupportsStreaming,
+        bool SupportsVoiceConversion)
     {
-        public static ResembleVoiceInfo FromAdditionalProperties(IDictionary<string, object> properties)
+        public static ResembleVoiceInfo FromModel(VoicesGetResponsesContentApplicationJsonSchemaItemsItems voice)
         {
-            var apiSupport = properties.GetObject("api_support");
-
             return new ResembleVoiceInfo(
-                Uuid: properties.GetString("uuid") ?? throw new InvalidOperationException("Voice UUID is missing."),
-                Name: properties.GetString("name") ?? "Unnamed voice",
-                SupportsSync: apiSupport?.GetBooleanProperty("sync") ?? false,
-                SupportsStreaming: apiSupport?.GetBooleanProperty("streaming") ?? false);
+                Uuid: voice.Uuid ?? throw new InvalidOperationException("Voice UUID is missing."),
+                Name: voice.Name ?? "Unnamed voice",
+                Source: voice.Source ?? "Unknown",
+                SupportsSync: voice.ApiSupport?.Sync == true,
+                SupportsStreaming: voice.ApiSupport?.Streaming == true,
+                SupportsVoiceConversion: string.Equals(
+                    voice.ComponentStatus?.VoiceConversion?.Status,
+                    "ready",
+                    StringComparison.OrdinalIgnoreCase));
         }
     }
+
+    private sealed record AudioFixture(
+        string FileName,
+        string Transcript,
+        string EditedTranscript,
+        IReadOnlyList<string> ExpectedTerms);
 }

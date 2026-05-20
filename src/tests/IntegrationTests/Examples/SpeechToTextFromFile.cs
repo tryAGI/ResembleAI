@@ -14,14 +14,15 @@ public partial class Tests
     public async Task Example_SpeechToTextFromFile()
     {
         using var client = GetAuthenticatedClient();
-        var audioBytes = await LoadSampleAudioAsync();
+        var fixture = GetPrimaryAudioFixture();
+        var audioBytes = await LoadAudioFixtureAsync(fixture);
 
         try
         {
             //// Submit a small local WAV file for transcription.
             var createdTranscript = await client.SubpackageSpeechToText.CreateTranscriptAsync(
                 file: audioBytes,
-                filename: SampleAudioFileName);
+                filename: fixture.FileName);
 
             //// Poll the transcript until it reaches a terminal state.
             var transcript = await WaitForTranscriptCompletionAsync(client, createdTranscript.Item!.Uuid!.Value);
@@ -30,7 +31,7 @@ public partial class Tests
             createdTranscript.Success.Should().BeTrue();
             createdTranscript.Item?.Uuid.Should().NotBeNull();
             transcript.Success.Should().BeTrue();
-            transcript.Item?.Text.Should().NotBeNullOrWhiteSpace();
+            AssertTranscriptLooksReasonable(transcript.Item?.Text, fixture);
         }
         catch (ApiException ex)
         {

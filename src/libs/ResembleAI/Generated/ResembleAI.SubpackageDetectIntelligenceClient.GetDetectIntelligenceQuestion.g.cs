@@ -6,19 +6,6 @@ namespace ResembleAI
     public partial class SubpackageDetectIntelligenceClient
     {
 
-        private static readonly global::ResembleAI.AutoSDKServer[] s_GetDetectIntelligenceQuestionServers = new global::ResembleAI.AutoSDKServer[]
-        {            new global::ResembleAI.AutoSDKServer(
-                id: "https-f-cluster-resemble-ai",
-                name: "f.cluster.resemble.ai",
-                url: "https://f.cluster.resemble.ai/",
-                description: ""),
-            new global::ResembleAI.AutoSDKServer(
-                id: "https-app-resemble-ai-api-v2",
-                name: "app.resemble.ai api v2",
-                url: "https://app.resemble.ai/api/v2",
-                description: ""),
-        };
-
 
         private static readonly global::ResembleAI.EndPointSecurityRequirement s_GetDetectIntelligenceQuestionSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
@@ -127,9 +114,7 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: $"/detects/{uuid}/intelligence/{questionUuid}",
-                                baseUri: ResolveBaseUri(
-                                servers: s_GetDetectIntelligenceQuestionServers,
-                                defaultBaseUrl: "https://f.cluster.resemble.ai/"));
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

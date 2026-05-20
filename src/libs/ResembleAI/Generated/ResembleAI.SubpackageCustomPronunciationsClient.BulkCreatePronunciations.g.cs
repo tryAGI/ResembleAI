@@ -6,19 +6,6 @@ namespace ResembleAI
     public partial class SubpackageCustomPronunciationsClient
     {
 
-        private static readonly global::ResembleAI.AutoSDKServer[] s_BulkCreatePronunciationsServers = new global::ResembleAI.AutoSDKServer[]
-        {            new global::ResembleAI.AutoSDKServer(
-                id: "https-f-cluster-resemble-ai",
-                name: "f.cluster.resemble.ai",
-                url: "https://f.cluster.resemble.ai/",
-                description: ""),
-            new global::ResembleAI.AutoSDKServer(
-                id: "https-app-resemble-ai-api-v2",
-                name: "app.resemble.ai api v2",
-                url: "https://app.resemble.ai/api/v2",
-                description: ""),
-        };
-
 
         private static readonly global::ResembleAI.EndPointSecurityRequirement s_BulkCreatePronunciationsSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
@@ -124,9 +111,7 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/pronunciations/bulk",
-                                baseUri: ResolveBaseUri(
-                                servers: s_BulkCreatePronunciationsServers,
-                                defaultBaseUrl: "https://f.cluster.resemble.ai/"));
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -576,9 +561,7 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/pronunciations/bulk",
-                                baseUri: ResolveBaseUri(
-                                servers: s_BulkCreatePronunciationsServers,
-                                defaultBaseUrl: "https://f.cluster.resemble.ai/"));
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -989,9 +972,7 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/pronunciations/bulk",
-                                baseUri: ResolveBaseUri(
-                                servers: s_BulkCreatePronunciationsServers,
-                                defaultBaseUrl: "https://f.cluster.resemble.ai/"));
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
