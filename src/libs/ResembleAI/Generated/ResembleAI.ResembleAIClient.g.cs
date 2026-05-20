@@ -508,7 +508,7 @@ namespace ResembleAI
                 return explicitBaseUri;
             }
 
-            return ResolveSelectedServer()?.Uri ?? (s_availableServers.Length > 0 ? s_availableServers[0].Uri : HttpClient.BaseAddress);
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
         }
 
         private global::System.Uri? ResolveBaseUri(
