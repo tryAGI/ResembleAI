@@ -115,5 +115,6 @@ namespace ResembleAI
         public DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

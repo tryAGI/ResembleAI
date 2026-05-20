@@ -21,6 +21,19 @@ namespace ResembleAI
         /// Create knowledge item<br/>
         /// Creates a new knowledge item and queues it for ingestion processing
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.AgentKnowledgeBaseCreateKnowledgeItemResponse201>> CreateKnowledgeItemAsResponseAsync(
+
+            global::ResembleAI.CreateKnowledgeItemRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create knowledge item<br/>
+        /// Creates a new knowledge item and queues it for ingestion processing
+        /// </summary>
         /// <param name="title">
         /// Title of the knowledge item
         /// </param>

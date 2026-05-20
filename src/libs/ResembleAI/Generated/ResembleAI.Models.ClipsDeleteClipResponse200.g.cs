@@ -39,5 +39,6 @@ namespace ResembleAI
         public ClipsDeleteClipResponse200()
         {
         }
+
     }
 }

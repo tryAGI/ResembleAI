@@ -34,12 +34,6 @@ namespace ResembleAI
         public global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType? MediaType { get; set; }
 
         /// <summary>
-        /// Return structured fields instead of prose. Default false for audio/video, true for images.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("json")]
-        public bool? Json { get; set; }
-
-        /// <summary>
         /// URL that receives the final intelligence payload via HTTP POST. When present, the request runs asynchronously and returns 202 Accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
@@ -66,9 +60,6 @@ namespace ResembleAI
         /// <param name="mediaType">
         /// Explicit media type (auto-detected if not provided)
         /// </param>
-        /// <param name="json">
-        /// Return structured fields instead of prose. Default false for audio/video, true for images.
-        /// </param>
         /// <param name="callbackUrl">
         /// URL that receives the final intelligence payload via HTTP POST. When present, the request runs asynchronously and returns 202 Accepted.
         /// </param>
@@ -80,14 +71,12 @@ namespace ResembleAI
             string? url,
             global::System.Guid? detectId,
             global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType? mediaType,
-            bool? json,
             string? callbackUrl)
         {
             this.MediaToken = mediaToken;
             this.Url = url;
             this.DetectId = detectId;
             this.MediaType = mediaType;
-            this.Json = json;
             this.CallbackUrl = callbackUrl;
         }
 
@@ -97,5 +86,6 @@ namespace ResembleAI
         public RunIntelligenceRequest()
         {
         }
+
     }
 }

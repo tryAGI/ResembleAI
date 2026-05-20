@@ -70,5 +70,6 @@ namespace ResembleAI
         public CreateProjectRequest()
         {
         }
+
     }
 }

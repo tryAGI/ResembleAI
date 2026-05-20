@@ -114,5 +114,6 @@ namespace ResembleAI
         public DetectBatch()
         {
         }
+
     }
 }

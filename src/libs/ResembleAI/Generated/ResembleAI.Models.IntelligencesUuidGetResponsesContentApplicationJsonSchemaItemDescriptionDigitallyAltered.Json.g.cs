@@ -2,7 +2,7 @@
 
 namespace ResembleAI
 {
-    public sealed partial class DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22
+    public sealed partial class IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace ResembleAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22? FromJson(
+        public static global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22),
-                jsonSerializerContext) as global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22;
+                typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered),
+                jsonSerializerContext) as global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22? FromJson(
+        public static global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace ResembleAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22),
-                jsonSerializerContext).ConfigureAwait(false)) as global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22;
+                typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered),
+                jsonSerializerContext).ConfigureAwait(false)) as global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant22?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

@@ -194,5 +194,6 @@ namespace ResembleAI
         public CreateDetectBatchRequest()
         {
         }
+
     }
 }

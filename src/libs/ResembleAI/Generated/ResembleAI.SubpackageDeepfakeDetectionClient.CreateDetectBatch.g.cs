@@ -83,6 +83,44 @@ namespace ResembleAI
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CreateDetectBatchAsResponseAsync(
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create a batch deepfake detection job<br/>
+        /// Submit up to 50 files in a single request and process them as a single logical<br/>
+        /// group. Returns HTTP 202 with a batch UUID; each file is analyzed in the<br/>
+        /// background and individual results are available via `GET /detect/{uuid}` for<br/>
+        /// each entry in `detect_uuids`.<br/>
+        /// Two intake methods:<br/>
+        /// - **Multiple media files** — repeated `files[]` form fields.<br/>
+        /// - **Single zip archive** — a single `file` form field whose value is a `.zip`<br/>
+        ///   containing the media files. Non-media entries are skipped.<br/>
+        /// Provide one of `files[]` or `file=&lt;...&gt;.zip` per request. Synchronous mode<br/>
+        /// (`Prefer: wait`) is not supported and returns 400 if sent.<br/>
+        /// Constraints:<br/>
+        /// - Maximum 50 files per batch.<br/>
+        /// - Maximum 500 MB total upload size across all files.<br/>
+        /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
+        ///   for every file, the request is rejected with 402 and no detects are created.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202>> CreateDetectBatchAsResponseAsync(
+
+            global::ResembleAI.CreateDetectBatchRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -109,10 +147,11 @@ namespace ResembleAI
             var __maxAttempts = global::ResembleAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/detect/batch",
                                 baseUri: ResolveBaseUri(
@@ -147,6 +186,7 @@ namespace ResembleAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             if (request.Files != default)
                             {
@@ -164,7 +204,8 @@ namespace ResembleAI
                                         __contentFiles.Headers.ContentDisposition.FileNameStar = null;
                                     }
                                 }
-                            } 
+
+                            }
                             if (request.File != default)
                             {
 
@@ -205,85 +246,99 @@ namespace ResembleAI
                                 {
                                     __contentFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.CallbackUrl != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.CallbackUrl ?? string.Empty),
                                     name: "\"callback_url\"");
-                            } 
+
+                            }
                             if (request.Intelligence != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Intelligence, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"intelligence\"");
-                            } 
+
+                            }
                             if (request.SearchIdentity != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.SearchIdentity, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"search_identity\"");
-                            } 
+
+                            }
                             if (request.Visualize != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Visualize, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"visualize\"");
-                            } 
+
+                            }
                             if (request.AudioSourceTracingEnabled != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AudioSourceTracingEnabled, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"audio_source_tracing_enabled\"");
-                            } 
+
+                            }
                             if (request.FrameLength != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.FrameLength, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"frame_length\"");
-                            } 
+
+                            }
                             if (request.StartRegion != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.StartRegion, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"start_region\"");
-                            } 
+
+                            }
                             if (request.EndRegion != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.EndRegion, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"end_region\"");
-                            } 
+
+                            }
                             if (request.MaxVideoSecs != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxVideoSecs, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"max_video_secs\"");
-                            } 
+
+                            }
                             if (request.UseLlm != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.UseLlm, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"use_llm\"");
-                            } 
+
+                            }
                             if (request.ZeroRetentionMode != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ZeroRetentionMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"zero_retention_mode\"");
+
                             }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::ResembleAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -325,6 +380,8 @@ namespace ResembleAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -335,6 +392,11 @@ namespace ResembleAI
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::ResembleAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -352,6 +414,8 @@ namespace ResembleAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -361,8 +425,7 @@ namespace ResembleAI
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -371,6 +434,11 @@ namespace ResembleAI
                         __attempt < __maxAttempts &&
                         global::ResembleAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::ResembleAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -387,14 +455,15 @@ namespace ResembleAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -434,6 +503,8 @@ namespace ResembleAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -454,6 +525,8 @@ namespace ResembleAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Invalid batch request (missing files, both file and files[] supplied, file count or size exceeded, unsupported file type, or `Prefer: wait` header sent)
@@ -592,9 +665,13 @@ namespace ResembleAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -622,9 +699,13 @@ namespace ResembleAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

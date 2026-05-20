@@ -77,5 +77,6 @@ namespace ResembleAI
         public CreateDuetVoiceRequest()
         {
         }
+
     }
 }

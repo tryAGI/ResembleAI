@@ -138,7 +138,10 @@ namespace ResembleAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 == null && agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 == null && agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace ResembleAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant1 == null && agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant2 == null && agentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesVariant3 == null)
+            {
                 try
                 {
 

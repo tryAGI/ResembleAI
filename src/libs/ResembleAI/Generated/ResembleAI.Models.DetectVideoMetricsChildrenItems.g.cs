@@ -92,5 +92,6 @@ namespace ResembleAI
         public DetectVideoMetricsChildrenItems()
         {
         }
+
     }
 }

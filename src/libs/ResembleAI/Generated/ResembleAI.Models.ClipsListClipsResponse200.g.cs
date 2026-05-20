@@ -48,5 +48,6 @@ namespace ResembleAI
         public ClipsListClipsResponse200()
         {
         }
+
     }
 }

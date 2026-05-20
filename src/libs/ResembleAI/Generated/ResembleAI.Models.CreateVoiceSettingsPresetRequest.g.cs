@@ -118,5 +118,6 @@ namespace ResembleAI
         public CreateVoiceSettingsPresetRequest()
         {
         }
+
     }
 }

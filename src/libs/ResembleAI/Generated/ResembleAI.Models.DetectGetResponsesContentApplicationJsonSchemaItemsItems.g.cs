@@ -252,5 +252,6 @@ namespace ResembleAI
         public DetectGetResponsesContentApplicationJsonSchemaItemsItems()
         {
         }
+
     }
 }

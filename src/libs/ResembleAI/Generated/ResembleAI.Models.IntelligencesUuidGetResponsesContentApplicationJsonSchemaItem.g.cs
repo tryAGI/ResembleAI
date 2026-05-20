@@ -15,10 +15,10 @@ namespace ResembleAI
         public string? Uuid { get; set; }
 
         /// <summary>
-        /// The AI-generated intelligence analysis
+        /// Structured intelligence analysis
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescription? Description { get; set; }
 
         /// <summary>
         /// 
@@ -50,7 +50,7 @@ namespace ResembleAI
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="description">
-        /// The AI-generated intelligence analysis
+        /// Structured intelligence analysis
         /// </param>
         /// <param name="createdAt"></param>
         /// <param name="detectUuid">
@@ -64,7 +64,7 @@ namespace ResembleAI
 #endif
         public IntelligencesUuidGetResponsesContentApplicationJsonSchemaItem(
             string? uuid,
-            string? description,
+            global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescription? description,
             global::System.DateTime? createdAt,
             string? detectUuid,
             global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType? mediaType)
@@ -82,5 +82,6 @@ namespace ResembleAI
         public IntelligencesUuidGetResponsesContentApplicationJsonSchemaItem()
         {
         }
+
     }
 }

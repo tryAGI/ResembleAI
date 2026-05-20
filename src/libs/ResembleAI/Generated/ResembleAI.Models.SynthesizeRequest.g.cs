@@ -153,5 +153,6 @@ namespace ResembleAI
         public SynthesizeRequest()
         {
         }
+
     }
 }

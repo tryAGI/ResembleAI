@@ -21,6 +21,19 @@ namespace ResembleAI
         /// Create voice settings preset<br/>
         /// Create a new voice settings preset (max 5 per user)
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.VoiceSettingsPresetsCreateVoiceSettingsPresetResponse201>> CreateVoiceSettingsPresetAsResponseAsync(
+
+            global::ResembleAI.CreateVoiceSettingsPresetRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create voice settings preset<br/>
+        /// Create a new voice settings preset (max 5 per user)
+        /// </summary>
         /// <param name="name">
         /// Preset name (unique, max 30 characters)
         /// </param>

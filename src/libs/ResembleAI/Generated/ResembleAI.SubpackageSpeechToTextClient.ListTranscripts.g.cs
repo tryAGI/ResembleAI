@@ -75,6 +75,34 @@ namespace ResembleAI
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListTranscriptsAsResponseAsync(
+                page: page,
+                perPage: perPage,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List transcripts<br/>
+        /// Retrieve paginated list of transcript jobs
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 25
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.SpeechToTextListTranscriptsResponse200>> ListTranscriptsAsResponseAsync(
+            int page,
+            int? perPage = default,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListTranscriptsArguments(
@@ -104,14 +132,15 @@ namespace ResembleAI
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/speech-to-text",
                                 baseUri: ResolveBaseUri(
                                 servers: s_ListTranscriptsServers,
-                                defaultBaseUrl: "https://f.cluster.resemble.ai/")); 
+                                defaultBaseUrl: "https://f.cluster.resemble.ai/"));
                             __pathBuilder
                                 .AddRequiredParameter("page", page.ToString()!)
-                                .AddOptionalParameter("per_page", perPage?.ToString()) 
+                                .AddOptionalParameter("per_page", perPage?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -184,6 +213,8 @@ namespace ResembleAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -194,6 +225,11 @@ namespace ResembleAI
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::ResembleAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -211,6 +247,8 @@ namespace ResembleAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -220,8 +258,7 @@ namespace ResembleAI
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -230,6 +267,11 @@ namespace ResembleAI
                         __attempt < __maxAttempts &&
                         global::ResembleAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::ResembleAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -246,14 +288,15 @@ namespace ResembleAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -293,6 +336,8 @@ namespace ResembleAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -313,6 +358,8 @@ namespace ResembleAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -337,9 +384,13 @@ namespace ResembleAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::ResembleAI.SpeechToTextListTranscriptsResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::ResembleAI.SpeechToTextListTranscriptsResponse200.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.SpeechToTextListTranscriptsResponse200>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -367,9 +418,13 @@ namespace ResembleAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::ResembleAI.SpeechToTextListTranscriptsResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ResembleAI.SpeechToTextListTranscriptsResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.SpeechToTextListTranscriptsResponse200>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
