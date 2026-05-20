@@ -96,6 +96,15 @@ public partial class Tests
         return team ?? throw new AssertInconclusiveException("No team details were returned by the ResembleAI account.");
     }
 
+    private static async Task<ProjectsGetResponsesContentApplicationJsonSchemaItemsItems> GetFirstProjectAsync(ResembleAIClient client)
+    {
+        var projects = await client.SubpackageProjects.ListProjectsAsync(page: 1, pageSize: 10).ConfigureAwait(false);
+        var project = projects.Items?
+            .FirstOrDefault(item => item is { Uuid: { Length: > 0 } });
+
+        return project ?? throw new AssertInconclusiveException("No project details were returned by the ResembleAI account.");
+    }
+
     private static async Task<SpeechToTextGetTranscriptResponse200> WaitForTranscriptCompletionAsync(
         ResembleAIClient client,
         Guid transcriptUuid,

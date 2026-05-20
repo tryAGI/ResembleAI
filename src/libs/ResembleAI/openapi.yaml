@@ -10721,7 +10721,94 @@
       },
       "VoicesPostResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "default_language": {
+            "type": "string"
+          },
+          "voice_type": {
+            "type": "string"
+          },
+          "voice_status": {
+            "type": "string"
+          },
+          "supported_languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "component_status": {
+            "type": "object",
+            "properties": {
+              "text_to_speech": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusTextToSpeech"
+              },
+              "fill": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusFill"
+              },
+              "voice_conversion": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusVoiceConversion"
+              }
+            },
+            "title": "VoicesComponentStatus"
+          },
+          "api_support": {
+            "type": "object",
+            "properties": {
+              "sync": {
+                "type": "boolean"
+              },
+              "async": {
+                "type": "boolean"
+              },
+              "direct_synthesis": {
+                "type": "boolean"
+              },
+              "streaming": {
+                "type": "boolean"
+              }
+            },
+            "title": "VoicesApiSupport"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
         "title": "VoicesPostResponsesContentApplicationJsonSchemaItem"
       },
       "Voices_createVoice_Response_200": {
@@ -11278,7 +11365,31 @@
       },
       "ProjectsGetResponsesContentApplicationJsonSchemaItemsItems": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
         "title": "ProjectsGetResponsesContentApplicationJsonSchemaItemsItems"
       },
       "Projects_listProjects_Response_200": {
@@ -11298,7 +11409,31 @@
       },
       "ProjectsPostResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
         "title": "ProjectsPostResponsesContentApplicationJsonSchemaItem"
       },
       "Projects_createProject_Response_200": {
@@ -11315,7 +11450,31 @@
       },
       "ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
         "title": "ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem"
       },
       "Projects_getProject_Response_200": {
@@ -11332,7 +11491,31 @@
       },
       "ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
         "title": "ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem"
       },
       "Projects_updateProject_Response_200": {

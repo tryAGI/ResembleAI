@@ -48,6 +48,20 @@ jq '
       },
       "title": $title
     };
+  def project_item_schema($title):
+    {
+      "type": "object",
+      "properties": {
+        "uuid": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "is_collaborative": { "type": "boolean" },
+        "is_archived": { "type": "boolean" }
+      },
+      "title": $title
+    };
   def voice_status_schema($title):
     {
       "type": "object",
@@ -121,10 +135,20 @@ jq '
       "success": { "type": "boolean" },
       "items": { "$ref": "#/components/schemas/AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem" }
     }
+  | .components.schemas.ProjectsGetResponsesContentApplicationJsonSchemaItemsItems =
+      project_item_schema("ProjectsGetResponsesContentApplicationJsonSchemaItemsItems")
+  | .components.schemas.ProjectsPostResponsesContentApplicationJsonSchemaItem =
+      project_item_schema("ProjectsPostResponsesContentApplicationJsonSchemaItem")
+  | .components.schemas.ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem =
+      project_item_schema("ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem")
+  | .components.schemas.ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem =
+      project_item_schema("ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem")
   | .components.schemas.VoicesGetResponsesContentApplicationJsonSchemaItemsItems =
       voice_item_schema("VoicesGetResponsesContentApplicationJsonSchemaItemsItems")
   | .components.schemas.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem =
       voice_item_schema("VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem")
+  | .components.schemas.VoicesPostResponsesContentApplicationJsonSchemaItem =
+      voice_item_schema("VoicesPostResponsesContentApplicationJsonSchemaItem")
 ' "$input_path" > "$temp_path"
 
 mv "$temp_path" "$input_path"

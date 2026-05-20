@@ -24,6 +24,11 @@ public partial class Tests
         var teamName = team.Name;
         var teamPlan = team.Plan;
 
+        //// Load the default project to confirm project management responses are typed.
+        var project = await GetFirstProjectAsync(client);
+        var projectName = project.Name;
+        var projectUuid = project.Uuid;
+
         //// Inspect current usage buckets reported by the billing endpoint.
         var billingUsage = await client.SubpackageAccount.GetBillingUsageAsync();
         var synthesisUsage = billingUsage.Items?.Synth;
@@ -31,11 +36,14 @@ public partial class Tests
 
         Console.WriteLine($"Email: {email}");
         Console.WriteLine($"Team: {teamName} ({teamPlan})");
+        Console.WriteLine($"Project: {projectName} [{projectUuid}]");
         Console.WriteLine($"Usage: synth={synthesisUsage}, detect={detectionUsage}");
 
         account.Success.Should().BeTrue();
         email.Should().NotBeNullOrWhiteSpace();
         teamPlan.Should().NotBeNullOrWhiteSpace();
+        projectName.Should().NotBeNullOrWhiteSpace();
+        projectUuid.Should().NotBeNullOrWhiteSpace();
         billingUsage.Success.Should().BeTrue();
     }
 }
