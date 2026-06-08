@@ -105,16 +105,6 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAudioEditClient SubpackageAudioEdit => new SubpackageAudioEditClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public SubpackageAudioEnhancementClient SubpackageAudioEnhancement => new SubpackageAudioEnhancementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
