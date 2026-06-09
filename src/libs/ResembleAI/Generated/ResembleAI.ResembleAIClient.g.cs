@@ -10,7 +10,7 @@ namespace ResembleAI
     public sealed partial class ResembleAIClient : global::ResembleAI.IResembleAIClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// synthesis
         /// </summary>
         public const string DefaultBaseUrl = "https://f.cluster.resemble.ai/";
 
@@ -296,14 +296,14 @@ namespace ResembleAI
         private static readonly global::ResembleAI.AutoSDKServer[] s_availableServers = new global::ResembleAI.AutoSDKServer[]
         {            new global::ResembleAI.AutoSDKServer(
                 id: "https-f-cluster-resemble-ai",
-                name: "f.cluster.resemble.ai",
+                name: "synthesis",
                 url: "https://f.cluster.resemble.ai/",
-                description: ""),
+                description: "synthesis"),
             new global::ResembleAI.AutoSDKServer(
                 id: "https-app-resemble-ai-api-v2",
-                name: "app.resemble.ai api v2",
+                name: "production",
                 url: "https://app.resemble.ai/api/v2",
-                description: ""),
+                description: "production"),
         };
 
         /// <summary>
