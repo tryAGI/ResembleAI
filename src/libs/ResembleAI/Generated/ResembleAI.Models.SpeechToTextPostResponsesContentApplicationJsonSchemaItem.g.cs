@@ -22,6 +22,12 @@ namespace ResembleAI
         public global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus? Status { get; set; }
 
         /// <summary>
+        /// Whether the transcript was created with zero retention
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("privacy_mode")]
+        public bool? PrivacyMode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -44,6 +50,9 @@ namespace ResembleAI
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="status"></param>
+        /// <param name="privacyMode">
+        /// Whether the transcript was created with zero retention
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
@@ -52,11 +61,13 @@ namespace ResembleAI
         public SpeechToTextPostResponsesContentApplicationJsonSchemaItem(
             global::System.Guid? uuid,
             global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus? status,
+            bool? privacyMode,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {
             this.Uuid = uuid;
             this.Status = status;
+            this.PrivacyMode = privacyMode;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

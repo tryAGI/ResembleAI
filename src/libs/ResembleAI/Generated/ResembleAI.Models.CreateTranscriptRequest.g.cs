@@ -27,6 +27,19 @@ namespace ResembleAI
         public string? Query { get; set; }
 
         /// <summary>
+        /// Public HTTPS URL that receives a POST with the result when processing finishes. Private, loopback, link-local, and non-HTTPS URLs are rejected. Required when zero_retention_mode is true.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
+        public string? CallbackUrl { get; set; }
+
+        /// <summary>
+        /// Enable zero retention. The uploaded media and any temporary processing copies are permanently deleted after transcription, and the transcript content is purged after one delivery to callback_url (which is mandatory in this mode). privacy_mode is accepted as an alias. Plan feature — requests are rejected with 402 if not included in your plan.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("zero_retention_mode")]
+        public bool? ZeroRetentionMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,17 +57,28 @@ namespace ResembleAI
         /// <param name="query">
         /// Optional intelligence question to evaluate after transcription
         /// </param>
+        /// <param name="callbackUrl">
+        /// Public HTTPS URL that receives a POST with the result when processing finishes. Private, loopback, link-local, and non-HTTPS URLs are rejected. Required when zero_retention_mode is true.
+        /// </param>
+        /// <param name="zeroRetentionMode">
+        /// Enable zero retention. The uploaded media and any temporary processing copies are permanently deleted after transcription, and the transcript content is purged after one delivery to callback_url (which is mandatory in this mode). privacy_mode is accepted as an alias. Plan feature — requests are rejected with 402 if not included in your plan.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateTranscriptRequest(
             byte[]? file,
             string? filename,
-            string? query)
+            string? query,
+            string? callbackUrl,
+            bool? zeroRetentionMode)
         {
             this.File = file;
             this.Filename = filename;
             this.Query = query;
+            this.CallbackUrl = callbackUrl;
+            this.ZeroRetentionMode = zeroRetentionMode;
         }
 
         /// <summary>

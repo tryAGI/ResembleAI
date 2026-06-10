@@ -193,6 +193,22 @@ namespace ResembleAI
                                     name: "\"query\"");
 
                             }
+                            if (request.CallbackUrl != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.CallbackUrl ?? string.Empty),
+                                    name: "\"callback_url\"");
+
+                            }
+                            if (request.ZeroRetentionMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ZeroRetentionMode, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"zero_retention_mode\"");
+
+                            }
 
                             __httpRequest.Content = __httpRequestContent;
 
@@ -386,7 +402,7 @@ namespace ResembleAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad request
+                            // Bad request (missing input, invalid callback_url, or zero retention requested without a callback_url)
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -418,6 +434,43 @@ namespace ResembleAI
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Zero retention is not included in the team's plan or subscription
+                            if ((int)__response.StatusCode == 402)
+                            {
+                                string? __content_402 = null;
+                                global::System.Exception? __exception_402 = null;
+                                global::ResembleAI.Error? __value_402 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_402 = global::ResembleAI.Error.FromJson(__content_402, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_402 = global::ResembleAI.Error.FromJson(__content_402, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_402 = __ex;
+                                }
+
+
+                                throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_402,
+                                    responseBody: __content_402,
+                                    responseObject: __value_402,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -532,6 +585,13 @@ namespace ResembleAI
         /// <param name="query">
         /// Optional intelligence question to evaluate after transcription
         /// </param>
+        /// <param name="callbackUrl">
+        /// Public HTTPS URL that receives a POST with the result when processing finishes. Private, loopback, link-local, and non-HTTPS URLs are rejected. Required when zero_retention_mode is true.
+        /// </param>
+        /// <param name="zeroRetentionMode">
+        /// Enable zero retention. The uploaded media and any temporary processing copies are permanently deleted after transcription, and the transcript content is purged after one delivery to callback_url (which is mandatory in this mode). privacy_mode is accepted as an alias. Plan feature — requests are rejected with 402 if not included in your plan.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -539,6 +599,8 @@ namespace ResembleAI
             byte[]? file = default,
             string? filename = default,
             string? query = default,
+            string? callbackUrl = default,
+            bool? zeroRetentionMode = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -547,6 +609,8 @@ namespace ResembleAI
                 File = file,
                 Filename = filename,
                 Query = query,
+                CallbackUrl = callbackUrl,
+                ZeroRetentionMode = zeroRetentionMode,
             };
 
             return await CreateTranscriptAsync(

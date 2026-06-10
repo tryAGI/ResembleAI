@@ -298,7 +298,17 @@
             }
           },
           "400": {
-            "description": "Bad request",
+            "description": "Bad request (missing input, invalid callback_url, or zero retention requested without a callback_url)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Zero retention is not included in the team's plan or subscription",
             "content": {
               "application/json": {
                 "schema": {
@@ -322,6 +332,16 @@
                   "query": {
                     "type": "string",
                     "description": "Optional intelligence question to evaluate after transcription"
+                  },
+                  "callback_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Public HTTPS URL that receives a POST with the result when processing finishes. Private, loopback, link-local, and non-HTTPS URLs are rejected. Required when zero_retention_mode is true."
+                  },
+                  "zero_retention_mode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable zero retention. The uploaded media and any temporary processing copies are permanently deleted after transcription, and the transcript content is purged after one delivery to callback_url (which is mandatory in this mode). privacy_mode is accepted as an alias. Plan feature — requests are rejected with 402 if not included in your plan."
                   }
                 }
               }
@@ -417,6 +437,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Speech-to-Text_askTranscriptQuestion_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing query, transcript not yet processed, or the transcript was created with zero retention and its content has been purged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -6800,6 +6830,10 @@
           "status": {
             "$ref": "#/components/schemas/SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus"
           },
+          "privacy_mode": {
+            "type": "boolean",
+            "description": "Whether the transcript was created with zero retention"
+          },
           "created_at": {
             "type": "string",
             "format": "date-time"
@@ -6864,7 +6898,8 @@
             "$ref": "#/components/schemas/SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus"
           },
           "text": {
-            "type": "string"
+            "type": "string",
+            "description": "Absent for zero-retention transcripts after the content purge"
           },
           "words": {
             "type": "array",
@@ -6878,13 +6913,28 @@
           },
           "file_url": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "description": "Absent once the media has been deleted (zero retention)"
           },
           "query": {
             "type": "string"
           },
           "answer": {
             "type": "string"
+          },
+          "privacy_mode": {
+            "type": "boolean",
+            "description": "Whether the transcript was created with zero retention"
+          },
+          "file_deleted_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the uploaded media was permanently deleted (zero retention)"
+          },
+          "content_deleted_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcript content was permanently purged (zero retention)"
           },
           "created_at": {
             "type": "string",

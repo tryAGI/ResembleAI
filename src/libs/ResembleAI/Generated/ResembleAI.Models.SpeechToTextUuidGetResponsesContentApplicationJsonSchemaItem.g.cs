@@ -22,7 +22,7 @@ namespace ResembleAI
         public global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        /// Absent for zero-retention transcripts after the content purge
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; }
@@ -40,7 +40,7 @@ namespace ResembleAI
         public double? DurationSeconds { get; set; }
 
         /// <summary>
-        /// 
+        /// Absent once the media has been deleted (zero retention)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
         public string? FileUrl { get; set; }
@@ -56,6 +56,24 @@ namespace ResembleAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answer")]
         public string? Answer { get; set; }
+
+        /// <summary>
+        /// Whether the transcript was created with zero retention
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("privacy_mode")]
+        public bool? PrivacyMode { get; set; }
+
+        /// <summary>
+        /// When the uploaded media was permanently deleted (zero retention)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_deleted_at")]
+        public global::System.DateTime? FileDeletedAt { get; set; }
+
+        /// <summary>
+        /// When the transcript content was permanently purged (zero retention)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_deleted_at")]
+        public global::System.DateTime? ContentDeletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -80,12 +98,25 @@ namespace ResembleAI
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="status"></param>
-        /// <param name="text"></param>
+        /// <param name="text">
+        /// Absent for zero-retention transcripts after the content purge
+        /// </param>
         /// <param name="words"></param>
         /// <param name="durationSeconds"></param>
-        /// <param name="fileUrl"></param>
+        /// <param name="fileUrl">
+        /// Absent once the media has been deleted (zero retention)
+        /// </param>
         /// <param name="query"></param>
         /// <param name="answer"></param>
+        /// <param name="privacyMode">
+        /// Whether the transcript was created with zero retention
+        /// </param>
+        /// <param name="fileDeletedAt">
+        /// When the uploaded media was permanently deleted (zero retention)
+        /// </param>
+        /// <param name="contentDeletedAt">
+        /// When the transcript content was permanently purged (zero retention)
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
@@ -100,6 +131,9 @@ namespace ResembleAI
             string? fileUrl,
             string? query,
             string? answer,
+            bool? privacyMode,
+            global::System.DateTime? fileDeletedAt,
+            global::System.DateTime? contentDeletedAt,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {
@@ -111,6 +145,9 @@ namespace ResembleAI
             this.FileUrl = fileUrl;
             this.Query = query;
             this.Answer = answer;
+            this.PrivacyMode = privacyMode;
+            this.FileDeletedAt = fileDeletedAt;
+            this.ContentDeletedAt = contentDeletedAt;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }
