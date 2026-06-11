@@ -247,6 +247,14 @@ namespace ResembleAI
                                     name: "\"model_types\"");
 
                             }
+                            if (request.Modality != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Modality).HasValue ? (request.Modality).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"modality\"");
+
+                            }
                             if (request.Intelligence != default)
                             {
 
@@ -613,6 +621,12 @@ namespace ResembleAI
         /// <param name="modelTypes">
         /// Use talking_head for face-swaps
         /// </param>
+        /// <param name="modality">
+        /// Video only. Selects which detection components run for a video file:<br/>
+        /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
+        /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
+        /// Default Value: all
+        /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
@@ -646,6 +660,7 @@ namespace ResembleAI
             double? endRegion = default,
             double? maxVideoSecs = default,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
+            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? intelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
@@ -665,6 +680,7 @@ namespace ResembleAI
                 EndRegion = endRegion,
                 MaxVideoSecs = maxVideoSecs,
                 ModelTypes = modelTypes,
+                Modality = modality,
                 Intelligence = intelligence,
                 AudioSourceTracing = audioSourceTracing,
                 UseReverseSearch = useReverseSearch,
@@ -715,6 +731,12 @@ namespace ResembleAI
         /// <param name="modelTypes">
         /// Use talking_head for face-swaps
         /// </param>
+        /// <param name="modality">
+        /// Video only. Selects which detection components run for a video file:<br/>
+        /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
+        /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
+        /// Default Value: all
+        /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
@@ -748,6 +770,7 @@ namespace ResembleAI
             double? endRegion = default,
             double? maxVideoSecs = default,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
+            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? intelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
@@ -769,6 +792,7 @@ namespace ResembleAI
                 EndRegion = endRegion,
                 MaxVideoSecs = maxVideoSecs,
                 ModelTypes = modelTypes,
+                Modality = modality,
                 Intelligence = intelligence,
                 AudioSourceTracing = audioSourceTracing,
                 UseReverseSearch = useReverseSearch,
@@ -930,6 +954,14 @@ namespace ResembleAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.ModelTypes).HasValue ? (request.ModelTypes).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"model_types\"");
+
+                            }
+                            if (request.Modality != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Modality).HasValue ? (request.Modality).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"modality\"");
 
                             }
                             if (request.Intelligence != default)
@@ -1290,6 +1322,12 @@ namespace ResembleAI
         /// <param name="modelTypes">
         /// Use talking_head for face-swaps
         /// </param>
+        /// <param name="modality">
+        /// Video only. Selects which detection components run for a video file:<br/>
+        /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
+        /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
+        /// Default Value: all
+        /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
@@ -1323,6 +1361,7 @@ namespace ResembleAI
             double? endRegion = default,
             double? maxVideoSecs = default,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
+            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? intelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
@@ -1344,6 +1383,7 @@ namespace ResembleAI
                 EndRegion = endRegion,
                 MaxVideoSecs = maxVideoSecs,
                 ModelTypes = modelTypes,
+                Modality = modality,
                 Intelligence = intelligence,
                 AudioSourceTracing = audioSourceTracing,
                 UseReverseSearch = useReverseSearch,
@@ -1505,6 +1545,14 @@ namespace ResembleAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.ModelTypes).HasValue ? (request.ModelTypes).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"model_types\"");
+
+                            }
+                            if (request.Modality != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Modality).HasValue ? (request.Modality).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"modality\"");
 
                             }
                             if (request.Intelligence != default)
