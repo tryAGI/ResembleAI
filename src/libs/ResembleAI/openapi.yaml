@@ -2862,6 +2862,10 @@
                     "$ref": "#/components/schemas/DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes",
                     "description": "Use talking_head for face-swaps"
                   },
+                  "modality": {
+                    "$ref": "#/components/schemas/DetectPostRequestBodyContentMultipartFormDataSchemaModality",
+                    "description": "Video only. Selects which detection components run for a video file:\n`audio` (audio track only), `video` (visual frames only), or `all` (both — the default).\nIgnored for audio and image inputs. Invalid values are rejected with HTTP 400.\n"
+                  },
                   "intelligence": {
                     "type": "boolean",
                     "default": false,
@@ -8380,6 +8384,16 @@
         ],
         "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
       },
+      "DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "description": "Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects.",
+        "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality"
+      },
       "DetectAudioMetrics": {
         "type": "object",
         "properties": {
@@ -8648,6 +8662,10 @@
           "status": {
             "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
           },
+          "modality": {
+            "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality",
+            "description": "Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects."
+          },
           "metrics": {
             "$ref": "#/components/schemas/DetectAudioMetrics"
           },
@@ -8783,6 +8801,27 @@
         ],
         "description": "Use talking_head for face-swaps",
         "title": "DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes"
+      },
+      "DetectPostRequestBodyContentMultipartFormDataSchemaModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "default": "all",
+        "description": "Video only. Selects which detection components run for a video file:\n`audio` (audio track only), `video` (visual frames only), or `all` (both — the default).\nIgnored for audio and image inputs. Invalid values are rejected with HTTP 400.\n",
+        "title": "DetectPostRequestBodyContentMultipartFormDataSchemaModality"
+      },
+      "DetectPostResponsesContentApplicationJsonSchemaItemModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "description": "Which detection modality was requested. `all` when not specified.\nFor a single-modality video detect, the skipped component's metrics are absent\n(`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the\ndetect still reaches `completed` once the requested modality(ies) finish.\n",
+        "title": "DetectPostResponsesContentApplicationJsonSchemaItemModality"
       },
       "DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType": {
         "type": "string",
@@ -8972,7 +9011,11 @@
           },
           "filename": {
             "type": "string",
-            "description": "Original filename, or tokenized (redacted_<token>.<ext>) when Zero Retention Modeon Modeon Mode is enabled"
+            "description": "Original filename, or tokenized (redacted_<token>.<ext>) when Zero Retention Mode is enabled"
+          },
+          "modality": {
+            "$ref": "#/components/schemas/DetectPostResponsesContentApplicationJsonSchemaItemModality",
+            "description": "Which detection modality was requested. `all` when not specified.\nFor a single-modality video detect, the skipped component's metrics are absent\n(`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the\ndetect still reaches `completed` once the requested modality(ies) finish.\n"
           },
           "intelligence": {
             "oneOf": [
@@ -9189,6 +9232,16 @@
         "description": "Intelligence results when requested",
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence"
       },
+      "DetectUuidGetResponsesContentApplicationJsonSchemaItemModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "description": "Which detection modality was requested for this detect. `all` when not specified\n(the default). For a single-modality video detect, the skipped component's metrics\nare absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).\n",
+        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemModality"
+      },
       "DetectUuidGetResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
         "properties": {
@@ -9232,12 +9285,16 @@
             ],
             "description": "Intelligence results when requested"
           },
+          "modality": {
+            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemModality",
+            "description": "Which detection modality was requested for this detect. `all` when not specified\n(the default). For a single-modality video detect, the skipped component's metrics\nare absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).\n"
+          },
           "url": {
             "type": [
               "string",
               "null"
             ],
-            "description": "URL to the media file. Null when Zero Retention Modeon Modeon Modeon Modeon Modeon Modeon Mode is enabled."
+            "description": "URL to the media file. Null when Zero Retention Mode is enabled."
           },
           "audio_url": {
             "type": [

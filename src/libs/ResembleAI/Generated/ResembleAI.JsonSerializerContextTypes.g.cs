@@ -664,1119 +664,1135 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectAudioMetrics? Type159 { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectImageMetricsChildrenItems? Type160 { get; set; }
+        public global::ResembleAI.DetectAudioMetrics? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectImageMetrics? Type161 { get; set; }
+        public global::ResembleAI.DetectImageMetricsChildrenItems? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DetectImageMetricsChildrenItems>? Type162 { get; set; }
+        public global::ResembleAI.DetectImageMetrics? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems? Type163 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectImageMetricsChildrenItems>? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItems? Type164 { get; set; }
+        public global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems>? Type165 { get; set; }
+        public global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItems? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectVideoMetricsChildrenItems? Type166 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems>? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItems>? Type167 { get; set; }
+        public global::ResembleAI.DetectVideoMetricsChildrenItems? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectVideoMetrics? Type168 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItems>? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItems>? Type169 { get; set; }
+        public global::ResembleAI.DetectVideoMetrics? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing? Type170 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItems>? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence? Type171 { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsExtraParams? Type172 { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItems? Type173 { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsExtraParams? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>? Type174 { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItems? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type175 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>? Type176 { get; set; }
+        public object? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DeepfakeDetectionListDetectionsResponse200? Type177 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItems>? Type178 { get; set; }
+        public global::ResembleAI.DeepfakeDetectionListDetectionsResponse200? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? Type179 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItems>? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType? Type180 { get; set; }
+        public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud? Type181 { get; set; }
+        public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? Type182 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness? Type183 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered? Type184 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? Type185 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription? Type186 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence? Type187 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItem? Type188 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? Type189 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DeepfakeDetectionCreateDetectionResponse200? Type190 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType? Type191 { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItem? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus? Type192 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing? Type193 { get; set; }
+        public global::ResembleAI.DeepfakeDetectionCreateDetectionResponse200? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType? Type194 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud? Type195 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? Type196 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness? Type197 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered? Type198 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? Type199 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription? Type200 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence? Type201 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItem? Type202 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? Type203 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? Type204 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DeepfakeDetectionGetDetectionResponse200? Type205 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectBatchStatus? Type206 { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItem? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectBatch? Type207 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202? Type208 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200? Type209 { get; set; }
+        public global::ResembleAI.DeepfakeDetectionGetDetectionResponse200? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType? Type210 { get; set; }
+        public global::ResembleAI.DetectBatchStatus? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType? Type211 { get; set; }
+        public global::ResembleAI.DetectBatch? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItem? Type212 { get; set; }
+        public global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligenceRunIntelligenceResponse200? Type213 { get; set; }
+        public global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType? Type214 { get; set; }
+        public global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraud? Type215 { get; set; }
+        public global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment? Type216 { get; set; }
+        public global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItem? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLiveness? Type217 { get; set; }
+        public global::ResembleAI.IntelligenceRunIntelligenceResponse200? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionDigitallyAltered? Type218 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescription? Type219 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraud? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType? Type220 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItems? Type221 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLiveness? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligenceListIntelligencesResponse200? Type222 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionDigitallyAltered? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItems>? Type223 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescription? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType? Type224 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraud? Type225 { get; set; }
+        public global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItems? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment? Type226 { get; set; }
+        public global::ResembleAI.IntelligenceListIntelligencesResponse200? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLiveness? Type227 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItems>? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered? Type228 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescription? Type229 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraud? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType? Type230 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItem? Type231 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLiveness? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IntelligenceGetIntelligenceResponse200? Type232 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionDigitallyAltered? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus? Type233 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescription? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItem? Type234 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectIntelligenceAskDetectIntelligenceQuestionResponse202? Type235 { get; set; }
+        public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItem? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus? Type236 { get; set; }
+        public global::ResembleAI.IntelligenceGetIntelligenceResponse200? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItem? Type237 { get; set; }
+        public global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectIntelligenceGetDetectIntelligenceQuestionResponse200? Type238 { get; set; }
+        public global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItem? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItemsResults? Type239 { get; set; }
+        public global::ResembleAI.DetectIntelligenceAskDetectIntelligenceQuestionResponse202? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems? Type240 { get; set; }
+        public global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AudioSourceTracingListAudioSourceTracingsResponse200? Type241 { get; set; }
+        public global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItem? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems>? Type242 { get; set; }
+        public global::ResembleAI.DetectIntelligenceGetDetectIntelligenceQuestionResponse200? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItemResults? Type243 { get; set; }
+        public global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItemsResults? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItem? Type244 { get; set; }
+        public global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AudioSourceTracingGetAudioSourceTracingResponse200? Type245 { get; set; }
+        public global::ResembleAI.AudioSourceTracingListAudioSourceTracingsResponse200? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems? Type246 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems>? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IdentityListIdentitiesResponse200? Type247 { get; set; }
+        public global::ResembleAI.AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItemResults? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems>? Type248 { get; set; }
+        public global::ResembleAI.AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItem? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IdentityPostResponsesContentApplicationJsonSchemaItem? Type249 { get; set; }
+        public global::ResembleAI.AudioSourceTracingGetAudioSourceTracingResponse200? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IdentityCreateIdentityResponse200? Type250 { get; set; }
+        public global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems? Type251 { get; set; }
+        public global::ResembleAI.IdentityListIdentitiesResponse200? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.IdentitySearchIdentitiesResponse200? Type252 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems>? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems>? Type253 { get; set; }
+        public global::ResembleAI.IdentityPostResponsesContentApplicationJsonSchemaItem? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyPostParametersPrefer? Type254 { get; set; }
+        public global::ResembleAI.IdentityCreateIdentityResponse200? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType? Type255 { get; set; }
+        public global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics? Type256 { get; set; }
+        public global::ResembleAI.IdentitySearchIdentitiesResponse200? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItem? Type257 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems>? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>? Type258 { get; set; }
+        public global::ResembleAI.WatermarkApplyPostParametersPrefer? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyWatermarkResponse200? Type259 { get; set; }
+        public global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType? Type260 { get; set; }
+        public global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics? Type261 { get; set; }
+        public global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItem? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItem? Type262 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>? Type263 { get; set; }
+        public global::ResembleAI.WatermarkApplyWatermarkResponse200? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200? Type264 { get; set; }
+        public global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectPostParametersPrefer? Type265 { get; set; }
+        public global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType? Type266 { get; set; }
+        public global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItem? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics? Type267 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItem? Type268 { get; set; }
+        public global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>? Type269 { get; set; }
+        public global::ResembleAI.WatermarkDetectPostParametersPrefer? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectWatermarkResponse200? Type270 { get; set; }
+        public global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType? Type271 { get; set; }
+        public global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark? Type272 { get; set; }
+        public global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItem? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, bool>? Type273 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics? Type274 { get; set; }
+        public global::ResembleAI.WatermarkDetectWatermarkResponse200? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem? Type275 { get; set; }
+        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>? Type276 { get; set; }
+        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.WatermarkGetWatermarkDetectionResultResponse200? Type277 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems? Type278 { get; set; }
+        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatus? Type279 { get; set; }
+        public global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusTextToSpeech? Type280 { get; set; }
+        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusFill? Type281 { get; set; }
+        public global::ResembleAI.WatermarkGetWatermarkDetectionResultResponse200? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusVoiceConversion? Type282 { get; set; }
+        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsApiSupport? Type283 { get; set; }
+        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatus? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesListVoicesResponse200? Type284 { get; set; }
+        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusTextToSpeech? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems>? Type285 { get; set; }
+        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusFill? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType? Type286 { get; set; }
+        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusVoiceConversion? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItem? Type287 { get; set; }
+        public global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsApiSupport? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatus? Type288 { get; set; }
+        public global::ResembleAI.VoicesListVoicesResponse200? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusTextToSpeech? Type289 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems>? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusFill? Type290 { get; set; }
+        public global::ResembleAI.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusVoiceConversion? Type291 { get; set; }
+        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItem? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemApiSupport? Type292 { get; set; }
+        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatus? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesCreateVoiceResponse200? Type293 { get; set; }
+        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusTextToSpeech? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem? Type294 { get; set; }
+        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusFill? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatus? Type295 { get; set; }
+        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusVoiceConversion? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatusTextToSpeech? Type296 { get; set; }
+        public global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemApiSupport? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatusFill? Type297 { get; set; }
+        public global::ResembleAI.VoicesCreateVoiceResponse200? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatusVoiceConversion? Type298 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemApiSupport? Type299 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatus? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesGetVoiceResponse200? Type300 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatusTextToSpeech? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesDeleteVoiceResponse200? Type301 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatusFill? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesBuildVoiceResponse200? Type302 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemComponentStatusVoiceConversion? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems? Type303 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItemApiSupport? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceDesignGenerateVoiceDesignResponse200? Type304 { get; set; }
+        public global::ResembleAI.VoicesGetVoiceResponse200? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems>? Type305 { get; set; }
+        public global::ResembleAI.VoicesDeleteVoiceResponse200? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceDesignCreateVoiceFromCandidateResponse200? Type306 { get; set; }
+        public global::ResembleAI.VoicesBuildVoiceResponse200? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems? Type307 { get; set; }
+        public global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.RecordingsListRecordingsResponse200? Type308 { get; set; }
+        public global::ResembleAI.VoiceDesignGenerateVoiceDesignResponse200? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems>? Type309 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems>? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidRecordingsPostResponsesContentApplicationJsonSchemaItem? Type310 { get; set; }
+        public global::ResembleAI.VoiceDesignCreateVoiceFromCandidateResponse200? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.RecordingsCreateRecordingResponse200? Type311 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidRecordingsRecordingIdGetResponsesContentApplicationJsonSchemaItem? Type312 { get; set; }
+        public global::ResembleAI.RecordingsListRecordingsResponse200? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.RecordingsGetRecordingResponse200? Type313 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems>? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.RecordingsDeleteRecordingResponse200? Type314 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidRecordingsPostResponsesContentApplicationJsonSchemaItem? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoicesVoiceUuidRecordingsRecordingIdPatchResponsesContentApplicationJsonSchemaItem? Type315 { get; set; }
+        public global::ResembleAI.RecordingsCreateRecordingResponse200? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.RecordingsUpdateRecordingResponse200? Type316 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidRecordingsRecordingIdGetResponsesContentApplicationJsonSchemaItem? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems? Type317 { get; set; }
+        public global::ResembleAI.RecordingsGetRecordingResponse200? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsListTermSubstitutionsResponse200? Type318 { get; set; }
+        public global::ResembleAI.RecordingsDeleteRecordingResponse200? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems>? Type319 { get; set; }
+        public global::ResembleAI.VoicesVoiceUuidRecordingsRecordingIdPatchResponsesContentApplicationJsonSchemaItem? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsPostResponsesContentApplicationJsonSchemaItem? Type320 { get; set; }
+        public global::ResembleAI.RecordingsUpdateRecordingResponse200? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsCreateTermSubstitutionResponse200? Type321 { get; set; }
+        public global::ResembleAI.TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsIdGetResponsesContentApplicationJsonSchemaItem? Type322 { get; set; }
+        public global::ResembleAI.TermSubstitutionsListTermSubstitutionsResponse200? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsGetTermSubstitutionResponse200? Type323 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems>? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.TermSubstitutionsDeleteTermSubstitutionResponse200? Type324 { get; set; }
+        public global::ResembleAI.TermSubstitutionsPostResponsesContentApplicationJsonSchemaItem? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.PronunciationsGetParametersStatus? Type325 { get; set; }
+        public global::ResembleAI.TermSubstitutionsCreateTermSubstitutionResponse200? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationStatus? Type326 { get; set; }
+        public global::ResembleAI.TermSubstitutionsIdGetResponsesContentApplicationJsonSchemaItem? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciation? Type327 { get; set; }
+        public global::ResembleAI.TermSubstitutionsGetTermSubstitutionResponse200? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationsListPronunciationsResponse200? Type328 { get; set; }
+        public global::ResembleAI.TermSubstitutionsDeleteTermSubstitutionResponse200? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.CustomPronunciation>? Type329 { get; set; }
+        public global::ResembleAI.PronunciationsGetParametersStatus? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationsCreatePronunciationResponse201? Type330 { get; set; }
+        public global::ResembleAI.CustomPronunciationStatus? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems? Type331 { get; set; }
+        public global::ResembleAI.CustomPronunciation? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationsBulkCreatePronunciationsResponse201? Type332 { get; set; }
+        public global::ResembleAI.CustomPronunciationsListPronunciationsResponse200? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems>? Type333 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.CustomPronunciation>? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationsGetPronunciationResponse200? Type334 { get; set; }
+        public global::ResembleAI.CustomPronunciationsCreatePronunciationResponse201? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationsDeletePronunciationResponse200? Type335 { get; set; }
+        public global::ResembleAI.PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CustomPronunciationsUpdatePronunciationResponse200? Type336 { get; set; }
+        public global::ResembleAI.CustomPronunciationsBulkCreatePronunciationsResponse201? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems? Type337 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems>? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsListVoiceSettingsPresetsResponse200? Type338 { get; set; }
+        public global::ResembleAI.CustomPronunciationsGetPronunciationResponse200? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems>? Type339 { get; set; }
+        public global::ResembleAI.CustomPronunciationsDeletePronunciationResponse200? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsPostResponsesContentApplicationJsonSchemaData? Type340 { get; set; }
+        public global::ResembleAI.CustomPronunciationsUpdatePronunciationResponse200? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsCreateVoiceSettingsPresetResponse201? Type341 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsUuidGetResponsesContentApplicationJsonSchemaData? Type342 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsListVoiceSettingsPresetsResponse200? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsGetVoiceSettingsPresetResponse200? Type343 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems>? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsDeleteVoiceSettingsPresetResponse200? Type344 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsPostResponsesContentApplicationJsonSchemaData? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsUuidPatchResponsesContentApplicationJsonSchemaData? Type345 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsCreateVoiceSettingsPresetResponse201? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.VoiceSettingsPresetsUpdateVoiceSettingsPresetResponse200? Type346 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsUuidGetResponsesContentApplicationJsonSchemaData? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsGetResponsesContentApplicationJsonSchemaItemsItems? Type347 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsGetVoiceSettingsPresetResponse200? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsListProjectsResponse200? Type348 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsDeleteVoiceSettingsPresetResponse200? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.ProjectsGetResponsesContentApplicationJsonSchemaItemsItems>? Type349 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsUuidPatchResponsesContentApplicationJsonSchemaData? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsPostResponsesContentApplicationJsonSchemaItem? Type350 { get; set; }
+        public global::ResembleAI.VoiceSettingsPresetsUpdateVoiceSettingsPresetResponse200? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsCreateProjectResponse200? Type351 { get; set; }
+        public global::ResembleAI.ProjectsGetResponsesContentApplicationJsonSchemaItemsItems? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem? Type352 { get; set; }
+        public global::ResembleAI.ProjectsListProjectsResponse200? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsGetProjectResponse200? Type353 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.ProjectsGetResponsesContentApplicationJsonSchemaItemsItems>? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem? Type354 { get; set; }
+        public global::ResembleAI.ProjectsPostResponsesContentApplicationJsonSchemaItem? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsUpdateProjectResponse200? Type355 { get; set; }
+        public global::ResembleAI.ProjectsCreateProjectResponse200? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsDeleteProjectResponse200? Type356 { get; set; }
+        public global::ResembleAI.ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems? Type357 { get; set; }
+        public global::ResembleAI.ProjectsGetProjectResponse200? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ClipsListClipsResponse200? Type358 { get; set; }
+        public global::ResembleAI.ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems>? Type359 { get; set; }
+        public global::ResembleAI.ProjectsUpdateProjectResponse200? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsProjectUuidClipsClipUuidGetResponsesContentApplicationJsonSchemaItem? Type360 { get; set; }
+        public global::ResembleAI.ProjectsDeleteProjectResponse200? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ClipsGetClipResponse200? Type361 { get; set; }
+        public global::ResembleAI.ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ClipsDeleteClipResponse200? Type362 { get; set; }
+        public global::ResembleAI.ClipsListClipsResponse200? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ProjectsProjectUuidClipsClipUuidPatchResponsesContentApplicationJsonSchemaItem? Type363 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems>? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ClipsUpdateClipResponse200? Type364 { get; set; }
+        public global::ResembleAI.ProjectsProjectUuidClipsClipUuidGetResponsesContentApplicationJsonSchemaItem? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountGetResponsesContentApplicationJsonSchemaItem? Type365 { get; set; }
+        public global::ResembleAI.ClipsGetClipResponse200? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountGetAccountResponse200? Type366 { get; set; }
+        public global::ResembleAI.ClipsDeleteClipResponse200? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountTeamsGetResponsesContentApplicationJsonSchemaItemsItems? Type367 { get; set; }
+        public global::ResembleAI.ProjectsProjectUuidClipsClipUuidPatchResponsesContentApplicationJsonSchemaItem? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountGetTeamsResponse200? Type368 { get; set; }
+        public global::ResembleAI.ClipsUpdateClipResponse200? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.AccountTeamsGetResponsesContentApplicationJsonSchemaItemsItems>? Type369 { get; set; }
+        public global::ResembleAI.AccountGetResponsesContentApplicationJsonSchemaItem? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountTeamsTeamUuidGetResponsesContentApplicationJsonSchemaItem? Type370 { get; set; }
+        public global::ResembleAI.AccountGetAccountResponse200? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountGetTeamResponse200? Type371 { get; set; }
+        public global::ResembleAI.AccountTeamsGetResponsesContentApplicationJsonSchemaItemsItems? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem? Type372 { get; set; }
+        public global::ResembleAI.AccountGetTeamsResponse200? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AccountGetBillingUsageResponse200? Type373 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.AccountTeamsGetResponsesContentApplicationJsonSchemaItemsItems>? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems? Type374 { get; set; }
+        public global::ResembleAI.AccountTeamsTeamUuidGetResponsesContentApplicationJsonSchemaItem? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsListDuetVoicesResponse200? Type375 { get; set; }
+        public global::ResembleAI.AccountGetTeamResponse200? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems>? Type376 { get; set; }
+        public global::ResembleAI.AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetVoicesPostResponsesContentApplicationJsonSchemaItem? Type377 { get; set; }
+        public global::ResembleAI.AccountGetBillingUsageResponse200? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsCreateDuetVoiceResponse200? Type378 { get; set; }
+        public global::ResembleAI.DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetVoicesIdPutResponsesContentApplicationJsonSchemaItem? Type379 { get; set; }
+        public global::ResembleAI.DuetsListDuetVoicesResponse200? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsUpdateDuetVoiceResponse200? Type380 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems>? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsDeleteDuetVoiceResponse200? Type381 { get; set; }
+        public global::ResembleAI.DuetVoicesPostResponsesContentApplicationJsonSchemaItem? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems? Type382 { get; set; }
+        public global::ResembleAI.DuetsCreateDuetVoiceResponse200? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsListDuetVoicePairsResponse200? Type383 { get; set; }
+        public global::ResembleAI.DuetVoicesIdPutResponsesContentApplicationJsonSchemaItem? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems>? Type384 { get; set; }
+        public global::ResembleAI.DuetsUpdateDuetVoiceResponse200? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetVoicePairsPostResponsesContentApplicationJsonSchemaItem? Type385 { get; set; }
+        public global::ResembleAI.DuetsDeleteDuetVoiceResponse200? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsCreateDuetVoicePairResponse200? Type386 { get; set; }
+        public global::ResembleAI.DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker? Type387 { get; set; }
+        public global::ResembleAI.DuetsListDuetVoicePairsResponse200? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems? Type388 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems>? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetPostResponsesContentApplicationJsonSchemaItem? Type389 { get; set; }
+        public global::ResembleAI.DuetVoicePairsPostResponsesContentApplicationJsonSchemaItem? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DuetsGenerateDuetResponse200? Type390 { get; set; }
+        public global::ResembleAI.DuetsCreateDuetVoicePairResponse200? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.SynthesizeRequest? Type391 { get; set; }
+        public global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.StreamSynthesizeRequest? Type392 { get; set; }
+        public global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateTranscriptRequest? Type393 { get; set; }
+        public global::ResembleAI.DuetPostResponsesContentApplicationJsonSchemaItem? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AskTranscriptQuestionRequest? Type394 { get; set; }
+        public global::ResembleAI.DuetsGenerateDuetResponse200? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateAudioEnhancementRequest? Type395 { get; set; }
+        public global::ResembleAI.SynthesizeRequest? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateAgentRequest? Type396 { get; set; }
+        public global::ResembleAI.StreamSynthesizeRequest? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaWebhooksItems>? Type397 { get; set; }
+        public global::ResembleAI.CreateTranscriptRequest? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateAgentRequest? Type398 { get; set; }
+        public global::ResembleAI.AskTranscriptQuestionRequest? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type399 { get; set; }
+        public global::ResembleAI.CreateAudioEnhancementRequest? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DispatchAgentRequest? Type400 { get; set; }
+        public global::ResembleAI.CreateAgentRequest? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateAgentToolRequest? Type401 { get; set; }
+        public global::System.Collections.Generic.IList<global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaWebhooksItems>? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateAgentToolRequest? Type402 { get; set; }
+        public global::ResembleAI.UpdateAgentRequest? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateAgentWebhookRequest? Type403 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateAgentWebhookRequest? Type404 { get; set; }
+        public global::ResembleAI.DispatchAgentRequest? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreatePhoneNumberRequest? Type405 { get; set; }
+        public global::ResembleAI.CreateAgentToolRequest? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateKnowledgeItemRequest? Type406 { get; set; }
+        public global::ResembleAI.UpdateAgentToolRequest? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AttachKnowledgeItemToAgentRequest? Type407 { get; set; }
+        public global::ResembleAI.CreateAgentWebhookRequest? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateSecureUploadRequest? Type408 { get; set; }
+        public global::ResembleAI.UpdateAgentWebhookRequest? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateDetectionRequest? Type409 { get; set; }
+        public global::ResembleAI.CreatePhoneNumberRequest? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateDetectBatchRequest? Type410 { get; set; }
+        public global::ResembleAI.CreateKnowledgeItemRequest? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]>? Type411 { get; set; }
+        public global::ResembleAI.AttachKnowledgeItemToAgentRequest? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.RunIntelligenceRequest? Type412 { get; set; }
+        public global::ResembleAI.CreateSecureUploadRequest? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.AskDetectIntelligenceQuestionRequest? Type413 { get; set; }
+        public global::ResembleAI.CreateDetectionRequest? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateIdentityRequest? Type414 { get; set; }
+        public global::ResembleAI.CreateDetectBatchRequest? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.SearchIdentitiesRequest? Type415 { get; set; }
+        public global::System.Collections.Generic.IList<byte[]>? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.ApplyWatermarkRequest? Type416 { get; set; }
+        public global::ResembleAI.RunIntelligenceRequest? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.DetectWatermarkRequest? Type417 { get; set; }
+        public global::ResembleAI.AskDetectIntelligenceQuestionRequest? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateVoiceRequest? Type418 { get; set; }
+        public global::ResembleAI.CreateIdentityRequest? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.BuildVoiceRequest? Type419 { get; set; }
+        public global::ResembleAI.SearchIdentitiesRequest? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.GenerateVoiceDesignRequest? Type420 { get; set; }
+        public global::ResembleAI.ApplyWatermarkRequest? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateVoiceFromCandidateRequest? Type421 { get; set; }
+        public global::ResembleAI.DetectWatermarkRequest? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateRecordingRequest? Type422 { get; set; }
+        public global::ResembleAI.CreateVoiceRequest? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateRecordingRequest? Type423 { get; set; }
+        public global::ResembleAI.BuildVoiceRequest? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateTermSubstitutionRequest? Type424 { get; set; }
+        public global::ResembleAI.GenerateVoiceDesignRequest? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreatePronunciationRequest? Type425 { get; set; }
+        public global::ResembleAI.CreateVoiceFromCandidateRequest? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.BulkCreatePronunciationsRequest? Type426 { get; set; }
+        public global::ResembleAI.CreateRecordingRequest? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdatePronunciationRequest? Type427 { get; set; }
+        public global::ResembleAI.UpdateRecordingRequest? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateVoiceSettingsPresetRequest? Type428 { get; set; }
+        public global::ResembleAI.CreateTermSubstitutionRequest? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateVoiceSettingsPresetRequest? Type429 { get; set; }
+        public global::ResembleAI.CreatePronunciationRequest? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateProjectRequest? Type430 { get; set; }
+        public global::ResembleAI.BulkCreatePronunciationsRequest? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateProjectRequest? Type431 { get; set; }
+        public global::ResembleAI.UpdatePronunciationRequest? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateClipRequest? Type432 { get; set; }
+        public global::ResembleAI.CreateVoiceSettingsPresetRequest? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateDuetVoiceRequest? Type433 { get; set; }
+        public global::ResembleAI.UpdateVoiceSettingsPresetRequest? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.UpdateDuetVoiceRequest? Type434 { get; set; }
+        public global::ResembleAI.CreateProjectRequest? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.CreateDuetVoicePairRequest? Type435 { get; set; }
+        public global::ResembleAI.UpdateProjectRequest? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::ResembleAI.GenerateDuetRequest? Type436 { get; set; }
+        public global::ResembleAI.UpdateClipRequest? Type436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems>? Type437 { get; set; }
+        public global::ResembleAI.CreateDuetVoiceRequest? Type437 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ResembleAI.UpdateDuetVoiceRequest? Type438 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ResembleAI.CreateDuetVoicePairRequest? Type439 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::ResembleAI.GenerateDuetRequest? Type440 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems>? Type441 { get; set; }
 
         /// <summary>
         /// 
