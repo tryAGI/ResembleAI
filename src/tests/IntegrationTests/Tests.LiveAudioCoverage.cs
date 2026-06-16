@@ -27,30 +27,9 @@ public partial class Tests
     }
 
     [TestMethod]
-    public async Task Live_AudioEdit_AcceptsBundledFixtures()
+    [Ignore("Audio edit endpoint is no longer present in the current OpenAPI spec.")]
+    public void Live_AudioEdit_AcceptsBundledFixtures()
     {
-        using var client = GetAuthenticatedClient();
-        var selectedVoice = await GetEditableVoiceAsync(client);
-
-        try
-        {
-            foreach (var fixture in GetBundledAudioFixtures())
-            {
-                var audioBytes = await LoadAudioFixtureAsync(fixture).ConfigureAwait(false);
-                var audioEdit = await client.SubpackageAudioEdit.CreateAudioEditAsync(
-                    inputAudio: audioBytes,
-                    inputAudioname: fixture.FileName,
-                    originalTranscript: fixture.Transcript,
-                    targetTranscript: fixture.EditedTranscript,
-                    voiceUuid: selectedVoice.Uuid).ConfigureAwait(false);
-
-                audioEdit.Success.Should().BeTrue();
-                audioEdit.Item?.TargetTranscript.Should().Be(fixture.EditedTranscript);
-            }
-        }
-        catch (ApiException ex)
-        {
-            AssertFeatureAvailable(ex, "audio edit");
-        }
+        Assert.Inconclusive("Audio edit endpoint is no longer present in the current OpenAPI spec.");
     }
 }
