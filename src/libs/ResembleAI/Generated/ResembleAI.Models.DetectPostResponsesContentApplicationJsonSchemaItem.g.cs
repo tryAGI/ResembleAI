@@ -45,10 +45,20 @@ namespace ResembleAI
         public string? AudioUrl { get; set; }
 
         /// <summary>
-        /// Original filename, or tokenized (redacted_&lt;token&gt;.&lt;ext&gt;) when Zero Retention Modeon Modeon Mode is enabled
+        /// Original filename, or tokenized (redacted_&lt;token&gt;.&lt;ext&gt;) when Zero Retention Mode is enabled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         public string? Filename { get; set; }
+
+        /// <summary>
+        /// Which detection modality was requested. `all` when not specified.<br/>
+        /// For a single-modality video detect, the skipped component's metrics are absent<br/>
+        /// (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the<br/>
+        /// detect still reaches `completed` once the requested modality(ies) finish.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter))]
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? Modality { get; set; }
 
         /// <summary>
         /// Intelligence results when requested
@@ -81,7 +91,13 @@ namespace ResembleAI
         /// Alias of url. Null when Zero Retention Mode is enabled.
         /// </param>
         /// <param name="filename">
-        /// Original filename, or tokenized (redacted_&lt;token&gt;.&lt;ext&gt;) when Zero Retention Modeon Modeon Mode is enabled
+        /// Original filename, or tokenized (redacted_&lt;token&gt;.&lt;ext&gt;) when Zero Retention Mode is enabled
+        /// </param>
+        /// <param name="modality">
+        /// Which detection modality was requested. `all` when not specified.<br/>
+        /// For a single-modality video detect, the skipped component's metrics are absent<br/>
+        /// (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the<br/>
+        /// detect still reaches `completed` once the requested modality(ies) finish.
         /// </param>
         /// <param name="intelligence">
         /// Intelligence results when requested
@@ -97,6 +113,7 @@ namespace ResembleAI
             string? url,
             string? audioUrl,
             string? filename,
+            global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? modality,
             global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence)
         {
             this.Uuid = uuid;
@@ -106,6 +123,7 @@ namespace ResembleAI
             this.Url = url;
             this.AudioUrl = audioUrl;
             this.Filename = filename;
+            this.Modality = modality;
             this.Intelligence = intelligence;
         }
 

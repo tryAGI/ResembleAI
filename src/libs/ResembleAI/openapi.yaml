@@ -298,7 +298,17 @@
             }
           },
           "400": {
-            "description": "Bad request",
+            "description": "Bad request (missing input, invalid callback_url, or zero retention requested without a callback_url)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Zero retention is not included in the team's plan or subscription",
             "content": {
               "application/json": {
                 "schema": {
@@ -322,6 +332,16 @@
                   "query": {
                     "type": "string",
                     "description": "Optional intelligence question to evaluate after transcription"
+                  },
+                  "callback_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Public HTTPS URL that receives a POST with the result when processing finishes. Private, loopback, link-local, and non-HTTPS URLs are rejected. Required when zero_retention_mode is true."
+                  },
+                  "zero_retention_mode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Enable zero retention. The uploaded media and any temporary processing copies are permanently deleted after transcription, and the transcript content is purged after one delivery to callback_url (which is mandatory in this mode). privacy_mode is accepted as an alias. Plan feature — requests are rejected with 402 if not included in your plan."
                   }
                 }
               }
@@ -417,6 +437,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Speech-to-Text_askTranscriptQuestion_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing query, transcript not yet processed, or the transcript was created with zero retention and its content has been purged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -556,164 +586,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Speech-to-Text_getTranscriptQuestion_Response_200"
-                }
-              }
-            }
-          }
-        }
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/edit": {
-      "get": {
-        "operationId": "list-audio-edits",
-        "summary": "List audio edits",
-        "description": "Retrieve paginated list of audio edits",
-        "tags": [
-          "subpackage_audioEdit"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "default": 1
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of audio edits",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Audio Edit_listAudioEdits_Response_200"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "create-audio-edit",
-        "summary": "Create audio edit",
-        "description": "Edit audio segments using voice synthesis",
-        "tags": [
-          "subpackage_audioEdit"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Edit job created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Audio Edit_createAudioEdit_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "input_audio": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "WAV, MP3, M4A, or WMA file (< 20 seconds)"
-                  },
-                  "original_transcript": {
-                    "type": "string",
-                    "description": "Accurate transcript of the uploaded audio"
-                  },
-                  "target_transcript": {
-                    "type": "string",
-                    "description": "Desired replacement text"
-                  },
-                  "voice_uuid": {
-                    "type": "string",
-                    "description": "Voice used to render the edited segment"
-                  }
-                },
-                "required": [
-                  "input_audio",
-                  "original_transcript",
-                  "target_transcript",
-                  "voice_uuid"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/edit/{audio_edit_uuid}": {
-      "get": {
-        "operationId": "get-audio-edit",
-        "summary": "Get audio edit",
-        "description": "Get status and result of an audio edit",
-        "tags": [
-          "subpackage_audioEdit"
-        ],
-        "parameters": [
-          {
-            "name": "audio_edit_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Audio edit details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Audio Edit_getAudioEdit_Response_200"
                 }
               }
             }
@@ -2989,6 +2861,10 @@
                   "model_types": {
                     "$ref": "#/components/schemas/DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes",
                     "description": "Use talking_head for face-swaps"
+                  },
+                  "modality": {
+                    "$ref": "#/components/schemas/DetectPostRequestBodyContentMultipartFormDataSchemaModality",
+                    "description": "Video only. Selects which detection components run for a video file:\n`audio` (audio track only), `video` (visual frames only), or `all` (both — the default).\nIgnored for audio and image inputs. Invalid values are rejected with HTTP 400.\n"
                   },
                   "intelligence": {
                     "type": "boolean",
@@ -6699,10 +6575,12 @@
   },
   "servers": [
     {
-      "url": "https://f.cluster.resemble.ai"
+      "url": "https://f.cluster.resemble.ai",
+      "description": "synthesis"
     },
     {
-      "url": "https://app.resemble.ai/api/v2"
+      "url": "https://app.resemble.ai/api/v2",
+      "description": "production"
     }
   ],
   "components": {
@@ -6956,6 +6834,10 @@
           "status": {
             "$ref": "#/components/schemas/SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus"
           },
+          "privacy_mode": {
+            "type": "boolean",
+            "description": "Whether the transcript was created with zero retention"
+          },
           "created_at": {
             "type": "string",
             "format": "date-time"
@@ -7020,7 +6902,8 @@
             "$ref": "#/components/schemas/SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus"
           },
           "text": {
-            "type": "string"
+            "type": "string",
+            "description": "Absent for zero-retention transcripts after the content purge"
           },
           "words": {
             "type": "array",
@@ -7034,13 +6917,28 @@
           },
           "file_url": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "description": "Absent once the media has been deleted (zero retention)"
           },
           "query": {
             "type": "string"
           },
           "answer": {
             "type": "string"
+          },
+          "privacy_mode": {
+            "type": "boolean",
+            "description": "Whether the transcript was created with zero retention"
+          },
+          "file_deleted_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the uploaded media was permanently deleted (zero retention)"
+          },
+          "content_deleted_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcript content was permanently purged (zero retention)"
           },
           "created_at": {
             "type": "string",
@@ -7189,107 +7087,6 @@
           }
         },
         "title": "Speech-to-Text_getTranscriptQuestion_Response_200"
-      },
-      "EditGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "EditGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Audio Edit_listAudioEdits_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "page": {
-            "type": "integer"
-          },
-          "num_pages": {
-            "type": "integer"
-          },
-          "page_size": {
-            "type": "integer"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EditGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Audio Edit_listAudioEdits_Response_200"
-      },
-      "EditPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "voice_uuid": {
-            "type": "string"
-          },
-          "original_transcript": {
-            "type": "string"
-          },
-          "target_transcript": {
-            "type": "string"
-          },
-          "input_audio_url": {
-            "type": "string",
-            "format": "uri"
-          }
-        },
-        "title": "EditPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Audio Edit_createAudioEdit_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/EditPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Audio Edit_createAudioEdit_Response_200"
-      },
-      "EditAudioEditUuidGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "voice_uuid": {
-            "type": "string"
-          },
-          "original_transcript": {
-            "type": "string"
-          },
-          "target_transcript": {
-            "type": "string"
-          },
-          "input_audio_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "result_audio_url": {
-            "type": "string",
-            "format": "uri"
-          }
-        },
-        "title": "EditAudioEditUuidGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Audio Edit_getAudioEdit_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/EditAudioEditUuidGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Audio Edit_getAudioEdit_Response_200"
       },
       "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus": {
         "type": "string",
@@ -8587,6 +8384,16 @@
         ],
         "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
       },
+      "DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "description": "Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects.",
+        "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality"
+      },
       "DetectAudioMetrics": {
         "type": "object",
         "properties": {
@@ -8855,6 +8662,10 @@
           "status": {
             "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
           },
+          "modality": {
+            "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality",
+            "description": "Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects."
+          },
           "metrics": {
             "$ref": "#/components/schemas/DetectAudioMetrics"
           },
@@ -8990,6 +8801,27 @@
         ],
         "description": "Use talking_head for face-swaps",
         "title": "DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes"
+      },
+      "DetectPostRequestBodyContentMultipartFormDataSchemaModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "default": "all",
+        "description": "Video only. Selects which detection components run for a video file:\n`audio` (audio track only), `video` (visual frames only), or `all` (both — the default).\nIgnored for audio and image inputs. Invalid values are rejected with HTTP 400.\n",
+        "title": "DetectPostRequestBodyContentMultipartFormDataSchemaModality"
+      },
+      "DetectPostResponsesContentApplicationJsonSchemaItemModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "description": "Which detection modality was requested. `all` when not specified.\nFor a single-modality video detect, the skipped component's metrics are absent\n(`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the\ndetect still reaches `completed` once the requested modality(ies) finish.\n",
+        "title": "DetectPostResponsesContentApplicationJsonSchemaItemModality"
       },
       "DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType": {
         "type": "string",
@@ -9179,7 +9011,11 @@
           },
           "filename": {
             "type": "string",
-            "description": "Original filename, or tokenized (redacted_<token>.<ext>) when Zero Retention Modeon Modeon Mode is enabled"
+            "description": "Original filename, or tokenized (redacted_<token>.<ext>) when Zero Retention Mode is enabled"
+          },
+          "modality": {
+            "$ref": "#/components/schemas/DetectPostResponsesContentApplicationJsonSchemaItemModality",
+            "description": "Which detection modality was requested. `all` when not specified.\nFor a single-modality video detect, the skipped component's metrics are absent\n(`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the\ndetect still reaches `completed` once the requested modality(ies) finish.\n"
           },
           "intelligence": {
             "oneOf": [
@@ -9396,6 +9232,16 @@
         "description": "Intelligence results when requested",
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence"
       },
+      "DetectUuidGetResponsesContentApplicationJsonSchemaItemModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "all"
+        ],
+        "description": "Which detection modality was requested for this detect. `all` when not specified\n(the default). For a single-modality video detect, the skipped component's metrics\nare absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).\n",
+        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemModality"
+      },
       "DetectUuidGetResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
         "properties": {
@@ -9439,12 +9285,16 @@
             ],
             "description": "Intelligence results when requested"
           },
+          "modality": {
+            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemModality",
+            "description": "Which detection modality was requested for this detect. `all` when not specified\n(the default). For a single-modality video detect, the skipped component's metrics\nare absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).\n"
+          },
           "url": {
             "type": [
               "string",
               "null"
             ],
-            "description": "URL to the media file. Null when Zero Retention Modeon Modeon Modeon Modeon Modeon Modeon Mode is enabled."
+            "description": "URL to the media file. Null when Zero Retention Mode is enabled."
           },
           "audio_url": {
             "type": [

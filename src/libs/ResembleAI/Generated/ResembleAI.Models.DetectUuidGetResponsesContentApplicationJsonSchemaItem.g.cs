@@ -61,7 +61,16 @@ namespace ResembleAI
         public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? Intelligence { get; set; }
 
         /// <summary>
-        /// URL to the media file. Null when Zero Retention Modeon Modeon Modeon Modeon Modeon Modeon Mode is enabled.
+        /// Which detection modality was requested for this detect. `all` when not specified<br/>
+        /// (the default). For a single-modality video detect, the skipped component's metrics<br/>
+        /// are absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter))]
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? Modality { get; set; }
+
+        /// <summary>
+        /// URL to the media file. Null when Zero Retention Mode is enabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
@@ -135,8 +144,13 @@ namespace ResembleAI
         /// <param name="intelligence">
         /// Intelligence results when requested
         /// </param>
+        /// <param name="modality">
+        /// Which detection modality was requested for this detect. `all` when not specified<br/>
+        /// (the default). For a single-modality video detect, the skipped component's metrics<br/>
+        /// are absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).
+        /// </param>
         /// <param name="url">
-        /// URL to the media file. Null when Zero Retention Modeon Modeon Modeon Modeon Modeon Modeon Mode is enabled.
+        /// URL to the media file. Null when Zero Retention Mode is enabled.
         /// </param>
         /// <param name="audioUrl">
         /// Alias of url. Null when Zero Retention Mode is enabled.
@@ -165,6 +179,7 @@ namespace ResembleAI
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
             global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? audioSourceTracing,
             global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence,
+            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? modality,
             string? url,
             string? audioUrl,
             string? filename,
@@ -182,6 +197,7 @@ namespace ResembleAI
             this.VideoMetrics = videoMetrics;
             this.AudioSourceTracing = audioSourceTracing;
             this.Intelligence = intelligence;
+            this.Modality = modality;
             this.Url = url;
             this.AudioUrl = audioUrl;
             this.Filename = filename;

@@ -98,11 +98,6 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAudioEditClient SubpackageAudioEdit { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public SubpackageAudioEnhancementClient SubpackageAudioEnhancement { get; }
 
         /// <summary>

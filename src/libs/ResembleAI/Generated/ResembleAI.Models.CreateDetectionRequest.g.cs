@@ -67,6 +67,16 @@ namespace ResembleAI
         public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? ModelTypes { get; set; }
 
         /// <summary>
+        /// Video only. Selects which detection components run for a video file:<br/>
+        /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
+        /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
+        /// Default Value: all
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter))]
+        public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? Modality { get; set; }
+
+        /// <summary>
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </summary>
@@ -138,6 +148,12 @@ namespace ResembleAI
         /// <param name="modelTypes">
         /// Use talking_head for face-swaps
         /// </param>
+        /// <param name="modality">
+        /// Video only. Selects which detection components run for a video file:<br/>
+        /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
+        /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
+        /// Default Value: all
+        /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
@@ -171,6 +187,7 @@ namespace ResembleAI
             double? endRegion,
             double? maxVideoSecs,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes,
+            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality,
             bool? intelligence,
             bool? audioSourceTracing,
             bool? useReverseSearch,
@@ -186,6 +203,7 @@ namespace ResembleAI
             this.EndRegion = endRegion;
             this.MaxVideoSecs = maxVideoSecs;
             this.ModelTypes = modelTypes;
+            this.Modality = modality;
             this.Intelligence = intelligence;
             this.AudioSourceTracing = audioSourceTracing;
             this.UseReverseSearch = useReverseSearch;

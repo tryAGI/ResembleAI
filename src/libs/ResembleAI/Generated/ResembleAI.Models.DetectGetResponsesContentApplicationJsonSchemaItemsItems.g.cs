@@ -29,6 +29,13 @@ namespace ResembleAI
         public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus? Status { get; set; }
 
         /// <summary>
+        /// Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter))]
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality? Modality { get; set; }
+
+        /// <summary>
         /// Audio detection metrics (for audio and video media types)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
@@ -156,6 +163,9 @@ namespace ResembleAI
         /// <param name="uuid"></param>
         /// <param name="mediaType"></param>
         /// <param name="status"></param>
+        /// <param name="modality">
+        /// Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects.
+        /// </param>
         /// <param name="metrics">
         /// Audio detection metrics (for audio and video media types)
         /// </param>
@@ -202,6 +212,7 @@ namespace ResembleAI
             string? uuid,
             global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType? mediaType,
             global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus? status,
+            global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality? modality,
             global::ResembleAI.DetectAudioMetrics? metrics,
             global::ResembleAI.DetectImageMetrics? imageMetrics,
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
@@ -225,6 +236,7 @@ namespace ResembleAI
             this.Uuid = uuid;
             this.MediaType = mediaType;
             this.Status = status;
+            this.Modality = modality;
             this.Metrics = metrics;
             this.ImageMetrics = imageMetrics;
             this.VideoMetrics = videoMetrics;
