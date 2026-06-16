@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
+
+fetch_spec() {
+  curl "$@" \
+    --fail --silent --show-error --location \
+    --retry 5 --retry-delay 10 --retry-all-errors \
+    --connect-timeout 30 --max-time 300
+}
+
 spec_url="https://docs.resemble.ai/openapi.json"
 temp_spec="$(mktemp)"
 
@@ -9,11 +21,10 @@ cleanup() {
 }
 
 trap cleanup EXIT
-
-dotnet tool install --global autosdk.cli --prerelease
+install_autosdk_cli
 rm -rf Generated
 
-if curl -fsSL -o "$temp_spec" "$spec_url"; then
+if fetch_spec -fsSL -o "$temp_spec" "$spec_url"; then
   mv "$temp_spec" openapi.yaml
 elif [[ ! -f openapi.yaml ]]; then
   echo "Failed to download $spec_url and no checked-in openapi.yaml exists." >&2
