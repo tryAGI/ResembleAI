@@ -267,6 +267,9 @@ public partial class Tests
         var responseText = $"{ex.Message}\n{ex.ResponseBody}";
 
         return ex.StatusCode is HttpStatusCode.PaymentRequired or HttpStatusCode.TooManyRequests ||
+               ex.StatusCode == HttpStatusCode.Forbidden &&
+               (responseText.Contains("forbidden", StringComparison.OrdinalIgnoreCase) ||
+                responseText.Contains("permission", StringComparison.OrdinalIgnoreCase)) ||
                ex.StatusCode == HttpStatusCode.UnprocessableEntity &&
                responseText.Contains("Invalid voice UUID", StringComparison.OrdinalIgnoreCase) ||
                ex.StatusCode == HttpStatusCode.Unauthorized &&
