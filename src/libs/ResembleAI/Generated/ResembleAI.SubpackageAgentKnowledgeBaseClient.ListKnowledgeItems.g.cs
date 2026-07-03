@@ -6,6 +6,14 @@ namespace ResembleAI
     public partial class SubpackageAgentKnowledgeBaseClient
     {
 
+        private static readonly global::ResembleAI.AutoSDKServer[] s_ListKnowledgeItemsServers = new global::ResembleAI.AutoSDKServer[]
+        {            new global::ResembleAI.AutoSDKServer(
+                id: "https-app-resemble-ai-api-v2",
+                name: "app.resemble.ai api v2",
+                url: "https://app.resemble.ai/api/v2",
+                description: ""),
+        };
+
 
         private static readonly global::ResembleAI.EndPointSecurityRequirement s_ListKnowledgeItemsSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
@@ -138,7 +146,9 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/knowledge_items",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListKnowledgeItemsServers,
+                                defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             __pathBuilder
                                 .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("source_type", sourceType?.ToValueString())

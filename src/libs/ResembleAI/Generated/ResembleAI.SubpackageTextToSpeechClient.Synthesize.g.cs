@@ -6,6 +6,14 @@ namespace ResembleAI
     public partial class SubpackageTextToSpeechClient
     {
 
+        private static readonly global::ResembleAI.AutoSDKServer[] s_SynthesizeServers = new global::ResembleAI.AutoSDKServer[]
+        {            new global::ResembleAI.AutoSDKServer(
+                id: "https-f-cluster-resemble-ai",
+                name: "f.cluster.resemble.ai",
+                url: "https://f.cluster.resemble.ai/",
+                description: ""),
+        };
+
 
         private static readonly global::ResembleAI.EndPointSecurityRequirement s_SynthesizeSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
@@ -111,7 +119,9 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/synthesize",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://f.cluster.resemble.ai/", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_SynthesizeServers,
+                                defaultBaseUrl: "https://f.cluster.resemble.ai/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
