@@ -6,6 +6,14 @@ namespace ResembleAI
     public partial class SubpackageClipsClient
     {
 
+        private static readonly global::ResembleAI.AutoSDKServer[] s_GetClipServers = new global::ResembleAI.AutoSDKServer[]
+        {            new global::ResembleAI.AutoSDKServer(
+                id: "https-app-resemble-ai-api-v2",
+                name: "app.resemble.ai api v2",
+                url: "https://app.resemble.ai/api/v2",
+                description: ""),
+        };
+
 
         private static readonly global::ResembleAI.EndPointSecurityRequirement s_GetClipSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
@@ -114,7 +122,9 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: $"/projects/{projectUuid}/clips/{clipUuid}",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetClipServers,
+                                defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

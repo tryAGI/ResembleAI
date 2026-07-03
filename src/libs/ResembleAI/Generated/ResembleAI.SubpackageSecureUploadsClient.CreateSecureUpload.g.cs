@@ -6,6 +6,14 @@ namespace ResembleAI
     public partial class SubpackageSecureUploadsClient
     {
 
+        private static readonly global::ResembleAI.AutoSDKServer[] s_CreateSecureUploadServers = new global::ResembleAI.AutoSDKServer[]
+        {            new global::ResembleAI.AutoSDKServer(
+                id: "https-app-resemble-ai-api-v2",
+                name: "app.resemble.ai api v2",
+                url: "https://app.resemble.ai/api/v2",
+                description: ""),
+        };
+
 
         private static readonly global::ResembleAI.EndPointSecurityRequirement s_CreateSecureUploadSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
@@ -121,7 +129,9 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/secure_uploads",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_CreateSecureUploadServers,
+                                defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -651,7 +661,9 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/secure_uploads",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_CreateSecureUploadServers,
+                                defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -1137,7 +1149,9 @@ namespace ResembleAI
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
                                 path: "/secure_uploads",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://app.resemble.ai/api/v2", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_CreateSecureUploadServers,
+                                defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
