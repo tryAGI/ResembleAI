@@ -45,7 +45,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAccountClient SubpackageAccount => new SubpackageAccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -55,7 +55,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentKnowledgeBaseClient SubpackageAgentKnowledgeBase => new SubpackageAgentKnowledgeBaseClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AgentKnowledgeBaseClient AgentKnowledgeBase => new AgentKnowledgeBaseClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -65,7 +65,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentPhoneNumbersClient SubpackageAgentPhoneNumbers => new SubpackageAgentPhoneNumbersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AgentPhoneNumbersClient AgentPhoneNumbers => new AgentPhoneNumbersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -75,7 +75,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentToolsClient SubpackageAgentTools => new SubpackageAgentToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AgentToolsClient AgentTools => new AgentToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -85,7 +85,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentWebhooksClient SubpackageAgentWebhooks => new SubpackageAgentWebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AgentWebhooksClient AgentWebhooks => new AgentWebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -95,7 +95,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentsClient SubpackageAgents => new SubpackageAgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -105,7 +105,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAudioEnhancementClient SubpackageAudioEnhancement => new SubpackageAudioEnhancementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AudioEnhancementClient AudioEnhancement => new AudioEnhancementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -115,7 +115,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAudioSourceTracingClient SubpackageAudioSourceTracing => new SubpackageAudioSourceTracingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public AudioSourceTracingClient AudioSourceTracing => new AudioSourceTracingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -125,7 +125,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageClipsClient SubpackageClips => new SubpackageClipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ClipsClient Clips => new ClipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -135,7 +135,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageCustomPronunciationsClient SubpackageCustomPronunciations => new SubpackageCustomPronunciationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public CustomPronunciationsClient CustomPronunciations => new CustomPronunciationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -145,7 +145,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDeepfakeDetectionClient SubpackageDeepfakeDetection => new SubpackageDeepfakeDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public DeepfakeDetectionClient DeepfakeDetection => new DeepfakeDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -155,7 +155,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDetectIntelligenceClient SubpackageDetectIntelligence => new SubpackageDetectIntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public DetectIntelligenceClient DetectIntelligence => new DetectIntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -165,7 +165,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDuetsClient SubpackageDuets => new SubpackageDuetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public DuetsClient Duets => new DuetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -175,7 +175,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIdentityClient SubpackageIdentity => new SubpackageIdentityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public IdentityClient Identity => new IdentityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -185,7 +185,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIntelligenceClient SubpackageIntelligence => new SubpackageIntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public IntelligenceClient Intelligence => new IntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -195,7 +195,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageProjectsClient SubpackageProjects => new SubpackageProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -205,7 +205,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageRecordingsClient SubpackageRecordings => new SubpackageRecordingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public RecordingsClient Recordings => new RecordingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -215,7 +215,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSecureUploadsClient SubpackageSecureUploads => new SubpackageSecureUploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public SecureUploadsClient SecureUploads => new SecureUploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -225,7 +225,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSpeechToTextClient SubpackageSpeechToText => new SubpackageSpeechToTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public SpeechToTextClient SpeechToText => new SpeechToTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -235,7 +235,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTermSubstitutionsClient SubpackageTermSubstitutions => new SubpackageTermSubstitutionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public TermSubstitutionsClient TermSubstitutions => new TermSubstitutionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -245,7 +245,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTextToSpeechClient SubpackageTextToSpeech => new SubpackageTextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -255,7 +255,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoiceDesignClient SubpackageVoiceDesign => new SubpackageVoiceDesignClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public VoiceDesignClient VoiceDesign => new VoiceDesignClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -265,7 +265,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoiceSettingsPresetsClient SubpackageVoiceSettingsPresets => new SubpackageVoiceSettingsPresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public VoiceSettingsPresetsClient VoiceSettingsPresets => new VoiceSettingsPresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -275,7 +275,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoicesClient SubpackageVoices => new SubpackageVoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -285,7 +285,7 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageWatermarkClient SubpackageWatermark => new SubpackageWatermarkClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        public WatermarkClient Watermark => new WatermarkClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
