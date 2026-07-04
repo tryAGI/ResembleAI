@@ -11,7 +11,7 @@
         "summary": "Synchronous text-to-speech synthesis",
         "description": "Generate speech synchronously from text or SSML. Returns complete audio as base64.",
         "tags": [
-          "subpackage_textToSpeech"
+          "textToSpeech"
         ],
         "parameters": [
           {
@@ -126,7 +126,7 @@
         "summary": "Streaming text-to-speech synthesis (HTTP)",
         "description": "Stream audio as it's generated. Returns chunked WAV data for progressive playback.",
         "tags": [
-          "subpackage_textToSpeech"
+          "textToSpeech"
         ],
         "parameters": [
           {
@@ -224,7 +224,7 @@
         "summary": "List transcripts",
         "description": "Retrieve paginated list of transcript jobs",
         "tags": [
-          "subpackage_speechToText"
+          "speechToText"
         ],
         "parameters": [
           {
@@ -273,7 +273,7 @@
         "summary": "Create transcript job",
         "description": "Submit audio or video for transcription",
         "tags": [
-          "subpackage_speechToText"
+          "speechToText"
         ],
         "parameters": [
           {
@@ -361,7 +361,7 @@
         "summary": "Get transcript",
         "description": "Retrieve transcript status, text, and timestamps",
         "tags": [
-          "subpackage_speechToText"
+          "speechToText"
         ],
         "parameters": [
           {
@@ -408,7 +408,7 @@
         "summary": "Ask intelligence question",
         "description": "Submit a question about a completed transcript",
         "tags": [
-          "subpackage_speechToText"
+          "speechToText"
         ],
         "parameters": [
           {
@@ -483,7 +483,7 @@
         "summary": "List intelligence questions",
         "description": "List all questions asked about a transcript",
         "tags": [
-          "subpackage_speechToText"
+          "speechToText"
         ],
         "parameters": [
           {
@@ -548,7 +548,7 @@
         "summary": "Get intelligence question status",
         "description": "Check the status of a specific question",
         "tags": [
-          "subpackage_speechToText"
+          "speechToText"
         ],
         "parameters": [
           {
@@ -604,7 +604,7 @@
         "summary": "List audio enhancements",
         "description": "Returns a paginated list of all audio enhancements for your team, ordered by most recent first.",
         "tags": [
-          "subpackage_audioEnhancement"
+          "audioEnhancement"
         ],
         "parameters": [
           {
@@ -664,7 +664,7 @@
         "summary": "Create audio enhancement",
         "description": "Submit an audio file for enhancement. Processing happens asynchronously in the background.\nThe API defaults to the v2 enhancement engine. The v1 engine is legacy and will be sunset in a future release.\n",
         "tags": [
-          "subpackage_audioEnhancement"
+          "audioEnhancement"
         ],
         "parameters": [
           {
@@ -775,7 +775,7 @@
         "summary": "Get audio enhancement",
         "description": "Poll this endpoint to check the status of an enhancement job and retrieve the download URL when complete.",
         "tags": [
-          "subpackage_audioEnhancement"
+          "audioEnhancement"
         ],
         "parameters": [
           {
@@ -832,7 +832,7 @@
         "summary": "List agents",
         "description": "Retrieve all agents for the authenticated team",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -882,7 +882,7 @@
         "summary": "Create agent",
         "description": "Create a new voice agent",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -993,7 +993,7 @@
         "summary": "Get agent",
         "description": "Retrieve a specific agent's details",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -1042,7 +1042,7 @@
         "summary": "Delete agent",
         "description": "Delete an agent and all its configurations",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -1082,7 +1082,7 @@
         "summary": "Update agent",
         "description": "Update an existing agent's configuration",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -1184,7 +1184,7 @@
         "summary": "Dispatch agent",
         "description": "Make an outbound call with an agent",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -1253,7 +1253,7 @@
         "summary": "Get capabilities",
         "description": "List supported ASR and LLM providers and models",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -1291,7 +1291,7 @@
         "summary": "Get system tools",
         "description": "List available system tools",
         "tags": [
-          "subpackage_agents"
+          "agents"
         ],
         "parameters": [
           {
@@ -1329,7 +1329,7 @@
         "summary": "List agent tools",
         "description": "List all tools for an agent",
         "tags": [
-          "subpackage_agentTools"
+          "agentTools"
         ],
         "parameters": [
           {
@@ -1369,7 +1369,7 @@
         "summary": "Create agent tool",
         "description": "Create a new tool for an agent",
         "tags": [
-          "subpackage_agentTools"
+          "agentTools"
         ],
         "parameters": [
           {
@@ -1445,7 +1445,7 @@
         "summary": "Get agent tool",
         "description": "Get details of a specific tool",
         "tags": [
-          "subpackage_agentTools"
+          "agentTools"
         ],
         "parameters": [
           {
@@ -1494,7 +1494,7 @@
         "summary": "Delete agent tool",
         "description": "Delete a tool",
         "tags": [
-          "subpackage_agentTools"
+          "agentTools"
         ],
         "parameters": [
           {
@@ -1543,7 +1543,7 @@
         "summary": "Update agent tool",
         "description": "Update an existing tool",
         "tags": [
-          "subpackage_agentTools"
+          "agentTools"
         ],
         "parameters": [
           {
@@ -1619,7 +1619,7 @@
         "summary": "List agent webhooks",
         "description": "List all webhooks for an agent",
         "tags": [
-          "subpackage_agentWebhooks"
+          "agentWebhooks"
         ],
         "parameters": [
           {
@@ -1659,7 +1659,7 @@
         "summary": "Create agent webhook",
         "description": "Create a new webhook for an agent",
         "tags": [
-          "subpackage_agentWebhooks"
+          "agentWebhooks"
         ],
         "parameters": [
           {
@@ -1727,7 +1727,7 @@
         "summary": "Get agent webhook",
         "description": "Get details of a specific webhook",
         "tags": [
-          "subpackage_agentWebhooks"
+          "agentWebhooks"
         ],
         "parameters": [
           {
@@ -1776,7 +1776,7 @@
         "summary": "Delete agent webhook",
         "description": "Delete a webhook",
         "tags": [
-          "subpackage_agentWebhooks"
+          "agentWebhooks"
         ],
         "parameters": [
           {
@@ -1825,7 +1825,7 @@
         "summary": "Update agent webhook",
         "description": "Update an existing webhook",
         "tags": [
-          "subpackage_agentWebhooks"
+          "agentWebhooks"
         ],
         "parameters": [
           {
@@ -1895,7 +1895,7 @@
         "summary": "List agent phone numbers",
         "description": "List all agent phone numbers",
         "tags": [
-          "subpackage_agentPhoneNumbers"
+          "agentPhoneNumbers"
         ],
         "parameters": [
           {
@@ -1926,7 +1926,7 @@
         "summary": "Create agent phone number",
         "description": "Create a new agent phone number",
         "tags": [
-          "subpackage_agentPhoneNumbers"
+          "agentPhoneNumbers"
         ],
         "parameters": [
           {
@@ -2009,7 +2009,7 @@
         "summary": "Get agent phone number",
         "description": "Get agent phone number details",
         "tags": [
-          "subpackage_agentPhoneNumbers"
+          "agentPhoneNumbers"
         ],
         "parameters": [
           {
@@ -2048,7 +2048,7 @@
         "summary": "Delete agent phone number",
         "description": "Delete an agent phone number",
         "tags": [
-          "subpackage_agentPhoneNumbers"
+          "agentPhoneNumbers"
         ],
         "parameters": [
           {
@@ -2094,7 +2094,7 @@
         "summary": "Force delete agent phone number",
         "description": "Force delete an agent phone number even if linked to agent",
         "tags": [
-          "subpackage_agentPhoneNumbers"
+          "agentPhoneNumbers"
         ],
         "parameters": [
           {
@@ -2140,7 +2140,7 @@
         "summary": "List knowledge items",
         "description": "List all knowledge items belonging to the authenticated user's team",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2209,7 +2209,7 @@
         "summary": "Create knowledge item",
         "description": "Creates a new knowledge item and queues it for ingestion processing",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2293,7 +2293,7 @@
         "summary": "Get knowledge item",
         "description": "Retrieves a single knowledge item with detailed information including attached agents",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2344,7 +2344,7 @@
         "summary": "Delete knowledge item",
         "description": "Deletes a knowledge item and cleans up associated data",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2402,7 +2402,7 @@
         "summary": "Re-ingest knowledge item",
         "description": "Re-runs the ingestion pipeline for an existing knowledge item",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2460,7 +2460,7 @@
         "summary": "List agent's knowledge items",
         "description": "Lists all knowledge items attached to a specific agent",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2511,7 +2511,7 @@
         "summary": "Attach knowledge item to agent",
         "description": "Attaches an existing knowledge item to an agent",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2588,7 +2588,7 @@
         "summary": "Detach knowledge item from agent",
         "description": "Removes a knowledge item from an agent",
         "tags": [
-          "subpackage_agentKnowledgeBase"
+          "agentKnowledgeBase"
         ],
         "parameters": [
           {
@@ -2666,7 +2666,7 @@
         "summary": "Upload media securely",
         "description": "Upload a media file and receive a short-lived token that can be passed to\ndownstream endpoints (such as `/detect` and `/intelligence`) in place of a\npublic URL. The returned token is a JWT that expires 1 hour after issuance.\n\nKeeping uploads private avoids exposing source media on the open internet and\nmeans you do not need to host files yourself for jobs that only need the API\nto read them once.\n",
         "tags": [
-          "subpackage_secureUploads"
+          "secureUploads"
         ],
         "parameters": [
           {
@@ -2743,7 +2743,7 @@
         "summary": "List all detects",
         "description": "Retrieve a paginated list of all detect objects for the authenticated user's team",
         "tags": [
-          "subpackage_deepfakeDetection"
+          "deepfakeDetection"
         ],
         "parameters": [
           {
@@ -2793,7 +2793,7 @@
         "summary": "Create deepfake detection",
         "description": "Analyze audio, image, and video for deepfake detection.\n\nSupply media via one of three intake methods:\n\n- **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.\n- **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.\n- **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request.\n",
         "tags": [
-          "subpackage_deepfakeDetection"
+          "deepfakeDetection"
         ],
         "parameters": [
           {
@@ -2912,7 +2912,7 @@
         "summary": "Get deepfake detection result",
         "description": "Get deepfake detection result by UUID",
         "tags": [
-          "subpackage_deepfakeDetection"
+          "deepfakeDetection"
         ],
         "parameters": [
           {
@@ -2969,7 +2969,7 @@
         "summary": "Create a batch deepfake detection job",
         "description": "Submit up to 50 files in a single request and process them as a single logical\ngroup. Returns HTTP 202 with a batch UUID; each file is analyzed in the\nbackground and individual results are available via `GET /detect/{uuid}` for\neach entry in `detect_uuids`.\n\nTwo intake methods:\n\n- **Multiple media files** — repeated `files[]` form fields.\n- **Single zip archive** — a single `file` form field whose value is a `.zip`\n  containing the media files. Non-media entries are skipped.\n\nProvide one of `files[]` or `file=<...>.zip` per request. Synchronous mode\n(`Prefer: wait`) is not supported and returns 400 if sent.\n\nConstraints:\n\n- Maximum 50 files per batch.\n- Maximum 500 MB total upload size across all files.\n- Allowed file types match `POST /detect`'s direct-upload allowlist.\n- All-or-nothing billing: if the team's wallet cannot cover the projected cost\n  for every file, the request is rejected with 402 and no detects are created.\n",
         "tags": [
-          "subpackage_deepfakeDetection"
+          "deepfakeDetection"
         ],
         "parameters": [
           {
@@ -3114,7 +3114,7 @@
         "summary": "Get batch status",
         "description": "Retrieve the latest aggregate status for a batch. The response shape mirrors\nthe create response — `status`, `completed_count`, and `failed_count` update\nas child detects progress. Use the `detect_uuids` array to fetch per-file\nresults via `GET /detect/{uuid}`.\n",
         "tags": [
-          "subpackage_deepfakeDetection"
+          "deepfakeDetection"
         ],
         "parameters": [
           {
@@ -3171,7 +3171,7 @@
         "summary": "Run intelligence",
         "description": "Analyze audio, image, or video for comprehensive insights. Optionally reference an existing detect to associate.",
         "tags": [
-          "subpackage_intelligence"
+          "intelligence"
         ],
         "parameters": [
           {
@@ -3243,7 +3243,7 @@
         "summary": "List intelligences",
         "description": "Retrieve a paginated list of all intelligence reports for the authenticated user's team",
         "tags": [
-          "subpackage_intelligence"
+          "intelligence"
         ],
         "parameters": [
           {
@@ -3300,7 +3300,7 @@
         "summary": "Get intelligence",
         "description": "Retrieve a single intelligence report by its UUID",
         "tags": [
-          "subpackage_intelligence"
+          "intelligence"
         ],
         "parameters": [
           {
@@ -3357,7 +3357,7 @@
         "summary": "Ask a question about a detection",
         "description": "Submit a natural-language question about a completed detection report. Returns 202 Accepted while the answer is generated in the background.",
         "tags": [
-          "subpackage_detectIntelligence"
+          "detectIntelligence"
         ],
         "parameters": [
           {
@@ -3452,7 +3452,7 @@
         "summary": "Get answer to a detection question",
         "description": "Retrieve the status and answer for a previously submitted question. Poll until status is completed or failed.",
         "tags": [
-          "subpackage_detectIntelligence"
+          "detectIntelligence"
         ],
         "parameters": [
           {
@@ -3518,7 +3518,7 @@
         "summary": "List audio source tracings",
         "description": "Retrieve a paginated list of all source tracing reports for the authenticated user's team",
         "tags": [
-          "subpackage_audioSourceTracing"
+          "audioSourceTracing"
         ],
         "parameters": [
           {
@@ -3575,7 +3575,7 @@
         "summary": "Get audio source tracing",
         "description": "Retrieve a single source tracing report by its UUID",
         "tags": [
-          "subpackage_audioSourceTracing"
+          "audioSourceTracing"
         ],
         "parameters": [
           {
@@ -3632,7 +3632,7 @@
         "summary": "List identities",
         "description": "List all speaker identities",
         "tags": [
-          "subpackage_identity"
+          "identity"
         ],
         "parameters": [
           {
@@ -3663,7 +3663,7 @@
         "summary": "Create identity",
         "description": "Create a new speaker identity",
         "tags": [
-          "subpackage_identity"
+          "identity"
         ],
         "parameters": [
           {
@@ -3722,7 +3722,7 @@
         "summary": "Search identities",
         "description": "Search for matching speaker identities",
         "tags": [
-          "subpackage_identity"
+          "identity"
         ],
         "parameters": [
           {
@@ -3778,7 +3778,7 @@
         "summary": "Apply watermark",
         "description": "Apply a watermark to an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.",
         "tags": [
-          "subpackage_watermark"
+          "watermark"
         ],
         "parameters": [
           {
@@ -3855,7 +3855,7 @@
         "summary": "Get watermark apply result",
         "description": "Retrieve the result of a watermark apply job.",
         "tags": [
-          "subpackage_watermark"
+          "watermark"
         ],
         "parameters": [
           {
@@ -3901,7 +3901,7 @@
         "summary": "Detect watermark",
         "description": "Detect a watermark in an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.",
         "tags": [
-          "subpackage_watermark"
+          "watermark"
         ],
         "parameters": [
           {
@@ -3972,7 +3972,7 @@
         "summary": "Get watermark detection result",
         "description": "Retrieve the result of a watermark detection.",
         "tags": [
-          "subpackage_watermark"
+          "watermark"
         ],
         "parameters": [
           {
@@ -4018,7 +4018,7 @@
         "summary": "List voices",
         "description": "Retrieve voice metadata",
         "tags": [
-          "subpackage_voices"
+          "voices"
         ],
         "parameters": [
           {
@@ -4076,7 +4076,7 @@
         "summary": "Create voice",
         "description": "Create a new voice",
         "tags": [
-          "subpackage_voices"
+          "voices"
         ],
         "parameters": [
           {
@@ -4146,7 +4146,7 @@
         "summary": "Get voice",
         "description": "Get voice details",
         "tags": [
-          "subpackage_voices"
+          "voices"
         ],
         "parameters": [
           {
@@ -4185,7 +4185,7 @@
         "summary": "Delete voice",
         "description": "Delete a voice",
         "tags": [
-          "subpackage_voices"
+          "voices"
         ],
         "parameters": [
           {
@@ -4231,7 +4231,7 @@
         "summary": "Build voice",
         "description": "Start voice training",
         "tags": [
-          "subpackage_voices"
+          "voices"
         ],
         "parameters": [
           {
@@ -4292,7 +4292,7 @@
         "summary": "Generate voice candidates",
         "description": "Generate three voice candidates from a text prompt",
         "tags": [
-          "subpackage_voiceDesign"
+          "voiceDesign"
         ],
         "parameters": [
           {
@@ -4348,7 +4348,7 @@
         "summary": "Create voice from candidate",
         "description": "Create a voice from a voice design candidate",
         "tags": [
-          "subpackage_voiceDesign"
+          "voiceDesign"
         ],
         "parameters": [
           {
@@ -4411,7 +4411,7 @@
         "summary": "List recordings",
         "description": "List all recordings for a voice",
         "tags": [
-          "subpackage_recordings"
+          "recordings"
         ],
         "parameters": [
           {
@@ -4468,7 +4468,7 @@
         "summary": "Create recording",
         "description": "Upload a new recording for voice training",
         "tags": [
-          "subpackage_recordings"
+          "recordings"
         ],
         "parameters": [
           {
@@ -4557,7 +4557,7 @@
         "summary": "Get recording",
         "description": "Get recording details",
         "tags": [
-          "subpackage_recordings"
+          "recordings"
         ],
         "parameters": [
           {
@@ -4604,7 +4604,7 @@
         "summary": "Delete recording",
         "description": "Delete a recording",
         "tags": [
-          "subpackage_recordings"
+          "recordings"
         ],
         "parameters": [
           {
@@ -4651,7 +4651,7 @@
         "summary": "Update recording",
         "description": "Update a recording",
         "tags": [
-          "subpackage_recordings"
+          "recordings"
         ],
         "parameters": [
           {
@@ -4728,7 +4728,7 @@
         "summary": "List term substitutions",
         "description": "List all term substitutions",
         "tags": [
-          "subpackage_termSubstitutions"
+          "termSubstitutions"
         ],
         "parameters": [
           {
@@ -4777,7 +4777,7 @@
         "summary": "Create term substitution",
         "description": "Create a new pronunciation substitution",
         "tags": [
-          "subpackage_termSubstitutions"
+          "termSubstitutions"
         ],
         "parameters": [
           {
@@ -4838,7 +4838,7 @@
         "summary": "Get term substitution",
         "description": "Get term substitution details",
         "tags": [
-          "subpackage_termSubstitutions"
+          "termSubstitutions"
         ],
         "parameters": [
           {
@@ -4877,7 +4877,7 @@
         "summary": "Delete term substitution",
         "description": "Delete a term substitution",
         "tags": [
-          "subpackage_termSubstitutions"
+          "termSubstitutions"
         ],
         "parameters": [
           {
@@ -4923,7 +4923,7 @@
         "summary": "List custom pronunciations",
         "description": "Retrieve all custom pronunciations for your team, with optional filters.",
         "tags": [
-          "subpackage_customPronunciations"
+          "customPronunciations"
         ],
         "parameters": [
           {
@@ -4990,7 +4990,7 @@
         "summary": "Create custom pronunciation",
         "description": "Upload a single pronunciation with a reference audio file.",
         "tags": [
-          "subpackage_customPronunciations"
+          "customPronunciations"
         ],
         "parameters": [
           {
@@ -5062,7 +5062,7 @@
         "summary": "Bulk create pronunciations from ZIP",
         "description": "Upload multiple pronunciations at once. Each audio file in the ZIP becomes a pronunciation — the filename (without extension) is used as the word.",
         "tags": [
-          "subpackage_customPronunciations"
+          "customPronunciations"
         ],
         "parameters": [
           {
@@ -5119,7 +5119,7 @@
         "summary": "Get custom pronunciation",
         "description": "Retrieve a single custom pronunciation by UUID",
         "tags": [
-          "subpackage_customPronunciations"
+          "customPronunciations"
         ],
         "parameters": [
           {
@@ -5169,7 +5169,7 @@
         "summary": "Delete custom pronunciation",
         "description": "Permanently remove a custom pronunciation. Takes effect immediately.",
         "tags": [
-          "subpackage_customPronunciations"
+          "customPronunciations"
         ],
         "parameters": [
           {
@@ -5209,7 +5209,7 @@
         "summary": "Toggle pronunciation active status",
         "description": "Enable or disable a pronunciation without deleting it. Inactive pronunciations are not used during synthesis.",
         "tags": [
-          "subpackage_customPronunciations"
+          "customPronunciations"
         ],
         "parameters": [
           {
@@ -5274,7 +5274,7 @@
         "summary": "List voice settings presets",
         "description": "List all voice settings presets",
         "tags": [
-          "subpackage_voiceSettingsPresets"
+          "voiceSettingsPresets"
         ],
         "parameters": [
           {
@@ -5305,7 +5305,7 @@
         "summary": "Create voice settings preset",
         "description": "Create a new voice settings preset (max 5 per user)",
         "tags": [
-          "subpackage_voiceSettingsPresets"
+          "voiceSettingsPresets"
         ],
         "parameters": [
           {
@@ -5395,7 +5395,7 @@
         "summary": "Get voice settings preset",
         "description": "Get preset details",
         "tags": [
-          "subpackage_voiceSettingsPresets"
+          "voiceSettingsPresets"
         ],
         "parameters": [
           {
@@ -5434,7 +5434,7 @@
         "summary": "Delete voice settings preset",
         "description": "Delete a preset",
         "tags": [
-          "subpackage_voiceSettingsPresets"
+          "voiceSettingsPresets"
         ],
         "parameters": [
           {
@@ -5473,7 +5473,7 @@
         "summary": "Update voice settings preset",
         "description": "Update a preset",
         "tags": [
-          "subpackage_voiceSettingsPresets"
+          "voiceSettingsPresets"
         ],
         "parameters": [
           {
@@ -5555,7 +5555,7 @@
         "summary": "List projects",
         "description": "List all projects",
         "tags": [
-          "subpackage_projects"
+          "projects"
         ],
         "parameters": [
           {
@@ -5604,7 +5604,7 @@
         "summary": "Create project",
         "description": "Create a new project",
         "tags": [
-          "subpackage_projects"
+          "projects"
         ],
         "parameters": [
           {
@@ -5671,7 +5671,7 @@
         "summary": "Get project",
         "description": "Get project details",
         "tags": [
-          "subpackage_projects"
+          "projects"
         ],
         "parameters": [
           {
@@ -5710,7 +5710,7 @@
         "summary": "Update project",
         "description": "Update a project",
         "tags": [
-          "subpackage_projects"
+          "projects"
         ],
         "parameters": [
           {
@@ -5772,7 +5772,7 @@
         "summary": "Delete project",
         "description": "Delete a project",
         "tags": [
-          "subpackage_projects"
+          "projects"
         ],
         "parameters": [
           {
@@ -5818,7 +5818,7 @@
         "summary": "List clips",
         "description": "List clips in a project",
         "tags": [
-          "subpackage_clips"
+          "clips"
         ],
         "parameters": [
           {
@@ -5882,7 +5882,7 @@
         "summary": "Get clip",
         "description": "Get clip details",
         "tags": [
-          "subpackage_clips"
+          "clips"
         ],
         "parameters": [
           {
@@ -5929,7 +5929,7 @@
         "summary": "Delete clip",
         "description": "Delete a clip",
         "tags": [
-          "subpackage_clips"
+          "clips"
         ],
         "parameters": [
           {
@@ -5976,7 +5976,7 @@
         "summary": "Update clip",
         "description": "Update a clip",
         "tags": [
-          "subpackage_clips"
+          "clips"
         ],
         "parameters": [
           {
@@ -6050,7 +6050,7 @@
         "summary": "Get account",
         "description": "Get account information",
         "tags": [
-          "subpackage_account"
+          "account"
         ],
         "parameters": [
           {
@@ -6088,7 +6088,7 @@
         "summary": "Get teams",
         "description": "Get team information",
         "tags": [
-          "subpackage_account"
+          "account"
         ],
         "parameters": [
           {
@@ -6126,7 +6126,7 @@
         "summary": "Get team",
         "description": "Get specific team information",
         "tags": [
-          "subpackage_account"
+          "account"
         ],
         "parameters": [
           {
@@ -6173,7 +6173,7 @@
         "summary": "Get billing usage",
         "description": "Get billing and usage information",
         "tags": [
-          "subpackage_account"
+          "account"
         ],
         "parameters": [
           {
@@ -6211,7 +6211,7 @@
         "summary": "List duet voices",
         "description": "Returns default and custom duet voices",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {
@@ -6242,7 +6242,7 @@
         "summary": "Create custom duet voice",
         "description": "Create a custom voice for duet generation",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {
@@ -6308,7 +6308,7 @@
         "summary": "Update duet voice",
         "description": "Update a custom duet voice (default voices cannot be modified)",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {
@@ -6364,7 +6364,7 @@
         "summary": "Delete duet voice",
         "description": "Delete a custom duet voice (default voices cannot be deleted)",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {
@@ -6410,7 +6410,7 @@
         "summary": "List duet voice pairs",
         "description": "List all voice pairs for duet generation",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {
@@ -6441,7 +6441,7 @@
         "summary": "Create duet voice pair",
         "description": "Create a voice pair for duet generation",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {
@@ -6506,7 +6506,7 @@
         "summary": "Generate duet",
         "description": "Generate conversational audio with two speakers",
         "tags": [
-          "subpackage_duets"
+          "duets"
         ],
         "parameters": [
           {

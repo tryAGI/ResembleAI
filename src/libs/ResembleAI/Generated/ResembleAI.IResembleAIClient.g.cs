@@ -68,127 +68,127 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAccountClient SubpackageAccount { get; }
+        public AccountClient Account { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentKnowledgeBaseClient SubpackageAgentKnowledgeBase { get; }
+        public AgentKnowledgeBaseClient AgentKnowledgeBase { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentPhoneNumbersClient SubpackageAgentPhoneNumbers { get; }
+        public AgentPhoneNumbersClient AgentPhoneNumbers { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentToolsClient SubpackageAgentTools { get; }
+        public AgentToolsClient AgentTools { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentWebhooksClient SubpackageAgentWebhooks { get; }
+        public AgentWebhooksClient AgentWebhooks { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAgentsClient SubpackageAgents { get; }
+        public AgentsClient Agents { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAudioEnhancementClient SubpackageAudioEnhancement { get; }
+        public AudioEnhancementClient AudioEnhancement { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAudioSourceTracingClient SubpackageAudioSourceTracing { get; }
+        public AudioSourceTracingClient AudioSourceTracing { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageClipsClient SubpackageClips { get; }
+        public ClipsClient Clips { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageCustomPronunciationsClient SubpackageCustomPronunciations { get; }
+        public CustomPronunciationsClient CustomPronunciations { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDeepfakeDetectionClient SubpackageDeepfakeDetection { get; }
+        public DeepfakeDetectionClient DeepfakeDetection { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDetectIntelligenceClient SubpackageDetectIntelligence { get; }
+        public DetectIntelligenceClient DetectIntelligence { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDuetsClient SubpackageDuets { get; }
+        public DuetsClient Duets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIdentityClient SubpackageIdentity { get; }
+        public IdentityClient Identity { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIntelligenceClient SubpackageIntelligence { get; }
+        public IntelligenceClient Intelligence { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageProjectsClient SubpackageProjects { get; }
+        public ProjectsClient Projects { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageRecordingsClient SubpackageRecordings { get; }
+        public RecordingsClient Recordings { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSecureUploadsClient SubpackageSecureUploads { get; }
+        public SecureUploadsClient SecureUploads { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSpeechToTextClient SubpackageSpeechToText { get; }
+        public SpeechToTextClient SpeechToText { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTermSubstitutionsClient SubpackageTermSubstitutions { get; }
+        public TermSubstitutionsClient TermSubstitutions { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTextToSpeechClient SubpackageTextToSpeech { get; }
+        public TextToSpeechClient TextToSpeech { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoiceDesignClient SubpackageVoiceDesign { get; }
+        public VoiceDesignClient VoiceDesign { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoiceSettingsPresetsClient SubpackageVoiceSettingsPresets { get; }
+        public VoiceSettingsPresetsClient VoiceSettingsPresets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoicesClient SubpackageVoices { get; }
+        public VoicesClient Voices { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageWatermarkClient SubpackageWatermark { get; }
+        public WatermarkClient Watermark { get; }
 
     }
 }
