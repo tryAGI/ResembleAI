@@ -448,9 +448,6 @@ namespace ResembleAI
         /// Create a new voice
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="voiceType">
-        /// Default Value: professional
-        /// </param>
         /// <param name="datasetUrl"></param>
         /// <param name="callbackUri"></param>
         /// <param name="language">
@@ -461,7 +458,6 @@ namespace ResembleAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.VoicesCreateVoiceResponse200> CreateVoiceAsync(
             string name,
-            global::ResembleAI.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType? voiceType = default,
             string? datasetUrl = default,
             string? callbackUri = default,
             string? language = default,
@@ -471,7 +467,6 @@ namespace ResembleAI
             var __request = new global::ResembleAI.CreateVoiceRequest
             {
                 Name = name,
-                VoiceType = voiceType,
                 DatasetUrl = datasetUrl,
                 CallbackUri = callbackUri,
                 Language = language,
