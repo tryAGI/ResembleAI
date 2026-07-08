@@ -237,10 +237,6 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceTypeNullableJsonConverter),
-
             typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter),
@@ -572,7 +568,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsApiSupport))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesListVoicesResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType), TypeInfoPropertyName = "VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesPostResponsesContentApplicationJsonSchemaItemComponentStatusTextToSpeech))]

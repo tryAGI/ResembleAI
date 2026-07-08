@@ -4110,9 +4110,6 @@
                   "name": {
                     "type": "string"
                   },
-                  "voice_type": {
-                    "$ref": "#/components/schemas/VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType"
-                  },
                   "dataset_url": {
                     "type": "string",
                     "format": "uri"
@@ -10559,15 +10556,6 @@
           }
         },
         "title": "Voices_listVoices_Response_200"
-      },
-      "VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType": {
-        "type": "string",
-        "enum": [
-          "rapid",
-          "professional"
-        ],
-        "default": "professional",
-        "title": "VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType"
       },
       "VoicesPostResponsesContentApplicationJsonSchemaItem": {
         "type": "object",

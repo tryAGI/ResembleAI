@@ -16,13 +16,6 @@ namespace ResembleAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// Default Value: professional
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceTypeJsonConverter))]
-        public global::ResembleAI.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType? VoiceType { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataset_url")]
@@ -50,9 +43,6 @@ namespace ResembleAI
         /// Initializes a new instance of the <see cref="CreateVoiceRequest" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="voiceType">
-        /// Default Value: professional
-        /// </param>
         /// <param name="datasetUrl"></param>
         /// <param name="callbackUri"></param>
         /// <param name="language">
@@ -63,13 +53,11 @@ namespace ResembleAI
 #endif
         public CreateVoiceRequest(
             string name,
-            global::ResembleAI.VoicesPostRequestBodyContentApplicationJsonSchemaVoiceType? voiceType,
             string? datasetUrl,
             string? callbackUri,
             string? language)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.VoiceType = voiceType;
             this.DatasetUrl = datasetUrl;
             this.CallbackUri = callbackUri;
             this.Language = language;
