@@ -122,6 +122,12 @@ namespace ResembleAI
         /// <param name="useLlm">
         /// Use LLM-assisted video analysis.
         /// </param>
+        /// <param name="faceOnly">
+        /// Focus detection on faces for video children by masking non-face regions. Audio and<br/>
+        /// image children use an effective value of `false`. Retrieve each child's effective value<br/>
+        /// with `GET /detect/{uuid}`; the aggregate batch response does not include this field.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="zeroRetentionMode">
         /// Enable Zero Retention Mode for every file in the batch.<br/>
         /// Default Value: false
@@ -143,6 +149,7 @@ namespace ResembleAI
             double? endRegion = default,
             double? maxVideoSecs = default,
             bool? useLlm = default,
+            bool? faceOnly = default,
             bool? zeroRetentionMode = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
