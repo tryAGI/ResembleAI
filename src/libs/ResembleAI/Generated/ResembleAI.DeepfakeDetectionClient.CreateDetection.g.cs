@@ -249,20 +249,20 @@ namespace ResembleAI
                                     name: "\"max_video_secs\"");
 
                             }
-                            if (request.ModelTypes != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.ModelTypes).HasValue ? (request.ModelTypes).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"model_types\"");
-
-                            }
                             if (request.Modality != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.Modality).HasValue ? (request.Modality).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"modality\"");
+
+                            }
+                            if (request.FaceOnly != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.FaceOnly, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"face_only\"");
 
                             }
                             if (request.Intelligence != default)
@@ -628,14 +628,17 @@ namespace ResembleAI
         /// <param name="maxVideoSecs">
         /// Cap processed duration
         /// </param>
-        /// <param name="modelTypes">
-        /// Use talking_head for face-swaps
-        /// </param>
         /// <param name="modality">
         /// Video only. Selects which detection components run for a video file:<br/>
         /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
         /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
         /// Default Value: all
+        /// </param>
+        /// <param name="faceOnly">
+        /// Focus visual video detection on faces by masking non-face regions. Effective only for<br/>
+        /// video inputs with `modality=all` or `modality=video`. Audio, image, and `modality=audio`<br/>
+        /// video requests are accepted but use an effective value of `false`.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
@@ -669,8 +672,8 @@ namespace ResembleAI
             double? startRegion = default,
             double? endRegion = default,
             double? maxVideoSecs = default,
-            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
+            bool? faceOnly = default,
             bool? intelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
@@ -689,8 +692,8 @@ namespace ResembleAI
                 StartRegion = startRegion,
                 EndRegion = endRegion,
                 MaxVideoSecs = maxVideoSecs,
-                ModelTypes = modelTypes,
                 Modality = modality,
+                FaceOnly = faceOnly,
                 Intelligence = intelligence,
                 AudioSourceTracing = audioSourceTracing,
                 UseReverseSearch = useReverseSearch,
@@ -738,14 +741,17 @@ namespace ResembleAI
         /// <param name="maxVideoSecs">
         /// Cap processed duration
         /// </param>
-        /// <param name="modelTypes">
-        /// Use talking_head for face-swaps
-        /// </param>
         /// <param name="modality">
         /// Video only. Selects which detection components run for a video file:<br/>
         /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
         /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
         /// Default Value: all
+        /// </param>
+        /// <param name="faceOnly">
+        /// Focus visual video detection on faces by masking non-face regions. Effective only for<br/>
+        /// video inputs with `modality=all` or `modality=video`. Audio, image, and `modality=audio`<br/>
+        /// video requests are accepted but use an effective value of `false`.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
@@ -779,8 +785,8 @@ namespace ResembleAI
             double? startRegion = default,
             double? endRegion = default,
             double? maxVideoSecs = default,
-            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
+            bool? faceOnly = default,
             bool? intelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
@@ -801,8 +807,8 @@ namespace ResembleAI
                 StartRegion = startRegion,
                 EndRegion = endRegion,
                 MaxVideoSecs = maxVideoSecs,
-                ModelTypes = modelTypes,
                 Modality = modality,
+                FaceOnly = faceOnly,
                 Intelligence = intelligence,
                 AudioSourceTracing = audioSourceTracing,
                 UseReverseSearch = useReverseSearch,
@@ -960,20 +966,20 @@ namespace ResembleAI
                                     name: "\"max_video_secs\"");
 
                             }
-                            if (request.ModelTypes != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.ModelTypes).HasValue ? (request.ModelTypes).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"model_types\"");
-
-                            }
                             if (request.Modality != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.Modality).HasValue ? (request.Modality).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"modality\"");
+
+                            }
+                            if (request.FaceOnly != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.FaceOnly, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"face_only\"");
 
                             }
                             if (request.Intelligence != default)
@@ -1331,14 +1337,17 @@ namespace ResembleAI
         /// <param name="maxVideoSecs">
         /// Cap processed duration
         /// </param>
-        /// <param name="modelTypes">
-        /// Use talking_head for face-swaps
-        /// </param>
         /// <param name="modality">
         /// Video only. Selects which detection components run for a video file:<br/>
         /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
         /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
         /// Default Value: all
+        /// </param>
+        /// <param name="faceOnly">
+        /// Focus visual video detection on faces by masking non-face regions. Effective only for<br/>
+        /// video inputs with `modality=all` or `modality=video`. Audio, image, and `modality=audio`<br/>
+        /// video requests are accepted but use an effective value of `false`.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
@@ -1372,8 +1381,8 @@ namespace ResembleAI
             double? startRegion = default,
             double? endRegion = default,
             double? maxVideoSecs = default,
-            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes = default,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
+            bool? faceOnly = default,
             bool? intelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
@@ -1394,8 +1403,8 @@ namespace ResembleAI
                 StartRegion = startRegion,
                 EndRegion = endRegion,
                 MaxVideoSecs = maxVideoSecs,
-                ModelTypes = modelTypes,
                 Modality = modality,
+                FaceOnly = faceOnly,
                 Intelligence = intelligence,
                 AudioSourceTracing = audioSourceTracing,
                 UseReverseSearch = useReverseSearch,
@@ -1553,20 +1562,20 @@ namespace ResembleAI
                                     name: "\"max_video_secs\"");
 
                             }
-                            if (request.ModelTypes != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.ModelTypes).HasValue ? (request.ModelTypes).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"model_types\"");
-
-                            }
                             if (request.Modality != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.Modality).HasValue ? (request.Modality).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"modality\"");
+
+                            }
+                            if (request.FaceOnly != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.FaceOnly, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"face_only\"");
 
                             }
                             if (request.Intelligence != default)

@@ -60,13 +60,6 @@ namespace ResembleAI
         public double? MaxVideoSecs { get; set; }
 
         /// <summary>
-        /// Use talking_head for face-swaps
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model_types")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypesJsonConverter))]
-        public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? ModelTypes { get; set; }
-
-        /// <summary>
         /// Video only. Selects which detection components run for a video file:<br/>
         /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
         /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
@@ -75,6 +68,15 @@ namespace ResembleAI
         [global::System.Text.Json.Serialization.JsonPropertyName("modality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter))]
         public global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? Modality { get; set; }
+
+        /// <summary>
+        /// Focus visual video detection on faces by masking non-face regions. Effective only for<br/>
+        /// video inputs with `modality=all` or `modality=video`. Audio, image, and `modality=audio`<br/>
+        /// video requests are accepted but use an effective value of `false`.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("face_only")]
+        public bool? FaceOnly { get; set; }
 
         /// <summary>
         /// Run multimodal intelligence analysis on the media<br/>
@@ -145,14 +147,17 @@ namespace ResembleAI
         /// <param name="maxVideoSecs">
         /// Cap processed duration
         /// </param>
-        /// <param name="modelTypes">
-        /// Use talking_head for face-swaps
-        /// </param>
         /// <param name="modality">
         /// Video only. Selects which detection components run for a video file:<br/>
         /// `audio` (audio track only), `video` (visual frames only), or `all` (both — the default).<br/>
         /// Ignored for audio and image inputs. Invalid values are rejected with HTTP 400.<br/>
         /// Default Value: all
+        /// </param>
+        /// <param name="faceOnly">
+        /// Focus visual video detection on faces by masking non-face regions. Effective only for<br/>
+        /// video inputs with `modality=all` or `modality=video`. Audio, image, and `modality=audio`<br/>
+        /// video requests are accepted but use an effective value of `false`.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
@@ -186,8 +191,8 @@ namespace ResembleAI
             double? startRegion,
             double? endRegion,
             double? maxVideoSecs,
-            global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModelTypes? modelTypes,
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality,
+            bool? faceOnly,
             bool? intelligence,
             bool? audioSourceTracing,
             bool? useReverseSearch,
@@ -202,8 +207,8 @@ namespace ResembleAI
             this.StartRegion = startRegion;
             this.EndRegion = endRegion;
             this.MaxVideoSecs = maxVideoSecs;
-            this.ModelTypes = modelTypes;
             this.Modality = modality;
+            this.FaceOnly = faceOnly;
             this.Intelligence = intelligence;
             this.AudioSourceTracing = audioSourceTracing;
             this.UseReverseSearch = useReverseSearch;

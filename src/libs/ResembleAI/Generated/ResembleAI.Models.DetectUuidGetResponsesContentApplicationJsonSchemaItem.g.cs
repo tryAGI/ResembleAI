@@ -70,6 +70,13 @@ namespace ResembleAI
         public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? Modality { get; set; }
 
         /// <summary>
+        /// Effective face-only setting for this detect. `true` only for video inputs that<br/>
+        /// include visual analysis; `false` for audio, image, and audio-only video detects.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("face_only")]
+        public bool? FaceOnly { get; set; }
+
+        /// <summary>
         /// URL to the media file. Null when Zero Retention Mode is enabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
@@ -149,6 +156,10 @@ namespace ResembleAI
         /// (the default). For a single-modality video detect, the skipped component's metrics<br/>
         /// are absent (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped).
         /// </param>
+        /// <param name="faceOnly">
+        /// Effective face-only setting for this detect. `true` only for video inputs that<br/>
+        /// include visual analysis; `false` for audio, image, and audio-only video detects.
+        /// </param>
         /// <param name="url">
         /// URL to the media file. Null when Zero Retention Mode is enabled.
         /// </param>
@@ -180,6 +191,7 @@ namespace ResembleAI
             global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? audioSourceTracing,
             global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence,
             global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? modality,
+            bool? faceOnly,
             string? url,
             string? audioUrl,
             string? filename,
@@ -198,6 +210,7 @@ namespace ResembleAI
             this.AudioSourceTracing = audioSourceTracing;
             this.Intelligence = intelligence;
             this.Modality = modality;
+            this.FaceOnly = faceOnly;
             this.Url = url;
             this.AudioUrl = audioUrl;
             this.Filename = filename;

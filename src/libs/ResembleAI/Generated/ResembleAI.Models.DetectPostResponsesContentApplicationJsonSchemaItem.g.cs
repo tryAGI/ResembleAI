@@ -61,6 +61,13 @@ namespace ResembleAI
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? Modality { get; set; }
 
         /// <summary>
+        /// Effective face-only setting. `true` only for video inputs that include visual<br/>
+        /// analysis; `false` for audio, image, and audio-only video detects.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("face_only")]
+        public bool? FaceOnly { get; set; }
+
+        /// <summary>
         /// Intelligence results when requested
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
@@ -99,6 +106,10 @@ namespace ResembleAI
         /// (`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the<br/>
         /// detect still reaches `completed` once the requested modality(ies) finish.
         /// </param>
+        /// <param name="faceOnly">
+        /// Effective face-only setting. `true` only for video inputs that include visual<br/>
+        /// analysis; `false` for audio, image, and audio-only video detects.
+        /// </param>
         /// <param name="intelligence">
         /// Intelligence results when requested
         /// </param>
@@ -114,6 +125,7 @@ namespace ResembleAI
             string? audioUrl,
             string? filename,
             global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? modality,
+            bool? faceOnly,
             global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence)
         {
             this.Uuid = uuid;
@@ -124,6 +136,7 @@ namespace ResembleAI
             this.AudioUrl = audioUrl;
             this.Filename = filename;
             this.Modality = modality;
+            this.FaceOnly = faceOnly;
             this.Intelligence = intelligence;
         }
 
