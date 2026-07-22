@@ -29,12 +29,6 @@ namespace ResembleAI
         public string? ProjectUuid { get; set; }
 
         /// <summary>
-        /// Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
-
-        /// <summary>
         /// Audio precision<br/>
         /// Default Value: PCM_32
         /// </summary>
@@ -81,9 +75,6 @@ namespace ResembleAI
         /// <param name="projectUuid">
         /// Optional project UUID to store the clip
         /// </param>
-        /// <param name="model">
-        /// Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices.
-        /// </param>
         /// <param name="precision">
         /// Audio precision<br/>
         /// Default Value: PCM_32
@@ -106,7 +97,6 @@ namespace ResembleAI
             string voiceUuid,
             string data,
             string? projectUuid,
-            string? model,
             global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision? precision,
             global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate? sampleRate,
             bool? useHd,
@@ -115,7 +105,6 @@ namespace ResembleAI
             this.VoiceUuid = voiceUuid ?? throw new global::System.ArgumentNullException(nameof(voiceUuid));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.ProjectUuid = projectUuid;
-            this.Model = model;
             this.Precision = precision;
             this.SampleRate = sampleRate;
             this.UseHd = useHd;

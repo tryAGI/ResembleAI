@@ -6,7 +6,7 @@ namespace ResembleAI
     public partial class IdentityClient
     {
 
-        private static readonly global::ResembleAI.AutoSDKServer[] s_ListIdentitiesServers = new global::ResembleAI.AutoSDKServer[]
+        private static readonly global::ResembleAI.AutoSDKServer[] s_DeleteIdentityServers = new global::ResembleAI.AutoSDKServer[]
         {            new global::ResembleAI.AutoSDKServer(
                 id: "https-app-resemble-ai-api-v2",
                 name: "app.resemble.ai api v2",
@@ -15,7 +15,7 @@ namespace ResembleAI
         };
 
 
-        private static readonly global::ResembleAI.EndPointSecurityRequirement s_ListIdentitiesSecurityRequirement0 =
+        private static readonly global::ResembleAI.EndPointSecurityRequirement s_DeleteIdentitySecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::ResembleAI.EndPointAuthorizationRequirement[]
@@ -29,55 +29,41 @@ namespace ResembleAI
                     },
                 },
             };
-        private static readonly global::ResembleAI.EndPointSecurityRequirement[] s_ListIdentitiesSecurityRequirements =
+        private static readonly global::ResembleAI.EndPointSecurityRequirement[] s_DeleteIdentitySecurityRequirements =
             new global::ResembleAI.EndPointSecurityRequirement[]
-            {                s_ListIdentitiesSecurityRequirement0,
+            {                s_DeleteIdentitySecurityRequirement0,
             };
-        partial void PrepareListIdentitiesArguments(
+        partial void PrepareDeleteIdentityArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int? page,
-            ref int? pageSize,
-            ref string? search);
-        partial void PrepareListIdentitiesRequest(
+            ref string uuid);
+        partial void PrepareDeleteIdentityRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int? page,
-            int? pageSize,
-            string? search);
-        partial void ProcessListIdentitiesResponse(
+            string uuid);
+        partial void ProcessDeleteIdentityResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessListIdentitiesResponseContent(
+        partial void ProcessDeleteIdentityResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// List identities<br/>
-        /// List the team's identities, newest first
+        /// Delete identity<br/>
+        /// Delete an identity and withdraw its enrollment from matching
         /// </summary>
-        /// <param name="page">
-        /// Default Value: 1
-        /// </param>
-        /// <param name="pageSize">
-        /// Default Value: 10
-        /// </param>
-        /// <param name="search"></param>
+        /// <param name="uuid"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.IdentityListIdentitiesResponse200> ListIdentitiesAsync(
-            int? page = default,
-            int? pageSize = default,
-            string? search = default,
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.IdentityDeleteIdentityResponse200> DeleteIdentityAsync(
+            string uuid,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ListIdentitiesAsResponseAsync(
-                page: page,
-                pageSize: pageSize,
-                search: search,
+            var __response = await DeleteIdentityAsResponseAsync(
+                uuid: uuid,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -85,39 +71,29 @@ namespace ResembleAI
             return __response.Body;
         }
         /// <summary>
-        /// List identities<br/>
-        /// List the team's identities, newest first
+        /// Delete identity<br/>
+        /// Delete an identity and withdraw its enrollment from matching
         /// </summary>
-        /// <param name="page">
-        /// Default Value: 1
-        /// </param>
-        /// <param name="pageSize">
-        /// Default Value: 10
-        /// </param>
-        /// <param name="search"></param>
+        /// <param name="uuid"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityListIdentitiesResponse200>> ListIdentitiesAsResponseAsync(
-            int? page = default,
-            int? pageSize = default,
-            string? search = default,
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityDeleteIdentityResponse200>> DeleteIdentityAsResponseAsync(
+            string uuid,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareListIdentitiesArguments(
+            PrepareDeleteIdentityArguments(
                 httpClient: HttpClient,
-                page: ref page,
-                pageSize: ref pageSize,
-                search: ref search);
+                uuid: ref uuid);
 
 
             var __authorizations = global::ResembleAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ListIdentitiesSecurityRequirements,
-                operationName: "ListIdentitiesAsync");
+                securityRequirements: s_DeleteIdentitySecurityRequirements,
+                operationName: "DeleteIdentityAsync");
 
             using var __timeoutCancellationTokenSource = global::ResembleAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -137,22 +113,17 @@ namespace ResembleAI
             {
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
-                                path: "/identity",
+                                path: $"/identity/{uuid}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_ListIdentitiesServers,
+                                servers: s_DeleteIdentityServers,
                                 defaultBaseUrl: "https://app.resemble.ai/api/v2"));
-                            __pathBuilder
-                                .AddOptionalParameter("page", page?.ToString())
-                                .AddOptionalParameter("page_size", pageSize?.ToString())
-                                .AddOptionalParameter("search", search)
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: global::System.Net.Http.HttpMethod.Delete,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -183,12 +154,10 @@ namespace ResembleAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareListIdentitiesRequest(
+                PrepareDeleteIdentityRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page,
-                    pageSize: pageSize,
-                    search: search);
+                    uuid: uuid!);
 
                 return __httpRequest;
             }
@@ -205,10 +174,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListIdentities",
-                                methodName: "ListIdentitiesAsync",
-                                pathTemplate: "\"/identity\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteIdentity",
+                                methodName: "DeleteIdentityAsync",
+                                pathTemplate: "$\"/identity/{uuid}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -239,10 +208,10 @@ namespace ResembleAI
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListIdentities",
-                                methodName: "ListIdentitiesAsync",
-                                pathTemplate: "\"/identity\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteIdentity",
+                                methodName: "DeleteIdentityAsync",
+                                pathTemplate: "$\"/identity/{uuid}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -280,10 +249,10 @@ namespace ResembleAI
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListIdentities",
-                                methodName: "ListIdentitiesAsync",
-                                pathTemplate: "\"/identity\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteIdentity",
+                                methodName: "DeleteIdentityAsync",
+                                pathTemplate: "$\"/identity/{uuid}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -320,7 +289,7 @@ namespace ResembleAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessListIdentitiesResponse(
+                ProcessDeleteIdentityResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -328,10 +297,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListIdentities",
-                                methodName: "ListIdentitiesAsync",
-                                pathTemplate: "\"/identity\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteIdentity",
+                                methodName: "DeleteIdentityAsync",
+                                pathTemplate: "$\"/identity/{uuid}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -350,10 +319,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ListIdentities",
-                                methodName: "ListIdentitiesAsync",
-                                pathTemplate: "\"/identity\"",
-                                httpMethod: "GET",
+                                operationId: "DeleteIdentity",
+                                methodName: "DeleteIdentityAsync",
+                                pathTemplate: "$\"/identity/{uuid}\"",
+                                httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -367,6 +336,43 @@ namespace ResembleAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The identity belongs to another team
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::ResembleAI.Error? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::ResembleAI.Error.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::ResembleAI.Error.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -380,7 +386,7 @@ namespace ResembleAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessListIdentitiesResponseContent(
+                                ProcessDeleteIdentityResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -389,9 +395,9 @@ namespace ResembleAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::ResembleAI.IdentityListIdentitiesResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::ResembleAI.IdentityDeleteIdentityResponse200.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityListIdentitiesResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityDeleteIdentityResponse200>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -421,9 +427,9 @@ namespace ResembleAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::ResembleAI.IdentityListIdentitiesResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ResembleAI.IdentityDeleteIdentityResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityListIdentitiesResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityDeleteIdentityResponse200>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

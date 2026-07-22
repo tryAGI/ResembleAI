@@ -209,6 +209,30 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
 
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter),
+
             typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter),
@@ -250,6 +274,8 @@ namespace ResembleAI
             typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkJsonConverter),
 
@@ -523,14 +549,24 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItemResults))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioSourceTracingGetAudioSourceTracingResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySummaryVisibility), TypeInfoPropertyName = "IdentitySummaryVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySummaryIdentityType), TypeInfoPropertyName = "IdentitySummaryIdentityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityListIdentitiesResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityPostResponsesContentApplicationJsonSchemaItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.IdentitySummary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityRequest0))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType), TypeInfoPropertyName = "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility), TypeInfoPropertyName = "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1Identity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityRequest1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityRequest), TypeInfoPropertyName = "IdentityCreateIdentityRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityDeleteIdentityResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality), TypeInfoPropertyName = "IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality), TypeInfoPropertyName = "IdentitySearchPostResponsesContentApplicationJsonSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchIdentitiesResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer), TypeInfoPropertyName = "WatermarkApplyPostParametersPrefer2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType), TypeInfoPropertyName = "WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics))]
@@ -690,7 +726,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.RunIntelligenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AskDetectIntelligenceQuestionRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateIdentityRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SearchIdentitiesRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.ApplyWatermarkRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectWatermarkRequest))]
@@ -741,8 +776,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentitySummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems>))]

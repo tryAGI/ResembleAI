@@ -35,11 +35,11 @@ namespace ResembleAI
             };
         partial void PrepareCreateIdentityArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::ResembleAI.CreateIdentityRequest request);
+            global::ResembleAI.IdentityCreateIdentityRequest request);
         partial void PrepareCreateIdentityRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::ResembleAI.CreateIdentityRequest request);
+            global::ResembleAI.IdentityCreateIdentityRequest request);
         partial void ProcessCreateIdentityResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace ResembleAI
 
         /// <summary>
         /// Create identity<br/>
-        /// Create a new speaker identity
+        /// Create a new identity profile. Two request forms are supported: the simple audio-only form (flat `name` + one audio source; creates a team-visible person identity and enrolls the voice immediately) and the multimodal form (a nested `identity` object with full control over type and visibility).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -59,7 +59,7 @@ namespace ResembleAI
         /// <exception cref="global::ResembleAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.IdentityCreateIdentityResponse200> CreateIdentityAsync(
 
-            global::ResembleAI.CreateIdentityRequest request,
+            global::ResembleAI.IdentityCreateIdentityRequest request,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,7 +74,7 @@ namespace ResembleAI
         }
         /// <summary>
         /// Create identity<br/>
-        /// Create a new speaker identity
+        /// Create a new identity profile. Two request forms are supported: the simple audio-only form (flat `name` + one audio source; creates a team-visible person identity and enrolls the voice immediately) and the multimodal form (a nested `identity` object with full control over type and visibility).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -82,12 +82,10 @@ namespace ResembleAI
         /// <exception cref="global::ResembleAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.IdentityCreateIdentityResponse200>> CreateIdentityAsResponseAsync(
 
-            global::ResembleAI.CreateIdentityRequest request,
+            global::ResembleAI.IdentityCreateIdentityRequest request,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateIdentityArguments(
@@ -347,6 +345,43 @@ namespace ResembleAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Validation failed or no audio source supplied
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::ResembleAI.Error? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::ResembleAI.Error.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::ResembleAI.Error.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -445,23 +480,17 @@ namespace ResembleAI
         }
         /// <summary>
         /// Create identity<br/>
-        /// Create a new speaker identity
+        /// Create a new identity profile. Two request forms are supported: the simple audio-only form (flat `name` + one audio source; creates a team-visible person identity and enrolls the voice immediately) and the multimodal form (a nested `identity` object with full control over type and visibility).
         /// </summary>
-        /// <param name="audioUrl"></param>
-        /// <param name="name"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.IdentityCreateIdentityResponse200> CreateIdentityAsync(
-            string audioUrl,
-            string? name = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::ResembleAI.CreateIdentityRequest
+            var __request = new global::ResembleAI.IdentityCreateIdentityRequest
             {
-                AudioUrl = audioUrl,
-                Name = name,
             };
 
             return await CreateIdentityAsync(

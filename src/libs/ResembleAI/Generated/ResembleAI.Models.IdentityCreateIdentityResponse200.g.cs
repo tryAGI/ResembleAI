@@ -9,16 +9,16 @@ namespace ResembleAI
     public sealed partial class IdentityCreateIdentityResponse200
     {
         /// <summary>
-        /// 
+        /// Whether the voice was enrolled for matching immediately
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// 
+        /// Identity summary returned by the list and simple-create endpoints
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        public global::ResembleAI.IdentityPostResponsesContentApplicationJsonSchemaItem? Item { get; set; }
+        public global::ResembleAI.IdentitySummary? Item { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,14 +29,18 @@ namespace ResembleAI
         /// <summary>
         /// Initializes a new instance of the <see cref="IdentityCreateIdentityResponse200" /> class.
         /// </summary>
-        /// <param name="success"></param>
-        /// <param name="item"></param>
+        /// <param name="success">
+        /// Whether the voice was enrolled for matching immediately
+        /// </param>
+        /// <param name="item">
+        /// Identity summary returned by the list and simple-create endpoints
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public IdentityCreateIdentityResponse200(
             bool? success,
-            global::ResembleAI.IdentityPostResponsesContentApplicationJsonSchemaItem? item)
+            global::ResembleAI.IdentitySummary? item)
         {
             this.Success = success;
             this.Item = item;

@@ -35,12 +35,6 @@ namespace ResembleAI
         public required string Data { get; set; }
 
         /// <summary>
-        /// Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
-
-        /// <summary>
         /// Audio precision for WAV output<br/>
         /// Default Value: PCM_32
         /// </summary>
@@ -98,9 +92,6 @@ namespace ResembleAI
         /// <param name="title">
         /// Optional title for the generated clip
         /// </param>
-        /// <param name="model">
-        /// Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices.
-        /// </param>
         /// <param name="precision">
         /// Audio precision for WAV output<br/>
         /// Default Value: PCM_32
@@ -128,7 +119,6 @@ namespace ResembleAI
             string data,
             string? projectUuid,
             string? title,
-            string? model,
             global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision? precision,
             global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat? outputFormat,
             global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate? sampleRate,
@@ -139,7 +129,6 @@ namespace ResembleAI
             this.ProjectUuid = projectUuid;
             this.Title = title;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Model = model;
             this.Precision = precision;
             this.OutputFormat = outputFormat;
             this.SampleRate = sampleRate;

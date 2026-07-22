@@ -2,7 +2,7 @@
 
 namespace ResembleAI
 {
-    public sealed partial class IdentityGetResponsesContentApplicationJsonSchemaItemsItems
+    public sealed partial class IdentitySummary
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace ResembleAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems? FromJson(
+        public static global::ResembleAI.IdentitySummary? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems),
-                jsonSerializerContext) as global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems;
+                typeof(global::ResembleAI.IdentitySummary),
+                jsonSerializerContext) as global::ResembleAI.IdentitySummary;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems? FromJson(
+        public static global::ResembleAI.IdentitySummary? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems? FromJson(
+        public static global::ResembleAI.IdentitySummary? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace ResembleAI
                     global::ResembleAI.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::ResembleAI.IdentitySummary>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace ResembleAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::ResembleAI.IdentitySummary?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems),
-                jsonSerializerContext).ConfigureAwait(false)) as global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems;
+                typeof(global::ResembleAI.IdentitySummary),
+                jsonSerializerContext).ConfigureAwait(false)) as global::ResembleAI.IdentitySummary;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::ResembleAI.IdentitySummary?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::ResembleAI.IdentitySummary?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace ResembleAI
                     global::ResembleAI.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::ResembleAI.IdentityGetResponsesContentApplicationJsonSchemaItemsItems?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::ResembleAI.IdentitySummary?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
