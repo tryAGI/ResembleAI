@@ -51,7 +51,7 @@ namespace ResembleAI
 
         /// <summary>
         /// Search identities<br/>
-        /// Search for matching speaker identities
+        /// Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -74,7 +74,7 @@ namespace ResembleAI
         }
         /// <summary>
         /// Search identities<br/>
-        /// Search for matching speaker identities
+        /// Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -347,6 +347,80 @@ namespace ResembleAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Search failed
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::ResembleAI.Error? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::ResembleAI.Error.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::ResembleAI.Error.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Missing media or unsupported modality
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::ResembleAI.Error? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::ResembleAI.Error.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::ResembleAI.Error.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -445,20 +519,37 @@ namespace ResembleAI
         }
         /// <summary>
         /// Search identities<br/>
-        /// Search for matching speaker identities
+        /// Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.
         /// </summary>
-        /// <param name="audioUrl"></param>
+        /// <param name="url">
+        /// URL to the media sample (one of url, file, signed_id is required)
+        /// </param>
+        /// <param name="signedId">
+        /// Signed ID from a secure upload
+        /// </param>
+        /// <param name="modality">
+        /// Inferred from the media's content type when omitted (defaults to audio)
+        /// </param>
+        /// <param name="topK">
+        /// Default Value: 1
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.IdentitySearchIdentitiesResponse200> SearchIdentitiesAsync(
-            string audioUrl,
+            string? url = default,
+            string? signedId = default,
+            global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality? modality = default,
+            int? topK = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::ResembleAI.SearchIdentitiesRequest
             {
-                AudioUrl = audioUrl,
+                Url = url,
+                SignedId = signedId,
+                Modality = modality,
+                TopK = topK,
             };
 
             return await SearchIdentitiesAsync(

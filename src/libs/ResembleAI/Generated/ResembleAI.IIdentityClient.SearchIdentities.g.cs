@@ -6,7 +6,7 @@ namespace ResembleAI
     {
         /// <summary>
         /// Search identities<br/>
-        /// Search for matching speaker identities
+        /// Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace ResembleAI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search identities<br/>
-        /// Search for matching speaker identities
+        /// Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,14 +32,28 @@ namespace ResembleAI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search identities<br/>
-        /// Search for matching speaker identities
+        /// Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.
         /// </summary>
-        /// <param name="audioUrl"></param>
+        /// <param name="url">
+        /// URL to the media sample (one of url, file, signed_id is required)
+        /// </param>
+        /// <param name="signedId">
+        /// Signed ID from a secure upload
+        /// </param>
+        /// <param name="modality">
+        /// Inferred from the media's content type when omitted (defaults to audio)
+        /// </param>
+        /// <param name="topK">
+        /// Default Value: 1
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::ResembleAI.IdentitySearchIdentitiesResponse200> SearchIdentitiesAsync(
-            string audioUrl,
+            string? url = default,
+            string? signedId = default,
+            global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality? modality = default,
+            int? topK = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

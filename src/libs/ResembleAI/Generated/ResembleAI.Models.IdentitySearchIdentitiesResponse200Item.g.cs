@@ -4,9 +4,9 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    /// Matches keyed by identity UUID. distance is a 0-100 match score (higher is closer; an identical sample scores 100). Image matches include score_type "cosine".
     /// </summary>
-    public sealed partial class IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems
+    public sealed partial class IdentitySearchIdentitiesResponse200Item
     {
 
         /// <summary>

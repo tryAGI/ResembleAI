@@ -6,7 +6,7 @@ namespace ResembleAI
     {
         /// <summary>
         /// Synchronous text-to-speech synthesis<br/>
-        /// Generate speech synchronously from text or SSML. Returns complete audio as base64.
+        /// Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace ResembleAI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Synchronous text-to-speech synthesis<br/>
-        /// Generate speech synchronously from text or SSML. Returns complete audio as base64.
+        /// Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,7 +32,7 @@ namespace ResembleAI
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Synchronous text-to-speech synthesis<br/>
-        /// Generate speech synchronously from text or SSML. Returns complete audio as base64.
+        /// Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="voiceUuid">
         /// Voice UUID to use for synthesis
@@ -45,9 +45,6 @@ namespace ResembleAI
         /// </param>
         /// <param name="data">
         /// Text or SSML to synthesize (max 3,000 characters)
-        /// </param>
-        /// <param name="model">
-        /// Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices.
         /// </param>
         /// <param name="precision">
         /// Audio precision for WAV output<br/>
@@ -76,7 +73,6 @@ namespace ResembleAI
             string data,
             string? projectUuid = default,
             string? title = default,
-            string? model = default,
             global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision? precision = default,
             global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat? outputFormat = default,
             global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate? sampleRate = default,

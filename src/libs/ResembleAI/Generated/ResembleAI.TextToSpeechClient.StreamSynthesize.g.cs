@@ -51,7 +51,7 @@ namespace ResembleAI
 
         /// <summary>
         /// Streaming text-to-speech synthesis (HTTP)<br/>
-        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -74,7 +74,7 @@ namespace ResembleAI
         }
         /// <summary>
         /// Streaming text-to-speech synthesis (HTTP)<br/>
-        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -437,7 +437,7 @@ namespace ResembleAI
         }
         /// <summary>
         /// Streaming text-to-speech synthesis (HTTP)<br/>
-        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -837,7 +837,7 @@ namespace ResembleAI
         }
         /// <summary>
         /// Streaming text-to-speech synthesis (HTTP)<br/>
-        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback.
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="voiceUuid">
         /// Voice UUID to use for synthesis
@@ -847,9 +847,6 @@ namespace ResembleAI
         /// </param>
         /// <param name="projectUuid">
         /// Optional project UUID to store the clip
-        /// </param>
-        /// <param name="model">
-        /// Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices.
         /// </param>
         /// <param name="precision">
         /// Audio precision<br/>
@@ -873,7 +870,6 @@ namespace ResembleAI
             string voiceUuid,
             string data,
             string? projectUuid = default,
-            string? model = default,
             global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision? precision = default,
             global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate? sampleRate = default,
             bool? useHd = default,
@@ -886,7 +882,6 @@ namespace ResembleAI
                 VoiceUuid = voiceUuid,
                 Data = data,
                 ProjectUuid = projectUuid,
-                Model = model,
                 Precision = precision,
                 SampleRate = sampleRate,
                 UseHd = useHd,

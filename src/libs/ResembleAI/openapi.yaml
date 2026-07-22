@@ -9,7 +9,7 @@
       "post": {
         "operationId": "synthesize",
         "summary": "Synchronous text-to-speech synthesis",
-        "description": "Generate speech synchronously from text or SSML. Returns complete audio as base64.",
+        "description": "Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.",
         "tags": [
           "textToSpeech"
         ],
@@ -78,10 +78,6 @@
                     "type": "string",
                     "description": "Text or SSML to synthesize (max 3,000 characters)"
                   },
-                  "model": {
-                    "type": "string",
-                    "description": "Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices."
-                  },
                   "precision": {
                     "$ref": "#/components/schemas/SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision",
                     "description": "Audio precision for WAV output"
@@ -124,7 +120,7 @@
       "post": {
         "operationId": "stream-synthesize",
         "summary": "Streaming text-to-speech synthesis (HTTP)",
-        "description": "Stream audio as it's generated. Returns chunked WAV data for progressive playback.",
+        "description": "Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.",
         "tags": [
           "textToSpeech"
         ],
@@ -179,10 +175,6 @@
                   "project_uuid": {
                     "type": "string",
                     "description": "Optional project UUID to store the clip"
-                  },
-                  "model": {
-                    "type": "string",
-                    "description": "Model to use for synthesis. Pass `chatterbox-turbo` to use the Turbo model for lower latency and paralinguistic tag support. If not specified, defaults to Chatterbox or Chatterbox Multilingual based on the voice. Note - Chatterbox-Turbo is supported by all Rapid English voices and Pre Built Library voices."
                   },
                   "precision": {
                     "$ref": "#/components/schemas/StreamPostRequestBodyContentApplicationJsonSchemaPrecision",
@@ -3636,11 +3628,38 @@
       "get": {
         "operationId": "list-identities",
         "summary": "List identities",
-        "description": "List all speaker identities",
+        "description": "List the team's identities, newest first",
         "tags": [
           "identity"
         ],
         "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Filter by identity name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -3667,7 +3686,7 @@
       "post": {
         "operationId": "create-identity",
         "summary": "Create identity",
-        "description": "Create a new speaker identity",
+        "description": "Create a new identity profile. Two request forms are supported: the simple audio-only form (flat `name` + one audio source; creates a team-visible person identity and enrolls the voice immediately) and the multimodal form (a nested `identity` object with full control over type and visibility).\n",
         "tags": [
           "identity"
         ],
@@ -3684,11 +3703,21 @@
         ],
         "responses": {
           "200": {
-            "description": "Identity created",
+            "description": "Identity created (simple form)",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Identity_createIdentity_Response_200"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation failed or no audio source supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -3698,19 +3727,63 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "audio_url": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "audio_url"
-                ]
+                "$ref": "#/components/schemas/Identity_createIdentity_Request"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/identity/{uuid}": {
+      "delete": {
+        "operationId": "delete-identity",
+        "summary": "Delete identity",
+        "description": "Delete an identity and withdraw its enrollment from matching",
+        "tags": [
+          "identity"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API token from https://app.resemble.ai/account/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Identity deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Identity_deleteIdentity_Response_200"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The identity belongs to another team",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           }
@@ -3726,7 +3799,7 @@
       "post": {
         "operationId": "search-identities",
         "summary": "Search identities",
-        "description": "Search for matching speaker identities",
+        "description": "Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.\n",
         "tags": [
           "identity"
         ],
@@ -3751,6 +3824,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Search failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Missing media or unsupported modality",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         },
         "requestBody": {
@@ -3759,14 +3852,24 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "audio_url": {
+                  "url": {
                     "type": "string",
-                    "format": "uri"
+                    "format": "uri",
+                    "description": "URL to the media sample (one of url, file, signed_id is required)"
+                  },
+                  "signed_id": {
+                    "type": "string",
+                    "description": "Signed ID from a secure upload"
+                  },
+                  "modality": {
+                    "$ref": "#/components/schemas/IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality",
+                    "description": "Inferred from the media's content type when omitted (defaults to audio)"
+                  },
+                  "top_k": {
+                    "type": "integer",
+                    "default": 1
                   }
-                },
-                "required": [
-                  "audio_url"
-                ]
+                }
               }
             }
           }
@@ -10086,10 +10189,71 @@
         },
         "title": "Audio Source Tracing_getAudioSourceTracing_Response_200"
       },
-      "IdentityGetResponsesContentApplicationJsonSchemaItemsItems": {
+      "IdentitySummaryVisibility": {
+        "type": "string",
+        "enum": [
+          "team",
+          "global"
+        ],
+        "title": "IdentitySummaryVisibility"
+      },
+      "IdentitySummaryIdentityType": {
+        "type": "string",
+        "enum": [
+          "person",
+          "brand"
+        ],
+        "title": "IdentitySummaryIdentityType"
+      },
+      "IdentitySummary": {
         "type": "object",
-        "properties": {},
-        "title": "IdentityGetResponsesContentApplicationJsonSchemaItemsItems"
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "audio_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri",
+            "description": "URL of the first voice sample, if any"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/IdentitySummaryVisibility"
+          },
+          "identity_type": {
+            "$ref": "#/components/schemas/IdentitySummaryIdentityType"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "voice_profile_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "project_count": {
+            "type": "integer"
+          }
+        },
+        "description": "Identity summary returned by the list and simple-create endpoints",
+        "title": "IdentitySummary"
       },
       "Identity_listIdentities_Response_200": {
         "type": "object",
@@ -10097,36 +10261,168 @@
           "success": {
             "type": "boolean"
           },
+          "page": {
+            "type": "integer"
+          },
+          "num_pages": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
           "items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IdentityGetResponsesContentApplicationJsonSchemaItemsItems"
+              "$ref": "#/components/schemas/IdentitySummary"
             }
           }
         },
         "title": "Identity_listIdentities_Response_200"
       },
-      "IdentityPostResponsesContentApplicationJsonSchemaItem": {
+      "IdentityCreateIdentityRequest0": {
         "type": "object",
-        "properties": {},
-        "title": "IdentityPostResponsesContentApplicationJsonSchemaItem"
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Speaker name/identifier"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to an audio sample (one of url, audio, signed_id is required)"
+          },
+          "signed_id": {
+            "type": "string",
+            "description": "Signed ID from a secure upload"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "IdentityCreateIdentityRequest0"
+      },
+      "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType": {
+        "type": "string",
+        "enum": [
+          "person",
+          "brand"
+        ],
+        "default": "person",
+        "title": "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType"
+      },
+      "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility": {
+        "type": "string",
+        "enum": [
+          "team",
+          "global"
+        ],
+        "default": "team",
+        "title": "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility"
+      },
+      "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1Identity": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "identity_type": {
+            "$ref": "#/components/schemas/IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "voice_profile_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1Identity"
+      },
+      "IdentityCreateIdentityRequest1": {
+        "type": "object",
+        "properties": {
+          "identity": {
+            "$ref": "#/components/schemas/IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1Identity"
+          }
+        },
+        "required": [
+          "identity"
+        ],
+        "title": "IdentityCreateIdentityRequest1"
+      },
+      "Identity_createIdentity_Request": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/IdentityCreateIdentityRequest0"
+          },
+          {
+            "$ref": "#/components/schemas/IdentityCreateIdentityRequest1"
+          }
+        ],
+        "title": "Identity_createIdentity_Request"
       },
       "Identity_createIdentity_Response_200": {
         "type": "object",
         "properties": {
           "success": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the voice was enrolled for matching immediately"
           },
           "item": {
-            "$ref": "#/components/schemas/IdentityPostResponsesContentApplicationJsonSchemaItem"
+            "$ref": "#/components/schemas/IdentitySummary"
           }
         },
         "title": "Identity_createIdentity_Response_200"
       },
-      "IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems": {
+      "Identity_deleteIdentity_Response_200": {
         "type": "object",
-        "properties": {},
-        "title": "IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems"
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "title": "Identity_deleteIdentity_Response_200"
+      },
+      "IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "image"
+        ],
+        "description": "Inferred from the media's content type when omitted (defaults to audio)",
+        "title": "IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality"
+      },
+      "IdentitySearchPostResponsesContentApplicationJsonSchemaModality": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "image"
+        ],
+        "title": "IdentitySearchPostResponsesContentApplicationJsonSchemaModality"
+      },
+      "IdentitySearchPostResponsesContentApplicationJsonSchemaItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "distance": {
+            "type": "number",
+            "format": "double"
+          },
+          "score_type": {
+            "type": "string"
+          }
+        },
+        "title": "IdentitySearchPostResponsesContentApplicationJsonSchemaItem"
       },
       "Identity_searchIdentities_Response_200": {
         "type": "object",
@@ -10134,11 +10430,15 @@
           "success": {
             "type": "boolean"
           },
-          "matches": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IdentitySearchPostResponsesContentApplicationJsonSchemaMatchesItems"
-            }
+          "modality": {
+            "$ref": "#/components/schemas/IdentitySearchPostResponsesContentApplicationJsonSchemaModality"
+          },
+          "item": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/IdentitySearchPostResponsesContentApplicationJsonSchemaItem"
+            },
+            "description": "Matches keyed by identity UUID. distance is a 0-100 match score (higher is closer; an identical sample scores 100). Image matches include score_type \"cosine\".\n"
           }
         },
         "title": "Identity_searchIdentities_Response_200"
