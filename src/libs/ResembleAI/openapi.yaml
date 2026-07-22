@@ -3795,6 +3795,170 @@
         }
       ]
     },
+    "/identity/{uuid}/attachments": {
+      "post": {
+        "operationId": "create-identity-attachment",
+        "summary": "Add reference media",
+        "description": "Attach a reference media file (voice sample, face photo, or reference video) to an identity. The modality's embedding recomputes asynchronously; the media becomes searchable once its embedding status is ready.\n",
+        "tags": [
+          "identity"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API token from https://app.resemble.ai/account/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Media attached; returns the updated identity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Identity"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid modality, or missing file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Identity not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Face photo limit reached (a person identity accepts at most 5 face photos)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "modality": {
+                    "$ref": "#/components/schemas/IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The media file to attach"
+                  }
+                },
+                "required": [
+                  "modality",
+                  "file"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/identity/{uuid}/attachments/{attachment_id}": {
+      "delete": {
+        "operationId": "delete-identity-attachment",
+        "summary": "Remove reference media",
+        "description": "Detach a reference media file from an identity. The affected modality's embedding recomputes without the removed file.\n",
+        "tags": [
+          "identity"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attachment_id",
+            "in": "path",
+            "description": "The id of an entry in the identity's voice_samples, face_photos, or reference_videos array",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API token from https://app.resemble.ai/account/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Media removed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Identity_deleteIdentityAttachment_Response_204"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Identity or attachment not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
     "/identity/search": {
       "post": {
         "operationId": "search-identities",
@@ -10390,6 +10554,172 @@
           }
         },
         "title": "Identity_deleteIdentity_Response_200"
+      },
+      "IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality": {
+        "type": "string",
+        "enum": [
+          "voice",
+          "face",
+          "video"
+        ],
+        "title": "IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality"
+      },
+      "IdentityIdentityType": {
+        "type": "string",
+        "enum": [
+          "person",
+          "brand"
+        ],
+        "title": "IdentityIdentityType"
+      },
+      "IdentityVisibility": {
+        "type": "string",
+        "enum": [
+          "team",
+          "global"
+        ],
+        "title": "IdentityVisibility"
+      },
+      "IdentityAttachment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "byte_size": {
+            "type": "integer"
+          },
+          "content_type": {
+            "type": "string"
+          }
+        },
+        "description": "A reference media file attached to an identity",
+        "title": "IdentityAttachment"
+      },
+      "IdentityEmbeddingsItemsModality": {
+        "type": "string",
+        "enum": [
+          "voice",
+          "face",
+          "video"
+        ],
+        "title": "IdentityEmbeddingsItemsModality"
+      },
+      "IdentityEmbeddingsItems": {
+        "type": "object",
+        "properties": {
+          "modality": {
+            "$ref": "#/components/schemas/IdentityEmbeddingsItemsModality"
+          },
+          "status": {
+            "type": "string"
+          },
+          "attachment_count": {
+            "type": "integer"
+          },
+          "computed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "title": "IdentityEmbeddingsItems"
+      },
+      "IdentityProjectsItems": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "title": "IdentityProjectsItems"
+      },
+      "Identity": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "identity_type": {
+            "$ref": "#/components/schemas/IdentityIdentityType"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/IdentityVisibility"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "voice_profile_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "project_count": {
+            "type": "integer"
+          },
+          "voice_samples": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityAttachment"
+            }
+          },
+          "face_photos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityAttachment"
+            }
+          },
+          "reference_videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityAttachment"
+            }
+          },
+          "embeddings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityEmbeddingsItems"
+            },
+            "description": "Per-modality embedding processing status"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityProjectsItems"
+            }
+          }
+        },
+        "description": "A multimodal identity profile",
+        "title": "Identity"
+      },
+      "Identity_deleteIdentityAttachment_Response_204": {
+        "type": "object",
+        "properties": {},
+        "description": "Empty response body",
+        "title": "Identity_deleteIdentityAttachment_Response_204"
       },
       "IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality": {
         "type": "string",

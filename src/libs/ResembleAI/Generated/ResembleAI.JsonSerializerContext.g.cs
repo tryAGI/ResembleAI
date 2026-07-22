@@ -225,6 +225,22 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter),
 
+            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter),
+
             typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter),
@@ -299,7 +315,9 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision), TypeInfoPropertyName = "SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat), TypeInfoPropertyName = "SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate), TypeInfoPropertyName = "SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate2")]
@@ -562,6 +580,18 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityRequest), TypeInfoPropertyName = "IdentityCreateIdentityRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityDeleteIdentityResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality), TypeInfoPropertyName = "IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityIdentityType), TypeInfoPropertyName = "IdentityIdentityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityVisibility), TypeInfoPropertyName = "IdentityVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityAttachment))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityEmbeddingsItemsModality), TypeInfoPropertyName = "IdentityEmbeddingsItemsModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityEmbeddingsItems))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityProjectsItems))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.Identity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.IdentityAttachment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.IdentityEmbeddingsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.IdentityProjectsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityDeleteIdentityAttachmentResponse204))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality), TypeInfoPropertyName = "IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality), TypeInfoPropertyName = "IdentitySearchPostResponsesContentApplicationJsonSchemaModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaItem))]
@@ -726,6 +756,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.RunIntelligenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AskDetectIntelligenceQuestionRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateIdentityAttachmentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SearchIdentitiesRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.ApplyWatermarkRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectWatermarkRequest))]
@@ -749,6 +780,406 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateDuetVoicePairRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.GenerateDuetRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision?), TypeInfoPropertyName = "NullableSynthesizePostRequestBodyContentApplicationJsonSchemaPrecision2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat?), TypeInfoPropertyName = "NullableSynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate?), TypeInfoPropertyName = "NullableSynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision?), TypeInfoPropertyName = "NullableStreamPostRequestBodyContentApplicationJsonSchemaPrecision2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate?), TypeInfoPropertyName = "NullableStreamPostRequestBodyContentApplicationJsonSchemaSampleRate2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableSpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableSpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableAudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine?), TypeInfoPropertyName = "NullableAudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine?), TypeInfoPropertyName = "NullableAudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus?), TypeInfoPropertyName = "NullableAudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus?), TypeInfoPropertyName = "NullableAudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables?), TypeInfoPropertyName = "NullableAgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariables2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaAsrUserInputAudioFormat?), TypeInfoPropertyName = "NullableAgentsPostRequestBodyContentApplicationJsonSchemaAsrUserInputAudioFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaTurnMode?), TypeInfoPropertyName = "NullableAgentsPostRequestBodyContentApplicationJsonSchemaTurnMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaSearchMode?), TypeInfoPropertyName = "NullableAgentsPostRequestBodyContentApplicationJsonSchemaSearchMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchMode?), TypeInfoPropertyName = "NullableAgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolType?), TypeInfoPropertyName = "NullableAgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookType?), TypeInfoPropertyName = "NullableAgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProvider?), TypeInfoPropertyName = "NullablePhoneNumbersPostRequestBodyContentApplicationJsonSchemaProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetParametersStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsGetParametersStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetParametersSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsGetParametersSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsModality2")]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaAsrUserInputAudioFormatJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaAsrUserInputAudioFormatNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaTurnModeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaTurnModeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaSearchModeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaSearchModeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchModeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchModeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProviderJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProviderNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersSourceTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersSourceTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.CustomPronunciationStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>),
+
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>),
+
+            typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>?), TypeInfoPropertyName = "NullableOneOfDetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracingObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligenceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableDetectPostRequestBodyContentMultipartFormDataSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>?), TypeInfoPropertyName = "NullableOneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracingObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectBatchStatus?), TypeInfoPropertyName = "NullableDetectBatchStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType?), TypeInfoPropertyName = "NullableIntelligencePostRequestBodyContentApplicationJsonSchemaMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableIntelligencePostResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType?), TypeInfoPropertyName = "NullableIntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment?), TypeInfoPropertyName = "NullableIntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?), TypeInfoPropertyName = "NullableIntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType?), TypeInfoPropertyName = "NullableIntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment?), TypeInfoPropertyName = "NullableIntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableIntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySummaryVisibility?), TypeInfoPropertyName = "NullableIdentitySummaryVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySummaryIdentityType?), TypeInfoPropertyName = "NullableIdentitySummaryIdentityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType?), TypeInfoPropertyName = "NullableIdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility?), TypeInfoPropertyName = "NullableIdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityCreateIdentityRequest?), TypeInfoPropertyName = "NullableIdentityCreateIdentityRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableIdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityIdentityType?), TypeInfoPropertyName = "NullableIdentityIdentityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityVisibility?), TypeInfoPropertyName = "NullableIdentityVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentityEmbeddingsItemsModality?), TypeInfoPropertyName = "NullableIdentityEmbeddingsItemsModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality?), TypeInfoPropertyName = "NullableIdentitySearchPostRequestBodyContentApplicationJsonSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality?), TypeInfoPropertyName = "NullableIdentitySearchPostResponsesContentApplicationJsonSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?), TypeInfoPropertyName = "NullableWatermarkApplyPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer?), TypeInfoPropertyName = "NullableWatermarkDetectPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark?), TypeInfoPropertyName = "NullableWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.PronunciationsGetParametersStatus?), TypeInfoPropertyName = "NullablePronunciationsGetParametersStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CustomPronunciationStatus?), TypeInfoPropertyName = "NullableCustomPronunciationStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker?), TypeInfoPropertyName = "NullableDuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
@@ -777,6 +1208,9 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentitySummary>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityAttachment>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityEmbeddingsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityProjectsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems>))]
@@ -793,7 +1227,201 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItems>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
+            SourceGenerationContextChunk0.Default,
+
+            SourceGenerationContextChunk1.Default
+            );
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaAsrUserInputAudioFormatJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaAsrUserInputAudioFormatNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaTurnModeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaTurnModeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaSearchModeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaSearchModeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchModeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchModeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProviderJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProviderNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersSourceTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetParametersSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.CustomPronunciationStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.AgentsPostRequestBodyContentApplicationJsonSchemaDynamicVariablesJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.UnixTimestampJsonConverter());
+
+            return options;
+        }
     }
 }
