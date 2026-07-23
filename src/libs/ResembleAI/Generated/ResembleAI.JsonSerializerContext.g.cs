@@ -253,25 +253,77 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter),
 
@@ -293,7 +345,7 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMetricsJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>),
 
@@ -305,13 +357,9 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>),
 
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>),
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>),
 
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>),
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>),
 
             typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -598,29 +646,43 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchIdentitiesResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer), TypeInfoPropertyName = "WatermarkApplyPostParametersPrefer2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType), TypeInfoPropertyName = "WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>), TypeInfoPropertyName = "OneOfWatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetricsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyWatermarkResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType), TypeInfoPropertyName = "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>), TypeInfoPropertyName = "OneOfWatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemMediaType), TypeInfoPropertyName = "WatermarkApplyItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemOperationType), TypeInfoPropertyName = "WatermarkApplyItemOperationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemStatus), TypeInfoPropertyName = "WatermarkApplyItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemModelVersion), TypeInfoPropertyName = "WatermarkApplyItemModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyMetrics))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer), TypeInfoPropertyName = "WatermarkDetectPostParametersPrefer2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType), TypeInfoPropertyName = "WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>), TypeInfoPropertyName = "OneOfWatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetricsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectWatermarkResponse200))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType), TypeInfoPropertyName = "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark), TypeInfoPropertyName = "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemMediaType), TypeInfoPropertyName = "WatermarkDetectItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemOperationType), TypeInfoPropertyName = "WatermarkDetectItemOperationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemStatus), TypeInfoPropertyName = "WatermarkDetectItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemModelVersion), TypeInfoPropertyName = "WatermarkDetectItemModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioDetectionMetricsOverallStatus), TypeInfoPropertyName = "WatermarkAudioDetectionMetricsOverallStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems), TypeInfoPropertyName = "WatermarkAudioDetectionMetricsDetectedModelVersionsItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioModelResultModelVersion), TypeInfoPropertyName = "WatermarkAudioModelResultModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioModelResultStatus), TypeInfoPropertyName = "WatermarkAudioModelResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioModelResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, bool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>), TypeInfoPropertyName = "OneOfWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkGetWatermarkDetectionResultResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioDetectionMetrics))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.WatermarkAudioModelResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus), TypeInfoPropertyName = "WatermarkVisionDetectionMetricsOverallStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems), TypeInfoPropertyName = "WatermarkVisionDetectionMetricsDetectedModelVersionsItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion), TypeInfoPropertyName = "WatermarkVisionModelResultModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultStatus), TypeInfoPropertyName = "WatermarkVisionModelResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict), TypeInfoPropertyName = "WatermarkVisionDetectionMetricsVerdict2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetrics))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.WatermarkVisionModelResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>), TypeInfoPropertyName = "OneOfWatermarkVisionDetectionMetricsVerdictObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemMetrics), TypeInfoPropertyName = "WatermarkDetectItemMetrics2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectItemMetrics?, object>), TypeInfoPropertyName = "OneOfWatermarkDetectItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItemsComponentStatusTextToSpeech))]
@@ -758,8 +820,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AskDetectIntelligenceQuestionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateIdentityAttachmentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SearchIdentitiesRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.ApplyWatermarkRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectWatermarkRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateVoiceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.BuildVoiceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.GenerateVoiceDesignRequest))]
@@ -803,18 +863,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsPostRequestBodyContentApplicationJsonSchemaSearchMode?), TypeInfoPropertyName = "NullableAgentsPostRequestBodyContentApplicationJsonSchemaSearchMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchMode?), TypeInfoPropertyName = "NullableAgentsUuidPatchRequestBodyContentApplicationJsonSchemaSearchMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolType?), TypeInfoPropertyName = "NullableAgentsAgentUuidToolsPostRequestBodyContentApplicationJsonSchemaToolType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookType?), TypeInfoPropertyName = "NullableAgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProvider?), TypeInfoPropertyName = "NullablePhoneNumbersPostRequestBodyContentApplicationJsonSchemaProvider2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetParametersStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsGetParametersStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetParametersSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsGetParametersSourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsModality2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1066,25 +1114,77 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter),
 
@@ -1106,7 +1206,7 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter),
 
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkJsonConverter),
+            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMetricsJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>),
 
@@ -1118,16 +1218,24 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>),
 
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>),
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>),
 
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>),
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>),
 
             typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookType?), TypeInfoPropertyName = "NullableAgentsAgentUuidWebhooksPostRequestBodyContentApplicationJsonSchemaWebhookType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.PhoneNumbersPostRequestBodyContentApplicationJsonSchemaProvider?), TypeInfoPropertyName = "NullablePhoneNumbersPostRequestBodyContentApplicationJsonSchemaProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetParametersStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsGetParametersStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetParametersSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsGetParametersSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsPostRequestBodyContentApplicationJsonSchemaSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceType?), TypeInfoPropertyName = "NullableKnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.KnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableKnowledgeItemsUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality?), TypeInfoPropertyName = "NullableDetectGetResponsesContentApplicationJsonSchemaItemsItemsModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>?), TypeInfoPropertyName = "NullableOneOfDetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracingObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligenceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableDetectPostRequestBodyContentMultipartFormDataSchemaModality2")]
@@ -1167,16 +1275,27 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality?), TypeInfoPropertyName = "NullableIdentitySearchPostRequestBodyContentApplicationJsonSchemaModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality?), TypeInfoPropertyName = "NullableIdentitySearchPostResponsesContentApplicationJsonSchemaModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?), TypeInfoPropertyName = "NullableWatermarkApplyPostParametersPrefer2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetricsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemMediaType?), TypeInfoPropertyName = "NullableWatermarkApplyItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemOperationType?), TypeInfoPropertyName = "NullableWatermarkApplyItemOperationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemStatus?), TypeInfoPropertyName = "NullableWatermarkApplyItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemModelVersion?), TypeInfoPropertyName = "NullableWatermarkApplyItemModelVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer?), TypeInfoPropertyName = "NullableWatermarkDetectPostParametersPrefer2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetricsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark?), TypeInfoPropertyName = "NullableWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemMediaType?), TypeInfoPropertyName = "NullableWatermarkDetectItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemOperationType?), TypeInfoPropertyName = "NullableWatermarkDetectItemOperationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemStatus?), TypeInfoPropertyName = "NullableWatermarkDetectItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemModelVersion?), TypeInfoPropertyName = "NullableWatermarkDetectItemModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioDetectionMetricsOverallStatus?), TypeInfoPropertyName = "NullableWatermarkAudioDetectionMetricsOverallStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems?), TypeInfoPropertyName = "NullableWatermarkAudioDetectionMetricsDetectedModelVersionsItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioModelResultModelVersion?), TypeInfoPropertyName = "NullableWatermarkAudioModelResultModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkAudioModelResultStatus?), TypeInfoPropertyName = "NullableWatermarkAudioModelResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsOverallStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsDetectedModelVersionsItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultStatus?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsVerdict2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkVisionDetectionMetricsVerdictObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemMetrics?), TypeInfoPropertyName = "NullableWatermarkDetectItemMetrics2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectItemMetrics?, object>?), TypeInfoPropertyName = "NullableOneOfWatermarkDetectItemMetricsObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.PronunciationsGetParametersStatus?), TypeInfoPropertyName = "NullablePronunciationsGetParametersStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CustomPronunciationStatus?), TypeInfoPropertyName = "NullableCustomPronunciationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker?), TypeInfoPropertyName = "NullableDuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker2")]
@@ -1211,6 +1330,10 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityAttachment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityEmbeddingsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityProjectsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.WatermarkAudioModelResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.WatermarkVisionModelResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoicesGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems>))]
@@ -1389,16 +1512,42 @@ namespace ResembleAI
             options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter());
@@ -1409,16 +1558,14 @@ namespace ResembleAI
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermarkJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemMetricsJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics, object>());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics, object>());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.UnixTimestampJsonConverter());
 
             return options;
