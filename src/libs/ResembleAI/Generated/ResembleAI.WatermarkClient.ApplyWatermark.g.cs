@@ -36,12 +36,12 @@ namespace ResembleAI
         partial void PrepareApplyWatermarkArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::ResembleAI.WatermarkApplyPostParametersPrefer? prefer,
-            global::ResembleAI.ApplyWatermarkRequest request);
+            global::ResembleAI.WatermarkApplyRequest request);
         partial void PrepareApplyWatermarkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::ResembleAI.WatermarkApplyPostParametersPrefer? prefer,
-            global::ResembleAI.ApplyWatermarkRequest request);
+            global::ResembleAI.WatermarkApplyRequest request);
         partial void ProcessApplyWatermarkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,16 +53,16 @@ namespace ResembleAI
 
         /// <summary>
         /// Apply watermark<br/>
-        /// Apply a watermark to an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.
+        /// Apply a Perth v2 watermark to an audio, image, or video file. The media type is automatically detected from the file content. Processing is asynchronous unless the `Prefer: wait` header is supplied.
         /// </summary>
         /// <param name="prefer"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkApplyWatermarkResponse200> ApplyWatermarkAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkApplyResponse> ApplyWatermarkAsync(
 
-            global::ResembleAI.ApplyWatermarkRequest request,
+            global::ResembleAI.WatermarkApplyRequest request,
             global::ResembleAI.WatermarkApplyPostParametersPrefer? prefer = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -79,16 +79,16 @@ namespace ResembleAI
         }
         /// <summary>
         /// Apply watermark<br/>
-        /// Apply a watermark to an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.
+        /// Apply a Perth v2 watermark to an audio, image, or video file. The media type is automatically detected from the file content. Processing is asynchronous unless the `Prefer: wait` header is supplied.
         /// </summary>
         /// <param name="prefer"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyWatermarkResponse200>> ApplyWatermarkAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyResponse>> ApplyWatermarkAsResponseAsync(
 
-            global::ResembleAI.ApplyWatermarkRequest request,
+            global::ResembleAI.WatermarkApplyRequest request,
             global::ResembleAI.WatermarkApplyPostParametersPrefer? prefer = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -384,9 +384,9 @@ namespace ResembleAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::ResembleAI.WatermarkApplyWatermarkResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::ResembleAI.WatermarkApplyResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyWatermarkResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -416,9 +416,9 @@ namespace ResembleAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::ResembleAI.WatermarkApplyWatermarkResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ResembleAI.WatermarkApplyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyWatermarkResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -460,24 +460,24 @@ namespace ResembleAI
         }
         /// <summary>
         /// Apply watermark<br/>
-        /// Apply a watermark to an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.
+        /// Apply a Perth v2 watermark to an audio, image, or video file. The media type is automatically detected from the file content. Processing is asynchronous unless the `Prefer: wait` header is supplied.
         /// </summary>
         /// <param name="prefer"></param>
         /// <param name="url">
-        /// HTTPS URL to the media file (audio, image, or video).
+        /// Public HTTPS URL to the audio, image, or video source.
         /// </param>
         /// <param name="strength">
         /// Watermark strength for image/video. Ignored for audio.<br/>
         /// Default Value: 0.2F
         /// </param>
         /// <param name="customMessage">
-        /// Custom message to embed for image/video. Ignored for audio.<br/>
+        /// Message to embed in image/video. Ignored for audio.<br/>
         /// Default Value: resembleai
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkApplyWatermarkResponse200> ApplyWatermarkAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkApplyResponse> ApplyWatermarkAsync(
             string url,
             global::ResembleAI.WatermarkApplyPostParametersPrefer? prefer = default,
             double? strength = default,
@@ -485,7 +485,7 @@ namespace ResembleAI
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::ResembleAI.ApplyWatermarkRequest
+            var __request = new global::ResembleAI.WatermarkApplyRequest
             {
                 Url = url,
                 Strength = strength,

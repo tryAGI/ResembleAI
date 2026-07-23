@@ -4049,7 +4049,7 @@
       "post": {
         "operationId": "apply-watermark",
         "summary": "Apply watermark",
-        "description": "Apply a watermark to an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.",
+        "description": "Apply a Perth v2 watermark to an audio, image, or video file. The media type is automatically detected from the file content. Processing is asynchronous unless the `Prefer: wait` header is supplied.",
         "tags": [
           "watermark"
         ],
@@ -4079,7 +4079,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Watermark_applyWatermark_Response_200"
+                  "$ref": "#/components/schemas/WatermarkApplyResponse"
                 }
               }
             }
@@ -4089,28 +4089,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "HTTPS URL to the media file (audio, image, or video)."
-                  },
-                  "strength": {
-                    "type": "number",
-                    "format": "double",
-                    "default": 0.2,
-                    "description": "Watermark strength for image/video. Ignored for audio."
-                  },
-                  "custom_message": {
-                    "type": "string",
-                    "default": "resembleai",
-                    "description": "Custom message to embed for image/video. Ignored for audio."
-                  }
-                },
-                "required": [
-                  "url"
-                ]
+                "$ref": "#/components/schemas/WatermarkApplyRequest"
               }
             }
           }
@@ -4155,7 +4134,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Watermark_getWatermarkApplyResult_Response_200"
+                  "$ref": "#/components/schemas/WatermarkApplyResponse"
                 }
               }
             }
@@ -4172,7 +4151,7 @@
       "post": {
         "operationId": "detect-watermark",
         "summary": "Detect watermark",
-        "description": "Detect a watermark in an audio, image, or video file. The media type is automatically detected from the file content. Use the `Prefer: wait` header for synchronous processing.",
+        "description": "Detect a watermark in an audio, image, or video file. Audio runs Perth v1 and Perth v2 concurrently; image/video is publicly reported as Perth v2. Processing is asynchronous unless the `Prefer: wait` header is supplied.",
         "tags": [
           "watermark"
         ],
@@ -4202,7 +4181,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Watermark_detectWatermark_Response_200"
+                  "$ref": "#/components/schemas/WatermarkDetectResponse"
                 }
               }
             }
@@ -4212,22 +4191,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "HTTPS URL to the media file (audio, image, or video)."
-                  },
-                  "custom_message": {
-                    "type": "string",
-                    "default": "resembleai",
-                    "description": "Custom message used during encoding for image/video. Ignored for audio."
-                  }
-                },
-                "required": [
-                  "url"
-                ]
+                "$ref": "#/components/schemas/WatermarkDetectRequest"
               }
             }
           }
@@ -4272,7 +4236,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Watermark_getWatermarkDetectionResult_Response_200"
+                  "$ref": "#/components/schemas/WatermarkDetectResponse"
                 }
               }
             }
@@ -10780,7 +10744,32 @@
         ],
         "title": "WatermarkApplyPostParametersPrefer"
       },
-      "WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType": {
+      "WatermarkApplyRequest": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Public HTTPS URL to the audio, image, or video source."
+          },
+          "strength": {
+            "type": "number",
+            "format": "double",
+            "default": 0.2,
+            "description": "Watermark strength for image/video. Ignored for audio."
+          },
+          "custom_message": {
+            "type": "string",
+            "default": "resembleai",
+            "description": "Message to embed in image/video. Ignored for audio."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "WatermarkApplyRequest"
+      },
+      "WatermarkApplyItemMediaType": {
         "type": "string",
         "enum": [
           "audio",
@@ -10788,91 +10777,70 @@
           "video"
         ],
         "description": "Detected media type of the source file.",
-        "title": "WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType"
+        "title": "WatermarkApplyItemMediaType"
       },
-      "WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics": {
-        "type": "object",
-        "properties": {},
-        "title": "WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics"
-      },
-      "WatermarkApplyPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "media_type": {
-            "$ref": "#/components/schemas/WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMediaType",
-            "description": "Detected media type of the source file."
-          },
-          "source_media_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "The original source URL provided in the request."
-          },
-          "watermarked_media": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "uri",
-            "description": "Signed URL to the watermarked file. Populated when processing is complete."
-          },
-          "metrics": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/WatermarkApplyPostResponsesContentApplicationJsonSchemaItemMetrics"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "WatermarkApplyPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Watermark_applyWatermark_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/WatermarkApplyPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Watermark_applyWatermark_Response_200"
-      },
-      "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType": {
+      "WatermarkApplyItemOperationType": {
         "type": "string",
         "enum": [
-          "audio",
-          "image",
-          "video"
+          "apply"
         ],
-        "title": "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType"
+        "title": "WatermarkApplyItemOperationType"
       },
-      "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics": {
+      "WatermarkApplyItemStatus": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "title": "WatermarkApplyItemStatus"
+      },
+      "WatermarkApplyItemModelVersion": {
+        "type": "string",
+        "enum": [
+          "perth_v2"
+        ],
+        "title": "WatermarkApplyItemModelVersion"
+      },
+      "WatermarkApplyMetrics": {
         "type": "object",
-        "properties": {},
-        "title": "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics"
+        "properties": {
+          "strength": {
+            "type": "number",
+            "format": "double"
+          },
+          "custom_message": {
+            "type": "string"
+          },
+          "message_bits_length": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "description": "Apply metadata for image/video. Audio apply metrics are null.",
+        "title": "WatermarkApplyMetrics"
       },
-      "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItem": {
+      "WatermarkApplyItem": {
         "type": "object",
         "properties": {
           "uuid": {
             "type": "string"
           },
           "media_type": {
-            "$ref": "#/components/schemas/WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType"
+            "$ref": "#/components/schemas/WatermarkApplyItemMediaType",
+            "description": "Detected media type of the source file."
+          },
+          "operation_type": {
+            "$ref": "#/components/schemas/WatermarkApplyItemOperationType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WatermarkApplyItemStatus"
+          },
+          "model_version": {
+            "$ref": "#/components/schemas/WatermarkApplyItemModelVersion"
           },
           "source_media_url": {
             "type": "string",
@@ -10884,17 +10852,10 @@
               "null"
             ],
             "format": "uri",
-            "description": "Signed URL to the watermarked file. Null while processing."
+            "description": "Signed output URL when processing is complete."
           },
           "metrics": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/WatermarkApplyMetrics"
           },
           "created_at": {
             "type": "string",
@@ -10905,19 +10866,33 @@
             "format": "date-time"
           }
         },
-        "title": "WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItem"
+        "required": [
+          "uuid",
+          "media_type",
+          "operation_type",
+          "status",
+          "model_version",
+          "source_media_url",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "WatermarkApplyItem"
       },
-      "Watermark_getWatermarkApplyResult_Response_200": {
+      "WatermarkApplyResponse": {
         "type": "object",
         "properties": {
           "success": {
             "type": "boolean"
           },
           "item": {
-            "$ref": "#/components/schemas/WatermarkApplyUuidResultGetResponsesContentApplicationJsonSchemaItem"
+            "$ref": "#/components/schemas/WatermarkApplyItem"
           }
         },
-        "title": "Watermark_getWatermarkApplyResult_Response_200"
+        "required": [
+          "success",
+          "item"
+        ],
+        "title": "WatermarkApplyResponse"
       },
       "WatermarkDetectPostParametersPrefer": {
         "type": "string",
@@ -10926,115 +10901,333 @@
         ],
         "title": "WatermarkDetectPostParametersPrefer"
       },
-      "WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType": {
+      "WatermarkDetectRequest": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Public HTTPS URL to the audio, image, or video source."
+          },
+          "custom_message": {
+            "type": "string",
+            "default": "resembleai",
+            "description": "Message used when applying the image/video watermark. Ignored for audio."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "title": "WatermarkDetectRequest"
+      },
+      "WatermarkDetectItemMediaType": {
         "type": "string",
         "enum": [
           "audio",
           "image",
           "video"
         ],
-        "title": "WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType"
+        "title": "WatermarkDetectItemMediaType"
       },
-      "WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics": {
-        "type": "object",
-        "properties": {},
-        "description": "Detection results. Null while processing.",
-        "title": "WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics"
+      "WatermarkDetectItemOperationType": {
+        "type": "string",
+        "enum": [
+          "detect"
+        ],
+        "title": "WatermarkDetectItemOperationType"
       },
-      "WatermarkDetectPostResponsesContentApplicationJsonSchemaItem": {
+      "WatermarkDetectItemStatus": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "title": "WatermarkDetectItemStatus"
+      },
+      "WatermarkDetectItemModelVersion": {
+        "type": "string",
+        "enum": [
+          "perth_v2"
+        ],
+        "description": "Present for image/video. Audio versions are reported in metrics.model_results.",
+        "title": "WatermarkDetectItemModelVersion"
+      },
+      "WatermarkAudioDetectionMetricsOverallStatus": {
+        "type": "string",
+        "enum": [
+          "present",
+          "absent",
+          "inconclusive"
+        ],
+        "title": "WatermarkAudioDetectionMetricsOverallStatus"
+      },
+      "WatermarkAudioDetectionMetricsDetectedModelVersionsItems": {
+        "type": "string",
+        "enum": [
+          "perth_v1",
+          "perth_v2"
+        ],
+        "title": "WatermarkAudioDetectionMetricsDetectedModelVersionsItems"
+      },
+      "WatermarkAudioModelResultModelVersion": {
+        "type": "string",
+        "enum": [
+          "perth_v1",
+          "perth_v2"
+        ],
+        "title": "WatermarkAudioModelResultModelVersion"
+      },
+      "WatermarkAudioModelResultStatus": {
+        "type": "string",
+        "enum": [
+          "succeeded",
+          "failed"
+        ],
+        "title": "WatermarkAudioModelResultStatus"
+      },
+      "WatermarkAudioModelResult": {
         "type": "object",
         "properties": {
-          "uuid": {
-            "type": "string"
+          "model_version": {
+            "$ref": "#/components/schemas/WatermarkAudioModelResultModelVersion"
           },
-          "media_type": {
-            "$ref": "#/components/schemas/WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMediaType"
+          "status": {
+            "$ref": "#/components/schemas/WatermarkAudioModelResultStatus"
           },
-          "source_media_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "metrics": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/WatermarkDetectPostResponsesContentApplicationJsonSchemaItemMetrics"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Detection results. Null while processing."
-          },
-          "watermarked_media": {
+          "detected": {
             "type": [
-              "string",
+              "boolean",
               "null"
-            ]
+            ],
+            "description": "Null when this detector was unavailable."
           },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "WatermarkDetectPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Watermark_detectWatermark_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/WatermarkDetectPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Watermark_detectWatermark_Response_200"
-      },
-      "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType": {
-        "type": "string",
-        "enum": [
-          "audio",
-          "image",
-          "video"
-        ],
-        "title": "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType"
-      },
-      "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark": {
-        "oneOf": [
-          {
+          "has_watermark": {
             "type": "object",
             "additionalProperties": {
               "type": "boolean"
-            }
+            },
+            "description": "Successful per-channel detection results."
           },
-          {
-            "type": "boolean"
-          }
-        ],
-        "title": "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark"
-      },
-      "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics": {
-        "type": "object",
-        "properties": {
-          "has_watermark": {
-            "$ref": "#/components/schemas/WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetricsHasWatermark"
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "error": {
+            "type": "string",
+            "description": "Safe error message when status is failed."
           }
         },
-        "description": "Detection results. For audio, has_watermark is a per-channel object. For image/video, has_watermark is a boolean.",
-        "title": "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics"
+        "required": [
+          "model_version",
+          "status",
+          "detected"
+        ],
+        "title": "WatermarkAudioModelResult"
       },
-      "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem": {
+      "WatermarkAudioDetectionMetrics": {
+        "type": "object",
+        "properties": {
+          "overall_status": {
+            "$ref": "#/components/schemas/WatermarkAudioDetectionMetricsOverallStatus"
+          },
+          "detected_model_versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkAudioDetectionMetricsDetectedModelVersionsItems"
+            },
+            "description": "Only model versions that positively detected a watermark."
+          },
+          "coverage_complete": {
+            "type": "boolean",
+            "description": "True only when both audio detectors completed successfully."
+          },
+          "has_watermark": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Per-channel aggregate across successful audio detectors."
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "model_results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkAudioModelResult"
+            }
+          }
+        },
+        "required": [
+          "overall_status",
+          "detected_model_versions",
+          "coverage_complete",
+          "has_watermark",
+          "model_results"
+        ],
+        "title": "WatermarkAudioDetectionMetrics"
+      },
+      "WatermarkVisionDetectionMetricsOverallStatus": {
+        "type": "string",
+        "enum": [
+          "present",
+          "degraded",
+          "absent",
+          "inconclusive"
+        ],
+        "title": "WatermarkVisionDetectionMetricsOverallStatus"
+      },
+      "WatermarkVisionDetectionMetricsDetectedModelVersionsItems": {
+        "type": "string",
+        "enum": [
+          "perth_v2"
+        ],
+        "title": "WatermarkVisionDetectionMetricsDetectedModelVersionsItems"
+      },
+      "WatermarkVisionModelResultModelVersion": {
+        "type": "string",
+        "enum": [
+          "perth_v2"
+        ],
+        "title": "WatermarkVisionModelResultModelVersion"
+      },
+      "WatermarkVisionModelResultStatus": {
+        "type": "string",
+        "enum": [
+          "succeeded"
+        ],
+        "title": "WatermarkVisionModelResultStatus"
+      },
+      "WatermarkVisionModelResult": {
+        "type": "object",
+        "properties": {
+          "model_version": {
+            "$ref": "#/components/schemas/WatermarkVisionModelResultModelVersion"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WatermarkVisionModelResultStatus"
+          },
+          "detected": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          }
+        },
+        "required": [
+          "model_version",
+          "status",
+          "detected"
+        ],
+        "title": "WatermarkVisionModelResult"
+      },
+      "WatermarkVisionDetectionMetricsVerdict": {
+        "type": "string",
+        "enum": [
+          "verified",
+          "degraded",
+          "not_watermarked"
+        ],
+        "description": "Backward-compatible image/video verdict.",
+        "title": "WatermarkVisionDetectionMetricsVerdict"
+      },
+      "WatermarkVisionDetectionMetrics": {
+        "type": "object",
+        "properties": {
+          "overall_status": {
+            "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsOverallStatus"
+          },
+          "detected_model_versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsDetectedModelVersionsItems"
+            },
+            "description": "Contains perth_v2 only when watermark signal is detected."
+          },
+          "has_watermark": {
+            "type": "boolean"
+          },
+          "detection_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "model_results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkVisionModelResult"
+            }
+          },
+          "verdict": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsVerdict"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Backward-compatible image/video verdict."
+          },
+          "synthid": {
+            "type": "boolean",
+            "description": "Optional auxiliary SynthID signal for images."
+          }
+        },
+        "required": [
+          "overall_status",
+          "detected_model_versions",
+          "has_watermark",
+          "detection_score",
+          "model_results"
+        ],
+        "title": "WatermarkVisionDetectionMetrics"
+      },
+      "WatermarkDetectItemMetrics": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/WatermarkAudioDetectionMetrics"
+          },
+          {
+            "$ref": "#/components/schemas/WatermarkVisionDetectionMetrics"
+          }
+        ],
+        "description": "Null while processing. New results use the media-specific versioned schema; historical audio results can use a flat shape.",
+        "title": "WatermarkDetectItemMetrics"
+      },
+      "WatermarkDetectItem": {
         "type": "object",
         "properties": {
           "uuid": {
             "type": "string"
           },
           "media_type": {
-            "$ref": "#/components/schemas/WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMediaType"
+            "$ref": "#/components/schemas/WatermarkDetectItemMediaType"
+          },
+          "operation_type": {
+            "$ref": "#/components/schemas/WatermarkDetectItemOperationType"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WatermarkDetectItemStatus"
+          },
+          "model_version": {
+            "$ref": "#/components/schemas/WatermarkDetectItemModelVersion",
+            "description": "Present for image/video. Audio versions are reported in metrics.model_results."
           },
           "source_media_url": {
             "type": "string",
@@ -11043,19 +11236,21 @@
           "metrics": {
             "oneOf": [
               {
-                "$ref": "#/components/schemas/WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItemMetrics"
+                "$ref": "#/components/schemas/WatermarkDetectItemMetrics"
               },
               {
                 "type": "null"
               }
             ],
-            "description": "Detection results. For audio, has_watermark is a per-channel object. For image/video, has_watermark is a boolean."
+            "description": "Null while processing. New results use the media-specific versioned schema; historical audio results can use a flat shape."
           },
           "watermarked_media": {
             "type": [
               "string",
               "null"
-            ]
+            ],
+            "format": "uri",
+            "description": "Detection does not produce output media."
           },
           "created_at": {
             "type": "string",
@@ -11066,19 +11261,32 @@
             "format": "date-time"
           }
         },
-        "title": "WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem"
+        "required": [
+          "uuid",
+          "media_type",
+          "operation_type",
+          "status",
+          "source_media_url",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "WatermarkDetectItem"
       },
-      "Watermark_getWatermarkDetectionResult_Response_200": {
+      "WatermarkDetectResponse": {
         "type": "object",
         "properties": {
           "success": {
             "type": "boolean"
           },
           "item": {
-            "$ref": "#/components/schemas/WatermarkDetectUuidResultGetResponsesContentApplicationJsonSchemaItem"
+            "$ref": "#/components/schemas/WatermarkDetectItem"
           }
         },
-        "title": "Watermark_getWatermarkDetectionResult_Response_200"
+        "required": [
+          "success",
+          "item"
+        ],
+        "title": "WatermarkDetectResponse"
       },
       "VoicesGetResponsesContentApplicationJsonSchemaItemsItems": {
         "type": "object",

@@ -57,7 +57,7 @@ namespace ResembleAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200> GetWatermarkApplyResultAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkApplyResponse> GetWatermarkApplyResultAsync(
             string uuid,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -78,7 +78,7 @@ namespace ResembleAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200>> GetWatermarkApplyResultAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyResponse>> GetWatermarkApplyResultAsResponseAsync(
             string uuid,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -358,9 +358,9 @@ namespace ResembleAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::ResembleAI.WatermarkApplyResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -390,9 +390,9 @@ namespace ResembleAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ResembleAI.WatermarkApplyResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkGetWatermarkApplyResultResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.WatermarkApplyResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
