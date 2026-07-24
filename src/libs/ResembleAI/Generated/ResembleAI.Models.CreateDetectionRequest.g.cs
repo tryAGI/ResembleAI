@@ -86,6 +86,13 @@ namespace ResembleAI
         public bool? Intelligence { get; set; }
 
         /// <summary>
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("infer_from_intelligence")]
+        public bool? InferFromIntelligence { get; set; }
+
+        /// <summary>
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
         /// </summary>
@@ -163,6 +170,10 @@ namespace ResembleAI
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="inferFromIntelligence">
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="audioSourceTracing">
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
@@ -194,6 +205,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality,
             bool? faceOnly,
             bool? intelligence,
+            bool? inferFromIntelligence,
             bool? audioSourceTracing,
             bool? useReverseSearch,
             bool? useOodDetector,
@@ -210,6 +222,7 @@ namespace ResembleAI
             this.Modality = modality;
             this.FaceOnly = faceOnly;
             this.Intelligence = intelligence;
+            this.InferFromIntelligence = inferFromIntelligence;
             this.AudioSourceTracing = audioSourceTracing;
             this.UseReverseSearch = useReverseSearch;
             this.UseOodDetector = useOodDetector;

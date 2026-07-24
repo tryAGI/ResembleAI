@@ -40,6 +40,13 @@ namespace ResembleAI
         public bool? Intelligence { get; set; }
 
         /// <summary>
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("infer_from_intelligence")]
+        public bool? InferFromIntelligence { get; set; }
+
+        /// <summary>
         /// Run identity search against the team's saved identities (audio/video only).<br/>
         /// Default Value: false
         /// </summary>
@@ -131,6 +138,10 @@ namespace ResembleAI
         /// Run multimodal intelligence on every file in the batch.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="inferFromIntelligence">
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="searchIdentity">
         /// Run identity search against the team's saved identities (audio/video only).<br/>
         /// Default Value: false
@@ -177,6 +188,7 @@ namespace ResembleAI
             string? filename,
             string? callbackUrl,
             bool? intelligence,
+            bool? inferFromIntelligence,
             bool? searchIdentity,
             bool? visualize,
             bool? audioSourceTracingEnabled,
@@ -193,6 +205,7 @@ namespace ResembleAI
             this.Filename = filename;
             this.CallbackUrl = callbackUrl;
             this.Intelligence = intelligence;
+            this.InferFromIntelligence = inferFromIntelligence;
             this.SearchIdentity = searchIdentity;
             this.Visualize = visualize;
             this.AudioSourceTracingEnabled = audioSourceTracingEnabled;
