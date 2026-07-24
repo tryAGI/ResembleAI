@@ -95,6 +95,10 @@ namespace ResembleAI
         /// Run multimodal intelligence on every file in the batch.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="inferFromIntelligence">
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="searchIdentity">
         /// Run identity search against the team's saved identities (audio/video only).<br/>
         /// Default Value: false
@@ -141,6 +145,7 @@ namespace ResembleAI
             string? filename = default,
             string? callbackUrl = default,
             bool? intelligence = default,
+            bool? inferFromIntelligence = default,
             bool? searchIdentity = default,
             bool? visualize = default,
             bool? audioSourceTracingEnabled = default,

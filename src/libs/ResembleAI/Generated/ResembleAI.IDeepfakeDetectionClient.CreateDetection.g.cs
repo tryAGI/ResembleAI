@@ -90,6 +90,10 @@ namespace ResembleAI
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="inferFromIntelligence">
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="audioSourceTracing">
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
@@ -121,6 +125,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? faceOnly = default,
             bool? intelligence = default,
+            bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
             bool? useOodDetector = default,
@@ -178,6 +183,10 @@ namespace ResembleAI
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="inferFromIntelligence">
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="audioSourceTracing">
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
@@ -209,6 +218,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? faceOnly = default,
             bool? intelligence = default,
+            bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
             bool? useOodDetector = default,
@@ -265,6 +275,10 @@ namespace ResembleAI
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="inferFromIntelligence">
+        /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="audioSourceTracing">
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
@@ -296,6 +310,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? faceOnly = default,
             bool? intelligence = default,
+            bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
             bool? useReverseSearch = default,
             bool? useOodDetector = default,

@@ -2864,6 +2864,11 @@
                     "default": false,
                     "description": "Run multimodal intelligence analysis on the media"
                   },
+                  "infer_from_intelligence": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to \"Likely Fake\". Has no effect unless `intelligence` is also true."
+                  },
                   "audio_source_tracing": {
                     "type": "boolean",
                     "default": false,
@@ -3045,6 +3050,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Run multimodal intelligence on every file in the batch."
+                  },
+                  "infer_from_intelligence": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to \"Likely Fake\". Has no effect unless `intelligence` is also true."
                   },
                   "search_identity": {
                     "type": "boolean",
