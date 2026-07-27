@@ -35,11 +35,13 @@ namespace ResembleAI
             };
         partial void PrepareGetDetectionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string uuid);
+            ref string uuid,
+            ref bool? experts);
         partial void PrepareGetDetectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string uuid);
+            string uuid,
+            bool? experts);
         partial void ProcessGetDetectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,19 +53,24 @@ namespace ResembleAI
 
         /// <summary>
         /// Get deepfake detection result<br/>
-        /// Get deepfake detection result by UUID
+        /// Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.
         /// </summary>
         /// <param name="uuid"></param>
+        /// <param name="experts">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.DeepfakeDetectionGetDetectionResponse200> GetDetectionAsync(
             string uuid,
+            bool? experts = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetDetectionAsResponseAsync(
                 uuid: uuid,
+                experts: experts,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -72,14 +79,18 @@ namespace ResembleAI
         }
         /// <summary>
         /// Get deepfake detection result<br/>
-        /// Get deepfake detection result by UUID
+        /// Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.
         /// </summary>
         /// <param name="uuid"></param>
+        /// <param name="experts">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.DeepfakeDetectionGetDetectionResponse200>> GetDetectionAsResponseAsync(
             string uuid,
+            bool? experts = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -87,7 +98,8 @@ namespace ResembleAI
                 client: HttpClient);
             PrepareGetDetectionArguments(
                 httpClient: HttpClient,
-                uuid: ref uuid);
+                uuid: ref uuid,
+                experts: ref experts);
 
 
             var __authorizations = global::ResembleAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -117,6 +129,9 @@ namespace ResembleAI
                                 baseUri: ResolveBaseUri(
                                 servers: s_GetDetectionServers,
                                 defaultBaseUrl: "https://app.resemble.ai/api/v2"));
+                            __pathBuilder
+                                .AddOptionalParameter("experts", experts?.ToString().ToLowerInvariant())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -157,7 +172,8 @@ namespace ResembleAI
                 PrepareGetDetectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid!);
+                    uuid: uuid!,
+                    experts: experts);
 
                 return __httpRequest;
             }

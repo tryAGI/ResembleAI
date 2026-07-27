@@ -3,10 +3,10 @@
 namespace ResembleAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?>
+    public sealed class DetectC2PaManifestValidationStateNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ResembleAI.DetectC2PaManifestValidationState?>
     {
         /// <inheritdoc />
-        public override global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? Read(
+        public override global::ResembleAI.DetectC2PaManifestValidationState? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace ResembleAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentExtensions.ToEnum(stringValue);
+                        return global::ResembleAI.DetectC2PaManifestValidationStateExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace ResembleAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment)numValue;
+                    return (global::ResembleAI.DetectC2PaManifestValidationState)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?);
+                    return default(global::ResembleAI.DetectC2PaManifestValidationState?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace ResembleAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? value,
+            global::ResembleAI.DetectC2PaManifestValidationState? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace ResembleAI.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::ResembleAI.DetectC2PaManifestValidationStateExtensions.ToValueString(value.Value));
             }
         }
     }

@@ -6,26 +6,34 @@ namespace ResembleAI
     {
         /// <summary>
         /// Get deepfake detection result<br/>
-        /// Get deepfake detection result by UUID
+        /// Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.
         /// </summary>
         /// <param name="uuid"></param>
+        /// <param name="experts">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::ResembleAI.DeepfakeDetectionGetDetectionResponse200> GetDetectionAsync(
             string uuid,
+            bool? experts = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get deepfake detection result<br/>
-        /// Get deepfake detection result by UUID
+        /// Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.
         /// </summary>
         /// <param name="uuid"></param>
+        /// <param name="experts">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.DeepfakeDetectionGetDetectionResponse200>> GetDetectionAsResponseAsync(
             string uuid,
+            bool? experts = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

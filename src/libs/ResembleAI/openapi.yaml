@@ -2824,7 +2824,7 @@
                   "callback_url": {
                     "type": "string",
                     "format": "uri",
-                    "description": "POST destination when analysis completes"
+                    "description": "POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout."
                   },
                   "visualize": {
                     "type": "boolean",
@@ -2874,6 +2874,11 @@
                     "default": false,
                     "description": "Enable audio source tracing to identify synthetic audio origin"
                   },
+                  "signal": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Run Signal content analysis after detection completes, classifying the media against fraud and abuse categories. Requires Signal access on your plan and cannot be combined with zero_retention_mode. Not supported for batch detections."
+                  },
                   "use_reverse_search": {
                     "type": "boolean",
                     "default": false,
@@ -2908,7 +2913,7 @@
       "get": {
         "operationId": "get-detection",
         "summary": "Get deepfake detection result",
-        "description": "Get deepfake detection result by UUID",
+        "description": "Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.",
         "tags": [
           "deepfakeDetection"
         ],
@@ -2920,6 +2925,16 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "experts",
+            "in": "query",
+            "description": "When true, return all successfully completed Intelligence results as an array, or an empty array when none have completed successfully. When omitted or false, return one completed result when available; otherwise, return the current processing or failed result.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
             }
           },
           {
@@ -8867,6 +8882,61 @@
         "description": "Video detection metrics (for video media type)",
         "title": "DetectVideoMetrics"
       },
+      "DetectC2PaManifestValidationState": {
+        "type": "string",
+        "enum": [
+          "Valid",
+          "NotPresent",
+          "Unavailable"
+        ],
+        "description": "Verification state. `NotPresent` means no embedded Content Credentials were found; `Unavailable` means verification could not complete.",
+        "title": "DetectC2PaManifestValidationState"
+      },
+      "DetectC2paManifest": {
+        "type": "object",
+        "properties": {
+          "validation_state": {
+            "$ref": "#/components/schemas/DetectC2PaManifestValidationState",
+            "description": "Verification state. `NotPresent` means no embedded Content Credentials were found; `Unavailable` means verification could not complete."
+          },
+          "active_manifest": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Active C2PA manifest identifier when credentials are present"
+          },
+          "manifests": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            },
+            "description": "Raw manifest details returned by C2PA tooling"
+          },
+          "validation_results": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "description": "Any type"
+            },
+            "description": "Detailed validation results returned by C2PA tooling"
+          },
+          "message": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Generic message when verification is unavailable"
+          }
+        },
+        "description": "Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.",
+        "title": "DetectC2paManifest"
+      },
       "DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing": {
         "type": "object",
         "properties": {
@@ -8922,6 +8992,9 @@
           },
           "video_metrics": {
             "$ref": "#/components/schemas/DetectVideoMetrics"
+          },
+          "c2pa_manifest": {
+            "$ref": "#/components/schemas/DetectC2paManifest"
           },
           "audio_source_tracing": {
             "oneOf": [
@@ -9061,6 +9134,15 @@
         ],
         "description": "Which detection modality was requested. `all` when not specified.\nFor a single-modality video detect, the skipped component's metrics are absent\n(`metrics` for audio-only-skipped, `video_metrics` for video-only-skipped), and the\ndetect still reaches `completed` once the requested modality(ies) finish.\n",
         "title": "DetectPostResponsesContentApplicationJsonSchemaItemModality"
+      },
+      "DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus": {
+        "type": "string",
+        "enum": [
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "title": "DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus"
       },
       "DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType": {
         "type": "string",
@@ -9202,15 +9284,30 @@
       "DetectPostResponsesContentApplicationJsonSchemaItemIntelligence": {
         "type": "object",
         "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus"
+          },
+          "error_message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "description": {
             "$ref": "#/components/schemas/DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription"
           },
           "created_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "detect_uuid": {
+            "type": "string"
           }
         },
-        "description": "Intelligence results when requested",
+        "description": "Default Intelligence result when requested",
         "title": "DetectPostResponsesContentApplicationJsonSchemaItemIntelligence"
       },
       "DetectPostResponsesContentApplicationJsonSchemaItem": {
@@ -9269,7 +9366,10 @@
                 "type": "null"
               }
             ],
-            "description": "Intelligence results when requested"
+            "description": "Default Intelligence result when requested"
+          },
+          "c2pa_manifest": {
+            "$ref": "#/components/schemas/DetectC2paManifest"
           }
         },
         "title": "DetectPostResponsesContentApplicationJsonSchemaItem"
@@ -9302,6 +9402,7 @@
           "completed",
           "failed"
         ],
+        "description": "Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.",
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus"
       },
       "DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing": {
@@ -9321,7 +9422,17 @@
         "description": "Source tracing results (only returned if audio is labeled fake)",
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType": {
+      "DetectIntelligenceResultStatus": {
+        "type": "string",
+        "enum": [
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "description": "Status of this Intelligence result, independent of the associated Detect job status.",
+        "title": "DetectIntelligenceResultStatus"
+      },
+      "DetectIntelligenceResultDescriptionOneOf1FraudType": {
         "type": "string",
         "enum": [
           "none",
@@ -9337,13 +9448,13 @@
           "employment_fraud",
           "other"
         ],
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType"
+        "title": "DetectIntelligenceResultDescriptionOneOf1FraudType"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud": {
+      "DetectIntelligenceResultDescriptionOneOf1Fraud": {
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType"
+            "$ref": "#/components/schemas/DetectIntelligenceResultDescriptionOneOf1FraudType"
           },
           "confidence": {
             "type": "number",
@@ -9353,22 +9464,22 @@
             "type": "string"
           }
         },
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud"
+        "title": "DetectIntelligenceResultDescriptionOneOf1Fraud"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment": {
+      "DetectIntelligenceResultDescriptionOneOf1LivenessAssessment": {
         "type": "string",
         "enum": [
           "real_person",
           "not_real_person",
           "inconclusive"
         ],
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment"
+        "title": "DetectIntelligenceResultDescriptionOneOf1LivenessAssessment"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness": {
+      "DetectIntelligenceResultDescriptionOneOf1Liveness": {
         "type": "object",
         "properties": {
           "assessment": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment"
+            "$ref": "#/components/schemas/DetectIntelligenceResultDescriptionOneOf1LivenessAssessment"
           },
           "confidence": {
             "type": "number",
@@ -9378,9 +9489,9 @@
             "type": "string"
           }
         },
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness"
+        "title": "DetectIntelligenceResultDescriptionOneOf1Liveness"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered": {
+      "DetectIntelligenceResultDescriptionOneOf1DigitallyAltered": {
         "type": "object",
         "properties": {
           "detected": {
@@ -9394,9 +9505,9 @@
             "type": "string"
           }
         },
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered"
+        "title": "DetectIntelligenceResultDescriptionOneOf1DigitallyAltered"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1": {
+      "DetectIntelligenceResultDescription1": {
         "type": "object",
         "properties": {
           "speaker_info": {
@@ -9436,43 +9547,82 @@
             "type": "string"
           },
           "fraud": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud"
+            "$ref": "#/components/schemas/DetectIntelligenceResultDescriptionOneOf1Fraud"
           },
           "liveness": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness"
+            "$ref": "#/components/schemas/DetectIntelligenceResultDescriptionOneOf1Liveness"
           },
           "digitally_altered": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered"
+            "$ref": "#/components/schemas/DetectIntelligenceResultDescriptionOneOf1DigitallyAltered"
           }
         },
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1"
+        "title": "DetectIntelligenceResultDescription1"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription": {
+      "DetectIntelligenceResultDescription": {
         "oneOf": [
           {
             "type": "string"
           },
           {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1"
+            "$ref": "#/components/schemas/DetectIntelligenceResultDescription1"
           }
         ],
-        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription"
+        "title": "DetectIntelligenceResultDescription"
       },
-      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence": {
+      "DetectIntelligenceResult": {
         "type": "object",
         "properties": {
           "uuid": {
             "type": "string"
           },
+          "status": {
+            "$ref": "#/components/schemas/DetectIntelligenceResultStatus",
+            "description": "Status of this Intelligence result, independent of the associated Detect job status."
+          },
+          "error_message": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "description": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DetectIntelligenceResultDescription"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "created_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "detect_uuid": {
+            "type": "string"
           }
         },
-        "description": "Intelligence results when requested",
+        "description": "One Detect Intelligence expert result",
+        "title": "DetectIntelligenceResult"
+      },
+      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DetectIntelligenceResult"
+        },
+        "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1"
+      },
+      "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/DetectIntelligenceResult"
+          },
+          {
+            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1"
+          }
+        ],
+        "description": "With experts omitted or false, one completed Intelligence result when available; otherwise, the current processing or failed result. With experts=true, all successfully completed results as an array, or an empty array when none have completed successfully.",
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence"
       },
       "DetectUuidGetResponsesContentApplicationJsonSchemaItemModality": {
@@ -9495,7 +9645,8 @@
             "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType"
           },
           "status": {
-            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus"
+            "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus",
+            "description": "Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing."
           },
           "metrics": {
             "$ref": "#/components/schemas/DetectAudioMetrics"
@@ -9505,6 +9656,9 @@
           },
           "video_metrics": {
             "$ref": "#/components/schemas/DetectVideoMetrics"
+          },
+          "c2pa_manifest": {
+            "$ref": "#/components/schemas/DetectC2paManifest"
           },
           "audio_source_tracing": {
             "oneOf": [
@@ -9526,7 +9680,7 @@
                 "type": "null"
               }
             ],
-            "description": "Intelligence results when requested"
+            "description": "With experts omitted or false, one completed Intelligence result when available; otherwise, the current processing or failed result. With experts=true, all successfully completed results as an array, or an empty array when none have completed successfully."
           },
           "modality": {
             "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemModality",

@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    /// Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.
     /// </summary>
     public enum DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus
     {

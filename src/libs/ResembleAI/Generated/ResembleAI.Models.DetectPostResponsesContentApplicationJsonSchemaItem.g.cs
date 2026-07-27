@@ -68,11 +68,17 @@ namespace ResembleAI
         public bool? FaceOnly { get; set; }
 
         /// <summary>
-        /// Intelligence results when requested
+        /// Default Intelligence result when requested
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>))]
         public global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? Intelligence { get; set; }
+
+        /// <summary>
+        /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("c2pa_manifest")]
+        public global::ResembleAI.DetectC2paManifest? C2paManifest { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -111,7 +117,10 @@ namespace ResembleAI
         /// analysis; `false` for audio, image, and audio-only video detects.
         /// </param>
         /// <param name="intelligence">
-        /// Intelligence results when requested
+        /// Default Intelligence result when requested
+        /// </param>
+        /// <param name="c2paManifest">
+        /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -126,7 +135,8 @@ namespace ResembleAI
             string? filename,
             global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? modality,
             bool? faceOnly,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence)
+            global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence,
+            global::ResembleAI.DetectC2paManifest? c2paManifest)
         {
             this.Uuid = uuid;
             this.Status = status;
@@ -138,6 +148,7 @@ namespace ResembleAI
             this.Modality = modality;
             this.FaceOnly = faceOnly;
             this.Intelligence = intelligence;
+            this.C2paManifest = c2paManifest;
         }
 
         /// <summary>
