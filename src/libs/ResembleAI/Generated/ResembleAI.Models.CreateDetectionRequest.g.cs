@@ -23,7 +23,7 @@ namespace ResembleAI
         public required string Filename { get; set; }
 
         /// <summary>
-        /// POST destination when analysis completes
+        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
         public string? CallbackUrl { get; set; }
@@ -100,6 +100,13 @@ namespace ResembleAI
         public bool? AudioSourceTracing { get; set; }
 
         /// <summary>
+        /// Run Signal content analysis after detection completes, classifying the media against fraud and abuse categories. Requires Signal access on your plan and cannot be combined with zero_retention_mode. Not supported for batch detections.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signal")]
+        public bool? Signal { get; set; }
+
+        /// <summary>
         /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
         /// Default Value: false
         /// </summary>
@@ -136,7 +143,7 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination when analysis completes
+        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -178,6 +185,10 @@ namespace ResembleAI
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="signal">
+        /// Run Signal content analysis after detection completes, classifying the media against fraud and abuse categories. Requires Signal access on your plan and cannot be combined with zero_retention_mode. Not supported for batch detections.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="useReverseSearch">
         /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
         /// Default Value: false
@@ -207,6 +218,7 @@ namespace ResembleAI
             bool? intelligence,
             bool? inferFromIntelligence,
             bool? audioSourceTracing,
+            bool? signal,
             bool? useReverseSearch,
             bool? useOodDetector,
             bool? zeroRetentionMode)
@@ -224,6 +236,7 @@ namespace ResembleAI
             this.Intelligence = intelligence;
             this.InferFromIntelligence = inferFromIntelligence;
             this.AudioSourceTracing = audioSourceTracing;
+            this.Signal = signal;
             this.UseReverseSearch = useReverseSearch;
             this.UseOodDetector = useOodDetector;
             this.ZeroRetentionMode = zeroRetentionMode;

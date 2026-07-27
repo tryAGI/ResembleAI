@@ -22,7 +22,7 @@ namespace ResembleAI
         public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType? MediaType { get; set; }
 
         /// <summary>
-        /// 
+        /// Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter))]
@@ -47,6 +47,12 @@ namespace ResembleAI
         public global::ResembleAI.DetectVideoMetrics? VideoMetrics { get; set; }
 
         /// <summary>
+        /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("c2pa_manifest")]
+        public global::ResembleAI.DetectC2paManifest? C2paManifest { get; set; }
+
+        /// <summary>
         /// Source tracing results (only returned if audio is labeled fake)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_source_tracing")]
@@ -54,11 +60,11 @@ namespace ResembleAI
         public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? AudioSourceTracing { get; set; }
 
         /// <summary>
-        /// Intelligence results when requested
+        /// With experts omitted or false, one completed Intelligence result when available; otherwise, the current processing or failed result. With experts=true, all successfully completed results as an array, or an empty array when none have completed successfully.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? Intelligence { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>))]
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>? Intelligence { get; set; }
 
         /// <summary>
         /// Which detection modality was requested for this detect. `all` when not specified<br/>
@@ -135,7 +141,9 @@ namespace ResembleAI
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="mediaType"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.
+        /// </param>
         /// <param name="metrics">
         /// Audio detection metrics (for audio and video media types)
         /// </param>
@@ -145,11 +153,14 @@ namespace ResembleAI
         /// <param name="videoMetrics">
         /// Video detection metrics (for video media type)
         /// </param>
+        /// <param name="c2paManifest">
+        /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
+        /// </param>
         /// <param name="audioSourceTracing">
         /// Source tracing results (only returned if audio is labeled fake)
         /// </param>
         /// <param name="intelligence">
-        /// Intelligence results when requested
+        /// With experts omitted or false, one completed Intelligence result when available; otherwise, the current processing or failed result. With experts=true, all successfully completed results as an array, or an empty array when none have completed successfully.
         /// </param>
         /// <param name="modality">
         /// Which detection modality was requested for this detect. `all` when not specified<br/>
@@ -188,8 +199,9 @@ namespace ResembleAI
             global::ResembleAI.DetectAudioMetrics? metrics,
             global::ResembleAI.DetectImageMetrics? imageMetrics,
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
+            global::ResembleAI.DetectC2paManifest? c2paManifest,
             global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? audioSourceTracing,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence,
+            global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>? intelligence,
             global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? modality,
             bool? faceOnly,
             string? url,
@@ -207,6 +219,7 @@ namespace ResembleAI
             this.Metrics = metrics;
             this.ImageMetrics = imageMetrics;
             this.VideoMetrics = videoMetrics;
+            this.C2paManifest = c2paManifest;
             this.AudioSourceTracing = audioSourceTracing;
             this.Intelligence = intelligence;
             this.Modality = modality;

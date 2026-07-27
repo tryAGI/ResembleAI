@@ -6,7 +6,7 @@ namespace ResembleAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
+    public sealed partial class DetectIntelligenceResultDescription1
     {
         /// <summary>
         /// 
@@ -78,19 +78,19 @@ namespace ResembleAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fraud")]
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud? Fraud { get; set; }
+        public global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1Fraud? Fraud { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("liveness")]
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness? Liveness { get; set; }
+        public global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1Liveness? Liveness { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("digitally_altered")]
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered? DigitallyAltered { get; set; }
+        public global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1DigitallyAltered? DigitallyAltered { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -99,7 +99,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescription1" /> class.
         /// </summary>
         /// <param name="speakerInfo"></param>
         /// <param name="language"></param>
@@ -118,7 +118,7 @@ namespace ResembleAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(
+        public DetectIntelligenceResultDescription1(
             string? speakerInfo,
             string? language,
             string? dialect,
@@ -130,9 +130,9 @@ namespace ResembleAI
             string? transcription,
             string? translation,
             string? misinformation,
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud? fraud,
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness? liveness,
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered? digitallyAltered)
+            global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1Fraud? fraud,
+            global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1Liveness? liveness,
+            global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1DigitallyAltered? digitallyAltered)
         {
             this.SpeakerInfo = speakerInfo;
             this.Language = language;
@@ -151,9 +151,9 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescription1" /> class.
         /// </summary>
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescription1()
+        public DetectIntelligenceResultDescription1()
         {
         }
 

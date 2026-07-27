@@ -6,7 +6,7 @@ namespace ResembleAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered
+    public sealed partial class DetectIntelligenceResultDescriptionOneOf1DigitallyAltered
     {
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescriptionOneOf1DigitallyAltered" /> class.
         /// </summary>
         /// <param name="detected"></param>
         /// <param name="confidence"></param>
@@ -41,7 +41,7 @@ namespace ResembleAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered(
+        public DetectIntelligenceResultDescriptionOneOf1DigitallyAltered(
             bool? detected,
             double? confidence,
             string? alterations)
@@ -52,9 +52,9 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescriptionOneOf1DigitallyAltered" /> class.
         /// </summary>
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1DigitallyAltered()
+        public DetectIntelligenceResultDescriptionOneOf1DigitallyAltered()
         {
         }
 

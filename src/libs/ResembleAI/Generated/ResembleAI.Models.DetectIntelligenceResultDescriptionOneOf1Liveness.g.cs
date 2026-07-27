@@ -6,14 +6,14 @@ namespace ResembleAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness
+    public sealed partial class DetectIntelligenceResultDescriptionOneOf1Liveness
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assessment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter))]
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? Assessment { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentJsonConverter))]
+        public global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment? Assessment { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescriptionOneOf1Liveness" /> class.
         /// </summary>
         /// <param name="assessment"></param>
         /// <param name="confidence"></param>
@@ -42,8 +42,8 @@ namespace ResembleAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness(
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment? assessment,
+        public DetectIntelligenceResultDescriptionOneOf1Liveness(
+            global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment? assessment,
             double? confidence,
             string? indicators)
         {
@@ -53,9 +53,9 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescriptionOneOf1Liveness" /> class.
         /// </summary>
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Liveness()
+        public DetectIntelligenceResultDescriptionOneOf1Liveness()
         {
         }
 

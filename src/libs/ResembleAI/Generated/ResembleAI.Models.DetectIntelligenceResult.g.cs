@@ -4,9 +4,9 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// Default Intelligence result when requested
+    /// One Detect Intelligence expert result
     /// </summary>
-    public sealed partial class DetectPostResponsesContentApplicationJsonSchemaItemIntelligence
+    public sealed partial class DetectIntelligenceResult
     {
         /// <summary>
         /// 
@@ -15,11 +15,11 @@ namespace ResembleAI
         public string? Uuid { get; set; }
 
         /// <summary>
-        /// 
+        /// Status of this Intelligence result, independent of the associated Detect job status.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusJsonConverter))]
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusJsonConverter))]
+        public global::ResembleAI.DetectIntelligenceResultStatus? Status { get; set; }
 
         /// <summary>
         /// 
@@ -31,8 +31,8 @@ namespace ResembleAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter))]
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectIntelligenceResultDescription?, object>))]
+        public global::ResembleAI.OneOf<global::ResembleAI.DetectIntelligenceResultDescription?, object>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -53,10 +53,12 @@ namespace ResembleAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectPostResponsesContentApplicationJsonSchemaItemIntelligence" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResult" /> class.
         /// </summary>
         /// <param name="uuid"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Status of this Intelligence result, independent of the associated Detect job status.
+        /// </param>
         /// <param name="errorMessage"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>
@@ -64,11 +66,11 @@ namespace ResembleAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DetectPostResponsesContentApplicationJsonSchemaItemIntelligence(
+        public DetectIntelligenceResult(
             string? uuid,
-            global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus? status,
+            global::ResembleAI.DetectIntelligenceResultStatus? status,
             string? errorMessage,
-            global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription? description,
+            global::ResembleAI.OneOf<global::ResembleAI.DetectIntelligenceResultDescription?, object>? description,
             global::System.DateTime? createdAt,
             string? detectUuid)
         {
@@ -81,9 +83,9 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectPostResponsesContentApplicationJsonSchemaItemIntelligence" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResult" /> class.
         /// </summary>
-        public DetectPostResponsesContentApplicationJsonSchemaItemIntelligence()
+        public DetectIntelligenceResult()
         {
         }
 

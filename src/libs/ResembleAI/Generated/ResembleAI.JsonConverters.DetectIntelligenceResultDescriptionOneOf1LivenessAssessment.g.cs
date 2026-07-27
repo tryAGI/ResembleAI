@@ -3,10 +3,10 @@
 namespace ResembleAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType>
+    public sealed class DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment>
     {
         /// <inheritdoc />
-        public override global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType Read(
+        public override global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace ResembleAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace ResembleAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType)numValue;
+                    return (global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType);
+                    return default(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace ResembleAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType value,
+            global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeExtensions.ToValueString(value));
+            writer.WriteStringValue(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentExtensions.ToValueString(value));
         }
     }
 }

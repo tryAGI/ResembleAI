@@ -61,6 +61,12 @@ namespace ResembleAI
         public global::ResembleAI.DetectVideoMetrics? VideoMetrics { get; set; }
 
         /// <summary>
+        /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("c2pa_manifest")]
+        public global::ResembleAI.DetectC2paManifest? C2paManifest { get; set; }
+
+        /// <summary>
         /// Source tracing results (only returned if audio is labeled fake)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_source_tracing")]
@@ -186,6 +192,9 @@ namespace ResembleAI
         /// <param name="videoMetrics">
         /// Video detection metrics (for video media type)
         /// </param>
+        /// <param name="c2paManifest">
+        /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
+        /// </param>
         /// <param name="audioSourceTracing">
         /// Source tracing results (only returned if audio is labeled fake)
         /// </param>
@@ -228,6 +237,7 @@ namespace ResembleAI
             global::ResembleAI.DetectAudioMetrics? metrics,
             global::ResembleAI.DetectImageMetrics? imageMetrics,
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
+            global::ResembleAI.DetectC2paManifest? c2paManifest,
             global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>? audioSourceTracing,
             global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>? intelligence,
             string? url,
@@ -253,6 +263,7 @@ namespace ResembleAI
             this.Metrics = metrics;
             this.ImageMetrics = imageMetrics;
             this.VideoMetrics = videoMetrics;
+            this.C2paManifest = c2paManifest;
             this.AudioSourceTracing = audioSourceTracing;
             this.Intelligence = intelligence;
             this.Url = url;

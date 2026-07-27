@@ -6,14 +6,14 @@ namespace ResembleAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud
+    public sealed partial class DetectIntelligenceResultDescriptionOneOf1Fraud
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter))]
-        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeJsonConverter))]
+        public global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescriptionOneOf1Fraud" /> class.
         /// </summary>
         /// <param name="type"></param>
         /// <param name="confidence"></param>
@@ -42,8 +42,8 @@ namespace ResembleAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud(
-            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType? type,
+        public DetectIntelligenceResultDescriptionOneOf1Fraud(
+            global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType? type,
             double? confidence,
             string? reasoning)
         {
@@ -53,9 +53,9 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud" /> class.
+        /// Initializes a new instance of the <see cref="DetectIntelligenceResultDescriptionOneOf1Fraud" /> class.
         /// </summary>
-        public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1Fraud()
+        public DetectIntelligenceResultDescriptionOneOf1Fraud()
         {
         }
 

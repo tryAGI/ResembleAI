@@ -289,6 +289,14 @@ namespace ResembleAI
                                     name: "\"audio_source_tracing\"");
 
                             }
+                            if (request.Signal != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Signal, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"signal\"");
+
+                            }
                             if (request.UseReverseSearch != default)
                             {
 
@@ -618,7 +626,7 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination when analysis completes
+        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -658,6 +666,10 @@ namespace ResembleAI
         /// </param>
         /// <param name="audioSourceTracing">
         /// Enable audio source tracing to identify synthetic audio origin<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="signal">
+        /// Run Signal content analysis after detection completes, classifying the media against fraud and abuse categories. Requires Signal access on your plan and cannot be combined with zero_retention_mode. Not supported for batch detections.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="useReverseSearch">
@@ -689,6 +701,7 @@ namespace ResembleAI
             bool? intelligence = default,
             bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
+            bool? signal = default,
             bool? useReverseSearch = default,
             bool? useOodDetector = default,
             bool? zeroRetentionMode = default,
@@ -710,6 +723,7 @@ namespace ResembleAI
                 Intelligence = intelligence,
                 InferFromIntelligence = inferFromIntelligence,
                 AudioSourceTracing = audioSourceTracing,
+                Signal = signal,
                 UseReverseSearch = useReverseSearch,
                 UseOodDetector = useOodDetector,
                 ZeroRetentionMode = zeroRetentionMode,
@@ -737,7 +751,7 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination when analysis completes
+        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -779,6 +793,10 @@ namespace ResembleAI
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="signal">
+        /// Run Signal content analysis after detection completes, classifying the media against fraud and abuse categories. Requires Signal access on your plan and cannot be combined with zero_retention_mode. Not supported for batch detections.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="useReverseSearch">
         /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
         /// Default Value: false
@@ -808,6 +826,7 @@ namespace ResembleAI
             bool? intelligence = default,
             bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
+            bool? signal = default,
             bool? useReverseSearch = default,
             bool? useOodDetector = default,
             bool? zeroRetentionMode = default,
@@ -831,6 +850,7 @@ namespace ResembleAI
                 Intelligence = intelligence,
                 InferFromIntelligence = inferFromIntelligence,
                 AudioSourceTracing = audioSourceTracing,
+                Signal = signal,
                 UseReverseSearch = useReverseSearch,
                 UseOodDetector = useOodDetector,
                 ZeroRetentionMode = zeroRetentionMode,
@@ -1024,6 +1044,14 @@ namespace ResembleAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AudioSourceTracing, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"audio_source_tracing\"");
+
+                            }
+                            if (request.Signal != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Signal, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"signal\"");
 
                             }
                             if (request.UseReverseSearch != default)
@@ -1347,7 +1375,7 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination when analysis completes
+        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -1389,6 +1417,10 @@ namespace ResembleAI
         /// Enable audio source tracing to identify synthetic audio origin<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="signal">
+        /// Run Signal content analysis after detection completes, classifying the media against fraud and abuse categories. Requires Signal access on your plan and cannot be combined with zero_retention_mode. Not supported for batch detections.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="useReverseSearch">
         /// Enable reverse image search to improve detection accuracy for image files. Only applies to image detections.<br/>
         /// Default Value: false
@@ -1418,6 +1450,7 @@ namespace ResembleAI
             bool? intelligence = default,
             bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
+            bool? signal = default,
             bool? useReverseSearch = default,
             bool? useOodDetector = default,
             bool? zeroRetentionMode = default,
@@ -1441,6 +1474,7 @@ namespace ResembleAI
                 Intelligence = intelligence,
                 InferFromIntelligence = inferFromIntelligence,
                 AudioSourceTracing = audioSourceTracing,
+                Signal = signal,
                 UseReverseSearch = useReverseSearch,
                 UseOodDetector = useOodDetector,
                 ZeroRetentionMode = zeroRetentionMode,
@@ -1634,6 +1668,14 @@ namespace ResembleAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AudioSourceTracing, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"audio_source_tracing\"");
+
+                            }
+                            if (request.Signal != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Signal, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"signal\"");
 
                             }
                             if (request.UseReverseSearch != default)
