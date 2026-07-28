@@ -56,7 +56,10 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
+        /// POST destination for the detection result.
+        /// </param>
+        /// <param name="waitForIntelligence">
+        /// Controls callback timing when callback_url and intelligence=true are provided. True waits without a forced timeout until Detect and Intelligence are both finished. False sends after Detect finishes without waiting for Intelligence. When omitted, the callback waits up to 10 minutes for Intelligence before sending the result state available at that time.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -121,6 +124,7 @@ namespace ResembleAI
             byte[] file,
             string filename,
             string? callbackUrl = default,
+            bool? waitForIntelligence = default,
             bool? visualize = default,
             int? frameLength = default,
             double? startRegion = default,
@@ -154,7 +158,10 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
+        /// POST destination for the detection result.
+        /// </param>
+        /// <param name="waitForIntelligence">
+        /// Controls callback timing when callback_url and intelligence=true are provided. True waits without a forced timeout until Detect and Intelligence are both finished. False sends after Detect finishes without waiting for Intelligence. When omitted, the callback waits up to 10 minutes for Intelligence before sending the result state available at that time.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -219,6 +226,7 @@ namespace ResembleAI
             global::System.IO.Stream file,
             string filename,
             string? callbackUrl = default,
+            bool? waitForIntelligence = default,
             bool? visualize = default,
             int? frameLength = default,
             double? startRegion = default,
@@ -251,7 +259,10 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
+        /// POST destination for the detection result.
+        /// </param>
+        /// <param name="waitForIntelligence">
+        /// Controls callback timing when callback_url and intelligence=true are provided. True waits without a forced timeout until Detect and Intelligence are both finished. False sends after Detect finishes without waiting for Intelligence. When omitted, the callback waits up to 10 minutes for Intelligence before sending the result state available at that time.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -316,6 +327,7 @@ namespace ResembleAI
             global::System.IO.Stream file,
             string filename,
             string? callbackUrl = default,
+            bool? waitForIntelligence = default,
             bool? visualize = default,
             int? frameLength = default,
             double? startRegion = default,

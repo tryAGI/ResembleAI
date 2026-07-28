@@ -2824,7 +2824,11 @@
                   "callback_url": {
                     "type": "string",
                     "format": "uri",
-                    "description": "POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout."
+                    "description": "POST destination for the detection result."
+                  },
+                  "wait_for_intelligence": {
+                    "type": "boolean",
+                    "description": "Controls callback timing when callback_url and intelligence=true are provided. True waits without a forced timeout until Detect and Intelligence are both finished. False sends after Detect finishes without waiting for Intelligence. When omitted, the callback waits up to 10 minutes for Intelligence before sending the result state available at that time."
                   },
                   "visualize": {
                     "type": "boolean",

@@ -23,10 +23,16 @@ namespace ResembleAI
         public required string Filename { get; set; }
 
         /// <summary>
-        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
+        /// POST destination for the detection result.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_url")]
         public string? CallbackUrl { get; set; }
+
+        /// <summary>
+        /// Controls callback timing when callback_url and intelligence=true are provided. True waits without a forced timeout until Detect and Intelligence are both finished. False sends after Detect finishes without waiting for Intelligence. When omitted, the callback waits up to 10 minutes for Intelligence before sending the result state available at that time.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wait_for_intelligence")]
+        public bool? WaitForIntelligence { get; set; }
 
         /// <summary>
         /// Generate visualization artifacts
@@ -143,7 +149,10 @@ namespace ResembleAI
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
         /// </param>
         /// <param name="callbackUrl">
-        /// POST destination for the detection result. When Intelligence is requested, callback delivery waits for a priority-stable successful result or the bounded fail-open timeout.
+        /// POST destination for the detection result.
+        /// </param>
+        /// <param name="waitForIntelligence">
+        /// Controls callback timing when callback_url and intelligence=true are provided. True waits without a forced timeout until Detect and Intelligence are both finished. False sends after Detect finishes without waiting for Intelligence. When omitted, the callback waits up to 10 minutes for Intelligence before sending the result state available at that time.
         /// </param>
         /// <param name="visualize">
         /// Generate visualization artifacts
@@ -208,6 +217,7 @@ namespace ResembleAI
             byte[] file,
             string filename,
             string? callbackUrl,
+            bool? waitForIntelligence,
             bool? visualize,
             int? frameLength,
             double? startRegion,
@@ -226,6 +236,7 @@ namespace ResembleAI
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.CallbackUrl = callbackUrl;
+            this.WaitForIntelligence = waitForIntelligence;
             this.Visualize = visualize;
             this.FrameLength = frameLength;
             this.StartRegion = startRegion;
