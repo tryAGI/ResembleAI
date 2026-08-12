@@ -10,9 +10,9 @@ namespace ResembleAI
     public sealed partial class ResembleAIClient : global::ResembleAI.IResembleAIClient, global::System.IDisposable
     {
         /// <summary>
-        /// synthesis
+        /// production
         /// </summary>
-        public const string DefaultBaseUrl = "https://f.cluster.resemble.ai/";
+        public const string DefaultBaseUrl = "https://app.resemble.ai/api/v2";
 
         private bool _disposeHttpClient = true;
 
@@ -46,56 +46,6 @@ namespace ResembleAI
         /// 
         /// </summary>
         public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentKnowledgeBaseClient AgentKnowledgeBase => new AgentKnowledgeBaseClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentPhoneNumbersClient AgentPhoneNumbers => new AgentPhoneNumbersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentToolsClient AgentTools => new AgentToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentWebhooksClient AgentWebhooks => new AgentWebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -146,6 +96,16 @@ namespace ResembleAI
         /// 
         /// </summary>
         public DeepfakeDetectionClient DeepfakeDetection => new DeepfakeDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DetectAgentsClient DetectAgents => new DetectAgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -295,15 +255,15 @@ namespace ResembleAI
 
         private static readonly global::ResembleAI.AutoSDKServer[] s_availableServers = new global::ResembleAI.AutoSDKServer[]
         {            new global::ResembleAI.AutoSDKServer(
-                id: "https-f-cluster-resemble-ai",
-                name: "synthesis",
-                url: "https://f.cluster.resemble.ai/",
-                description: "synthesis"),
-            new global::ResembleAI.AutoSDKServer(
                 id: "https-app-resemble-ai-api-v2",
                 name: "production",
                 url: "https://app.resemble.ai/api/v2",
                 description: "production"),
+            new global::ResembleAI.AutoSDKServer(
+                id: "https-f-cluster-resemble-ai",
+                name: "synthesis",
+                url: "https://f.cluster.resemble.ai/",
+                description: "synthesis"),
         };
 
         /// <summary>

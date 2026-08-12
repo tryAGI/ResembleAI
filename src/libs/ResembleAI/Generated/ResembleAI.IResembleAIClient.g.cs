@@ -73,31 +73,6 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
-        public AgentKnowledgeBaseClient AgentKnowledgeBase { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentPhoneNumbersClient AgentPhoneNumbers { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentToolsClient AgentTools { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentWebhooksClient AgentWebhooks { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AgentsClient Agents { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public AudioEnhancementClient AudioEnhancement { get; }
 
         /// <summary>
@@ -119,6 +94,11 @@ namespace ResembleAI
         /// 
         /// </summary>
         public DeepfakeDetectionClient DeepfakeDetection { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DetectAgentsClient DetectAgents { get; }
 
         /// <summary>
         /// 
