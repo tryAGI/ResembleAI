@@ -77,6 +77,26 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter),
 
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter),
+
             typeof(global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.DetectAgentTierNullableJsonConverter),
@@ -375,6 +395,8 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>),
 
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectFeedbackVerdict?, object>),
+
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectAgentRunResultVerdict, object>),
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>),
@@ -467,6 +489,16 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectBatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionCreateDetectBatchResponse202))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionGetDetectBatchResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackType), TypeInfoPropertyName = "DetectFeedbackType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackVote), TypeInfoPropertyName = "DetectFeedbackVote2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackVerdict), TypeInfoPropertyName = "DetectFeedbackVerdict2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackMediaType), TypeInfoPropertyName = "DetectFeedbackMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedback))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectFeedbackVerdict?, object>), TypeInfoPropertyName = "OneOfDetectFeedbackVerdictObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionGetDetectFeedbackResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType), TypeInfoPropertyName = "DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionCreateDetectFeedbackResponse200))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DeepfakeDetectionDeleteDetectFeedbackResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgentTier), TypeInfoPropertyName = "DetectAgentTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgentCapabilities))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgent))]
@@ -834,6 +866,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateDetectionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateDetectBatchRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateDetectFeedbackRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.RunDetectAgentInvestigationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.RunIntelligenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AskDetectIntelligenceQuestionRequest))]
@@ -882,17 +915,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultStatus?), TypeInfoPropertyName = "NullableDetectIntelligenceResultStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectIntelligenceResultDescriptionOneOf1FraudType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectIntelligenceResultDescriptionOneOf1LivenessAssessment2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultDescription?), TypeInfoPropertyName = "NullableDetectIntelligenceResultDescription2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectIntelligenceResultDescription?, object>?), TypeInfoPropertyName = "NullableOneOfDetectIntelligenceResultDescriptionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemModality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>?), TypeInfoPropertyName = "NullableOneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracingObject2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -967,6 +989,26 @@ namespace ResembleAI
             typeof(global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter),
+
+            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter),
 
             typeof(global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter),
 
@@ -1266,6 +1308,8 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>),
 
+            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectFeedbackVerdict?, object>),
+
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectAgentRunResultVerdict, object>),
 
             typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>),
@@ -1284,8 +1328,25 @@ namespace ResembleAI
 
             typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultStatus?), TypeInfoPropertyName = "NullableDetectIntelligenceResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectIntelligenceResultDescriptionOneOf1FraudType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectIntelligenceResultDescriptionOneOf1LivenessAssessment2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectIntelligenceResultDescription?), TypeInfoPropertyName = "NullableDetectIntelligenceResultDescription2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectIntelligenceResultDescription?, object>?), TypeInfoPropertyName = "NullableOneOfDetectIntelligenceResultDescriptionObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>?), TypeInfoPropertyName = "NullableOneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracingObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>?), TypeInfoPropertyName = "NullableOneOfDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectBatchStatus?), TypeInfoPropertyName = "NullableDetectBatchStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackType?), TypeInfoPropertyName = "NullableDetectFeedbackType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackVote?), TypeInfoPropertyName = "NullableDetectFeedbackVote2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackVerdict?), TypeInfoPropertyName = "NullableDetectFeedbackVerdict2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectFeedbackMediaType?), TypeInfoPropertyName = "NullableDetectFeedbackMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectFeedbackVerdict?, object>?), TypeInfoPropertyName = "NullableOneOfDetectFeedbackVerdictObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType?), TypeInfoPropertyName = "NullableDetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgentTier?), TypeInfoPropertyName = "NullableDetectAgentTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgentRunSummaryStatus?), TypeInfoPropertyName = "NullableDetectAgentRunSummaryStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectAgentRunResultVerdict, object>?), TypeInfoPropertyName = "NullableOneOfDetectAgentRunResultVerdictObject2")]
@@ -1498,6 +1559,16 @@ namespace ResembleAI
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentTierNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusJsonConverter());
@@ -1647,6 +1718,7 @@ namespace ResembleAI
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectIntelligenceResultDescription?, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>());
+            options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectFeedbackVerdict?, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectAgentRunResultVerdict, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>());
