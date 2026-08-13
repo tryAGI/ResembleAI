@@ -3,10 +3,10 @@
 
 namespace ResembleAI
 {
-    public partial class AccountClient
+    public partial class SignalClient
     {
 
-        private static readonly global::ResembleAI.AutoSDKServer[] s_GetBillingUsageServers = new global::ResembleAI.AutoSDKServer[]
+        private static readonly global::ResembleAI.AutoSDKServer[] s_UpdateSignalSettingsServers = new global::ResembleAI.AutoSDKServer[]
         {            new global::ResembleAI.AutoSDKServer(
                 id: "https-app-resemble-ai-api-v2",
                 name: "app.resemble.ai api v2",
@@ -15,7 +15,7 @@ namespace ResembleAI
         };
 
 
-        private static readonly global::ResembleAI.EndPointSecurityRequirement s_GetBillingUsageSecurityRequirement0 =
+        private static readonly global::ResembleAI.EndPointSecurityRequirement s_UpdateSignalSettingsSecurityRequirement0 =
             new global::ResembleAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::ResembleAI.EndPointAuthorizationRequirement[]
@@ -29,36 +29,43 @@ namespace ResembleAI
                     },
                 },
             };
-        private static readonly global::ResembleAI.EndPointSecurityRequirement[] s_GetBillingUsageSecurityRequirements =
+        private static readonly global::ResembleAI.EndPointSecurityRequirement[] s_UpdateSignalSettingsSecurityRequirements =
             new global::ResembleAI.EndPointSecurityRequirement[]
-            {                s_GetBillingUsageSecurityRequirement0,
+            {                s_UpdateSignalSettingsSecurityRequirement0,
             };
-        partial void PrepareGetBillingUsageArguments(
-            global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetBillingUsageRequest(
+        partial void PrepareUpdateSignalSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetBillingUsageResponse(
+            global::ResembleAI.SignalSettingsUpdateRequest request);
+        partial void PrepareUpdateSignalSettingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::ResembleAI.SignalSettingsUpdateRequest request);
+        partial void ProcessUpdateSignalSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetBillingUsageResponseContent(
+        partial void ProcessUpdateSignalSettingsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get billing usage<br/>
-        /// Get billing and usage information
+        /// Update team settings<br/>
+        /// Update team-level Signal preferences.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.AccountGetBillingUsageResponse200> GetBillingUsageAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.SignalSettingsResponse> UpdateSignalSettingsAsync(
+
+            global::ResembleAI.SignalSettingsUpdateRequest request,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GetBillingUsageAsResponseAsync(
+            var __response = await UpdateSignalSettingsAsResponseAsync(
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -66,26 +73,32 @@ namespace ResembleAI
             return __response.Body;
         }
         /// <summary>
-        /// Get billing usage<br/>
-        /// Get billing and usage information
+        /// Update team settings<br/>
+        /// Update team-level Signal preferences.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.AccountGetBillingUsageResponse200>> GetBillingUsageAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.SignalSettingsResponse>> UpdateSignalSettingsAsResponseAsync(
+
+            global::ResembleAI.SignalSettingsUpdateRequest request,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetBillingUsageArguments(
-                httpClient: HttpClient);
+            PrepareUpdateSignalSettingsArguments(
+                httpClient: HttpClient,
+                request: request);
 
 
             var __authorizations = global::ResembleAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GetBillingUsageSecurityRequirements,
-                operationName: "GetBillingUsageAsync");
+                securityRequirements: s_UpdateSignalSettingsSecurityRequirements,
+                operationName: "UpdateSignalSettingsAsync");
 
             using var __timeoutCancellationTokenSource = global::ResembleAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -105,9 +118,9 @@ namespace ResembleAI
             {
 
                             var __pathBuilder = new global::ResembleAI.PathBuilder(
-                                path: "/account/billing_usage",
+                                path: "/signal/settings",
                                 baseUri: ResolveBaseUri(
-                                servers: s_GetBillingUsageServers,
+                                servers: s_UpdateSignalSettingsServers,
                                 defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             var __path = __pathBuilder.ToString();
                 __path = global::ResembleAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -115,7 +128,7 @@ namespace ResembleAI
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Get,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -138,6 +151,12 @@ namespace ResembleAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::ResembleAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -146,9 +165,10 @@ namespace ResembleAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGetBillingUsageRequest(
+                PrepareUpdateSignalSettingsRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    request: request);
 
                 return __httpRequest;
             }
@@ -165,10 +185,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetBillingUsage",
-                                methodName: "GetBillingUsageAsync",
-                                pathTemplate: "\"/account/billing_usage\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateSignalSettings",
+                                methodName: "UpdateSignalSettingsAsync",
+                                pathTemplate: "\"/signal/settings\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -199,10 +219,10 @@ namespace ResembleAI
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetBillingUsage",
-                                methodName: "GetBillingUsageAsync",
-                                pathTemplate: "\"/account/billing_usage\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateSignalSettings",
+                                methodName: "UpdateSignalSettingsAsync",
+                                pathTemplate: "\"/signal/settings\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -240,10 +260,10 @@ namespace ResembleAI
                         await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetBillingUsage",
-                                methodName: "GetBillingUsageAsync",
-                                pathTemplate: "\"/account/billing_usage\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateSignalSettings",
+                                methodName: "UpdateSignalSettingsAsync",
+                                pathTemplate: "\"/signal/settings\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -280,7 +300,7 @@ namespace ResembleAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGetBillingUsageResponse(
+                ProcessUpdateSignalSettingsResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -288,10 +308,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetBillingUsage",
-                                methodName: "GetBillingUsageAsync",
-                                pathTemplate: "\"/account/billing_usage\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateSignalSettings",
+                                methodName: "UpdateSignalSettingsAsync",
+                                pathTemplate: "\"/signal/settings\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -310,10 +330,10 @@ namespace ResembleAI
                     await global::ResembleAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::ResembleAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GetBillingUsage",
-                                methodName: "GetBillingUsageAsync",
-                                pathTemplate: "\"/account/billing_usage\"",
-                                httpMethod: "GET",
+                                operationId: "UpdateSignalSettings",
+                                methodName: "UpdateSignalSettingsAsync",
+                                pathTemplate: "\"/signal/settings\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -327,6 +347,43 @@ namespace ResembleAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // No team context
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::ResembleAI.SignalError? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::ResembleAI.SignalError.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::ResembleAI.SignalError.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::ResembleAI.ApiException<global::ResembleAI.SignalError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -340,7 +397,7 @@ namespace ResembleAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGetBillingUsageResponseContent(
+                                ProcessUpdateSignalSettingsResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -349,9 +406,9 @@ namespace ResembleAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::ResembleAI.AccountGetBillingUsageResponse200.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::ResembleAI.SignalSettingsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.AccountGetBillingUsageResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.SignalSettingsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -381,9 +438,9 @@ namespace ResembleAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::ResembleAI.AccountGetBillingUsageResponse200.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::ResembleAI.SignalSettingsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.AccountGetBillingUsageResponse200>(
+                                    return new global::ResembleAI.AutoSDKHttpResponse<global::ResembleAI.SignalSettingsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::ResembleAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -422,6 +479,31 @@ namespace ResembleAI
             {
                 __httpRequest?.Dispose();
             }
+        }
+        /// <summary>
+        /// Update team settings<br/>
+        /// Update team-level Signal preferences.
+        /// </summary>
+        /// <param name="useBuiltinCategories">
+        /// When false, scoring uses only the team's custom categories.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::ResembleAI.SignalSettingsResponse> UpdateSignalSettingsAsync(
+            bool? useBuiltinCategories = default,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::ResembleAI.SignalSettingsUpdateRequest
+            {
+                UseBuiltinCategories = useBuiltinCategories,
+            };
+
+            return await UpdateSignalSettingsAsync(
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

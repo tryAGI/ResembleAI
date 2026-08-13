@@ -36,7 +36,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -67,7 +67,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -220,7 +220,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -268,7 +268,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -432,7 +432,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -480,7 +480,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -557,7 +557,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -702,7 +702,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -799,7 +799,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -877,7 +877,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -968,7 +968,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1015,7 +1015,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1072,7 +1072,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1176,7 +1176,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1243,7 +1243,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1290,7 +1290,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1365,7 +1365,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1396,7 +1396,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1461,7 +1461,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1517,7 +1517,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1625,7 +1625,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1673,7 +1673,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1759,7 +1759,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1823,7 +1823,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1861,7 +1861,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1925,7 +1925,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1951,6 +1951,535 @@
         }
       ]
     },
+    "/signal": {
+      "get": {
+        "operationId": "list-signal-submissions",
+        "summary": "List submissions",
+        "description": "Retrieve past Signal submissions for your team, newest first.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated submissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalSubmissionListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The account does not have Signal access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-signal-submission",
+        "summary": "Score content",
+        "description": "Score a piece of content against the fraud and scam categories available to your team\nand return a verdict with the best-matching categories.\n\nSupply exactly one of:\n\n- **Text** — `application/json` with a `text` field.\n- **File** — `multipart/form-data` with the media attached as `file`. Audio, image, and\n  video are supported, up to 15 MB. The media type is detected from the file's MIME type\n  unless `media_type` is supplied.\n",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Scored submission",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalScoreResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Neither text nor file was provided, or `media_type` is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The account does not have Signal access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "File exceeds the 15 MB limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Text to analyze."
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/signal/{id}": {
+      "delete": {
+        "operationId": "delete-signal-submission",
+        "summary": "Delete submission",
+        "description": "Permanently delete a Signal submission belonging to your team.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Submission deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalSuccessResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Submission not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/signal/custom_categories": {
+      "get": {
+        "operationId": "list-signal-custom-categories",
+        "summary": "List custom categories",
+        "description": "Retrieve the team's Signal settings, the built-in categories, the team's custom categories with their example phrases, and calibration status.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Categories, settings, and calibration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalCustomCategoryListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The account does not have Signal access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-signal-custom-category",
+        "summary": "Create custom category",
+        "description": "Create a custom fraud category from example phrases. Categories embed asynchronously:\na new category starts at `pending`, moves to `embedding`, and becomes usable for\nscoring once its status is `ready`.\n",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Category created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalCustomCategoryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignalCustomCategoryCreateRequest"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/signal/custom_categories/{id}": {
+      "get": {
+        "operationId": "get-signal-custom-category",
+        "summary": "Get custom category",
+        "description": "Retrieve a single custom category with its example phrases.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Custom category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalCustomCategoryResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Category not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-signal-custom-category",
+        "summary": "Delete custom category",
+        "description": "Delete a custom category and its example phrases.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Category deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalSuccessResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Category not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-signal-custom-category",
+        "summary": "Update custom category",
+        "description": "Update a custom category. Supplying `scenarios` replaces the existing example phrases and re-triggers embedding.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Category updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalCustomCategoryResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Category not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignalCustomCategoryUpdateRequest"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/signal/settings": {
+      "patch": {
+        "operationId": "update-signal-settings",
+        "summary": "Update team settings",
+        "description": "Update team-level Signal preferences.",
+        "tags": [
+          "signal"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalSettingsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "No team context",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignalError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignalSettingsUpdateRequest"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
     "/secure_uploads": {
       "post": {
         "operationId": "create-secure-upload",
@@ -1963,7 +2492,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2040,7 +2569,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2151,7 +2680,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2263,7 +2792,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2294,7 +2823,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2391,7 +2920,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2438,7 +2967,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2531,7 +3060,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2587,7 +3116,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2644,7 +3173,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2685,7 +3214,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2805,7 +3334,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2880,7 +3409,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2911,7 +3440,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -2986,7 +3515,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3025,7 +3554,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3071,7 +3600,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3124,7 +3653,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3180,7 +3709,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3269,7 +3798,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3308,7 +3837,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3405,7 +3934,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3452,7 +3981,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3499,7 +4028,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3578,7 +4107,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3609,7 +4138,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3678,7 +4207,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3717,7 +4246,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3791,7 +4320,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3822,7 +4351,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3894,7 +4423,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3960,7 +4489,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4010,7 +4539,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4050,7 +4579,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4106,7 +4635,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4137,7 +4666,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4235,7 +4764,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4274,7 +4803,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4313,7 +4842,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4405,7 +4934,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4436,7 +4965,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4511,7 +5040,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4550,7 +5079,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4612,7 +5141,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4676,7 +5205,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4730,7 +5259,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4777,7 +5306,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4824,7 +5353,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4882,7 +5411,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4913,7 +5442,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4987,7 +5516,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5043,7 +5572,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5081,7 +5610,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5112,7 +5641,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5177,7 +5706,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5249,7 +5778,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5287,7 +5816,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5334,7 +5863,7 @@
           {
             "name": "Authorization",
             "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5360,19 +5889,56 @@
         }
       ]
     },
-    "/account/billing_usage": {
+    "/plans": {
       "get": {
-        "operationId": "get-billing-usage",
-        "summary": "Get billing usage",
-        "description": "Get billing and usage information",
+        "operationId": "list-billing-plans",
+        "summary": "List billing plans",
+        "description": "Returns all active self-serve plans, their products, prices, and plan-specific quantity rules. This endpoint is public.",
         "tags": [
-          "account"
+          "billingPlans"
+        ],
+        "responses": {
+          "200": {
+            "description": "Active self-serve billing plans.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingPlansResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/plans/{id}": {
+      "get": {
+        "operationId": "get-billing-plan",
+        "summary": "Get a billing plan",
+        "description": "Returns an active billing plan by slug, including its products, prices, and quantity rules. This endpoint is public.",
+        "tags": [
+          "billingPlans"
         ],
         "parameters": [
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API token from https://app.resemble.ai/account/api",
+            "name": "id",
+            "in": "path",
+            "description": "Plan slug returned by the list-plans endpoint.",
             "required": true,
             "schema": {
               "type": "string"
@@ -5381,12 +5947,843 @@
         ],
         "responses": {
           "200": {
-            "description": "Billing information",
+            "description": "Billing plan details.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account_getBillingUsage_Response_200"
+                  "$ref": "#/components/schemas/BillingPlanResponse"
                 }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested billing resource does not exist for the current team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/subscription": {
+      "get": {
+        "operationId": "get-billing-subscription",
+        "summary": "Get the current subscription",
+        "description": "Returns the current team's active, past-due, or delinquent subscription. Returns a null subscription when no customer-visible subscription exists.",
+        "tags": [
+          "billingSubscriptions"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current subscription or null.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingSubscriptionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/subscription/products": {
+      "patch": {
+        "operationId": "update-billing-subscription-products",
+        "summary": "Update subscription product quantities",
+        "description": "Updates one or more adjustable subscription products atomically. Each `new_quantity` is the desired absolute total, not an increment. A product is adjustable when its category is `subscription` and its `plan_product.allow_additional_usage` value is true. Quantities must remain within the plan's minimum and maximum and cannot be reduced below `consumed_quantity`.",
+        "tags": [
+          "billingSubscriptions"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subscription with updated product quantities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingSubscriptionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request could not be parsed or contains invalid parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Additional customer authentication is required before the billing change can complete.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingPaymentActionRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested billing resource does not exist for the current team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The request was understood but violates a billing rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateBillingSubscriptionProductsRequestUnprocessableEntityError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BillingUpdateProductsRequest"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/subscription/confirm_payment": {
+      "post": {
+        "operationId": "confirm-billing-subscription-payment",
+        "summary": "Confirm a subscription payment",
+        "description": "Synchronizes the subscription after the customer completes the additional payment authentication requested by a quantity or plan change.",
+        "tags": [
+          "billingSubscriptions"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synchronized subscription.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingSubscriptionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request could not be parsed or contains invalid parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested billing resource does not exist for the current team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The request was understood but violates a billing rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfirmBillingSubscriptionPaymentRequestUnprocessableEntityError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BillingConfirmPaymentRequest"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/subscription/change_plan": {
+      "patch": {
+        "operationId": "change-billing-plan",
+        "summary": "Change the current subscription plan",
+        "description": "Changes a self-serve subscription to another active plan with proration. Optional product quantities are absolute quantities on the destination plan.",
+        "tags": [
+          "billingSubscriptions"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subscription on the new plan.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingSubscriptionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request could not be parsed or contains invalid parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Additional customer authentication is required before the billing change can complete.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingPaymentActionRequired"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested billing resource does not exist for the current team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The request was understood but violates a billing rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChangeBillingPlanRequestUnprocessableEntityError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BillingChangePlanRequest"
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/wallet": {
+      "get": {
+        "operationId": "get-billing-wallet",
+        "summary": "Get the billing wallet",
+        "description": "Returns the current team's cash, promotional, total, and lifetime wallet balances.",
+        "tags": [
+          "billingWallet"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Wallet balances and statistics.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingWalletResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/wallet/transactions": {
+      "get": {
+        "operationId": "list-billing-wallet-transactions",
+        "summary": "List wallet transactions",
+        "description": "Returns wallet transactions newest first. Use page and per_page for paginated results, or limit for an unpaginated recent subset.",
+        "tags": [
+          "billingWallet"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Return at most this many recent transactions. When present, pagination metadata is omitted.",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number. Defaults to 1 and is ignored when limit is present.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Results per page. Defaults to 10 and is capped at 100.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Wallet transactions and optional pagination metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingTransactionsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request could not be parsed or contains invalid parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/wallet/transactions/export.csv": {
+      "get": {
+        "operationId": "export-billing-wallet-transactions",
+        "summary": "Export wallet transactions",
+        "description": "Downloads the current team's complete wallet transaction history as a CSV file, newest first.",
+        "tags": [
+          "billingWallet"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/wallet/auto_reload": {
+      "get": {
+        "operationId": "get-billing-auto-reload",
+        "summary": "Get auto-reload settings",
+        "description": "Returns the current team's auto-reload configuration, whether a payment method is available, and the supported reload range.",
+        "tags": [
+          "billingWallet"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto-reload configuration or null when it has not been configured.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingAutoReloadResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-billing-auto-reload",
+        "summary": "Update auto-reload settings",
+        "description": "Enables, disables, or changes wallet auto-reload. Amounts are expressed in cents and must comply with the limits returned by the GET operation.",
+        "tags": [
+          "billingWallet"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated auto-reload configuration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Billing Wallet_updateBillingAutoReload_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request could not be parsed or contains invalid parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "A valid API key was not provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key owner cannot manage billing, or the Billing API is unavailable for the customer's billing arrangement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingForbiddenError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The request was understood but violates a billing rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateBillingAutoReloadRequestUnprocessableEntityError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "An unexpected billing error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BillingUpdateAutoReloadRequest"
               }
             }
           }
@@ -5407,6 +6804,10 @@
     {
       "url": "https://f.cluster.resemble.ai",
       "description": "synthesis"
+    },
+    {
+      "url": "https://app.resemble.ai/billing/api/v1",
+      "description": "billing"
     }
   ],
   "components": {
@@ -8666,6 +10067,593 @@
         ],
         "title": "WatermarkDetectResponse"
       },
+      "SignalSubmissionInputModality": {
+        "type": "string",
+        "enum": [
+          "text",
+          "audio",
+          "video",
+          "image"
+        ],
+        "title": "SignalSubmissionInputModality"
+      },
+      "SignalSubmissionVerdict": {
+        "type": "string",
+        "enum": [
+          "safe",
+          "suspicious",
+          "fraud"
+        ],
+        "title": "SignalSubmissionVerdict"
+      },
+      "SignalCategoryScore": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Single emoji associated with the category."
+          },
+          "score": {
+            "type": "number",
+            "format": "double",
+            "description": "Similarity score from 0 to 1."
+          }
+        },
+        "required": [
+          "name",
+          "score"
+        ],
+        "title": "SignalCategoryScore"
+      },
+      "SignalScoreItemInputModality": {
+        "type": "string",
+        "enum": [
+          "text",
+          "audio",
+          "video",
+          "image"
+        ],
+        "title": "SignalScoreItemInputModality"
+      },
+      "SignalScoreItemVerdict": {
+        "type": "string",
+        "enum": [
+          "safe",
+          "suspicious",
+          "fraud"
+        ],
+        "title": "SignalScoreItemVerdict"
+      },
+      "SignalTopMatch": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Category the matched example belongs to."
+          },
+          "text": {
+            "type": "string",
+            "description": "The individual training example that matched."
+          },
+          "score": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "title": "SignalTopMatch"
+      },
+      "SignalScoreItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Submission identifier, used with `DELETE /signal/{id}`."
+          },
+          "input_modality": {
+            "$ref": "#/components/schemas/SignalScoreItemInputModality"
+          },
+          "verdict": {
+            "$ref": "#/components/schemas/SignalScoreItemVerdict"
+          },
+          "top_category": {
+            "$ref": "#/components/schemas/SignalCategoryScore"
+          },
+          "category_scores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalCategoryScore"
+            },
+            "description": "Highest-scoring categories, including the top category."
+          },
+          "benign_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "How strongly the content matched benign, non-fraud content."
+          },
+          "margin_over_second": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Gap between the top category score and the runner-up."
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sample phrases from the top category, useful for explaining the verdict."
+          },
+          "top_matches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalTopMatch"
+            }
+          },
+          "duration_seconds": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Media duration for audio and video. Null for text and image."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "input_modality",
+          "verdict"
+        ],
+        "title": "SignalScoreItem"
+      },
+      "SignalSubmission": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "input_modality": {
+            "$ref": "#/components/schemas/SignalSubmissionInputModality"
+          },
+          "filename": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Original filename for file submissions."
+          },
+          "content_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "MIME type for file submissions."
+          },
+          "text_preview": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Truncated copy of the submitted text. Null for file submissions."
+          },
+          "verdict": {
+            "$ref": "#/components/schemas/SignalSubmissionVerdict"
+          },
+          "top_category": {
+            "$ref": "#/components/schemas/SignalCategoryScore"
+          },
+          "benign_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "margin_over_second": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "response": {
+            "$ref": "#/components/schemas/SignalScoreItem"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "title": "SignalSubmission"
+      },
+      "SignalSubmissionListResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalSubmission"
+            }
+          },
+          "page": {
+            "type": "integer"
+          },
+          "per_page": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "total_pages": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "success",
+          "items"
+        ],
+        "title": "SignalSubmissionListResponse"
+      },
+      "SignalError": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "max_bytes": {
+            "type": "integer",
+            "description": "Present on 413 responses."
+          }
+        },
+        "title": "SignalError"
+      },
+      "SignalScoreResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/SignalScoreItem"
+          }
+        },
+        "required": [
+          "success",
+          "item"
+        ],
+        "title": "SignalScoreResponse"
+      },
+      "SignalSuccessResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "title": "SignalSuccessResponse"
+      },
+      "SignalSettings": {
+        "type": "object",
+        "properties": {
+          "use_builtin_categories": {
+            "type": "boolean",
+            "description": "When false, scoring uses only the team's custom categories."
+          }
+        },
+        "title": "SignalSettings"
+      },
+      "SignalBuiltInCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scenario_count": {
+            "type": "integer"
+          },
+          "example_texts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "title": "SignalBuiltInCategory"
+      },
+      "SignalCustomCategoryStatus": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "embedding",
+          "ready",
+          "needs_more_examples",
+          "failed"
+        ],
+        "title": "SignalCustomCategoryStatus"
+      },
+      "SignalCustomCategoryOverlapsItems": {
+        "type": "object",
+        "properties": {},
+        "title": "SignalCustomCategoryOverlapsItems"
+      },
+      "SignalScenario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "text": {
+            "type": "string"
+          },
+          "embedded": {
+            "type": "boolean",
+            "description": "Whether this example has finished embedding."
+          }
+        },
+        "title": "SignalScenario"
+      },
+      "SignalCustomCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the category is included in scoring."
+          },
+          "status": {
+            "$ref": "#/components/schemas/SignalCustomCategoryStatus"
+          },
+          "embed_error": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Error message when `status` is `failed`."
+          },
+          "embedded_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "scenario_count": {
+            "type": "integer"
+          },
+          "embedding_model_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "overlaps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalCustomCategoryOverlapsItems"
+            },
+            "description": "Calibration warnings where this category was confused with another."
+          },
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalScenario"
+            }
+          }
+        },
+        "title": "SignalCustomCategory"
+      },
+      "SignalCalibrationWarningsItems": {
+        "type": "object",
+        "properties": {},
+        "title": "SignalCalibrationWarningsItems"
+      },
+      "SignalCalibration": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "calibrated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "overall_recall": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalCalibrationWarningsItems"
+            }
+          }
+        },
+        "description": "Null until the team's categories have been calibrated.",
+        "title": "SignalCalibration"
+      },
+      "SignalCustomCategoryListResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/SignalSettings"
+          },
+          "built_in_categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalBuiltInCategory"
+            }
+          },
+          "custom_categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SignalCustomCategory"
+            }
+          },
+          "calibration": {
+            "$ref": "#/components/schemas/SignalCalibration"
+          }
+        },
+        "required": [
+          "success"
+        ],
+        "title": "SignalCustomCategoryListResponse"
+      },
+      "SignalCustomCategoryCreateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Category name. Must be unique within the team."
+          },
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Example phrases that define the pattern. Maximum 50 entries, each up to 2000 characters. A newline-separated string is also accepted."
+          },
+          "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Single emoji."
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": [
+          "name",
+          "scenarios"
+        ],
+        "title": "SignalCustomCategoryCreateRequest"
+      },
+      "SignalCustomCategoryResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/SignalCustomCategory"
+          }
+        },
+        "required": [
+          "success",
+          "item"
+        ],
+        "title": "SignalCustomCategoryResponse"
+      },
+      "SignalCustomCategoryUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "description": "Any subset of the create parameters. Supplying `scenarios` replaces the existing set and re-triggers embedding.",
+        "title": "SignalCustomCategoryUpdateRequest"
+      },
+      "SignalSettingsUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "use_builtin_categories": {
+            "type": "boolean",
+            "description": "When false, scoring uses only the team's custom categories."
+          }
+        },
+        "title": "SignalSettingsUpdateRequest"
+      },
+      "SignalSettingsResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/SignalSettings"
+          }
+        },
+        "required": [
+          "success",
+          "settings"
+        ],
+        "title": "SignalSettingsResponse"
+      },
       "Secure Uploads_createSecureUpload_Response_200": {
         "type": "object",
         "properties": {
@@ -10644,6 +12632,969 @@
         },
         "title": "Account_getTeam_Response_200"
       },
+      "BillingPlanPlanType": {
+        "type": "string",
+        "enum": [
+          "self_serve",
+          "custom",
+          "default"
+        ],
+        "title": "BillingPlanPlanType"
+      },
+      "BillingPlanBillingInterval": {
+        "type": "string",
+        "enum": [
+          "monthly",
+          "quarterly",
+          "annual"
+        ],
+        "title": "BillingPlanBillingInterval"
+      },
+      "BillingPlanFamily": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "position": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "title": "BillingPlanFamily"
+      },
+      "BillingPlanProductCategory": {
+        "type": "string",
+        "enum": [
+          "metered",
+          "subscription",
+          "base_fee",
+          "included_credits"
+        ],
+        "title": "BillingPlanProductCategory"
+      },
+      "BillingProductRateTier": {
+        "type": "object",
+        "properties": {
+          "tier_order": {
+            "type": "integer"
+          },
+          "min_quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "max_quantity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "rate_per_unit_cents": {
+            "type": "integer"
+          },
+          "rate_per_unit_dollars": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "title": "BillingProductRateTier"
+      },
+      "BillingProductFamily": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "position": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "title": "BillingProductFamily"
+      },
+      "BillingPlanProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Stable product identifier used in product_quantities and changes requests."
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unit_type": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/BillingPlanProductCategory"
+          },
+          "rate_per_unit_cents": {
+            "type": "integer"
+          },
+          "rate_per_unit_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "has_tiers": {
+            "type": "boolean"
+          },
+          "tiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillingProductRateTier"
+            }
+          },
+          "included_quantity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "allow_additional_usage": {
+            "type": "boolean",
+            "description": "Whether the plan permits the product quantity to be changed."
+          },
+          "min_usage_per_period": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Minimum allowed quantity for this product on the plan."
+          },
+          "max_usage_per_period": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Maximum allowed quantity for this product on the plan. Null means no plan-specific maximum."
+          },
+          "ui_visible": {
+            "type": "boolean",
+            "description": "Whether the product is displayed in Resemble billing interfaces."
+          },
+          "product_family": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BillingProductFamily"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "description": "A product and its pricing and quantity rules on a plan.",
+        "title": "BillingPlanProduct"
+      },
+      "BillingPlan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Stable plan identifier used when creating or changing a subscription."
+          },
+          "plan_type": {
+            "$ref": "#/components/schemas/BillingPlanPlanType"
+          },
+          "base_fee_cents": {
+            "type": "integer"
+          },
+          "base_fee_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "total_base_cost_cents": {
+            "type": "integer"
+          },
+          "total_base_cost_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "included_dollar_balance_cents": {
+            "type": "integer"
+          },
+          "included_dollar_balance_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "billing_interval": {
+            "$ref": "#/components/schemas/BillingPlanBillingInterval"
+          },
+          "plan_family": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BillingPlanFamily"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillingPlanProduct"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "title": "BillingPlan"
+      },
+      "BillingPlansResponse": {
+        "type": "object",
+        "properties": {
+          "plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillingPlan"
+            }
+          }
+        },
+        "required": [
+          "plans"
+        ],
+        "title": "BillingPlansResponse"
+      },
+      "BillingError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Human-readable error message."
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "BillingError"
+      },
+      "BillingPlanResponse": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "$ref": "#/components/schemas/BillingPlan"
+          }
+        },
+        "required": [
+          "plan"
+        ],
+        "title": "BillingPlanResponse"
+      },
+      "BillingSubscriptionStatus": {
+        "type": "string",
+        "enum": [
+          "pending_payment",
+          "active_pending_payment",
+          "active",
+          "trialing",
+          "cancelled",
+          "expired",
+          "past_due",
+          "delinquent"
+        ],
+        "title": "BillingSubscriptionStatus"
+      },
+      "BillingSubscriptionProductCategory": {
+        "type": "string",
+        "enum": [
+          "metered",
+          "subscription",
+          "base_fee",
+          "included_credits"
+        ],
+        "title": "BillingSubscriptionProductCategory"
+      },
+      "BillingSubscriptionProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Product identifier to send as product_slug when updating quantities."
+          },
+          "unit_type": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/BillingSubscriptionProductCategory"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "min_purchase_quantity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "max_purchase_quantity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          }
+        },
+        "title": "BillingSubscriptionProduct"
+      },
+      "BillingSubscriptionPlanProduct": {
+        "type": "object",
+        "properties": {
+          "included_quantity": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "allow_additional_usage": {
+            "type": "boolean"
+          },
+          "min_usage_per_period": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "max_usage_per_period": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          }
+        },
+        "description": "Quantity rules inherited from the subscription's current plan.",
+        "title": "BillingSubscriptionPlanProduct"
+      },
+      "BillingSubscriptionItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double",
+            "description": "Current absolute quantity on the subscription."
+          },
+          "consumed_quantity": {
+            "type": "number",
+            "format": "double",
+            "description": "Quantity currently in use. A product cannot be reduced below this value."
+          },
+          "product": {
+            "$ref": "#/components/schemas/BillingSubscriptionProduct"
+          },
+          "plan_product": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BillingSubscriptionPlanProduct"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "rate_per_unit_cents": {
+            "type": "number",
+            "format": "double",
+            "description": "Locked-in unit rate for this subscription item."
+          },
+          "current_rate_per_unit_cents": {
+            "type": "number",
+            "format": "double",
+            "description": "Current catalog unit rate for comparison."
+          },
+          "is_grandfathered": {
+            "type": "boolean"
+          },
+          "rate_locked_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "ui_visible": {
+            "type": "boolean"
+          }
+        },
+        "title": "BillingSubscriptionItem"
+      },
+      "BillingSubscription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/BillingPlan"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BillingSubscriptionStatus"
+          },
+          "current_period_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "current_period_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cancel_at_period_end": {
+            "type": "boolean"
+          },
+          "cancel_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "activated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "invoice_due_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "delinquent_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "subscription_items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillingSubscriptionItem"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "title": "BillingSubscription"
+      },
+      "BillingSubscriptionResponse": {
+        "type": "object",
+        "properties": {
+          "subscription": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BillingSubscription"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "subscription"
+        ],
+        "title": "BillingSubscriptionResponse"
+      },
+      "BillingForbiddenError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Human-readable authorization or eligibility error."
+          },
+          "error_code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Machine-readable error code when one is available."
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "BillingForbiddenError"
+      },
+      "BillingProductQuantityChange": {
+        "type": "object",
+        "properties": {
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug returned by the subscription response."
+          },
+          "new_quantity": {
+            "type": "number",
+            "format": "double",
+            "description": "Desired absolute total, not an increment or decrement."
+          }
+        },
+        "required": [
+          "product_slug",
+          "new_quantity"
+        ],
+        "title": "BillingProductQuantityChange"
+      },
+      "BillingUpdateProductsRequest": {
+        "type": "object",
+        "properties": {
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillingProductQuantityChange"
+            }
+          }
+        },
+        "required": [
+          "changes"
+        ],
+        "title": "BillingUpdateProductsRequest"
+      },
+      "BillingPaymentActionRequired": {
+        "type": "object",
+        "properties": {
+          "requires_action": {
+            "type": "boolean"
+          },
+          "client_secret": {
+            "type": "string",
+            "description": "Client secret used to complete the required payment authentication."
+          }
+        },
+        "required": [
+          "requires_action",
+          "client_secret"
+        ],
+        "title": "BillingPaymentActionRequired"
+      },
+      "BillingValidationErrors": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "errors"
+        ],
+        "title": "BillingValidationErrors"
+      },
+      "UpdateBillingSubscriptionProductsRequestUnprocessableEntityError": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BillingError"
+          },
+          {
+            "$ref": "#/components/schemas/BillingValidationErrors"
+          }
+        ],
+        "title": "UpdateBillingSubscriptionProductsRequestUnprocessableEntityError"
+      },
+      "BillingConfirmPaymentRequest": {
+        "type": "object",
+        "properties": {
+          "payment_intent_id": {
+            "type": "string",
+            "description": "Payment intent identifier completed by the customer."
+          }
+        },
+        "required": [
+          "payment_intent_id"
+        ],
+        "title": "BillingConfirmPaymentRequest"
+      },
+      "ConfirmBillingSubscriptionPaymentRequestUnprocessableEntityError": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BillingError"
+          },
+          {
+            "$ref": "#/components/schemas/BillingValidationErrors"
+          }
+        ],
+        "title": "ConfirmBillingSubscriptionPaymentRequestUnprocessableEntityError"
+      },
+      "BillingChangePlanRequest": {
+        "type": "object",
+        "properties": {
+          "plan_slug": {
+            "type": "string"
+          },
+          "product_quantities": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number",
+              "format": "double"
+            },
+            "description": "Optional map of product slugs to desired quantities on the new plan."
+          }
+        },
+        "required": [
+          "plan_slug"
+        ],
+        "title": "BillingChangePlanRequest"
+      },
+      "ChangeBillingPlanRequestUnprocessableEntityError": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BillingError"
+          },
+          {
+            "$ref": "#/components/schemas/BillingValidationErrors"
+          }
+        ],
+        "title": "ChangeBillingPlanRequestUnprocessableEntityError"
+      },
+      "BillingWallet": {
+        "type": "object",
+        "properties": {
+          "balance_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "balance_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "cash_balance_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "cash_balance_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "promotional_balance_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "promotional_balance_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "lifetime_loaded_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "lifetime_loaded_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "lifetime_consumed_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "lifetime_consumed_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "low_balance": {
+            "type": "boolean"
+          }
+        },
+        "title": "BillingWallet"
+      },
+      "BillingWalletResponse": {
+        "type": "object",
+        "properties": {
+          "wallet": {
+            "$ref": "#/components/schemas/BillingWallet"
+          }
+        },
+        "title": "BillingWalletResponse"
+      },
+      "BillingWalletTransactionTransactionType": {
+        "type": "string",
+        "enum": [
+          "credit_purchase",
+          "trial_credit",
+          "promotion_bonus",
+          "usage_deduction",
+          "refund",
+          "manual_adjustment",
+          "subscription_renewal_credit",
+          "promotional_credit_adjustment",
+          "plan_change",
+          "plan_subscription",
+          "subscription_cancellation"
+        ],
+        "title": "BillingWalletTransactionTransactionType"
+      },
+      "BillingWalletTransaction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "transaction_type": {
+            "$ref": "#/components/schemas/BillingWalletTransactionTransactionType"
+          },
+          "amount_cents": {
+            "type": "number",
+            "format": "double",
+            "description": "Positive for credits and negative for debits."
+          },
+          "balance_after_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "description": "Any type"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "title": "BillingWalletTransaction"
+      },
+      "BillingPagination": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "per_page": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "total_pages": {
+            "type": "integer"
+          }
+        },
+        "title": "BillingPagination"
+      },
+      "BillingTransactionsResponse": {
+        "type": "object",
+        "properties": {
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BillingWalletTransaction"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/BillingPagination"
+          }
+        },
+        "required": [
+          "transactions"
+        ],
+        "title": "BillingTransactionsResponse"
+      },
+      "BillingAutoReloadSetting": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "reload_amount_cents": {
+            "type": "integer"
+          },
+          "reload_amount_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "minimum_balance_threshold_cents": {
+            "type": "integer"
+          },
+          "minimum_balance_threshold_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "maximum_monthly_spend_cents": {
+            "type": "integer"
+          },
+          "maximum_monthly_spend_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "current_month_spend_cents": {
+            "type": "integer"
+          },
+          "current_month_spend_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "remaining_monthly_allowance_cents": {
+            "type": "integer"
+          },
+          "remaining_monthly_allowance_dollars": {
+            "type": "number",
+            "format": "double"
+          },
+          "has_payment_method": {
+            "type": "boolean"
+          },
+          "can_reload": {
+            "type": "boolean"
+          }
+        },
+        "title": "BillingAutoReloadSetting"
+      },
+      "BillingAutoReloadResponse": {
+        "type": "object",
+        "properties": {
+          "auto_reload": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BillingAutoReloadSetting"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minimum_reload_amount_cents": {
+            "type": "integer"
+          },
+          "maximum_reload_amount_cents": {
+            "type": "integer"
+          }
+        },
+        "title": "BillingAutoReloadResponse"
+      },
+      "BillingUpdateAutoReloadRequest": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "reload_amount_cents": {
+            "type": "integer"
+          },
+          "minimum_balance_threshold_cents": {
+            "type": "integer"
+          },
+          "maximum_monthly_spend_cents": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "enabled",
+          "reload_amount_cents",
+          "minimum_balance_threshold_cents",
+          "maximum_monthly_spend_cents"
+        ],
+        "title": "BillingUpdateAutoReloadRequest"
+      },
+      "Billing Wallet_updateBillingAutoReload_Response_200": {
+        "type": "object",
+        "properties": {
+          "auto_reload": {
+            "$ref": "#/components/schemas/BillingAutoReloadSetting"
+          }
+        },
+        "title": "Billing Wallet_updateBillingAutoReload_Response_200"
+      },
+      "UpdateBillingAutoReloadRequestUnprocessableEntityError": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BillingError"
+          },
+          {
+            "$ref": "#/components/schemas/BillingValidationErrors"
+          }
+        ],
+        "title": "UpdateBillingAutoReloadRequestUnprocessableEntityError"
+      },
       "AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
         "properties": {
@@ -10657,7 +13608,6 @@
         "title": "AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem"
       },
       "Account_getBillingUsage_Response_200": {
-        "type": "object",
         "properties": {
           "success": {
             "type": "boolean"
@@ -10665,15 +13615,14 @@
           "items": {
             "$ref": "#/components/schemas/AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem"
           }
-        },
-        "title": "Account_getBillingUsage_Response_200"
+        }
       }
     },
     "securitySchemes": {
       "BearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "API token from https://app.resemble.ai/account/api"
+        "description": "API key from https://app.resemble.ai/hub/api"
       }
     }
   }
