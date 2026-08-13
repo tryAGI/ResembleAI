@@ -75,6 +75,36 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public BillingPlansClient BillingPlans => new BillingPlansClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BillingSubscriptionsClient BillingSubscriptions => new BillingSubscriptionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BillingWalletClient BillingWallet => new BillingWalletClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ClipsClient Clips => new ClipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -185,6 +215,16 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public SignalClient Signal => new SignalClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SpeechToTextClient SpeechToText => new SpeechToTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -264,6 +304,11 @@ namespace ResembleAI
                 name: "synthesis",
                 url: "https://f.cluster.resemble.ai/",
                 description: "synthesis"),
+            new global::ResembleAI.AutoSDKServer(
+                id: "https-app-resemble-ai-billing-api-v1",
+                name: "billing",
+                url: "https://app.resemble.ai/billing/api/v1",
+                description: "billing"),
         };
 
         /// <summary>

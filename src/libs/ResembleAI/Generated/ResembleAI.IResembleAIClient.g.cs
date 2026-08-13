@@ -83,6 +83,21 @@ namespace ResembleAI
         /// <summary>
         /// 
         /// </summary>
+        public BillingPlansClient BillingPlans { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BillingSubscriptionsClient BillingSubscriptions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BillingWalletClient BillingWallet { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ClipsClient Clips { get; }
 
         /// <summary>
@@ -134,6 +149,11 @@ namespace ResembleAI
         /// 
         /// </summary>
         public SecureUploadsClient SecureUploads { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SignalClient Signal { get; }
 
         /// <summary>
         /// 
