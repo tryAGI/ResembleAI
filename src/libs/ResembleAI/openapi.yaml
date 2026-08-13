@@ -468,6 +468,200 @@
         }
       ]
     },
+    "/detect/{uuid}/feedback": {
+      "get": {
+        "operationId": "get-detect-feedback",
+        "summary": "Get detection feedback",
+        "description": "Retrieve your own feedback for a detect. Returns 404 when *you* haven't answered this\ndetect, even if the detect exists and a teammate has answered it.\n",
+        "tags": [
+          "deepfakeDetection"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "description": "UUID of the detect.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Feedback",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deepfake Detection_getDetectFeedback_Response_200"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No such detect for the authenticated team, or you have not left feedback on it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-detect-feedback",
+        "summary": "Submit detection feedback",
+        "description": "Tell Resemble whether a detection verdict was right — and when it wasn't, what it\nshould have been. The answer is stored with a snapshot of what the model said at the\ntime of submission (verdict, score, media type, raw metrics), so it stays interpretable\neven if the detect is later re-run or deleted.\n\nUpserts on `(detect, user)`: re-posting edits your existing answer rather than adding a\nsecond one. There is no separate update call. Feedback is per user, not per team — a\nteammate's answer on the same detect is invisible to you.\n\nThe detect must have completed processing; feedback on a pending or failed detect is\nrejected with 400. Teams without Detect access also receive 400 (not 403).\n",
+        "tags": [
+          "deepfakeDetection"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "description": "UUID of the completed detect.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Feedback recorded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deepfake Detection_createDetectFeedback_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unknown or missing `type`, `comment` over 1000 characters, the detect has not completed processing, or the team does not have Detect access.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No such detect for the authenticated team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType",
+                    "description": "What the verdict should have been.\n  - `correct` — the verdict was right.\n  - `should_be_ai_generated` — we said authentic; it is AI-generated.\n  - `should_be_authentic` — we said AI-generated; it is genuine and unaltered.\n  - `should_be_non_ai` — no model generated it, but it may still be edited, spliced, or a human impersonation.\n  - `should_be_neutral` — neither call is right; the media is genuinely ambiguous.\n  - `skipped` — the verdict was wrong, but the reviewer didn't say how.\n"
+                  },
+                  "comment": {
+                    "type": "string",
+                    "description": "Free text, up to 1000 characters. Trimmed; blank becomes `null`."
+                  },
+                  "source": {
+                    "type": "string",
+                    "default": "api",
+                    "description": "Where the answer came from. Use a stable, aggregatable value such as a product\nor queue name — not a per-request identifier. Truncated to 64 characters\nrather than rejected.\n"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-detect-feedback",
+        "summary": "Delete detection feedback",
+        "description": "Retract your own feedback. Idempotent — returns 200 whether or not a row existed. Only\nyour row is removed; a teammate's answer on the same detect is untouched. Works even on\na detect that later failed.\n",
+        "tags": [
+          "deepfakeDetection"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "description": "UUID of the detect.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Feedback retracted (or none existed)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deepfake Detection_deleteDetectFeedback_Response_200"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No such detect for the authenticated team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
     "/agents": {
       "get": {
         "operationId": "list-detect-agents",
@@ -8030,6 +8224,160 @@
           }
         },
         "title": "Deepfake Detection_getDetectBatch_Response_200"
+      },
+      "DetectFeedbackType": {
+        "type": "string",
+        "enum": [
+          "correct",
+          "should_be_ai_generated",
+          "should_be_authentic",
+          "should_be_non_ai",
+          "should_be_neutral",
+          "skipped"
+        ],
+        "description": "What the verdict should have been.",
+        "title": "DetectFeedbackType"
+      },
+      "DetectFeedbackVote": {
+        "type": "string",
+        "enum": [
+          "up",
+          "down"
+        ],
+        "description": "Derived from `type` — `correct` is `up`, everything else is `down`. Never independent of `type`.",
+        "title": "DetectFeedbackVote"
+      },
+      "DetectFeedbackVerdict": {
+        "type": "string",
+        "enum": [
+          "ai_generated",
+          "authentic"
+        ],
+        "description": "What the model said, snapshotted when the feedback was submitted. `null` when the\ndetection landed somewhere indeterminate. `should_be_neutral` and `should_be_non_ai`\nhave no counterpart here — this field records only the two decided model outcomes.\n",
+        "title": "DetectFeedbackVerdict"
+      },
+      "DetectFeedbackMediaType": {
+        "type": "string",
+        "enum": [
+          "audio",
+          "video",
+          "image",
+          "text"
+        ],
+        "description": "Media type of the detect.",
+        "title": "DetectFeedbackMediaType"
+      },
+      "DetectFeedback": {
+        "type": "object",
+        "properties": {
+          "detect_uuid": {
+            "type": "string",
+            "description": "The detect this answer is attached to."
+          },
+          "type": {
+            "$ref": "#/components/schemas/DetectFeedbackType",
+            "description": "What the verdict should have been."
+          },
+          "vote": {
+            "$ref": "#/components/schemas/DetectFeedbackVote",
+            "description": "Derived from `type` — `correct` is `up`, everything else is `down`. Never independent of `type`."
+          },
+          "verdict": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DetectFeedbackVerdict"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "What the model said, snapshotted when the feedback was submitted. `null` when the\ndetection landed somewhere indeterminate. `should_be_neutral` and `should_be_non_ai`\nhave no counterpart here — this field records only the two decided model outcomes.\n"
+          },
+          "score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "The model's headline confidence, 0.0–1.0, or `null`. For video, the higher of the\naudio and video confidences.\n"
+          },
+          "media_type": {
+            "$ref": "#/components/schemas/DetectFeedbackMediaType",
+            "description": "Media type of the detect."
+          },
+          "comment": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The reviewer's free-text comment, or `null`."
+          },
+          "credit": {
+            "type": "integer",
+            "description": "Credits awarded for this answer. Written by Resemble, never by the submitter; `0` on a fresh row."
+          },
+          "source": {
+            "type": "string",
+            "description": "Attribution string recorded for this answer. Defaults to `api`."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Moves when the answer is revised; `created_at` does not."
+          }
+        },
+        "description": "A reviewer's answer about a detection verdict, stored with a snapshot of what the\nmodel said at the time the answer was submitted. Returned by\n`POST /detect/{uuid}/feedback` and `GET /detect/{uuid}/feedback`.\n",
+        "title": "DetectFeedback"
+      },
+      "Deepfake Detection_getDetectFeedback_Response_200": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/DetectFeedback"
+          }
+        },
+        "title": "Deepfake Detection_getDetectFeedback_Response_200"
+      },
+      "DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType": {
+        "type": "string",
+        "enum": [
+          "correct",
+          "should_be_ai_generated",
+          "should_be_authentic",
+          "should_be_non_ai",
+          "should_be_neutral",
+          "skipped"
+        ],
+        "description": "What the verdict should have been.\n  - `correct` — the verdict was right.\n  - `should_be_ai_generated` — we said authentic; it is AI-generated.\n  - `should_be_authentic` — we said AI-generated; it is genuine and unaltered.\n  - `should_be_non_ai` — no model generated it, but it may still be edited, spliced, or a human impersonation.\n  - `should_be_neutral` — neither call is right; the media is genuinely ambiguous.\n  - `skipped` — the verdict was wrong, but the reviewer didn't say how.\n",
+        "title": "DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType"
+      },
+      "Deepfake Detection_createDetectFeedback_Response_200": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/DetectFeedback"
+          }
+        },
+        "title": "Deepfake Detection_createDetectFeedback_Response_200"
+      },
+      "Deepfake Detection_deleteDetectFeedback_Response_200": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "title": "Deepfake Detection_deleteDetectFeedback_Response_200"
       },
       "DetectAgentTier": {
         "type": "string",
