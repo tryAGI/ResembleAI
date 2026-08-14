@@ -13,407 +13,6 @@ namespace ResembleAI
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentTierNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionInputModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionInputModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemInputModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemInputModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalCustomCategoryStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalCustomCategoryStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.CustomPronunciationStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanPlanTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanPlanTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanBillingIntervalJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanBillingIntervalNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanProductCategoryJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanProductCategoryNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMetricsJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.UpdateBillingSubscriptionProductsRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.ConfirmBillingSubscriptionPaymentRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.ChangeBillingPlanRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.UpdateBillingAutoReloadRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectIntelligenceResultDescription?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectFeedbackVerdict?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectAgentRunResultVerdict, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingProductFamily, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingPlanFamily, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscriptionPlanProduct, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscription, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingAutoReloadSetting, object>),
-
-            typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
@@ -926,407 +525,6 @@ namespace ResembleAI
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentTierNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionInputModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionInputModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalSubmissionVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemInputModalityJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemInputModalityNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemVerdictJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalScoreItemVerdictNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalCustomCategoryStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SignalCustomCategoryStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.CustomPronunciationStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanPlanTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanPlanTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanBillingIntervalJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanBillingIntervalNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanProductCategoryJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingPlanProductCategoryNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionStatusJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionStatusNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeNullableJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.IdentityCreateIdentityRequestJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.WatermarkDetectItemMetricsJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.UpdateBillingSubscriptionProductsRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.ConfirmBillingSubscriptionPaymentRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.ChangeBillingPlanRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.UpdateBillingAutoReloadRequestUnprocessableEntityErrorJsonConverter),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectIntelligenceResultDescription?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectFeedbackVerdict?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectAgentRunResultVerdict, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingProductFamily, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingPlanFamily, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscriptionPlanProduct, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscription, object>),
-
-            typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingAutoReloadSetting, object>),
-
-            typeof(global::ResembleAI.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>?), TypeInfoPropertyName = "NullableOneOfDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType2")]
@@ -1493,11 +691,7 @@ namespace ResembleAI
     /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
-        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
-            SourceGenerationContextChunk0.Default,
-
-            SourceGenerationContextChunk1.Default
-            );
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -1527,182 +721,6 @@ namespace ResembleAI
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
             };
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentTierNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalSubmissionInputModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalSubmissionInputModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalSubmissionVerdictJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalSubmissionVerdictNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalScoreItemInputModalityJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalScoreItemInputModalityNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalScoreItemVerdictJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalScoreItemVerdictNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalCustomCategoryStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SignalCustomCategoryStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.CustomPronunciationStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingPlanPlanTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingPlanPlanTypeNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingPlanBillingIntervalJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingPlanBillingIntervalNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingPlanProductCategoryJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingPlanProductCategoryNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingSubscriptionStatusJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingSubscriptionStatusNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryNullableJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeJsonConverter());
-            options.Converters.Add(new global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeNullableJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionJsonConverter());
             options.Converters.Add(new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligenceJsonConverter());
@@ -1729,7 +747,1302 @@ namespace ResembleAI
             options.Converters.Add(new global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingAutoReloadSetting, object>());
             options.Converters.Add(new global::ResembleAI.JsonConverters.UnixTimestampJsonConverter());
 
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+
             return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectC2PaManifestValidationState)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectC2PaManifestValidationState?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectBatchStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectBatchStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackVote)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackVote?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackVerdict)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackVerdict?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectFeedbackMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectAgentTier)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectAgentTier?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectAgentRunSummaryStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectAgentRunSummaryStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySummaryVisibility)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySummaryVisibility?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySummaryIdentityType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySummaryIdentityType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityIdentityType)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityIdentityType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityVisibility)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityVisibility?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityEmbeddingsItemsModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentityEmbeddingsItemsModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemOperationType)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemOperationType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemModelVersion)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemModelVersion?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemOperationType)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemOperationType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsOverallStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsOverallStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultModelVersion)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultModelVersion?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalSubmissionVerdict)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalSubmissionVerdict?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalScoreItemInputModality)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalScoreItemInputModality?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalScoreItemVerdict)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalScoreItemVerdict?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalCustomCategoryStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.SignalCustomCategoryStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision)
+
+                    || typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat)
+
+                    || typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate)
+
+                    || typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate?)
+
+                    || typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision)
+
+                    || typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision?)
+
+                    || typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate)
+
+                    || typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine?)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine?)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.PronunciationsGetParametersStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.PronunciationsGetParametersStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.CustomPronunciationStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.CustomPronunciationStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker)
+
+                    || typeToConvert == typeof(global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker?)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingPlanPlanType)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingPlanPlanType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingPlanBillingInterval)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingPlanBillingInterval?)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingPlanProductCategory)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingPlanProductCategory?)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingSubscriptionStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingSubscriptionStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingSubscriptionProductCategory)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingSubscriptionProductCategory?)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingWalletTransactionTransactionType)
+
+                    || typeToConvert == typeof(global::ResembleAI.BillingWalletTransactionTransactionType?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectC2PaManifestValidationState))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectC2PaManifestValidationState?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectC2PaManifestValidationStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessmentNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectIntelligenceResultStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1LivenessAssessment?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1LivenessAssessmentNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectBatchStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectBatchStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectBatchStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectBatchStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackVote))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackVoteJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackVote?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackVoteNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackVerdict))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackVerdictJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackVerdict?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackVerdictNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectFeedbackMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectFeedbackMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectAgentTier))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectAgentTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectAgentTier?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectAgentTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectAgentRunSummaryStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectAgentRunSummaryStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectAgentRunSummaryStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessmentNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionFraudTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessment?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescriptionLivenessAssessmentNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySummaryVisibility))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySummaryVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySummaryVisibility?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySummaryVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySummaryIdentityType))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySummaryIdentityType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySummaryIdentityTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityUuidAttachmentsPostRequestBodyContentMultipartFormDataSchemaModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityIdentityType))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityIdentityType?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityIdentityTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityVisibility))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityVisibility?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityEmbeddingsItemsModality))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentityEmbeddingsItemsModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentityEmbeddingsItemsModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySearchPostRequestBodyContentApplicationJsonSchemaModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.IdentitySearchPostResponsesContentApplicationJsonSchemaModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.IdentitySearchPostResponsesContentApplicationJsonSchemaModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemOperationType))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemOperationType?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemModelVersion))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemModelVersion?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectPostParametersPrefer?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectPostParametersPreferNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemOperationType))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemOperationType?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemOperationTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsOverallStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsOverallStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsOverallStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioDetectionMetricsDetectedModelVersionsItems?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultModelVersion))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultModelVersion?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkAudioModelResultStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsDetectedModelVersionsItemsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionModelResultStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsVerdictNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalSubmissionInputModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalSubmissionInputModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalSubmissionVerdict))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalSubmissionVerdictJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalSubmissionVerdict?))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalSubmissionVerdictNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalScoreItemInputModality))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalScoreItemInputModalityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalScoreItemInputModality?))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalScoreItemInputModalityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalScoreItemVerdict))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalScoreItemVerdictJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalScoreItemVerdict?))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalScoreItemVerdictNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalCustomCategoryStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalCustomCategoryStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SignalCustomCategoryStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.SignalCustomCategoryStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision))
+                {
+                    return new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision?))
+                {
+                    return new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat))
+                {
+                    return new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat?))
+                {
+                    return new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormatNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate))
+                {
+                    return new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate?))
+                {
+                    return new global::ResembleAI.JsonConverters.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision))
+                {
+                    return new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision?))
+                {
+                    return new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaPrecisionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate))
+                {
+                    return new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaSampleRate?))
+                {
+                    return new global::ResembleAI.JsonConverters.StreamPostRequestBodyContentApplicationJsonSchemaSampleRateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine?))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine?))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.PronunciationsGetParametersStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.PronunciationsGetParametersStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.PronunciationsGetParametersStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.CustomPronunciationStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.CustomPronunciationStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.CustomPronunciationStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.CustomPronunciationStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker))
+                {
+                    return new global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker?))
+                {
+                    return new global::ResembleAI.JsonConverters.DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeakerNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingPlanPlanType))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingPlanPlanTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingPlanPlanType?))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingPlanPlanTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingPlanBillingInterval))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingPlanBillingIntervalJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingPlanBillingInterval?))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingPlanBillingIntervalNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingPlanProductCategory))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingPlanProductCategoryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingPlanProductCategory?))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingPlanProductCategoryNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingSubscriptionStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingSubscriptionStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingSubscriptionStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingSubscriptionStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingSubscriptionProductCategory))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingSubscriptionProductCategory?))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingSubscriptionProductCategoryNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingWalletTransactionTransactionType))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.BillingWalletTransactionTransactionType?))
+                {
+                    return new global::ResembleAI.JsonConverters.BillingWalletTransactionTransactionTypeNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
         }
     }
 }
