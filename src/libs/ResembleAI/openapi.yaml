@@ -20,7 +20,8 @@
             "description": "Page number (must be >= 1)",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -30,6 +31,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
               "default": 10
             }
           },
@@ -112,6 +115,8 @@
                   },
                   "frame_length": {
                     "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4,
                     "default": 2,
                     "description": "Window size in seconds (audio/video)"
                   },
@@ -368,6 +373,8 @@
                   },
                   "frame_length": {
                     "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4,
                     "description": "Window size in seconds (audio/video)."
                   },
                   "start_region": {
@@ -590,6 +597,7 @@
                   },
                   "comment": {
                     "type": "string",
+                    "maxLength": 1000,
                     "description": "Free text, up to 1000 characters. Trimmed; blank becomes `null`."
                   },
                   "source": {
@@ -1146,7 +1154,8 @@
             "description": "Page number (must be >= 1)",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -1156,6 +1165,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
               "default": 10
             }
           },
@@ -1421,7 +1432,8 @@
             "description": "Page number (must be >= 1)",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -1431,6 +1443,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
               "default": 10
             }
           },
@@ -1544,6 +1558,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
               "default": 10
             }
           },
@@ -1927,6 +1943,8 @@
                   },
                   "top_k": {
                     "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20,
                     "default": 1
                   }
                 }
@@ -2160,6 +2178,7 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -2169,6 +2188,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 10
             }
           },
@@ -2971,6 +2992,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -2980,6 +3002,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
               "default": 25
             }
           },
@@ -3239,6 +3263,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -3248,6 +3273,7 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "maximum": 50,
               "default": 25
             }
           },
@@ -3351,7 +3377,8 @@
             "description": "Page number (starting from 1).",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -3361,6 +3388,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
               "default": 10
             }
           },
@@ -3484,11 +3513,15 @@
                   },
                   "loudness_target_level": {
                     "type": "integer",
+                    "minimum": -70,
+                    "maximum": -5,
                     "default": -14,
                     "description": "Target loudness in LUFS. Engine v1 only (legacy)."
                   },
                   "loudness_peak_limit": {
                     "type": "integer",
+                    "minimum": -9,
+                    "maximum": 0,
                     "default": -1,
                     "description": "Peak limit in dBTP. Engine v1 only (legacy)."
                   }
@@ -3579,6 +3612,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -3588,6 +3622,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
               "default": 10
             }
           },
@@ -3977,6 +4013,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -4286,6 +4323,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -4887,23 +4925,30 @@
                 "properties": {
                   "name": {
                     "type": "string",
+                    "maxLength": 30,
                     "description": "Preset name (unique, max 30 characters)"
                   },
                   "pace": {
                     "type": "number",
                     "format": "double",
+                    "minimum": 0.2,
+                    "maximum": 2,
                     "default": 1,
                     "description": "Speech pace/speed"
                   },
                   "temperature": {
                     "type": "number",
                     "format": "double",
+                    "minimum": 0.1,
+                    "maximum": 5,
                     "default": 0.8,
                     "description": "Voice variation"
                   },
                   "pitch": {
                     "type": "number",
                     "format": "double",
+                    "minimum": -10,
+                    "maximum": 10,
                     "default": 0,
                     "description": "Voice pitch adjustment"
                   },
@@ -4915,11 +4960,14 @@
                   "exaggeration": {
                     "type": "number",
                     "format": "double",
+                    "minimum": 0,
+                    "maximum": 1,
                     "default": 0.5,
                     "description": "Emotional exaggeration"
                   },
                   "description": {
                     "type": "string",
+                    "maxLength": 1000,
                     "default": "",
                     "description": "Voice style prompt"
                   }
@@ -5113,6 +5161,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -5384,6 +5433,7 @@
             "required": true,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -6670,7 +6720,8 @@
             "description": "Return at most this many recent transactions. When present, pagination metadata is omitted.",
             "required": false,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "minimum": 1
             }
           },
           {
@@ -6680,6 +6731,7 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
               "default": 1
             }
           },
@@ -6690,6 +6742,8 @@
             "required": false,
             "schema": {
               "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
               "default": 10
             }
           },
@@ -7446,7 +7500,8 @@
               "string",
               "null"
             ],
-            "description": "Legacy field. May be present on older image/video detects. Ignored on create for new detections."
+            "description": "Legacy field. May be present on older image/video detects. Ignored on create for new detections.",
+            "deprecated": true
           },
           "extra_params": {
             "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsExtraParams"
@@ -7551,7 +7606,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "reasoning": {
             "type": "string"
@@ -7576,7 +7633,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "indicators": {
             "type": "string"
@@ -7592,7 +7651,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "alterations": {
             "type": "string"
@@ -7839,7 +7900,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "reasoning": {
             "type": "string"
@@ -7864,7 +7927,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "indicators": {
             "type": "string"
@@ -7880,7 +7945,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "alterations": {
             "type": "string"
@@ -8675,7 +8742,9 @@
             }
           },
           "count": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
           }
         },
         "required": [
@@ -8862,7 +8931,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "reasoning": {
             "type": "string"
@@ -8887,7 +8958,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "indicators": {
             "type": "string"
@@ -8903,7 +8976,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "alterations": {
             "type": "string"
@@ -9051,7 +9126,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "reasoning": {
             "type": "string"
@@ -9076,7 +9153,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "indicators": {
             "type": "string"
@@ -9092,7 +9171,9 @@
           },
           "confidence": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "minimum": 0,
+            "maximum": 100
           },
           "alterations": {
             "type": "string"
@@ -9581,7 +9662,8 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 120
           },
           "identity_type": {
             "$ref": "#/components/schemas/IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType"
@@ -9882,11 +9964,14 @@
           "strength": {
             "type": "number",
             "format": "double",
+            "minimum": 0,
+            "maximum": 1,
             "default": 0.2,
             "description": "Watermark strength for image/video. Ignored for audio."
           },
           "custom_message": {
             "type": "string",
+            "maxLength": 64,
             "default": "resembleai",
             "description": "Message to embed in image/video. Ignored for audio."
           }
@@ -10038,6 +10123,7 @@
           },
           "custom_message": {
             "type": "string",
+            "maxLength": 64,
             "default": "resembleai",
             "description": "Message used when applying the image/video watermark. Ignored for audio."
           }
@@ -13556,6 +13642,7 @@
           "new_quantity": {
             "type": "number",
             "format": "double",
+            "minimum": 0,
             "description": "Desired absolute total, not an increment or decrement."
           }
         },
@@ -13657,7 +13744,8 @@
             "type": "object",
             "additionalProperties": {
               "type": "number",
-              "format": "double"
+              "format": "double",
+              "minimum": 0
             },
             "description": "Optional map of product slugs to desired quantities on the new plan."
           }
@@ -13906,13 +13994,16 @@
             "type": "boolean"
           },
           "reload_amount_cents": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0
           },
           "minimum_balance_threshold_cents": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0
           },
           "maximum_monthly_spend_cents": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0
           }
         },
         "required": [

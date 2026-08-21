@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace ResembleAI
@@ -138,6 +140,7 @@ namespace ResembleAI
         /// Legacy field. May be present on older image/video detects. Ignored on create for new detections.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipeline")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Pipeline { get; set; }
 
         /// <summary>
@@ -218,9 +221,6 @@ namespace ResembleAI
         /// <param name="visualize"></param>
         /// <param name="audioSourceTracingEnabled"></param>
         /// <param name="useOodDetector"></param>
-        /// <param name="pipeline">
-        /// Legacy field. May be present on older image/video detects. Ignored on create for new detections.
-        /// </param>
         /// <param name="extraParams"></param>
         /// <param name="errorMessage"></param>
         /// <param name="createdAt"></param>
@@ -249,7 +249,6 @@ namespace ResembleAI
             bool? visualize,
             bool? audioSourceTracingEnabled,
             bool? useOodDetector,
-            string? pipeline,
             global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsExtraParams? extraParams,
             string? errorMessage,
             global::System.DateTime? createdAt,
@@ -275,7 +274,6 @@ namespace ResembleAI
             this.Visualize = visualize;
             this.AudioSourceTracingEnabled = audioSourceTracingEnabled;
             this.UseOodDetector = useOodDetector;
-            this.Pipeline = pipeline;
             this.ExtraParams = extraParams;
             this.ErrorMessage = errorMessage;
             this.CreatedAt = createdAt;
