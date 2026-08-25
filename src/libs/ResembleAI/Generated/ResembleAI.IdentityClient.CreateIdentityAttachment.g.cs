@@ -162,10 +162,6 @@ namespace ResembleAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(uuid ?? string.Empty),
-                                name: "\"uuid\"");
-
-                            __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Modality.ToValueString()),
                                 name: "\"modality\"");
 
@@ -742,10 +738,6 @@ namespace ResembleAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(uuid ?? string.Empty),
-                                name: "\"uuid\"");
-
-                            __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Modality.ToValueString()),
                                 name: "\"modality\"");
 
@@ -1276,10 +1268,6 @@ namespace ResembleAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(uuid ?? string.Empty),
-                                name: "\"uuid\"");
-
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Modality.ToValueString()),
                                 name: "\"modality\"");
