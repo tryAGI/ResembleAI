@@ -20,7 +20,7 @@ public partial class Tests
         try
         {
             //// Submit a small local WAV file for transcription.
-            var createdTranscript = await client.SubpackageSpeechToText.CreateTranscriptAsync(
+            var createdTranscript = await client.SpeechToText.CreateTranscriptAsync(
                 file: audioBytes,
                 filename: fixture.FileName);
 

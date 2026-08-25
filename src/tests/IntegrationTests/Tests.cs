@@ -48,7 +48,7 @@ public partial class Tests
                 SupportsVoiceConversion: true);
         }
 
-        var voices = await client.SubpackageVoices.ListVoicesAsync(page: 1, pageSize: 25).ConfigureAwait(false);
+        var voices = await client.Voices.ListVoicesAsync(page: 1, pageSize: 25).ConfigureAwait(false);
 
         var voice = voices.Items?
             .Where(item => item is { Uuid: { Length: > 0 } })
@@ -73,7 +73,7 @@ public partial class Tests
                 SupportsVoiceConversion: true);
         }
 
-        var voices = await client.SubpackageVoices.ListVoicesAsync(page: 1, pageSize: 50, advanced: true).ConfigureAwait(false);
+        var voices = await client.Voices.ListVoicesAsync(page: 1, pageSize: 50, advanced: true).ConfigureAwait(false);
 
         var voice = voices.Items?
             .Where(item => item is { Uuid: { Length: > 0 } })
@@ -89,7 +89,7 @@ public partial class Tests
 
     private static async Task<AccountTeamsGetResponsesContentApplicationJsonSchemaItemsItems> GetFirstTeamAsync(ResembleAIClient client)
     {
-        var teams = await client.SubpackageAccount.GetTeamsAsync().ConfigureAwait(false);
+        var teams = await client.Account.GetTeamsAsync().ConfigureAwait(false);
         var team = teams.Items?
             .FirstOrDefault(item => item is { Uuid: { Length: > 0 } });
 
@@ -98,7 +98,7 @@ public partial class Tests
 
     private static async Task<ProjectsGetResponsesContentApplicationJsonSchemaItemsItems> GetFirstProjectAsync(ResembleAIClient client)
     {
-        var projects = await client.SubpackageProjects.ListProjectsAsync(page: 1, pageSize: 10).ConfigureAwait(false);
+        var projects = await client.Projects.ListProjectsAsync(page: 1, pageSize: 10).ConfigureAwait(false);
         var project = projects.Items?
             .FirstOrDefault(item => item is { Uuid: { Length: > 0 } });
 
@@ -112,7 +112,7 @@ public partial class Tests
     {
         for (var attempt = 0; attempt < 30; attempt++)
         {
-            var transcript = await client.SubpackageSpeechToText.GetTranscriptAsync(transcriptUuid, cancellationToken: cancellationToken)
+            var transcript = await client.SpeechToText.GetTranscriptAsync(transcriptUuid, cancellationToken: cancellationToken)
                 .ConfigureAwait(false);
 
             switch (transcript.Item?.Status)

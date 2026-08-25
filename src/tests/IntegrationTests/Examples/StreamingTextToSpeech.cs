@@ -19,7 +19,7 @@ public partial class Tests
         try
         {
             //// Stream synthesized audio as a WAV byte buffer.
-            var audioBytes = await client.SubpackageTextToSpeech.StreamSynthesizeAsync(
+            var audioBytes = await client.TextToSpeech.StreamSynthesizeAsync(
                 voiceUuid: selectedVoice.Uuid,
                 data: "This is a streaming text to speech check for the Resemble AI SDK.",
                 sampleRate: StreamPostRequestBodyContentApplicationJsonSchemaSampleRate.x22050);

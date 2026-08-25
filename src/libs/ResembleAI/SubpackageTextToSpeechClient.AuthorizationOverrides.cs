@@ -1,7 +1,7 @@
 namespace ResembleAI;
 
 #pragma warning disable CA1822
-public sealed partial class SubpackageTextToSpeechClient
+public sealed partial class TextToSpeechClient
 {
     partial void PrepareSynthesizeRequest(
         HttpClient httpClient,

@@ -19,7 +19,7 @@ public partial class Tests
         try
         {
             //// Synthesize a short clip to WAV audio.
-            var response = await client.SubpackageTextToSpeech.SynthesizeAsync(
+            var response = await client.TextToSpeech.SynthesizeAsync(
                 voiceUuid: selectedVoice.Uuid,
                 data: "Hello from the Resemble AI SDK integration tests.",
                 title: "resembleai-sync-sample",

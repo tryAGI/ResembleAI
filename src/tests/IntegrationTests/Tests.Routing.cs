@@ -16,10 +16,10 @@ public partial class Tests
             disposeHttpClient: false);
 
         var selectedVoice = await GetReadyVoiceAsync(client);
-        var synthResponse = await client.SubpackageTextToSpeech.SynthesizeAsync(
+        var synthResponse = await client.TextToSpeech.SynthesizeAsync(
             voiceUuid: selectedVoice.Uuid,
             data: "hello from routing coverage");
-        var streamResponse = await client.SubpackageTextToSpeech.StreamSynthesizeAsync(
+        var streamResponse = await client.TextToSpeech.StreamSynthesizeAsync(
             voiceUuid: selectedVoice.Uuid,
             data: "hello from stream routing coverage");
 

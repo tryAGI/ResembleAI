@@ -3,7 +3,7 @@ order: 10
 title: Account overview
 slug: account-overview
 
-Inspect the authenticated account, current team plan, and billing usage.
+Inspect the authenticated account, current team plan, and default project.
 */
 
 namespace ResembleAI.IntegrationTests;
@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Load the signed-in account profile.
-        var account = await client.SubpackageAccount.GetAccountAsync();
+        var account = await client.Account.GetAccountAsync();
         var email = account.Item?.Email;
 
         //// Load the first team record returned by the account API.
@@ -29,21 +29,14 @@ public partial class Tests
         var projectName = project.Name;
         var projectUuid = project.Uuid;
 
-        //// Inspect current usage buckets reported by the billing endpoint.
-        var billingUsage = await client.SubpackageAccount.GetBillingUsageAsync();
-        var synthesisUsage = billingUsage.Items?.Synth;
-        var detectionUsage = billingUsage.Items?.Detect;
-
         Console.WriteLine($"Email: {email}");
         Console.WriteLine($"Team: {teamName} ({teamPlan})");
         Console.WriteLine($"Project: {projectName} [{projectUuid}]");
-        Console.WriteLine($"Usage: synth={synthesisUsage}, detect={detectionUsage}");
 
         account.Success.Should().BeTrue();
         email.Should().NotBeNullOrWhiteSpace();
         teamPlan.Should().NotBeNullOrWhiteSpace();
         projectName.Should().NotBeNullOrWhiteSpace();
         projectUuid.Should().NotBeNullOrWhiteSpace();
-        billingUsage.Success.Should().BeTrue();
     }
 }

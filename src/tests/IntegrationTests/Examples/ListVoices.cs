@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         //// Fetch the first page of available voices from the management API.
-        var voices = await client.SubpackageVoices.ListVoicesAsync(page: 1, pageSize: 10);
+        var voices = await client.Voices.ListVoicesAsync(page: 1, pageSize: 10);
         var selectedVoice = await GetReadyVoiceAsync(client);
 
         Console.WriteLine($"Selected voice: {selectedVoice.Name} ({selectedVoice.Uuid})");

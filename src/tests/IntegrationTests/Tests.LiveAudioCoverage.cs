@@ -12,7 +12,7 @@ public partial class Tests
             foreach (var fixture in GetBundledAudioFixtures())
             {
                 var audioBytes = await LoadAudioFixtureAsync(fixture).ConfigureAwait(false);
-                var createdTranscript = await client.SubpackageSpeechToText.CreateTranscriptAsync(
+                var createdTranscript = await client.SpeechToText.CreateTranscriptAsync(
                     file: audioBytes,
                     filename: fixture.FileName).ConfigureAwait(false);
 
