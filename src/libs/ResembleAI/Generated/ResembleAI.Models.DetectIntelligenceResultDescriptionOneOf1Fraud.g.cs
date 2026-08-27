@@ -4,25 +4,25 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetectIntelligenceResultDescriptionOneOf1Fraud
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectIntelligenceResultDescriptionOneOf1FraudTypeJsonConverter))]
         public global::ResembleAI.DetectIntelligenceResultDescriptionOneOf1FraudType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         public double? Confidence { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
         public string? Reasoning { get; set; }

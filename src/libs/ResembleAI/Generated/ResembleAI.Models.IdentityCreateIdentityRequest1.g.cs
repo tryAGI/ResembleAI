@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IdentityCreateIdentityRequest1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identity")]
         [global::System.Text.Json.Serialization.JsonRequired]

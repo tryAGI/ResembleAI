@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BillingSubscriptionItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public long? Id { get; set; }
@@ -27,13 +27,13 @@ namespace ResembleAI
         public double? ConsumedQuantity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product")]
         public global::ResembleAI.BillingSubscriptionProduct? Product { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan_product")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscriptionPlanProduct, object>))]
@@ -52,19 +52,19 @@ namespace ResembleAI
         public double? CurrentRatePerUnitCents { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_grandfathered")]
         public bool? IsGrandfathered { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rate_locked_at")]
         public global::System.DateTime? RateLockedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ui_visible")]
         public bool? UiVisible { get; set; }

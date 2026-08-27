@@ -4,24 +4,24 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IdentitySearchPostResponsesContentApplicationJsonSchemaItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("distance")]
         public double? Distance { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_type")]
         public string? ScoreType { get; set; }

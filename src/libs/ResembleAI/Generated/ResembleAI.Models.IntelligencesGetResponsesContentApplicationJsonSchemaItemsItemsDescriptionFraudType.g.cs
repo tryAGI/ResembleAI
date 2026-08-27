@@ -4,56 +4,56 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmploymentFraud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Extortion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FinancialFraud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Impersonation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InsuranceFraud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PoliticalManipulation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RomanceScam,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SyntheticMediaFraud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TechSupportScam,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vishing,
     }

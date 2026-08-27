@@ -4,16 +4,16 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IdentitySummaryVisibility
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Global,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Team,
     }

@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inconclusive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotRealPerson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RealPerson,
     }

@@ -20,7 +20,7 @@ namespace ResembleAI.JsonConverters
                     {
                         return global::ResembleAI.WatermarkDetectPostParametersPreferExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

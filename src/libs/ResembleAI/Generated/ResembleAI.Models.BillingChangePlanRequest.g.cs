@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BillingChangePlanRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan_slug")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,11 +9,11 @@ namespace ResembleAI
     public enum DetectFeedbackVote
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Down,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Up,
     }

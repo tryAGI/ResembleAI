@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WatermarkDetectItemMediaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BillingPaymentActionRequired
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requires_action")]
         [global::System.Text.Json.Serialization.JsonRequired]

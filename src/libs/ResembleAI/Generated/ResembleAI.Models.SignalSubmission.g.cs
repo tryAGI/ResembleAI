@@ -4,18 +4,18 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SignalSubmission
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_modality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.SignalSubmissionInputModalityJsonConverter))]
@@ -40,38 +40,38 @@ namespace ResembleAI
         public string? TextPreview { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verdict")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.SignalSubmissionVerdictJsonConverter))]
         public global::ResembleAI.SignalSubmissionVerdict? Verdict { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_category")]
         public global::ResembleAI.SignalCategoryScore? TopCategory { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("benign_score")]
         public double? BenignScore { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("margin_over_second")]
         public double? MarginOverSecond { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         public global::ResembleAI.SignalScoreItem? Response { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }

@@ -20,7 +20,7 @@ namespace ResembleAI.JsonConverters
                     {
                         return global::ResembleAI.IdentitySummaryIdentityTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

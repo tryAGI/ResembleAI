@@ -4,19 +4,19 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SignalScoreResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Success { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]

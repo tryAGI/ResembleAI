@@ -4,24 +4,24 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SignalScoreItemInputModality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

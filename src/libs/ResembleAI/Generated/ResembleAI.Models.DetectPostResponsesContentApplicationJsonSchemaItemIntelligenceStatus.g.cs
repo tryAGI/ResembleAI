@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }

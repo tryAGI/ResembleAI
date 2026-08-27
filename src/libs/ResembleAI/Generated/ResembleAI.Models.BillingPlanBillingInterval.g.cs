@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BillingPlanBillingInterval
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Annual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Monthly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Quarterly,
     }

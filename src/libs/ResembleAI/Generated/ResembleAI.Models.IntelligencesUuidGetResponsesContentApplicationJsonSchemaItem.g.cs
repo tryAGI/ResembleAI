@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IntelligencesUuidGetResponsesContentApplicationJsonSchemaItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uuid")]
         public string? Uuid { get; set; }
@@ -21,7 +21,7 @@ namespace ResembleAI
         public global::ResembleAI.IntelligencesUuidGetResponsesContentApplicationJsonSchemaItemDescription? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }

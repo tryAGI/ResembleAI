@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

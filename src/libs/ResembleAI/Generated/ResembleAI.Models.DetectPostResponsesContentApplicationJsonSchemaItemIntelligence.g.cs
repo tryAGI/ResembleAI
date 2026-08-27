@@ -9,39 +9,39 @@ namespace ResembleAI
     public sealed partial class DetectPostResponsesContentApplicationJsonSchemaItemIntelligence
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uuid")]
         public string? Uuid { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatusJsonConverter))]
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         public string? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionJsonConverter))]
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detect_uuid")]
         public string? DetectUuid { get; set; }

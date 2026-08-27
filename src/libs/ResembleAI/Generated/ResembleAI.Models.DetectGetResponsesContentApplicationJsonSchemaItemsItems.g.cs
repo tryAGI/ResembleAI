@@ -6,25 +6,25 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetectGetResponsesContentApplicationJsonSchemaItemsItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uuid")]
         public string? Uuid { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaTypeJsonConverter))]
         public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType? MediaType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter))]
@@ -76,7 +76,7 @@ namespace ResembleAI
         public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>? AudioSourceTracing { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>))]
@@ -101,7 +101,7 @@ namespace ResembleAI
         public string? Filename { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         public double? Duration { get; set; }
@@ -119,19 +119,19 @@ namespace ResembleAI
         public global::System.DateTime? FileDeletedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visualize")]
         public bool? Visualize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_source_tracing_enabled")]
         public bool? AudioSourceTracingEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_ood_detector")]
         public bool? UseOodDetector { get; set; }
@@ -144,25 +144,25 @@ namespace ResembleAI
         public string? Pipeline { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra_params")]
         public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsExtraParams? ExtraParams { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         public string? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }

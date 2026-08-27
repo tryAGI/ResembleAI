@@ -5,12 +5,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct IdentityCreateIdentityRequest : global::System.IEquatable<IdentityCreateIdentityRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.IdentityCreateIdentityRequest0? IdentityCreateIdentityRequest0 { get; init; }
@@ -19,7 +19,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IdentityCreateIdentityRequest0))]
@@ -27,7 +27,7 @@ namespace ResembleAI
         public bool IsIdentityCreateIdentityRequest0 => IdentityCreateIdentityRequest0 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIdentityCreateIdentityRequest0(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.IdentityCreateIdentityRequest0 PickIdentityCreateIdentityRequest0() => IsIdentityCreateIdentityRequest0
             ? IdentityCreateIdentityRequest0!
             : throw new global::System.InvalidOperationException($"Expected union variant 'IdentityCreateIdentityRequest0' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.IdentityCreateIdentityRequest1? IdentityCreateIdentityRequest1 { get; init; }
@@ -56,7 +56,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IdentityCreateIdentityRequest1))]
@@ -64,7 +64,7 @@ namespace ResembleAI
         public bool IsIdentityCreateIdentityRequest1 => IdentityCreateIdentityRequest1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIdentityCreateIdentityRequest1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.IdentityCreateIdentityRequest1 PickIdentityCreateIdentityRequest1() => IsIdentityCreateIdentityRequest1
             ? IdentityCreateIdentityRequest1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'IdentityCreateIdentityRequest1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IdentityCreateIdentityRequest(global::ResembleAI.IdentityCreateIdentityRequest0 value) => new IdentityCreateIdentityRequest((global::ResembleAI.IdentityCreateIdentityRequest0?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.IdentityCreateIdentityRequest0?(IdentityCreateIdentityRequest @this) => @this.IdentityCreateIdentityRequest0;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdentityCreateIdentityRequest(global::ResembleAI.IdentityCreateIdentityRequest0? value)
         {
@@ -101,22 +101,22 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IdentityCreateIdentityRequest FromIdentityCreateIdentityRequest0(global::ResembleAI.IdentityCreateIdentityRequest0? value) => new IdentityCreateIdentityRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IdentityCreateIdentityRequest(global::ResembleAI.IdentityCreateIdentityRequest1 value) => new IdentityCreateIdentityRequest((global::ResembleAI.IdentityCreateIdentityRequest1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.IdentityCreateIdentityRequest1?(IdentityCreateIdentityRequest @this) => @this.IdentityCreateIdentityRequest1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdentityCreateIdentityRequest(global::ResembleAI.IdentityCreateIdentityRequest1? value)
         {
@@ -124,12 +124,12 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IdentityCreateIdentityRequest FromIdentityCreateIdentityRequest1(global::ResembleAI.IdentityCreateIdentityRequest1? value) => new IdentityCreateIdentityRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdentityCreateIdentityRequest(
             global::ResembleAI.IdentityCreateIdentityRequest0? identityCreateIdentityRequest0,
@@ -141,23 +141,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             IdentityCreateIdentityRequest1 as object ??
-            IdentityCreateIdentityRequest0 as object 
+            IdentityCreateIdentityRequest0 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             IdentityCreateIdentityRequest0?.ToString() ??
-            IdentityCreateIdentityRequest1?.ToString() 
+            IdentityCreateIdentityRequest1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ResembleAI.IdentityCreateIdentityRequest0, TResult>? identityCreateIdentityRequest0 = null,
@@ -190,7 +190,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ResembleAI.IdentityCreateIdentityRequest0>? identityCreateIdentityRequest0 = null,
@@ -214,7 +214,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ResembleAI.IdentityCreateIdentityRequest0>? identityCreateIdentityRequest0 = null,
@@ -237,7 +237,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(IdentityCreateIdentityRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::ResembleAI.IdentityCreateIdentityRequest0?>.Default.Equals(IdentityCreateIdentityRequest0, other.IdentityCreateIdentityRequest0) &&
-                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.IdentityCreateIdentityRequest1?>.Default.Equals(IdentityCreateIdentityRequest1, other.IdentityCreateIdentityRequest1) 
+                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.IdentityCreateIdentityRequest1?>.Default.Equals(IdentityCreateIdentityRequest1, other.IdentityCreateIdentityRequest1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(IdentityCreateIdentityRequest obj1, IdentityCreateIdentityRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(IdentityCreateIdentityRequest obj1, IdentityCreateIdentityRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

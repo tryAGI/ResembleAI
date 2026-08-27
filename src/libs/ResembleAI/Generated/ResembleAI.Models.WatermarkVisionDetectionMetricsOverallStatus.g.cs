@@ -4,24 +4,24 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WatermarkVisionDetectionMetricsOverallStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Absent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Degraded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inconclusive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Present,
     }

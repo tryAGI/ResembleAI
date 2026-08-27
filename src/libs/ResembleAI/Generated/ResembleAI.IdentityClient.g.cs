@@ -10,7 +10,7 @@ namespace ResembleAI
     public sealed partial class IdentityClient : global::ResembleAI.IIdentityClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://app.resemble.ai/api/v2";
 
@@ -40,7 +40,7 @@ namespace ResembleAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ResembleAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

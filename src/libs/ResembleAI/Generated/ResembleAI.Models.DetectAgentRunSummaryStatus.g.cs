@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DetectAgentRunSummaryStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Running,
     }

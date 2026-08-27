@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IdentityEmbeddingsItemsModality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Face,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voice,
     }

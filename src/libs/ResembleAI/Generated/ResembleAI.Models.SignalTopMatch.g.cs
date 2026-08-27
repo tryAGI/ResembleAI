@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SignalTopMatch
     {
@@ -21,7 +21,7 @@ namespace ResembleAI
         public string? Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         public double? Score { get; set; }

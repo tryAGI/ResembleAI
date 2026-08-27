@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WatermarkApplyItemModelVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerthV2,
     }

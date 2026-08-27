@@ -11,11 +11,11 @@ namespace ResembleAI
     public enum DetectFeedbackVerdict
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AiGenerated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Authentic,
     }

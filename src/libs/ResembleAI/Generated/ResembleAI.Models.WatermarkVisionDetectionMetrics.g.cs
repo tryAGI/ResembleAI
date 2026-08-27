@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WatermarkVisionDetectionMetrics
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overall_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkVisionDetectionMetricsOverallStatusJsonConverter))]
@@ -24,20 +24,20 @@ namespace ResembleAI
         public required global::System.Collections.Generic.IList<global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems> DetectedModelVersions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_watermark")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasWatermark { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detection_score")]
         public double? DetectionScore { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_results")]
         [global::System.Text.Json.Serialization.JsonRequired]

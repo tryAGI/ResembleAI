@@ -4,24 +4,24 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BillingSubscriptionProductCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BaseFee,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IncludedCredits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscription,
     }

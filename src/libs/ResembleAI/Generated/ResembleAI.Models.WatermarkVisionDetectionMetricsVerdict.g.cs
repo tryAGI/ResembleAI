@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum WatermarkVisionDetectionMetricsVerdict
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Degraded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotWatermarked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Verified,
     }

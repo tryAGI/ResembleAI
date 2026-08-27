@@ -9,49 +9,49 @@ namespace ResembleAI
     public sealed partial class DetectAgentCapabilities
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Media { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reverse_search")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool ReverseSearch { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identity")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Identity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grounding")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Grounding { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("structured")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Structured { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Tools { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("knowledge")]
         [global::System.Text.Json.Serialization.JsonRequired]

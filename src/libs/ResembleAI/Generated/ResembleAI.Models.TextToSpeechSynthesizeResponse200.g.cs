@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TextToSpeechSynthesizeResponse200
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         public bool? Success { get; set; }
@@ -21,7 +21,7 @@ namespace ResembleAI
         public byte[]? AudioContent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_timestamps")]
         public global::ResembleAI.AudioTimestamps? AudioTimestamps { get; set; }
@@ -39,25 +39,25 @@ namespace ResembleAI
         public double? SynthDuration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         public string? OutputFormat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample_rate")]
         public int? SampleRate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues")]
         public global::System.Collections.Generic.IList<string>? Issues { get; set; }

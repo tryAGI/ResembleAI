@@ -9,27 +9,27 @@ namespace ResembleAI
     public enum SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x22050,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x32000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x44100,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x48000,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x8000,
     }

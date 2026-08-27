@@ -9,11 +9,11 @@ namespace ResembleAI
     public enum IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityIdentityType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Brand,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Person,
     }

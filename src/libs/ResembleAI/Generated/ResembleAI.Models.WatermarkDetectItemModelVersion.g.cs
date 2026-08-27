@@ -9,7 +9,7 @@ namespace ResembleAI
     public enum WatermarkDetectItemModelVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerthV2,
     }

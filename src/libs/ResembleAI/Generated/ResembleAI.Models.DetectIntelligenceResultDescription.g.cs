@@ -5,12 +5,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DetectIntelligenceResultDescription : global::System.IEquatable<DetectIntelligenceResultDescription>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? DetectIntelligenceResultDescriptionVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectIntelligenceResultDescriptionVariant1))]
@@ -27,7 +27,7 @@ namespace ResembleAI
         public bool IsDetectIntelligenceResultDescriptionVariant1 => DetectIntelligenceResultDescriptionVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetectIntelligenceResultDescriptionVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickDetectIntelligenceResultDescriptionVariant1() => IsDetectIntelligenceResultDescriptionVariant1
             ? DetectIntelligenceResultDescriptionVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectIntelligenceResultDescriptionVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.DetectIntelligenceResultDescription1? DetectIntelligenceResultDescription1 { get; init; }
@@ -56,7 +56,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectIntelligenceResultDescription1))]
@@ -64,7 +64,7 @@ namespace ResembleAI
         public bool IsDetectIntelligenceResultDescription1 => DetectIntelligenceResultDescription1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetectIntelligenceResultDescription1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.DetectIntelligenceResultDescription1 PickDetectIntelligenceResultDescription1() => IsDetectIntelligenceResultDescription1
             ? DetectIntelligenceResultDescription1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectIntelligenceResultDescription1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetectIntelligenceResultDescription(string value) => new DetectIntelligenceResultDescription((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(DetectIntelligenceResultDescription @this) => @this.DetectIntelligenceResultDescriptionVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectIntelligenceResultDescription(string? value)
         {
@@ -101,22 +101,22 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetectIntelligenceResultDescription FromDetectIntelligenceResultDescriptionVariant1(string? value) => new DetectIntelligenceResultDescription(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetectIntelligenceResultDescription(global::ResembleAI.DetectIntelligenceResultDescription1 value) => new DetectIntelligenceResultDescription((global::ResembleAI.DetectIntelligenceResultDescription1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.DetectIntelligenceResultDescription1?(DetectIntelligenceResultDescription @this) => @this.DetectIntelligenceResultDescription1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectIntelligenceResultDescription(global::ResembleAI.DetectIntelligenceResultDescription1? value)
         {
@@ -124,12 +124,12 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetectIntelligenceResultDescription FromDetectIntelligenceResultDescription1(global::ResembleAI.DetectIntelligenceResultDescription1? value) => new DetectIntelligenceResultDescription(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectIntelligenceResultDescription(
             string? detectIntelligenceResultDescriptionVariant1,
@@ -141,23 +141,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DetectIntelligenceResultDescription1 as object ??
-            DetectIntelligenceResultDescriptionVariant1 as object 
+            DetectIntelligenceResultDescriptionVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             DetectIntelligenceResultDescriptionVariant1?.ToString() ??
-            DetectIntelligenceResultDescription1?.ToString() 
+            DetectIntelligenceResultDescription1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? detectIntelligenceResultDescriptionVariant1 = null,
@@ -190,7 +190,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? detectIntelligenceResultDescriptionVariant1 = null,
@@ -214,7 +214,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? detectIntelligenceResultDescriptionVariant1 = null,
@@ -237,7 +237,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DetectIntelligenceResultDescription other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(DetectIntelligenceResultDescriptionVariant1, other.DetectIntelligenceResultDescriptionVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.DetectIntelligenceResultDescription1?>.Default.Equals(DetectIntelligenceResultDescription1, other.DetectIntelligenceResultDescription1) 
+                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.DetectIntelligenceResultDescription1?>.Default.Equals(DetectIntelligenceResultDescription1, other.DetectIntelligenceResultDescription1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DetectIntelligenceResultDescription obj1, DetectIntelligenceResultDescription obj2)
         {
@@ -277,7 +277,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DetectIntelligenceResultDescription obj1, DetectIntelligenceResultDescription obj2)
         {
@@ -285,7 +285,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

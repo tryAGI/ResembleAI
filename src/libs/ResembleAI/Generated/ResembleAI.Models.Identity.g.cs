@@ -9,75 +9,75 @@ namespace ResembleAI
     public sealed partial class Identity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uuid")]
         public string? Uuid { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("identity_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.IdentityIdentityTypeJsonConverter))]
         public global::ResembleAI.IdentityIdentityType? IdentityType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.IdentityVisibilityJsonConverter))]
         public global::ResembleAI.IdentityVisibility? Visibility { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notes")]
         public string? Notes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_profile_id")]
         public string? VoiceProfileId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_count")]
         public int? ProjectCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_samples")]
         public global::System.Collections.Generic.IList<global::ResembleAI.IdentityAttachment>? VoiceSamples { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("face_photos")]
         public global::System.Collections.Generic.IList<global::ResembleAI.IdentityAttachment>? FacePhotos { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_videos")]
         public global::System.Collections.Generic.IList<global::ResembleAI.IdentityAttachment>? ReferenceVideos { get; set; }
@@ -89,7 +89,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.IList<global::ResembleAI.IdentityEmbeddingsItems>? Embeddings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
         public global::System.Collections.Generic.IList<global::ResembleAI.IdentityProjectsItems>? Projects { get; set; }

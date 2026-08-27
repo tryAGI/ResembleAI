@@ -4,33 +4,33 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WatermarkVisionModelResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultModelVersionJsonConverter))]
         public global::ResembleAI.WatermarkVisionModelResultModelVersion ModelVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkVisionModelResultStatusJsonConverter))]
         public global::ResembleAI.WatermarkVisionModelResultStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detected")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Detected { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         public double? Confidence { get; set; }

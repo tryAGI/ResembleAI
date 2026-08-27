@@ -9,19 +9,19 @@ namespace ResembleAI
     public enum DetectFeedbackMediaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

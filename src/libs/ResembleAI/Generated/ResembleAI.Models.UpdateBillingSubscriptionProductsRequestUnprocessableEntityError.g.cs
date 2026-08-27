@@ -5,12 +5,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct UpdateBillingSubscriptionProductsRequestUnprocessableEntityError : global::System.IEquatable<UpdateBillingSubscriptionProductsRequestUnprocessableEntityError>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.BillingError? BillingError { get; init; }
@@ -19,7 +19,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
@@ -27,7 +27,7 @@ namespace ResembleAI
         public bool IsBillingError => BillingError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBillingError(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.BillingError PickBillingError() => IsBillingError
             ? BillingError!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.BillingValidationErrors? BillingValidationErrors { get; init; }
@@ -56,7 +56,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingValidationErrors))]
@@ -64,7 +64,7 @@ namespace ResembleAI
         public bool IsBillingValidationErrors => BillingValidationErrors != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBillingValidationErrors(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.BillingValidationErrors PickBillingValidationErrors() => IsBillingValidationErrors
             ? BillingValidationErrors!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingValidationErrors' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(global::ResembleAI.BillingError value) => new UpdateBillingSubscriptionProductsRequestUnprocessableEntityError((global::ResembleAI.BillingError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.BillingError?(UpdateBillingSubscriptionProductsRequestUnprocessableEntityError @this) => @this.BillingError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(global::ResembleAI.BillingError? value)
         {
@@ -101,22 +101,22 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateBillingSubscriptionProductsRequestUnprocessableEntityError FromBillingError(global::ResembleAI.BillingError? value) => new UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(global::ResembleAI.BillingValidationErrors value) => new UpdateBillingSubscriptionProductsRequestUnprocessableEntityError((global::ResembleAI.BillingValidationErrors?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.BillingValidationErrors?(UpdateBillingSubscriptionProductsRequestUnprocessableEntityError @this) => @this.BillingValidationErrors;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(global::ResembleAI.BillingValidationErrors? value)
         {
@@ -124,12 +124,12 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateBillingSubscriptionProductsRequestUnprocessableEntityError FromBillingValidationErrors(global::ResembleAI.BillingValidationErrors? value) => new UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateBillingSubscriptionProductsRequestUnprocessableEntityError(
             global::ResembleAI.BillingError? billingError,
@@ -141,23 +141,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BillingValidationErrors as object ??
-            BillingError as object 
+            BillingError as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BillingError?.ToString() ??
-            BillingValidationErrors?.ToString() 
+            BillingValidationErrors?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ResembleAI.BillingError, TResult>? billingError = null,
@@ -190,7 +190,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ResembleAI.BillingError>? billingError = null,
@@ -214,7 +214,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ResembleAI.BillingError>? billingError = null,
@@ -237,7 +237,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(UpdateBillingSubscriptionProductsRequestUnprocessableEntityError other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::ResembleAI.BillingError?>.Default.Equals(BillingError, other.BillingError) &&
-                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.BillingValidationErrors?>.Default.Equals(BillingValidationErrors, other.BillingValidationErrors) 
+                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.BillingValidationErrors?>.Default.Equals(BillingValidationErrors, other.BillingValidationErrors)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(UpdateBillingSubscriptionProductsRequestUnprocessableEntityError obj1, UpdateBillingSubscriptionProductsRequestUnprocessableEntityError obj2)
         {
@@ -277,7 +277,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(UpdateBillingSubscriptionProductsRequestUnprocessableEntityError obj1, UpdateBillingSubscriptionProductsRequestUnprocessableEntityError obj2)
         {
@@ -285,7 +285,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

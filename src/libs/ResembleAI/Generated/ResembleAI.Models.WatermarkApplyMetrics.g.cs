@@ -9,19 +9,19 @@ namespace ResembleAI
     public sealed partial class WatermarkApplyMetrics
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
         public double? Strength { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_message")]
         public string? CustomMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message_bits_length")]
         public int? MessageBitsLength { get; set; }

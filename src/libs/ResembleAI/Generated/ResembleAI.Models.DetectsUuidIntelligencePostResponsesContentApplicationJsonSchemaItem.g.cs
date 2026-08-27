@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItem
     {
@@ -46,13 +46,13 @@ namespace ResembleAI
         public string? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }

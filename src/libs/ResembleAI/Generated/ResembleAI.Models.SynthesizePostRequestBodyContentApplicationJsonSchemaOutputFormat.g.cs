@@ -10,11 +10,11 @@ namespace ResembleAI
     public enum SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

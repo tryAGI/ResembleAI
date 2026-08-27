@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CustomPronunciationsBulkCreatePronunciationsResponse201
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         public bool? Success { get; set; }
@@ -27,13 +27,13 @@ namespace ResembleAI
         public int? TotalErrors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         public global::System.Collections.Generic.IList<global::ResembleAI.CustomPronunciation>? Items { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         public global::System.Collections.Generic.IList<global::ResembleAI.PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems>? Errors { get; set; }

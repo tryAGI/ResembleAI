@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WatermarkAudioDetectionMetricsOverallStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Absent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inconclusive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Present,
     }

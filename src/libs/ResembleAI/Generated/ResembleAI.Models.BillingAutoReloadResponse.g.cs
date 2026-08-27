@@ -4,25 +4,25 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BillingAutoReloadResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_reload")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingAutoReloadSetting, object>))]
         public global::ResembleAI.OneOf<global::ResembleAI.BillingAutoReloadSetting, object>? AutoReload { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minimum_reload_amount_cents")]
         public int? MinimumReloadAmountCents { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maximum_reload_amount_cents")]
         public int? MaximumReloadAmountCents { get; set; }

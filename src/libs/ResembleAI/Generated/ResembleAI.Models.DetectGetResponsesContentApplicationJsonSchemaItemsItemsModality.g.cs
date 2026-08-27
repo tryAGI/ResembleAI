@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

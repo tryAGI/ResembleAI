@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum DetectC2PaManifestValidationState
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotPresent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Valid,
     }

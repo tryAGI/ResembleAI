@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum DetectAgentTier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Forensic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Investigation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Triage,
     }

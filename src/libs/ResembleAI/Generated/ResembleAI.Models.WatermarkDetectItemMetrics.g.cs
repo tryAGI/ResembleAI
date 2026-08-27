@@ -10,7 +10,7 @@ namespace ResembleAI
     public readonly partial struct WatermarkDetectItemMetrics : global::System.IEquatable<WatermarkDetectItemMetrics>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.WatermarkAudioDetectionMetrics? WatermarkAudioDetectionMetrics { get; init; }
@@ -19,7 +19,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WatermarkAudioDetectionMetrics))]
@@ -27,7 +27,7 @@ namespace ResembleAI
         public bool IsWatermarkAudioDetectionMetrics => WatermarkAudioDetectionMetrics != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWatermarkAudioDetectionMetrics(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.WatermarkAudioDetectionMetrics PickWatermarkAudioDetectionMetrics() => IsWatermarkAudioDetectionMetrics
             ? WatermarkAudioDetectionMetrics!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WatermarkAudioDetectionMetrics' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.WatermarkVisionDetectionMetrics? WatermarkVisionDetectionMetrics { get; init; }
@@ -56,7 +56,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WatermarkVisionDetectionMetrics))]
@@ -64,7 +64,7 @@ namespace ResembleAI
         public bool IsWatermarkVisionDetectionMetrics => WatermarkVisionDetectionMetrics != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWatermarkVisionDetectionMetrics(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.WatermarkVisionDetectionMetrics PickWatermarkVisionDetectionMetrics() => IsWatermarkVisionDetectionMetrics
             ? WatermarkVisionDetectionMetrics!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WatermarkVisionDetectionMetrics' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WatermarkDetectItemMetrics(global::ResembleAI.WatermarkAudioDetectionMetrics value) => new WatermarkDetectItemMetrics((global::ResembleAI.WatermarkAudioDetectionMetrics?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.WatermarkAudioDetectionMetrics?(WatermarkDetectItemMetrics @this) => @this.WatermarkAudioDetectionMetrics;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WatermarkDetectItemMetrics(global::ResembleAI.WatermarkAudioDetectionMetrics? value)
         {
@@ -101,22 +101,22 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WatermarkDetectItemMetrics FromWatermarkAudioDetectionMetrics(global::ResembleAI.WatermarkAudioDetectionMetrics? value) => new WatermarkDetectItemMetrics(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WatermarkDetectItemMetrics(global::ResembleAI.WatermarkVisionDetectionMetrics value) => new WatermarkDetectItemMetrics((global::ResembleAI.WatermarkVisionDetectionMetrics?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.WatermarkVisionDetectionMetrics?(WatermarkDetectItemMetrics @this) => @this.WatermarkVisionDetectionMetrics;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WatermarkDetectItemMetrics(global::ResembleAI.WatermarkVisionDetectionMetrics? value)
         {
@@ -124,12 +124,12 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WatermarkDetectItemMetrics FromWatermarkVisionDetectionMetrics(global::ResembleAI.WatermarkVisionDetectionMetrics? value) => new WatermarkDetectItemMetrics(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WatermarkDetectItemMetrics(
             global::ResembleAI.WatermarkAudioDetectionMetrics? watermarkAudioDetectionMetrics,
@@ -141,23 +141,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WatermarkVisionDetectionMetrics as object ??
-            WatermarkAudioDetectionMetrics as object 
+            WatermarkAudioDetectionMetrics as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             WatermarkAudioDetectionMetrics?.ToString() ??
-            WatermarkVisionDetectionMetrics?.ToString() 
+            WatermarkVisionDetectionMetrics?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ResembleAI.WatermarkAudioDetectionMetrics, TResult>? watermarkAudioDetectionMetrics = null,
@@ -190,7 +190,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ResembleAI.WatermarkAudioDetectionMetrics>? watermarkAudioDetectionMetrics = null,
@@ -214,7 +214,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ResembleAI.WatermarkAudioDetectionMetrics>? watermarkAudioDetectionMetrics = null,
@@ -237,7 +237,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(WatermarkDetectItemMetrics other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::ResembleAI.WatermarkAudioDetectionMetrics?>.Default.Equals(WatermarkAudioDetectionMetrics, other.WatermarkAudioDetectionMetrics) &&
-                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.WatermarkVisionDetectionMetrics?>.Default.Equals(WatermarkVisionDetectionMetrics, other.WatermarkVisionDetectionMetrics) 
+                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.WatermarkVisionDetectionMetrics?>.Default.Equals(WatermarkVisionDetectionMetrics, other.WatermarkVisionDetectionMetrics)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(WatermarkDetectItemMetrics obj1, WatermarkDetectItemMetrics obj2)
         {
@@ -277,7 +277,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(WatermarkDetectItemMetrics obj1, WatermarkDetectItemMetrics obj2)
         {
@@ -285,7 +285,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

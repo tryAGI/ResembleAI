@@ -9,25 +9,25 @@ namespace ResembleAI
     public sealed partial class DetectAgentRunSummaryInputs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         public string? Query { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         public string? Filename { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("check_urls")]
         public string? CheckUrls { get; set; }

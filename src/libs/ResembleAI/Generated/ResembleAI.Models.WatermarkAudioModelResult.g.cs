@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WatermarkAudioModelResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultModelVersionJsonConverter))]
@@ -17,7 +17,7 @@ namespace ResembleAI
         public required global::ResembleAI.WatermarkAudioModelResultModelVersion ModelVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkAudioModelResultStatusJsonConverter))]
@@ -37,7 +37,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.Dictionary<string, bool>? HasWatermark { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
         public double? Confidence { get; set; }

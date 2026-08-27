@@ -4,24 +4,24 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }

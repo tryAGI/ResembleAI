@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }
