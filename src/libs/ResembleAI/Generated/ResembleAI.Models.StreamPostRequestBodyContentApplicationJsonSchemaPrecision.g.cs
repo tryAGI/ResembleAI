@@ -10,19 +10,19 @@ namespace ResembleAI
     public enum StreamPostRequestBodyContentApplicationJsonSchemaPrecision
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mulaw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm24,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm32,
     }

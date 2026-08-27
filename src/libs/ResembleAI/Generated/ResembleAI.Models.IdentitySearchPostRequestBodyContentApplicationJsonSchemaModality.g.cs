@@ -9,11 +9,11 @@ namespace ResembleAI
     public enum IdentitySearchPostRequestBodyContentApplicationJsonSchemaModality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
     }

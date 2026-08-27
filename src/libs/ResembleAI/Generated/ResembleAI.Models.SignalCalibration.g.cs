@@ -9,25 +9,25 @@ namespace ResembleAI
     public sealed partial class SignalCalibration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("calibrated_at")]
         public global::System.DateTime? CalibratedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overall_recall")]
         public double? OverallRecall { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warnings")]
         public global::System.Collections.Generic.IList<global::ResembleAI.SignalCalibrationWarningsItems>? Warnings { get; set; }

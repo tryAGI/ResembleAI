@@ -15,27 +15,27 @@ namespace ResembleAI
     public enum DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Correct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeAiGenerated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeAuthentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeNeutral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeNonAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
     }

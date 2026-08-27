@@ -9,25 +9,25 @@ namespace ResembleAI
     public sealed partial class BillingSubscriptionPlanProduct
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("included_quantity")]
         public double? IncludedQuantity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_additional_usage")]
         public bool? AllowAdditionalUsage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_usage_per_period")]
         public double? MinUsagePerPeriod { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_usage_per_period")]
         public double? MaxUsagePerPeriod { get; set; }

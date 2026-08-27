@@ -9,15 +9,15 @@ namespace ResembleAI
     public enum CustomPronunciationStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ready,
     }

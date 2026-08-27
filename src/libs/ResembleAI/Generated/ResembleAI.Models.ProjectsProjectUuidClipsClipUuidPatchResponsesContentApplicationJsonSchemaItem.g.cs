@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProjectsProjectUuidClipsClipUuidPatchResponsesContentApplicationJsonSchemaItem
     {

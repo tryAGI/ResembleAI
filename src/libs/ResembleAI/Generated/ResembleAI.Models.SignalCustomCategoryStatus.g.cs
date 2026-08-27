@@ -4,28 +4,28 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SignalCustomCategoryStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Embedding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeedsMoreExamples,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ready,
     }

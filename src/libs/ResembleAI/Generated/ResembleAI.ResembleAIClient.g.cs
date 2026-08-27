@@ -40,7 +40,7 @@ namespace ResembleAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ResembleAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -50,7 +50,7 @@ namespace ResembleAI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -60,7 +60,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioEnhancementClient AudioEnhancement => new AudioEnhancementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -70,7 +70,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioSourceTracingClient AudioSourceTracing => new AudioSourceTracingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -80,7 +80,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillingPlansClient BillingPlans => new BillingPlansClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -90,7 +90,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillingSubscriptionsClient BillingSubscriptions => new BillingSubscriptionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -100,7 +100,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillingWalletClient BillingWallet => new BillingWalletClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -110,7 +110,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClipsClient Clips => new ClipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -120,7 +120,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomPronunciationsClient CustomPronunciations => new CustomPronunciationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -130,7 +130,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DeepfakeDetectionClient DeepfakeDetection => new DeepfakeDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -140,7 +140,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectAgentsClient DetectAgents => new DetectAgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -150,7 +150,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectIntelligenceClient DetectIntelligence => new DetectIntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -160,7 +160,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DuetsClient Duets => new DuetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -170,7 +170,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdentityClient Identity => new IdentityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -180,7 +180,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntelligenceClient Intelligence => new IntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -190,7 +190,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -200,7 +200,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecordingsClient Recordings => new RecordingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -210,7 +210,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SecureUploadsClient SecureUploads => new SecureUploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -220,7 +220,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SignalClient Signal => new SignalClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -230,7 +230,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpeechToTextClient SpeechToText => new SpeechToTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -240,7 +240,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TermSubstitutionsClient TermSubstitutions => new TermSubstitutionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -250,7 +250,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -260,7 +260,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoiceDesignClient VoiceDesign => new VoiceDesignClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -270,7 +270,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoiceSettingsPresetsClient VoiceSettingsPresets => new VoiceSettingsPresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -280,7 +280,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -290,7 +290,7 @@ namespace ResembleAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WatermarkClient Watermark => new WatermarkClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

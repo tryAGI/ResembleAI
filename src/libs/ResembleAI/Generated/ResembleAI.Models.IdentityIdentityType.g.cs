@@ -4,16 +4,16 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IdentityIdentityType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Brand,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Person,
     }

@@ -5,12 +5,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription : global::System.IEquatable<DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1))]
@@ -27,7 +27,7 @@ namespace ResembleAI
         public bool IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 => DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1() => IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1
             ? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 { get; init; }
@@ -56,7 +56,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1))]
@@ -64,7 +64,7 @@ namespace ResembleAI
         public bool IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 => DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1() => IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
             ? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(string value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription @this) => @this.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(string? value)
         {
@@ -101,22 +101,22 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription FromDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(string? value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription((global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription @this) => @this.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? value)
         {
@@ -124,12 +124,12 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription FromDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1? value) => new DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription(
             string? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1,
@@ -141,23 +141,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 as object ??
-            DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 as object 
+            DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.ToString() ??
-            DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.ToString() 
+            DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
@@ -190,7 +190,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
@@ -214,7 +214,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 = null,
@@ -237,7 +237,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1, other.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?>.Default.Equals(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1, other.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1) 
+                global::System.Collections.Generic.EqualityComparer<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?>.Default.Equals(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1, other.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription obj1, DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription obj2)
         {
@@ -277,7 +277,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription obj1, DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription obj2)
         {
@@ -285,7 +285,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,52 +4,52 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BillingWalletTransactionTransactionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreditPurchase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ManualAdjustment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlanChange,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlanSubscription,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromotionBonus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromotionalCreditAdjustment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refund,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubscriptionCancellation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SubscriptionRenewalCredit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrialCredit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UsageDeduction,
     }

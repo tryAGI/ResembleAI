@@ -4,31 +4,31 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SignalCustomCategoryListResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Success { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         public global::ResembleAI.SignalSettings? Settings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("built_in_categories")]
         public global::System.Collections.Generic.IList<global::ResembleAI.SignalBuiltInCategory>? BuiltInCategories { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_categories")]
         public global::System.Collections.Generic.IList<global::ResembleAI.SignalCustomCategory>? CustomCategories { get; set; }

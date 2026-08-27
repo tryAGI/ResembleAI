@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WatermarkApplyPostParametersPrefer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wait,
     }

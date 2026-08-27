@@ -60,133 +60,133 @@ namespace ResembleAI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AccountClient Account { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioEnhancementClient AudioEnhancement { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioSourceTracingClient AudioSourceTracing { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillingPlansClient BillingPlans { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillingSubscriptionsClient BillingSubscriptions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillingWalletClient BillingWallet { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClipsClient Clips { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomPronunciationsClient CustomPronunciations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DeepfakeDetectionClient DeepfakeDetection { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectAgentsClient DetectAgents { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectIntelligenceClient DetectIntelligence { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DuetsClient Duets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdentityClient Identity { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntelligenceClient Intelligence { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectsClient Projects { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecordingsClient Recordings { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SecureUploadsClient SecureUploads { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SignalClient Signal { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpeechToTextClient SpeechToText { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TermSubstitutionsClient TermSubstitutions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TextToSpeechClient TextToSpeech { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoiceDesignClient VoiceDesign { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoiceSettingsPresetsClient VoiceSettingsPresets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoicesClient Voices { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WatermarkClient Watermark { get; }
 

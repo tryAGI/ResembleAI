@@ -9,27 +9,27 @@ namespace ResembleAI
     public enum DetectFeedbackType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Correct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeAiGenerated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeAuthentic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeNeutral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShouldBeNonAi,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
     }

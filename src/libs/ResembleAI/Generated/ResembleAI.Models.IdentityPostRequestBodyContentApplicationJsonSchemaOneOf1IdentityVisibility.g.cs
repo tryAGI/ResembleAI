@@ -9,11 +9,11 @@ namespace ResembleAI
     public enum IdentityPostRequestBodyContentApplicationJsonSchemaOneOf1IdentityVisibility
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Global,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Team,
     }

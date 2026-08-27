@@ -4,20 +4,20 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SignalSubmissionVerdict
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fraud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Safe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Suspicious,
     }

@@ -136,7 +136,7 @@ namespace ResembleAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::ResembleAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

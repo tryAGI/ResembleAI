@@ -4,40 +4,40 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BillingSubscriptionStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ActivePendingPayment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delinquent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expired,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PastDue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PendingPayment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trialing,
     }

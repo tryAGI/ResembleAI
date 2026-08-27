@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SignalCustomCategoryCreateRequest
     {
@@ -23,7 +23,7 @@ namespace ResembleAI
         public required global::System.Collections.Generic.IList<string> Scenarios { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }

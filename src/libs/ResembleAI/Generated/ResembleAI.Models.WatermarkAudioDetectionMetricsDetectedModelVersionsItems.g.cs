@@ -4,16 +4,16 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WatermarkAudioDetectionMetricsDetectedModelVersionsItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerthV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PerthV2,
     }

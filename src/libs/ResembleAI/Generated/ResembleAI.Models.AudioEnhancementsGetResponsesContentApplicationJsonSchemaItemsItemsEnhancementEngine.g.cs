@@ -4,16 +4,16 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V2,
     }

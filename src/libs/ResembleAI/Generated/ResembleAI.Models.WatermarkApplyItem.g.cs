@@ -4,12 +4,12 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WatermarkApplyItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uuid")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,14 +24,14 @@ namespace ResembleAI
         public required global::ResembleAI.WatermarkApplyItemMediaType MediaType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemOperationTypeJsonConverter))]
         public global::ResembleAI.WatermarkApplyItemOperationType OperationType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemStatusJsonConverter))]
@@ -39,14 +39,14 @@ namespace ResembleAI
         public required global::ResembleAI.WatermarkApplyItemStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkApplyItemModelVersionJsonConverter))]
         public global::ResembleAI.WatermarkApplyItemModelVersion ModelVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_media_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -65,14 +65,14 @@ namespace ResembleAI
         public global::ResembleAI.WatermarkApplyMetrics? Metrics { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]

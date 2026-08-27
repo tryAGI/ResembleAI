@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GenerateDuetRequest
     {
@@ -16,7 +16,7 @@ namespace ResembleAI
         public required int VoicePairId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("script")]
         [global::System.Text.Json.Serialization.JsonRequired]

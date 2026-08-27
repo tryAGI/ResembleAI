@@ -19,7 +19,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectIntelligenceResult))]
@@ -27,7 +27,7 @@ namespace ResembleAI
         public bool IsDetectIntelligenceResult => DetectIntelligenceResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetectIntelligenceResult(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::ResembleAI.DetectIntelligenceResult PickDetectIntelligenceResult() => IsDetectIntelligenceResult
             ? DetectIntelligenceResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectIntelligenceResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult>? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 { get; init; }
@@ -56,7 +56,7 @@ namespace ResembleAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1))]
@@ -64,7 +64,7 @@ namespace ResembleAI
         public bool IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 => DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult> PickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1() => IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1
             ? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence(global::ResembleAI.DetectIntelligenceResult value) => new DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence((global::ResembleAI.DetectIntelligenceResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::ResembleAI.DetectIntelligenceResult?(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence @this) => @this.DetectIntelligenceResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence(global::ResembleAI.DetectIntelligenceResult? value)
         {
@@ -101,12 +101,12 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence FromDetectIntelligenceResult(global::ResembleAI.DetectIntelligenceResult? value) => new DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence(
             global::ResembleAI.DetectIntelligenceResult? detectIntelligenceResult,
@@ -118,23 +118,23 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 as object ??
-            DetectIntelligenceResult as object 
+            DetectIntelligenceResult as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             DetectIntelligenceResult?.ToString() ??
-            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1?.ToString() 
+            DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::ResembleAI.DetectIntelligenceResult, TResult>? detectIntelligenceResult = null,
@@ -167,7 +167,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::ResembleAI.DetectIntelligenceResult>? detectIntelligenceResult = null,
@@ -191,7 +191,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::ResembleAI.DetectIntelligenceResult>? detectIntelligenceResult = null,
@@ -214,7 +214,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::ResembleAI.DetectIntelligenceResult?>.Default.Equals(DetectIntelligenceResult, other.DetectIntelligenceResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult>?>.Default.Equals(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1, other.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult>?>.Default.Equals(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1, other.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence obj1, DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence obj2)
         {
@@ -254,7 +254,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence obj1, DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence obj2)
         {
@@ -262,7 +262,7 @@ namespace ResembleAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

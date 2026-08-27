@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SignalScoreItem
     {
@@ -15,7 +15,7 @@ namespace ResembleAI
         public int? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_modality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.SignalScoreItemInputModalityJsonConverter))]
@@ -23,7 +23,7 @@ namespace ResembleAI
         public required global::ResembleAI.SignalScoreItemInputModality InputModality { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verdict")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.SignalScoreItemVerdictJsonConverter))]
@@ -31,7 +31,7 @@ namespace ResembleAI
         public required global::ResembleAI.SignalScoreItemVerdict Verdict { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_category")]
         public global::ResembleAI.SignalCategoryScore? TopCategory { get; set; }
@@ -61,7 +61,7 @@ namespace ResembleAI
         public global::System.Collections.Generic.IList<string>? Examples { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_matches")]
         public global::System.Collections.Generic.IList<global::ResembleAI.SignalTopMatch>? TopMatches { get; set; }
@@ -73,7 +73,7 @@ namespace ResembleAI
         public double? DurationSeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }

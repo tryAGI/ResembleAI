@@ -13,19 +13,19 @@ namespace ResembleAI
     public enum DetectBatchStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PartiallyFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }
