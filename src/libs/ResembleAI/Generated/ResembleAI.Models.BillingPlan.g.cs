@@ -80,8 +80,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan_family")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingPlanFamily, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.BillingPlanFamily, object>? PlanFamily { get; set; }
+        public global::ResembleAI.BillingPlanFamily? PlanFamily { get; set; }
 
         /// <summary>
         ///
@@ -149,7 +148,7 @@ namespace ResembleAI
             int? includedDollarBalanceCents,
             double? includedDollarBalanceDollars,
             global::ResembleAI.BillingPlanBillingInterval? billingInterval,
-            global::ResembleAI.OneOf<global::ResembleAI.BillingPlanFamily, object>? planFamily,
+            global::ResembleAI.BillingPlanFamily? planFamily,
             bool? active,
             global::System.Collections.Generic.IList<global::ResembleAI.BillingPlanProduct>? products,
             global::System.DateTime? createdAt,

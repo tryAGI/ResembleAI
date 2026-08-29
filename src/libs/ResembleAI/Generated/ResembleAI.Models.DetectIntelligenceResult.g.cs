@@ -31,8 +31,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectIntelligenceResultDescription?, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectIntelligenceResultDescription?, object>? Description { get; set; }
+        public global::ResembleAI.DetectIntelligenceResultDescription? Description { get; set; }
 
         /// <summary>
         ///
@@ -70,7 +69,7 @@ namespace ResembleAI
             string? uuid,
             global::ResembleAI.DetectIntelligenceResultStatus? status,
             string? errorMessage,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectIntelligenceResultDescription?, object>? description,
+            global::ResembleAI.DetectIntelligenceResultDescription? description,
             global::System.DateTime? createdAt,
             string? detectUuid)
         {

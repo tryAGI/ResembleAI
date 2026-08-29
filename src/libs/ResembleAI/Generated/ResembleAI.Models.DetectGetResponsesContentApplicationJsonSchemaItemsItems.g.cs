@@ -72,15 +72,13 @@ namespace ResembleAI
         /// Source tracing results (only returned if audio is labeled fake)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_source_tracing")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>? AudioSourceTracing { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing? AudioSourceTracing { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>? Intelligence { get; set; }
+        public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence? Intelligence { get; set; }
 
         /// <summary>
         /// URL to the media file. Null when Zero Retention Mode is enabled.
@@ -238,8 +236,8 @@ namespace ResembleAI
             global::ResembleAI.DetectImageMetrics? imageMetrics,
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
             global::ResembleAI.DetectC2paManifest? c2paManifest,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing, object>? audioSourceTracing,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence, object>? intelligence,
+            global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsAudioSourceTracing? audioSourceTracing,
+            global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsIntelligence? intelligence,
             string? url,
             string? audioUrl,
             string? filename,

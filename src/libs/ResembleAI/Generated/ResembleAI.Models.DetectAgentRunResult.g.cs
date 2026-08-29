@@ -12,8 +12,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verdict")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectAgentRunResultVerdict, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectAgentRunResultVerdict, object>? Verdict { get; set; }
+        public global::ResembleAI.DetectAgentRunResultVerdict? Verdict { get; set; }
 
         /// <summary>
         ///
@@ -64,7 +63,7 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DetectAgentRunResult(
-            global::ResembleAI.OneOf<global::ResembleAI.DetectAgentRunResultVerdict, object>? verdict,
+            global::ResembleAI.DetectAgentRunResultVerdict? verdict,
             string? recommendedAction,
             double? confidence,
             string? label,

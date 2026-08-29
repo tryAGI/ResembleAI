@@ -36,8 +36,7 @@ namespace ResembleAI
         /// have no counterpart here — this field records only the two decided model outcomes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verdict")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectFeedbackVerdict?, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectFeedbackVerdict?, object>? Verdict { get; set; }
+        public global::ResembleAI.DetectFeedbackVerdict? Verdict { get; set; }
 
         /// <summary>
         /// The model's headline confidence, 0.0–1.0, or `null`. For video, the higher of the<br/>
@@ -133,7 +132,7 @@ namespace ResembleAI
             string? detectUuid,
             global::ResembleAI.DetectFeedbackType? type,
             global::ResembleAI.DetectFeedbackVote? vote,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectFeedbackVerdict?, object>? verdict,
+            global::ResembleAI.DetectFeedbackVerdict? verdict,
             double? score,
             global::ResembleAI.DetectFeedbackMediaType? mediaType,
             string? comment,

@@ -47,8 +47,7 @@ namespace ResembleAI
         /// Backward-compatible image/video verdict.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verdict")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>? Verdict { get; set; }
+        public global::ResembleAI.WatermarkVisionDetectionMetricsVerdict? Verdict { get; set; }
 
         /// <summary>
         /// Optional auxiliary SynthID signal for images.
@@ -87,7 +86,7 @@ namespace ResembleAI
             bool hasWatermark,
             global::System.Collections.Generic.IList<global::ResembleAI.WatermarkVisionModelResult> modelResults,
             double? detectionScore,
-            global::ResembleAI.OneOf<global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?, object>? verdict,
+            global::ResembleAI.WatermarkVisionDetectionMetricsVerdict? verdict,
             bool? synthid)
         {
             this.OverallStatus = overallStatus;

@@ -56,8 +56,7 @@ namespace ResembleAI
         /// Null while processing. New results use the media-specific versioned schema; historical audio results can use a flat shape.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.WatermarkDetectItemMetrics?, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectItemMetrics?, object>? Metrics { get; set; }
+        public global::ResembleAI.WatermarkDetectItemMetrics? Metrics { get; set; }
 
         /// <summary>
         /// Detection does not produce output media.
@@ -116,7 +115,7 @@ namespace ResembleAI
             global::System.DateTime updatedAt,
             global::ResembleAI.WatermarkDetectItemOperationType operationType,
             global::ResembleAI.WatermarkDetectItemModelVersion? modelVersion,
-            global::ResembleAI.OneOf<global::ResembleAI.WatermarkDetectItemMetrics?, object>? metrics,
+            global::ResembleAI.WatermarkDetectItemMetrics? metrics,
             string? watermarkedMedia)
         {
             this.Uuid = uuid ?? throw new global::System.ArgumentNullException(nameof(uuid));

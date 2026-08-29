@@ -71,8 +71,7 @@ namespace ResembleAI
         /// Default Intelligence result when requested
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? Intelligence { get; set; }
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence? Intelligence { get; set; }
 
         /// <summary>
         /// Content Credentials (C2PA) verification result for audio, image, and video media. Returned when verification has completed. A fallback verification failure returns `validation_state: Unavailable` and does not fail the detection.
@@ -135,7 +134,7 @@ namespace ResembleAI
             string? filename,
             global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? modality,
             bool? faceOnly,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence, object>? intelligence,
+            global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence? intelligence,
             global::ResembleAI.DetectC2paManifest? c2paManifest)
         {
             this.Uuid = uuid;
