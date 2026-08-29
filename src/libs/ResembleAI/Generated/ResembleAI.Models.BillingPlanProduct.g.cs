@@ -103,8 +103,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product_family")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingProductFamily, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.BillingProductFamily, object>? ProductFamily { get; set; }
+        public global::ResembleAI.BillingProductFamily? ProductFamily { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -160,7 +159,7 @@ namespace ResembleAI
             double? minUsagePerPeriod,
             double? maxUsagePerPeriod,
             bool? uiVisible,
-            global::ResembleAI.OneOf<global::ResembleAI.BillingProductFamily, object>? productFamily)
+            global::ResembleAI.BillingProductFamily? productFamily)
         {
             this.Id = id;
             this.Name = name;

@@ -56,15 +56,13 @@ namespace ResembleAI
         /// Source tracing results (only returned if audio is labeled fake)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_source_tracing")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? AudioSourceTracing { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing? AudioSourceTracing { get; set; }
 
         /// <summary>
         /// With experts omitted or false, one completed Intelligence result when available; otherwise, the current processing or failed result. With experts=true, all successfully completed results as an array, or an empty array when none have completed successfully.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>? Intelligence { get; set; }
+        public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence? Intelligence { get; set; }
 
         /// <summary>
         /// Which detection modality was requested for this detect. `all` when not specified<br/>
@@ -200,8 +198,8 @@ namespace ResembleAI
             global::ResembleAI.DetectImageMetrics? imageMetrics,
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
             global::ResembleAI.DetectC2paManifest? c2paManifest,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing, object>? audioSourceTracing,
-            global::ResembleAI.OneOf<global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence?, object>? intelligence,
+            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing? audioSourceTracing,
+            global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence? intelligence,
             global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? modality,
             bool? faceOnly,
             string? url,

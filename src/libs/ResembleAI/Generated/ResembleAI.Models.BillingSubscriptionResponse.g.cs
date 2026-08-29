@@ -12,9 +12,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscription")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscription, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::ResembleAI.OneOf<global::ResembleAI.BillingSubscription, object> Subscription { get; set; }
+        public global::ResembleAI.BillingSubscription? Subscription { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +28,7 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BillingSubscriptionResponse(
-            global::ResembleAI.OneOf<global::ResembleAI.BillingSubscription, object> subscription)
+            global::ResembleAI.BillingSubscription? subscription)
         {
             this.Subscription = subscription;
         }

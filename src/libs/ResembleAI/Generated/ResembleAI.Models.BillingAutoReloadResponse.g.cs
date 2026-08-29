@@ -12,8 +12,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_reload")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingAutoReloadSetting, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.BillingAutoReloadSetting, object>? AutoReload { get; set; }
+        public global::ResembleAI.BillingAutoReloadSetting? AutoReload { get; set; }
 
         /// <summary>
         ///
@@ -43,7 +42,7 @@ namespace ResembleAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BillingAutoReloadResponse(
-            global::ResembleAI.OneOf<global::ResembleAI.BillingAutoReloadSetting, object>? autoReload,
+            global::ResembleAI.BillingAutoReloadSetting? autoReload,
             int? minimumReloadAmountCents,
             int? maximumReloadAmountCents)
         {

@@ -36,8 +36,7 @@ namespace ResembleAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("plan_product")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.OneOfJsonConverter<global::ResembleAI.BillingSubscriptionPlanProduct, object>))]
-        public global::ResembleAI.OneOf<global::ResembleAI.BillingSubscriptionPlanProduct, object>? PlanProduct { get; set; }
+        public global::ResembleAI.BillingSubscriptionPlanProduct? PlanProduct { get; set; }
 
         /// <summary>
         /// Locked-in unit rate for this subscription item.
@@ -104,7 +103,7 @@ namespace ResembleAI
             double? quantity,
             double? consumedQuantity,
             global::ResembleAI.BillingSubscriptionProduct? product,
-            global::ResembleAI.OneOf<global::ResembleAI.BillingSubscriptionPlanProduct, object>? planProduct,
+            global::ResembleAI.BillingSubscriptionPlanProduct? planProduct,
             double? ratePerUnitCents,
             double? currentRatePerUnitCents,
             bool? isGrandfathered,
