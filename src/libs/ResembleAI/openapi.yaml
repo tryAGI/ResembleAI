@@ -3429,7 +3429,7 @@
       "post": {
         "operationId": "create-audio-enhancement",
         "summary": "Create audio enhancement",
-        "description": "Submit an audio file for enhancement. Processing happens asynchronously in the background.\nThe API defaults to the v2 enhancement engine. The v1 engine is legacy and will be sunset in a future release.\n",
+        "description": "Submit an audio file for enhancement. Processing happens asynchronously in the background.\n",
         "tags": [
           "audioEnhancement"
         ],
@@ -3487,43 +3487,20 @@
                     "format": "binary",
                     "description": "Audio file to enhance (WAV, MP3, M4A, MP4, OGG, AAC, FLAC). Max 150 MB."
                   },
-                  "enhancement_engine": {
-                    "$ref": "#/components/schemas/AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine",
-                    "description": "Enhancement engine to use. Default is v2."
-                  },
                   "remove_noise": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Remove background noise. Engine v2 only."
+                    "description": "Remove background noise."
                   },
                   "normalize": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Normalize audio levels. Engine v2 only."
+                    "description": "Normalize audio levels."
                   },
                   "studio_sound": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Apply studio-quality enhancement. Engine v2 only."
-                  },
-                  "enhancement_level": {
-                    "type": "number",
-                    "format": "double",
-                    "description": "Enhancement intensity (0.0 to 1.0). Engine v1 only (legacy)."
-                  },
-                  "loudness_target_level": {
-                    "type": "integer",
-                    "minimum": -70,
-                    "maximum": -5,
-                    "default": -14,
-                    "description": "Target loudness in LUFS. Engine v1 only (legacy)."
-                  },
-                  "loudness_peak_limit": {
-                    "type": "integer",
-                    "minimum": -9,
-                    "maximum": 0,
-                    "default": -1,
-                    "description": "Peak limit in dBTP. Engine v1 only (legacy)."
+                    "description": "Apply studio-quality enhancement."
                   }
                 },
                 "required": [
@@ -11590,14 +11567,6 @@
         ],
         "title": "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
       },
-      "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine": {
-        "type": "string",
-        "enum": [
-          "v1",
-          "v2"
-        ],
-        "title": "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine"
-      },
       "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems": {
         "type": "object",
         "properties": {
@@ -11607,9 +11576,6 @@
           "status": {
             "$ref": "#/components/schemas/AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
           },
-          "enhancement_engine": {
-            "$ref": "#/components/schemas/AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine"
-          },
           "error_message": {
             "type": [
               "string",
@@ -11618,28 +11584,15 @@
           },
           "remove_noise": {
             "type": "boolean",
-            "description": "Engine v2 only."
+            "description": "Whether background noise removal was applied."
           },
           "normalize": {
             "type": "boolean",
-            "description": "Engine v2 only."
+            "description": "Whether loudness normalization was applied."
           },
           "studio_sound": {
             "type": "boolean",
-            "description": "Engine v2 only."
-          },
-          "loudness_target_level": {
-            "type": "integer",
-            "description": "Engine v1 only."
-          },
-          "loudness_peak_limit": {
-            "type": "integer",
-            "description": "Engine v1 only."
-          },
-          "enhancement_level": {
-            "type": "number",
-            "format": "double",
-            "description": "Engine v1 only."
+            "description": "Whether studio-quality enhancement was applied."
           },
           "original_audio_url": {
             "type": "string",
@@ -11690,16 +11643,6 @@
           }
         },
         "title": "ListAudioEnhancementsRequestBadRequestError"
-      },
-      "AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine": {
-        "type": "string",
-        "enum": [
-          "v1",
-          "v2"
-        ],
-        "default": "v2",
-        "description": "Enhancement engine to use. Default is v2.",
-        "title": "AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine"
       },
       "AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus": {
         "type": "string",
