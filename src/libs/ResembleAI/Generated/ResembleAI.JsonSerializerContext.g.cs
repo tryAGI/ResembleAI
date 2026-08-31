@@ -277,12 +277,10 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SpeechToTextUuidQuestionsQuestionUuidGetResponsesContentApplicationJsonSchemaItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SpeechToTextGetTranscriptQuestionResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus), TypeInfoPropertyName = "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine), TypeInfoPropertyName = "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementListAudioEnhancementsResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.ListAudioEnhancementsRequestBadRequestError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine), TypeInfoPropertyName = "AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus), TypeInfoPropertyName = "AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementCreateAudioEnhancementResponse202))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateAudioEnhancementRequestBadRequestError))]
@@ -514,6 +512,8 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType?), TypeInfoPropertyName = "NullableDetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgentTier?), TypeInfoPropertyName = "NullableDetectAgentTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectAgentRunSummaryStatus?), TypeInfoPropertyName = "NullableDetectAgentRunSummaryStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType?), TypeInfoPropertyName = "NullableIntelligencePostRequestBodyContentApplicationJsonSchemaMediaType2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -526,8 +526,6 @@ namespace ResembleAI
         Converters = new global::System.Type[]
         {
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostRequestBodyContentApplicationJsonSchemaMediaType?), TypeInfoPropertyName = "NullableIntelligencePostRequestBodyContentApplicationJsonSchemaMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencePostResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableIntelligencePostResponsesContentApplicationJsonSchemaItemMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType?), TypeInfoPropertyName = "NullableIntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionFraudType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.IntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment?), TypeInfoPropertyName = "NullableIntelligencesGetResponsesContentApplicationJsonSchemaItemsItemsDescriptionLivenessAssessment2")]
@@ -582,8 +580,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableSpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableSpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?), TypeInfoPropertyName = "NullableAudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine?), TypeInfoPropertyName = "NullableAudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine?), TypeInfoPropertyName = "NullableAudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus?), TypeInfoPropertyName = "NullableAudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus?), TypeInfoPropertyName = "NullableAudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.PronunciationsGetParametersStatus?), TypeInfoPropertyName = "NullablePronunciationsGetParametersStatus2")]
@@ -1012,14 +1008,6 @@ namespace ResembleAI
                     || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus)
 
                     || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?)
-
-                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine)
-
-                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine?)
-
-                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine)
-
-                    || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine?)
 
                     || typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus)
 
@@ -1818,26 +1806,6 @@ namespace ResembleAI
                 if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus?))
                 {
                     return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatusNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine))
-                {
-                    return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngine?))
-                {
-                    return new global::ResembleAI.JsonConverters.AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsEnhancementEngineNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine))
-                {
-                    return new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngine?))
-                {
-                    return new global::ResembleAI.JsonConverters.AudioEnhancementsPostRequestBodyContentMultipartFormDataSchemaEnhancementEngineNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ResembleAI.AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus))
