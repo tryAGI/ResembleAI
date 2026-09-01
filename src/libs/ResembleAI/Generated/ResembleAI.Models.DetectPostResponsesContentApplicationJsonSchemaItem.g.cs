@@ -15,10 +15,11 @@ namespace ResembleAI
         public string? Uuid { get; set; }
 
         /// <summary>
-        ///
+        /// Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectPostResponsesContentApplicationJsonSchemaItemStatusJsonConverter))]
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemStatus? Status { get; set; }
 
         /// <summary>
         /// Whether Zero Retention Mode is enabled for this detect
@@ -68,6 +69,12 @@ namespace ResembleAI
         public bool? FaceOnly { get; set; }
 
         /// <summary>
+        /// Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("watermark")]
+        public global::ResembleAI.DetectWatermarkAnalysis? Watermark { get; set; }
+
+        /// <summary>
         /// Default Intelligence result when requested
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("intelligence")]
@@ -89,7 +96,9 @@ namespace ResembleAI
         /// Initializes a new instance of the <see cref="DetectPostResponsesContentApplicationJsonSchemaItem" /> class.
         /// </summary>
         /// <param name="uuid"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.
+        /// </param>
         /// <param name="zeroRetentionMode">
         /// Whether Zero Retention Mode is enabled for this detect
         /// </param>
@@ -115,6 +124,9 @@ namespace ResembleAI
         /// Effective face-only setting. `true` only for video inputs that include visual<br/>
         /// analysis; `false` for audio, image, and audio-only video detects.
         /// </param>
+        /// <param name="watermark">
+        /// Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.
+        /// </param>
         /// <param name="intelligence">
         /// Default Intelligence result when requested
         /// </param>
@@ -126,7 +138,7 @@ namespace ResembleAI
 #endif
         public DetectPostResponsesContentApplicationJsonSchemaItem(
             string? uuid,
-            string? status,
+            global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemStatus? status,
             bool? zeroRetentionMode,
             global::System.DateTime? fileDeletedAt,
             string? url,
@@ -134,6 +146,7 @@ namespace ResembleAI
             string? filename,
             global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality? modality,
             bool? faceOnly,
+            global::ResembleAI.DetectWatermarkAnalysis? watermark,
             global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligence? intelligence,
             global::ResembleAI.DetectC2paManifest? c2paManifest)
         {
@@ -146,6 +159,7 @@ namespace ResembleAI
             this.Filename = filename;
             this.Modality = modality;
             this.FaceOnly = faceOnly;
+            this.Watermark = watermark;
             this.Intelligence = intelligence;
             this.C2paManifest = c2paManifest;
         }

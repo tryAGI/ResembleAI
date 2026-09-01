@@ -62,7 +62,7 @@
       "post": {
         "operationId": "create-detection",
         "summary": "Create deepfake detection",
-        "description": "Analyze audio, image, and video for deepfake detection.\n\nSupply media via one of three intake methods:\n\n- **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.\n- **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.\n- **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request.\n",
+        "description": "Analyze audio, image, and video for deepfake detection.\n\nSupply media via one of three intake methods:\n\n- **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.\n- **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.\n- **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request.\n\nSet `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake\nanalysis. This option supports single audio, image, and video requests only. It adds one Watermark\ndetection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes\n`Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark\nfailure is returned in the nested `watermark` object and does not change the deepfake verdict.\n",
         "tags": [
           "deepfakeDetection"
         ],
@@ -84,6 +84,36 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Deepfake Detection_createDetection_Response_200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request, including a malformed `detect_watermark` boolean or a known source that exceeds the Watermark decoder limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Insufficient balance for the combined Detect request. When watermark analysis was requested, details include `watermark_cost_cents`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateDetectionRequestPaymentRequiredError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The API key does not have access to Watermark detection or another requested product.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -149,6 +179,11 @@
                     "default": false,
                     "description": "Run multimodal intelligence analysis on the media"
                   },
+                  "detect_watermark": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video."
+                  },
                   "infer_from_intelligence": {
                     "type": "boolean",
                     "default": false,
@@ -198,7 +233,7 @@
       "get": {
         "operationId": "get-detection",
         "summary": "Get deepfake detection result",
-        "description": "Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.",
+        "description": "Get a deepfake detection result by UUID. For an otherwise successful Detect with watermark analysis, item status remains processing until the linked analysis completes or fails. A core detection failure still reports failed. Intelligence runs separately and can still be processing after Detect reaches completed.",
         "tags": [
           "deepfakeDetection"
         ],
@@ -265,7 +300,7 @@
       "post": {
         "operationId": "create-detect-batch",
         "summary": "Create a batch deepfake detection job",
-        "description": "Submit up to 50 files in a single request and process them as a single logical\ngroup. Returns HTTP 202 with a batch UUID; each file is analyzed in the\nbackground and individual results are available via `GET /detect/{uuid}` for\neach entry in `detect_uuids`.\n\nTwo intake methods:\n\n- **Multiple media files** — repeated `files[]` form fields.\n- **Single zip archive** — a single `file` form field whose value is a `.zip`\n  containing the media files. Non-media entries are skipped.\n\nProvide one of `files[]` or `file=<...>.zip` per request. Synchronous mode\n(`Prefer: wait`) is not supported and returns 400 if sent.\n\nConstraints:\n\n- Maximum 50 files per batch.\n- Maximum 500 MB total upload size across all files.\n- Allowed file types match `POST /detect`'s direct-upload allowlist.\n- All-or-nothing billing: if the team's wallet cannot cover the projected cost\n  for every file, the request is rejected with 402 and no detects are created.\n",
+        "description": "Submit up to 50 files in a single request and process them as a single logical\ngroup. Returns HTTP 202 with a batch UUID; each file is analyzed in the\nbackground and individual results are available via `GET /detect/{uuid}` for\neach entry in `detect_uuids`.\n\nTwo intake methods:\n\n- **Multiple media files** — repeated `files[]` form fields.\n- **Single zip archive** — a single `file` form field whose value is a `.zip`\n  containing the media files. Non-media entries are skipped.\n\nProvide one of `files[]` or `file=<...>.zip` per request. Synchronous mode\n(`Prefer: wait`) is not supported and returns 400 if sent.\n\nConstraints:\n\n- Maximum 50 files per batch.\n- Maximum 500 MB total upload size across all files.\n- Allowed file types match `POST /detect`'s direct-upload allowlist.\n- Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.\n- All-or-nothing billing: if the team's wallet cannot cover the projected cost\n  for every file, the request is rejected with 402 and no detects are created.\n",
         "tags": [
           "deepfakeDetection"
         ],
@@ -292,7 +327,7 @@
             }
           },
           "400": {
-            "description": "Invalid batch request (missing files, both file and files[] supplied, file count or size exceeded, unsupported file type, or `Prefer: wait` header sent)",
+            "description": "Invalid batch request (missing files, both file and files[] supplied, file count or size exceeded, unsupported file type, `Prefer: wait` header sent, or `detect_watermark=true`)",
             "content": {
               "application/json": {
                 "schema": {
@@ -7053,6 +7088,7 @@
           "completed",
           "failed"
         ],
+        "description": "Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.",
         "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
       },
       "DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality": {
@@ -7064,6 +7100,299 @@
         ],
         "description": "Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects.",
         "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality"
+      },
+      "DetectWatermarkAnalysisStatus": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "description": "Lifecycle state of the linked watermark analysis.",
+        "title": "DetectWatermarkAnalysisStatus"
+      },
+      "WatermarkAudioDetectionMetricsOverallStatus": {
+        "type": "string",
+        "enum": [
+          "present",
+          "absent",
+          "inconclusive"
+        ],
+        "title": "WatermarkAudioDetectionMetricsOverallStatus"
+      },
+      "WatermarkAudioDetectionMetricsDetectedModelVersionsItems": {
+        "type": "string",
+        "enum": [
+          "perth_v1",
+          "perth_v2"
+        ],
+        "title": "WatermarkAudioDetectionMetricsDetectedModelVersionsItems"
+      },
+      "WatermarkAudioModelResultModelVersion": {
+        "type": "string",
+        "enum": [
+          "perth_v1",
+          "perth_v2"
+        ],
+        "title": "WatermarkAudioModelResultModelVersion"
+      },
+      "WatermarkAudioModelResultStatus": {
+        "type": "string",
+        "enum": [
+          "succeeded",
+          "failed"
+        ],
+        "title": "WatermarkAudioModelResultStatus"
+      },
+      "WatermarkAudioModelResult": {
+        "type": "object",
+        "properties": {
+          "model_version": {
+            "$ref": "#/components/schemas/WatermarkAudioModelResultModelVersion"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WatermarkAudioModelResultStatus"
+          },
+          "detected": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Null when this detector was unavailable."
+          },
+          "has_watermark": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Successful per-channel detection results."
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "error": {
+            "type": "string",
+            "description": "Safe error message when status is failed."
+          }
+        },
+        "required": [
+          "model_version",
+          "status",
+          "detected"
+        ],
+        "title": "WatermarkAudioModelResult"
+      },
+      "WatermarkAudioDetectionMetrics": {
+        "type": "object",
+        "properties": {
+          "overall_status": {
+            "$ref": "#/components/schemas/WatermarkAudioDetectionMetricsOverallStatus"
+          },
+          "detected_model_versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkAudioDetectionMetricsDetectedModelVersionsItems"
+            },
+            "description": "Only model versions that positively detected a watermark."
+          },
+          "coverage_complete": {
+            "type": "boolean",
+            "description": "True only when both audio detectors completed successfully."
+          },
+          "has_watermark": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "description": "Per-channel aggregate across successful audio detectors."
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "model_results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkAudioModelResult"
+            }
+          },
+          "synthid": {
+            "type": "boolean",
+            "description": "Optional auxiliary SynthID verdict for audio. Omitted when SynthID is unavailable."
+          }
+        },
+        "required": [
+          "overall_status",
+          "detected_model_versions",
+          "coverage_complete",
+          "has_watermark",
+          "model_results"
+        ],
+        "title": "WatermarkAudioDetectionMetrics"
+      },
+      "WatermarkVisionDetectionMetricsOverallStatus": {
+        "type": "string",
+        "enum": [
+          "present",
+          "degraded",
+          "absent",
+          "inconclusive"
+        ],
+        "title": "WatermarkVisionDetectionMetricsOverallStatus"
+      },
+      "WatermarkVisionDetectionMetricsDetectedModelVersionsItems": {
+        "type": "string",
+        "enum": [
+          "perth_v2"
+        ],
+        "title": "WatermarkVisionDetectionMetricsDetectedModelVersionsItems"
+      },
+      "WatermarkVisionModelResultModelVersion": {
+        "type": "string",
+        "enum": [
+          "perth_v2"
+        ],
+        "title": "WatermarkVisionModelResultModelVersion"
+      },
+      "WatermarkVisionModelResultStatus": {
+        "type": "string",
+        "enum": [
+          "succeeded"
+        ],
+        "title": "WatermarkVisionModelResultStatus"
+      },
+      "WatermarkVisionModelResult": {
+        "type": "object",
+        "properties": {
+          "model_version": {
+            "$ref": "#/components/schemas/WatermarkVisionModelResultModelVersion"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WatermarkVisionModelResultStatus"
+          },
+          "detected": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          }
+        },
+        "required": [
+          "model_version",
+          "status",
+          "detected"
+        ],
+        "title": "WatermarkVisionModelResult"
+      },
+      "WatermarkVisionDetectionMetricsVerdict": {
+        "type": "string",
+        "enum": [
+          "verified",
+          "degraded",
+          "not_watermarked"
+        ],
+        "description": "Backward-compatible image/video verdict.",
+        "title": "WatermarkVisionDetectionMetricsVerdict"
+      },
+      "WatermarkVisionDetectionMetrics": {
+        "type": "object",
+        "properties": {
+          "overall_status": {
+            "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsOverallStatus"
+          },
+          "detected_model_versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsDetectedModelVersionsItems"
+            },
+            "description": "Contains perth_v2 only when watermark signal is detected."
+          },
+          "has_watermark": {
+            "type": "boolean"
+          },
+          "detection_score": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "model_results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WatermarkVisionModelResult"
+            }
+          },
+          "verdict": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsVerdict"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Backward-compatible image/video verdict."
+          },
+          "synthid": {
+            "type": "boolean",
+            "description": "Optional auxiliary SynthID verdict for image or video. Omitted when SynthID is unavailable."
+          }
+        },
+        "required": [
+          "overall_status",
+          "detected_model_versions",
+          "has_watermark",
+          "detection_score",
+          "model_results"
+        ],
+        "title": "WatermarkVisionDetectionMetrics"
+      },
+      "DetectWatermarkAnalysisMetrics": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/WatermarkAudioDetectionMetrics"
+          },
+          {
+            "$ref": "#/components/schemas/WatermarkVisionDetectionMetrics"
+          }
+        ],
+        "description": "Present when watermark analysis completes. Audio uses Perth v1/v2 metrics; image and video use the Resemble image/video detector metrics. `synthid`, when present, is the boolean verdict returned by SynthID. Its omission means the provider result was unavailable, not that no watermark was found.",
+        "title": "DetectWatermarkAnalysisMetrics"
+      },
+      "DetectWatermarkAnalysis": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/DetectWatermarkAnalysisStatus",
+            "description": "Lifecycle state of the linked watermark analysis."
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/DetectWatermarkAnalysisMetrics",
+            "description": "Present when watermark analysis completes. Audio uses Perth v1/v2 metrics; image and video use the Resemble image/video detector metrics. `synthid`, when present, is the boolean verdict returned by SynthID. Its omission means the provider result was unavailable, not that no watermark was found."
+          },
+          "error_message": {
+            "type": "string",
+            "description": "Safe error message when the watermark analysis failed. A child failure does not fail an otherwise successful deepfake detection."
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "description": "Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.",
+        "title": "DetectWatermarkAnalysis"
       },
       "DetectAudioMetrics": {
         "type": "object",
@@ -7386,7 +7715,8 @@
             "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType"
           },
           "status": {
-            "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
+            "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus",
+            "description": "Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed."
           },
           "modality": {
             "$ref": "#/components/schemas/DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality",
@@ -7395,6 +7725,9 @@
           "face_only": {
             "type": "boolean",
             "description": "Effective face-only setting for this detect. `true` only for video inputs that\ninclude visual analysis; `false` for audio, image, and audio-only video detects.\n"
+          },
+          "watermark": {
+            "$ref": "#/components/schemas/DetectWatermarkAnalysis"
           },
           "metrics": {
             "$ref": "#/components/schemas/DetectAudioMetrics"
@@ -7537,6 +7870,16 @@
         "default": "all",
         "description": "Video only. Selects which detection components run for a video file:\n`audio` (audio track only), `video` (visual frames only), or `all` (both — the default).\nIgnored for audio and image inputs. Invalid values are rejected with HTTP 400.\n",
         "title": "DetectPostRequestBodyContentMultipartFormDataSchemaModality"
+      },
+      "DetectPostResponsesContentApplicationJsonSchemaItemStatus": {
+        "type": "string",
+        "enum": [
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "description": "Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.",
+        "title": "DetectPostResponsesContentApplicationJsonSchemaItemStatus"
       },
       "DetectPostResponsesContentApplicationJsonSchemaItemModality": {
         "type": "string",
@@ -7736,7 +8079,8 @@
             "type": "string"
           },
           "status": {
-            "type": "string"
+            "$ref": "#/components/schemas/DetectPostResponsesContentApplicationJsonSchemaItemStatus",
+            "description": "Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed."
           },
           "zero_retention_mode": {
             "type": "boolean",
@@ -7776,6 +8120,9 @@
             "type": "boolean",
             "description": "Effective face-only setting. `true` only for video inputs that include visual\nanalysis; `false` for audio, image, and audio-only video detects.\n"
           },
+          "watermark": {
+            "$ref": "#/components/schemas/DetectWatermarkAnalysis"
+          },
           "intelligence": {
             "oneOf": [
               {
@@ -7805,6 +8152,70 @@
         },
         "title": "Deepfake Detection_createDetection_Response_200"
       },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "title": "Error"
+      },
+      "DetectPostResponsesContentApplicationJsonSchemaDetails": {
+        "type": "object",
+        "properties": {
+          "estimated_cost_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "detect_cost_cents": {
+            "type": "number",
+            "format": "double"
+          },
+          "watermark_cost_cents": {
+            "type": "number",
+            "format": "double",
+            "description": "Present only when `detect_watermark=true` was requested."
+          }
+        },
+        "title": "DetectPostResponsesContentApplicationJsonSchemaDetails"
+      },
+      "CreateDetectionRequestPaymentRequiredError": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "$ref": "#/components/schemas/DetectPostResponsesContentApplicationJsonSchemaDetails"
+          }
+        },
+        "title": "CreateDetectionRequestPaymentRequiredError"
+      },
       "DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType": {
         "type": "string",
         "enum": [
@@ -7821,7 +8232,7 @@
           "completed",
           "failed"
         ],
-        "description": "Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.",
+        "description": "Status of the requested Deepfake Detection work. For an otherwise successful Detect with watermark analysis, processing continues until that nested analysis completes or fails. A core detection failure still reports failed. A failed watermark analysis is terminal and does not fail an otherwise successful deepfake detection. Intelligence may still be processing after Detect reaches completed.",
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus"
       },
       "DetectUuidGetResponsesContentApplicationJsonSchemaItemAudioSourceTracing": {
@@ -8071,7 +8482,7 @@
           },
           "status": {
             "$ref": "#/components/schemas/DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus",
-            "description": "Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing."
+            "description": "Status of the requested Deepfake Detection work. For an otherwise successful Detect with watermark analysis, processing continues until that nested analysis completes or fails. A core detection failure still reports failed. A failed watermark analysis is terminal and does not fail an otherwise successful deepfake detection. Intelligence may still be processing after Detect reaches completed."
           },
           "metrics": {
             "$ref": "#/components/schemas/DetectAudioMetrics"
@@ -8114,6 +8525,9 @@
           "face_only": {
             "type": "boolean",
             "description": "Effective face-only setting for this detect. `true` only for video inputs that\ninclude visual analysis; `false` for audio, image, and audio-only video detects.\n"
+          },
+          "watermark": {
+            "$ref": "#/components/schemas/DetectWatermarkAnalysis"
           },
           "url": {
             "type": [
@@ -8171,30 +8585,6 @@
           }
         },
         "title": "Deepfake Detection_getDetection_Response_200"
-      },
-      "Error": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "error": {
-            "type": "string"
-          },
-          "errors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "Error"
       },
       "DetectBatchStatus": {
         "type": "string",
@@ -10143,250 +10533,6 @@
         ],
         "description": "Present for image/video. Audio versions are reported in metrics.model_results.",
         "title": "WatermarkDetectItemModelVersion"
-      },
-      "WatermarkAudioDetectionMetricsOverallStatus": {
-        "type": "string",
-        "enum": [
-          "present",
-          "absent",
-          "inconclusive"
-        ],
-        "title": "WatermarkAudioDetectionMetricsOverallStatus"
-      },
-      "WatermarkAudioDetectionMetricsDetectedModelVersionsItems": {
-        "type": "string",
-        "enum": [
-          "perth_v1",
-          "perth_v2"
-        ],
-        "title": "WatermarkAudioDetectionMetricsDetectedModelVersionsItems"
-      },
-      "WatermarkAudioModelResultModelVersion": {
-        "type": "string",
-        "enum": [
-          "perth_v1",
-          "perth_v2"
-        ],
-        "title": "WatermarkAudioModelResultModelVersion"
-      },
-      "WatermarkAudioModelResultStatus": {
-        "type": "string",
-        "enum": [
-          "succeeded",
-          "failed"
-        ],
-        "title": "WatermarkAudioModelResultStatus"
-      },
-      "WatermarkAudioModelResult": {
-        "type": "object",
-        "properties": {
-          "model_version": {
-            "$ref": "#/components/schemas/WatermarkAudioModelResultModelVersion"
-          },
-          "status": {
-            "$ref": "#/components/schemas/WatermarkAudioModelResultStatus"
-          },
-          "detected": {
-            "type": [
-              "boolean",
-              "null"
-            ],
-            "description": "Null when this detector was unavailable."
-          },
-          "has_watermark": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "boolean"
-            },
-            "description": "Successful per-channel detection results."
-          },
-          "confidence": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
-          "error": {
-            "type": "string",
-            "description": "Safe error message when status is failed."
-          }
-        },
-        "required": [
-          "model_version",
-          "status",
-          "detected"
-        ],
-        "title": "WatermarkAudioModelResult"
-      },
-      "WatermarkAudioDetectionMetrics": {
-        "type": "object",
-        "properties": {
-          "overall_status": {
-            "$ref": "#/components/schemas/WatermarkAudioDetectionMetricsOverallStatus"
-          },
-          "detected_model_versions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WatermarkAudioDetectionMetricsDetectedModelVersionsItems"
-            },
-            "description": "Only model versions that positively detected a watermark."
-          },
-          "coverage_complete": {
-            "type": "boolean",
-            "description": "True only when both audio detectors completed successfully."
-          },
-          "has_watermark": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "boolean"
-            },
-            "description": "Per-channel aggregate across successful audio detectors."
-          },
-          "confidence": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
-          "model_results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WatermarkAudioModelResult"
-            }
-          }
-        },
-        "required": [
-          "overall_status",
-          "detected_model_versions",
-          "coverage_complete",
-          "has_watermark",
-          "model_results"
-        ],
-        "title": "WatermarkAudioDetectionMetrics"
-      },
-      "WatermarkVisionDetectionMetricsOverallStatus": {
-        "type": "string",
-        "enum": [
-          "present",
-          "degraded",
-          "absent",
-          "inconclusive"
-        ],
-        "title": "WatermarkVisionDetectionMetricsOverallStatus"
-      },
-      "WatermarkVisionDetectionMetricsDetectedModelVersionsItems": {
-        "type": "string",
-        "enum": [
-          "perth_v2"
-        ],
-        "title": "WatermarkVisionDetectionMetricsDetectedModelVersionsItems"
-      },
-      "WatermarkVisionModelResultModelVersion": {
-        "type": "string",
-        "enum": [
-          "perth_v2"
-        ],
-        "title": "WatermarkVisionModelResultModelVersion"
-      },
-      "WatermarkVisionModelResultStatus": {
-        "type": "string",
-        "enum": [
-          "succeeded"
-        ],
-        "title": "WatermarkVisionModelResultStatus"
-      },
-      "WatermarkVisionModelResult": {
-        "type": "object",
-        "properties": {
-          "model_version": {
-            "$ref": "#/components/schemas/WatermarkVisionModelResultModelVersion"
-          },
-          "status": {
-            "$ref": "#/components/schemas/WatermarkVisionModelResultStatus"
-          },
-          "detected": {
-            "type": "boolean"
-          },
-          "confidence": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          }
-        },
-        "required": [
-          "model_version",
-          "status",
-          "detected"
-        ],
-        "title": "WatermarkVisionModelResult"
-      },
-      "WatermarkVisionDetectionMetricsVerdict": {
-        "type": "string",
-        "enum": [
-          "verified",
-          "degraded",
-          "not_watermarked"
-        ],
-        "description": "Backward-compatible image/video verdict.",
-        "title": "WatermarkVisionDetectionMetricsVerdict"
-      },
-      "WatermarkVisionDetectionMetrics": {
-        "type": "object",
-        "properties": {
-          "overall_status": {
-            "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsOverallStatus"
-          },
-          "detected_model_versions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsDetectedModelVersionsItems"
-            },
-            "description": "Contains perth_v2 only when watermark signal is detected."
-          },
-          "has_watermark": {
-            "type": "boolean"
-          },
-          "detection_score": {
-            "type": [
-              "number",
-              "null"
-            ],
-            "format": "double"
-          },
-          "model_results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WatermarkVisionModelResult"
-            }
-          },
-          "verdict": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/WatermarkVisionDetectionMetricsVerdict"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Backward-compatible image/video verdict."
-          },
-          "synthid": {
-            "type": "boolean",
-            "description": "Optional auxiliary SynthID signal for images."
-          }
-        },
-        "required": [
-          "overall_status",
-          "detected_model_versions",
-          "has_watermark",
-          "detection_score",
-          "model_results"
-        ],
-        "title": "WatermarkVisionDetectionMetrics"
       },
       "WatermarkDetectItemMetrics": {
         "oneOf": [

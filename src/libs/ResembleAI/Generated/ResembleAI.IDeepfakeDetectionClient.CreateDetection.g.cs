@@ -11,7 +11,12 @@ namespace ResembleAI
         /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
         /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
         /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
+        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
+        /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
+        /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
+        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
+        /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -29,7 +34,12 @@ namespace ResembleAI
         /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
         /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
         /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
+        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
+        /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
+        /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
+        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
+        /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -47,7 +57,12 @@ namespace ResembleAI
         /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
         /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
         /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
+        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
+        /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
+        /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
+        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
+        /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
         /// <param name="file">
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
@@ -91,6 +106,10 @@ namespace ResembleAI
         /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="detectWatermark">
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="inferFromIntelligence">
@@ -133,6 +152,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? faceOnly = default,
             bool? intelligence = default,
+            bool? detectWatermark = default,
             bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
             bool? signal = default,
@@ -149,7 +169,12 @@ namespace ResembleAI
         /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
         /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
         /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
+        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
+        /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
+        /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
+        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
+        /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
         /// <param name="file">
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
@@ -193,6 +218,10 @@ namespace ResembleAI
         /// </param>
         /// <param name="intelligence">
         /// Run multimodal intelligence analysis on the media<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="detectWatermark">
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="inferFromIntelligence">
@@ -235,6 +264,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? faceOnly = default,
             bool? intelligence = default,
+            bool? detectWatermark = default,
             bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
             bool? signal = default,
@@ -250,7 +280,12 @@ namespace ResembleAI
         /// - **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.<br/>
         /// - **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.<br/>
         /// - **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.<br/>
-        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.
+        /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
+        /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
+        /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
+        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
+        /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
         /// <param name="file">
         /// The media file to analyze (audio, video, or image). Must be 150 MB or smaller.
@@ -296,6 +331,10 @@ namespace ResembleAI
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="detectWatermark">
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="inferFromIntelligence">
         /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
         /// Default Value: false
@@ -336,6 +375,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality = default,
             bool? faceOnly = default,
             bool? intelligence = default,
+            bool? detectWatermark = default,
             bool? inferFromIntelligence = default,
             bool? audioSourceTracing = default,
             bool? signal = default,

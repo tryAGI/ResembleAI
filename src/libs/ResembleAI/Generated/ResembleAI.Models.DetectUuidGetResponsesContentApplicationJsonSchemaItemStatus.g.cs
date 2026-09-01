@@ -4,7 +4,7 @@
 namespace ResembleAI
 {
     /// <summary>
-    /// Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.
+    /// Status of the requested Deepfake Detection work. For an otherwise successful Detect with watermark analysis, processing continues until that nested analysis completes or fails. A core detection failure still reports failed. A failed watermark analysis is terminal and does not fail an otherwise successful deepfake detection. Intelligence may still be processing after Detect reaches completed.
     /// </summary>
     public enum DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus
     {

@@ -4,10 +4,10 @@
 namespace ResembleAI.JsonConverters
 {
     /// <inheritdoc />
-    public class WatermarkDetectItemMetricsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ResembleAI.WatermarkDetectItemMetrics>
+    public class DetectWatermarkAnalysisMetricsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::ResembleAI.DetectWatermarkAnalysisMetrics>
     {
         /// <inheritdoc />
-        public override global::ResembleAI.WatermarkDetectItemMetrics Read(
+        public override global::ResembleAI.DetectWatermarkAnalysisMetrics Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -118,7 +118,7 @@ namespace ResembleAI.JsonConverters
                 }
             }
 
-            var __value = new global::ResembleAI.WatermarkDetectItemMetrics(
+            var __value = new global::ResembleAI.DetectWatermarkAnalysisMetrics(
                 watermarkAudioDetectionMetrics,
 
                 watermarkVisionDetectionMetrics
@@ -130,7 +130,7 @@ namespace ResembleAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::ResembleAI.WatermarkDetectItemMetrics value,
+            global::ResembleAI.DetectWatermarkAnalysisMetrics value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

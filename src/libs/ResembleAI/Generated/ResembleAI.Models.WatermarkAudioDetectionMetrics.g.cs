@@ -51,6 +51,12 @@ namespace ResembleAI
         public required global::System.Collections.Generic.IList<global::ResembleAI.WatermarkAudioModelResult> ModelResults { get; set; }
 
         /// <summary>
+        /// Optional auxiliary SynthID verdict for audio. Omitted when SynthID is unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("synthid")]
+        public bool? Synthid { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +77,9 @@ namespace ResembleAI
         /// </param>
         /// <param name="modelResults"></param>
         /// <param name="confidence"></param>
+        /// <param name="synthid">
+        /// Optional auxiliary SynthID verdict for audio. Omitted when SynthID is unavailable.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +89,8 @@ namespace ResembleAI
             bool coverageComplete,
             global::System.Collections.Generic.Dictionary<string, bool> hasWatermark,
             global::System.Collections.Generic.IList<global::ResembleAI.WatermarkAudioModelResult> modelResults,
-            double? confidence)
+            double? confidence,
+            bool? synthid)
         {
             this.OverallStatus = overallStatus;
             this.DetectedModelVersions = detectedModelVersions ?? throw new global::System.ArgumentNullException(nameof(detectedModelVersions));
@@ -88,6 +98,7 @@ namespace ResembleAI
             this.HasWatermark = hasWatermark ?? throw new global::System.ArgumentNullException(nameof(hasWatermark));
             this.Confidence = confidence;
             this.ModelResults = modelResults ?? throw new global::System.ArgumentNullException(nameof(modelResults));
+            this.Synthid = synthid;
         }
 
         /// <summary>

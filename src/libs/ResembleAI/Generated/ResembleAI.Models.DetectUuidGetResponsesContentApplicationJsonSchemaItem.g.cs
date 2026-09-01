@@ -22,7 +22,7 @@ namespace ResembleAI
         public global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType? MediaType { get; set; }
 
         /// <summary>
-        /// Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.
+        /// Status of the requested Deepfake Detection work. For an otherwise successful Detect with watermark analysis, processing continues until that nested analysis completes or fails. A core detection failure still reports failed. A failed watermark analysis is terminal and does not fail an otherwise successful deepfake detection. Intelligence may still be processing after Detect reaches completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatusJsonConverter))]
@@ -79,6 +79,12 @@ namespace ResembleAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("face_only")]
         public bool? FaceOnly { get; set; }
+
+        /// <summary>
+        /// Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("watermark")]
+        public global::ResembleAI.DetectWatermarkAnalysis? Watermark { get; set; }
 
         /// <summary>
         /// URL to the media file. Null when Zero Retention Mode is enabled.
@@ -140,7 +146,7 @@ namespace ResembleAI
         /// <param name="uuid"></param>
         /// <param name="mediaType"></param>
         /// <param name="status">
-        /// Status of the Deepfake Detection job only. A completed Detect has verdict and metrics available, but its Intelligence results may still be processing.
+        /// Status of the requested Deepfake Detection work. For an otherwise successful Detect with watermark analysis, processing continues until that nested analysis completes or fails. A core detection failure still reports failed. A failed watermark analysis is terminal and does not fail an otherwise successful deepfake detection. Intelligence may still be processing after Detect reaches completed.
         /// </param>
         /// <param name="metrics">
         /// Audio detection metrics (for audio and video media types)
@@ -168,6 +174,9 @@ namespace ResembleAI
         /// <param name="faceOnly">
         /// Effective face-only setting for this detect. `true` only for video inputs that<br/>
         /// include visual analysis; `false` for audio, image, and audio-only video detects.
+        /// </param>
+        /// <param name="watermark">
+        /// Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.
         /// </param>
         /// <param name="url">
         /// URL to the media file. Null when Zero Retention Mode is enabled.
@@ -202,6 +211,7 @@ namespace ResembleAI
             global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence? intelligence,
             global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemModality? modality,
             bool? faceOnly,
+            global::ResembleAI.DetectWatermarkAnalysis? watermark,
             string? url,
             string? audioUrl,
             string? filename,
@@ -222,6 +232,7 @@ namespace ResembleAI
             this.Intelligence = intelligence;
             this.Modality = modality;
             this.FaceOnly = faceOnly;
+            this.Watermark = watermark;
             this.Url = url;
             this.AudioUrl = audioUrl;
             this.Filename = filename;

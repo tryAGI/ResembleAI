@@ -24,7 +24,7 @@ namespace ResembleAI
         public global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsMediaType? MediaType { get; set; }
 
         /// <summary>
-        ///
+        /// Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusJsonConverter))]
@@ -43,6 +43,12 @@ namespace ResembleAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("face_only")]
         public bool? FaceOnly { get; set; }
+
+        /// <summary>
+        /// Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("watermark")]
+        public global::ResembleAI.DetectWatermarkAnalysis? Watermark { get; set; }
 
         /// <summary>
         /// Audio detection metrics (for audio and video media types)
@@ -176,13 +182,18 @@ namespace ResembleAI
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="mediaType"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.
+        /// </param>
         /// <param name="modality">
         /// Which detection modality was requested. `all` when not specified (the default). Only meaningful for video detects.
         /// </param>
         /// <param name="faceOnly">
         /// Effective face-only setting for this detect. `true` only for video inputs that<br/>
         /// include visual analysis; `false` for audio, image, and audio-only video detects.
+        /// </param>
+        /// <param name="watermark">
+        /// Conditional watermark analysis requested with `detect_watermark=true`. The object is omitted when watermark analysis was not requested. Resemble watermark metrics and the optional SynthID verdict are independent of the deepfake verdict.
         /// </param>
         /// <param name="metrics">
         /// Audio detection metrics (for audio and video media types)
@@ -232,6 +243,7 @@ namespace ResembleAI
             global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus? status,
             global::ResembleAI.DetectGetResponsesContentApplicationJsonSchemaItemsItemsModality? modality,
             bool? faceOnly,
+            global::ResembleAI.DetectWatermarkAnalysis? watermark,
             global::ResembleAI.DetectAudioMetrics? metrics,
             global::ResembleAI.DetectImageMetrics? imageMetrics,
             global::ResembleAI.DetectVideoMetrics? videoMetrics,
@@ -257,6 +269,7 @@ namespace ResembleAI
             this.Status = status;
             this.Modality = modality;
             this.FaceOnly = faceOnly;
+            this.Watermark = watermark;
             this.Metrics = metrics;
             this.ImageMetrics = imageMetrics;
             this.VideoMetrics = videoMetrics;
