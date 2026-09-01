@@ -65,6 +65,7 @@ namespace ResembleAI
         /// - Maximum 50 files per batch.<br/>
         /// - Maximum 500 MB total upload size across all files.<br/>
         /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.<br/>
         /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
         ///   for every file, the request is rejected with 402 and no detects are created.
         /// </summary>
@@ -103,6 +104,7 @@ namespace ResembleAI
         /// - Maximum 50 files per batch.<br/>
         /// - Maximum 500 MB total upload size across all files.<br/>
         /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.<br/>
         /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
         ///   for every file, the request is rejected with 402 and no detects are created.
         /// </summary>
@@ -540,7 +542,7 @@ namespace ResembleAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Invalid batch request (missing files, both file and files[] supplied, file count or size exceeded, unsupported file type, or `Prefer: wait` header sent)
+                            // Invalid batch request (missing files, both file and files[] supplied, file count or size exceeded, unsupported file type, `Prefer: wait` header sent, or `detect_watermark=true`)
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -763,6 +765,7 @@ namespace ResembleAI
         /// - Maximum 50 files per batch.<br/>
         /// - Maximum 500 MB total upload size across all files.<br/>
         /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.<br/>
         /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
         ///   for every file, the request is rejected with 402 and no detects are created.
         /// </summary>

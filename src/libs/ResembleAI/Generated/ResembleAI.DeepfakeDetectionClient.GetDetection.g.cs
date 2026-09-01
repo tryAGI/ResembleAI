@@ -53,7 +53,7 @@ namespace ResembleAI
 
         /// <summary>
         /// Get deepfake detection result<br/>
-        /// Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.
+        /// Get a deepfake detection result by UUID. For an otherwise successful Detect with watermark analysis, item status remains processing until the linked analysis completes or fails. A core detection failure still reports failed. Intelligence runs separately and can still be processing after Detect reaches completed.
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="experts">
@@ -79,7 +79,7 @@ namespace ResembleAI
         }
         /// <summary>
         /// Get deepfake detection result<br/>
-        /// Get a deepfake detection result by UUID. The item status describes the Detect job only; Intelligence runs separately and can still be processing after Detect reaches completed.
+        /// Get a deepfake detection result by UUID. For an otherwise successful Detect with watermark analysis, item status remains processing until the linked analysis completes or fails. A core detection failure still reports failed. Intelligence runs separately and can still be processing after Detect reaches completed.
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="experts">

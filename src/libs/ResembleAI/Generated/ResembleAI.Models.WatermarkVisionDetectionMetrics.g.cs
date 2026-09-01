@@ -50,7 +50,7 @@ namespace ResembleAI
         public global::ResembleAI.WatermarkVisionDetectionMetricsVerdict? Verdict { get; set; }
 
         /// <summary>
-        /// Optional auxiliary SynthID signal for images.
+        /// Optional auxiliary SynthID verdict for image or video. Omitted when SynthID is unavailable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synthid")]
         public bool? Synthid { get; set; }
@@ -75,7 +75,7 @@ namespace ResembleAI
         /// Backward-compatible image/video verdict.
         /// </param>
         /// <param name="synthid">
-        /// Optional auxiliary SynthID signal for images.
+        /// Optional auxiliary SynthID verdict for image or video. Omitted when SynthID is unavailable.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

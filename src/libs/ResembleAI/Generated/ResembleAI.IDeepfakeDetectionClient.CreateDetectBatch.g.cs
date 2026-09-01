@@ -20,6 +20,7 @@ namespace ResembleAI
         /// - Maximum 50 files per batch.<br/>
         /// - Maximum 500 MB total upload size across all files.<br/>
         /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.<br/>
         /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
         ///   for every file, the request is rejected with 402 and no detects are created.
         /// </summary>
@@ -48,6 +49,7 @@ namespace ResembleAI
         /// - Maximum 50 files per batch.<br/>
         /// - Maximum 500 MB total upload size across all files.<br/>
         /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.<br/>
         /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
         ///   for every file, the request is rejected with 402 and no detects are created.
         /// </summary>
@@ -76,6 +78,7 @@ namespace ResembleAI
         /// - Maximum 50 files per batch.<br/>
         /// - Maximum 500 MB total upload size across all files.<br/>
         /// - Allowed file types match `POST /detect`'s direct-upload allowlist.<br/>
+        /// - Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.<br/>
         /// - All-or-nothing billing: if the team's wallet cannot cover the projected cost<br/>
         ///   for every file, the request is rejected with 402 and no detects are created.
         /// </summary>

@@ -6,7 +6,7 @@ namespace ResembleAI
     /// <summary>
     /// Processing state for the requested Detect work. For an otherwise successful Detect with watermark analysis, this remains processing until the linked analysis completes or fails. A core detection failure still reports failed.
     /// </summary>
-    public enum DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus
+    public enum DetectPostResponsesContentApplicationJsonSchemaItemStatus
     {
         /// <summary>
         ///
@@ -25,31 +25,31 @@ namespace ResembleAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatusExtensions
+    public static class DetectPostResponsesContentApplicationJsonSchemaItemStatusExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus value)
+        public static string ToValueString(this DetectPostResponsesContentApplicationJsonSchemaItemStatus value)
         {
             return value switch
             {
-                DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus.Completed => "completed",
-                DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus.Failed => "failed",
-                DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus.Processing => "processing",
+                DetectPostResponsesContentApplicationJsonSchemaItemStatus.Completed => "completed",
+                DetectPostResponsesContentApplicationJsonSchemaItemStatus.Failed => "failed",
+                DetectPostResponsesContentApplicationJsonSchemaItemStatus.Processing => "processing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus? ToEnum(string value)
+        public static DetectPostResponsesContentApplicationJsonSchemaItemStatus? ToEnum(string value)
         {
             return value switch
             {
-                "completed" => DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus.Completed,
-                "failed" => DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus.Failed,
-                "processing" => DetectGetResponsesContentApplicationJsonSchemaItemsItemsStatus.Processing,
+                "completed" => DetectPostResponsesContentApplicationJsonSchemaItemStatus.Completed,
+                "failed" => DetectPostResponsesContentApplicationJsonSchemaItemStatus.Failed,
+                "processing" => DetectPostResponsesContentApplicationJsonSchemaItemStatus.Processing,
                 _ => null,
             };
         }

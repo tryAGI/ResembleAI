@@ -92,6 +92,13 @@ namespace ResembleAI
         public bool? Intelligence { get; set; }
 
         /// <summary>
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("detect_watermark")]
+        public bool? DetectWatermark { get; set; }
+
+        /// <summary>
         /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
         /// Default Value: false
         /// </summary>
@@ -186,6 +193,10 @@ namespace ResembleAI
         /// Run multimodal intelligence analysis on the media<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="detectWatermark">
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="inferFromIntelligence">
         /// Opt in to let a strong intelligence finding escalate an otherwise non-fake verdict to "Likely Fake". Has no effect unless `intelligence` is also true.<br/>
         /// Default Value: false
@@ -226,6 +237,7 @@ namespace ResembleAI
             global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality? modality,
             bool? faceOnly,
             bool? intelligence,
+            bool? detectWatermark,
             bool? inferFromIntelligence,
             bool? audioSourceTracing,
             bool? signal,
@@ -245,6 +257,7 @@ namespace ResembleAI
             this.Modality = modality;
             this.FaceOnly = faceOnly;
             this.Intelligence = intelligence;
+            this.DetectWatermark = detectWatermark;
             this.InferFromIntelligence = inferFromIntelligence;
             this.AudioSourceTracing = audioSourceTracing;
             this.Signal = signal;
