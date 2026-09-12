@@ -7,7 +7,7 @@
   "paths": {
     "/detect": {
       "get": {
-        "operationId": "list-detections",
+        "operationId": "deepfakeDetection_listDetections",
         "summary": "List all detects",
         "description": "Retrieve a paginated list of all detect objects for the authenticated user's team",
         "tags": [
@@ -60,7 +60,7 @@
         }
       },
       "post": {
-        "operationId": "create-detection",
+        "operationId": "deepfakeDetection_createDetection",
         "summary": "Create deepfake detection",
         "description": "Analyze audio, image, and video for deepfake detection.\n\nSupply media via one of three intake methods:\n\n- **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.\n- **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.\n- **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request.\n\nSet `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake\nanalysis. This option supports single audio, image, and video requests only. It adds one Watermark\ndetection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes\n`Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark\nfailure is returned in the nested `watermark` object and does not change the deepfake verdict.\n",
         "tags": [
@@ -231,7 +231,7 @@
     },
     "/detect/{uuid}": {
       "get": {
-        "operationId": "get-detection",
+        "operationId": "deepfakeDetection_getDetection",
         "summary": "Get deepfake detection result",
         "description": "Get a deepfake detection result by UUID. For an otherwise successful Detect with watermark analysis, item status remains processing until the linked analysis completes or fails. A core detection failure still reports failed. Intelligence runs separately and can still be processing after Detect reaches completed.",
         "tags": [
@@ -290,6 +290,56 @@
           }
         }
       },
+      "delete": {
+        "operationId": "deepfakeDetection_deleteDetection",
+        "summary": "Delete deepfake detection",
+        "description": "Delete a detection belonging to the authenticated user's team. Once deleted, the detection is no longer returned by list or get requests.",
+        "tags": [
+          "deepfakeDetection"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "description": "The UUID of the detect object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "API key from https://app.resemble.ai/hub/api",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detection deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deepfake Detection_deleteDetection_Response_200"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Detect not found. Unknown UUIDs and detects belonging to another team are indistinguishable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
       "servers": [
         {
           "url": "https://app.resemble.ai/api/v2"
@@ -298,7 +348,7 @@
     },
     "/detect/batch": {
       "post": {
-        "operationId": "create-detect-batch",
+        "operationId": "deepfakeDetection_createDetectBatch",
         "summary": "Create a batch deepfake detection job",
         "description": "Submit up to 50 files in a single request and process them as a single logical\ngroup. Returns HTTP 202 with a batch UUID; each file is analyzed in the\nbackground and individual results are available via `GET /detect/{uuid}` for\neach entry in `detect_uuids`.\n\nTwo intake methods:\n\n- **Multiple media files** — repeated `files[]` form fields.\n- **Single zip archive** — a single `file` form field whose value is a `.zip`\n  containing the media files. Non-media entries are skipped.\n\nProvide one of `files[]` or `file=<...>.zip` per request. Synchronous mode\n(`Prefer: wait`) is not supported and returns 400 if sent.\n\nConstraints:\n\n- Maximum 50 files per batch.\n- Maximum 500 MB total upload size across all files.\n- Allowed file types match `POST /detect`'s direct-upload allowlist.\n- Watermark analysis is not supported for batch or zip requests. Sending `detect_watermark=true` returns 400.\n- All-or-nothing billing: if the team's wallet cannot cover the projected cost\n  for every file, the request is rejected with 402 and no detects are created.\n",
         "tags": [
@@ -455,7 +505,7 @@
     },
     "/detect/batch/{uuid}": {
       "get": {
-        "operationId": "get-detect-batch",
+        "operationId": "deepfakeDetection_getDetectBatch",
         "summary": "Get batch status",
         "description": "Retrieve the latest aggregate status for a batch. The response shape mirrors\nthe create response — `status`, `completed_count`, and `failed_count` update\nas child detects progress. Use the `detect_uuids` array to fetch per-file\nresults via `GET /detect/{uuid}`.\n",
         "tags": [
@@ -512,7 +562,7 @@
     },
     "/detect/{uuid}/feedback": {
       "get": {
-        "operationId": "get-detect-feedback",
+        "operationId": "deepfakeDetection_getDetectFeedback",
         "summary": "Get detection feedback",
         "description": "Retrieve your own feedback for a detect. Returns 404 when *you* haven't answered this\ndetect, even if the detect exists and a teammate has answered it.\n",
         "tags": [
@@ -562,7 +612,7 @@
         }
       },
       "post": {
-        "operationId": "create-detect-feedback",
+        "operationId": "deepfakeDetection_createDetectFeedback",
         "summary": "Submit detection feedback",
         "description": "Tell Resemble whether a detection verdict was right — and when it wasn't, what it\nshould have been. The answer is stored with a snapshot of what the model said at the\ntime of submission (verdict, score, media type, raw metrics), so it stays interpretable\neven if the detect is later re-run or deleted.\n\nUpserts on `(detect, user)`: re-posting edits your existing answer rather than adding a\nsecond one. There is no separate update call. Feedback is per user, not per team — a\nteammate's answer on the same detect is invisible to you.\n\nThe detect must have completed processing; feedback on a pending or failed detect is\nrejected with 400. Teams without Detect access also receive 400 (not 403).\n",
         "tags": [
@@ -650,7 +700,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-detect-feedback",
+        "operationId": "deepfakeDetection_deleteDetectFeedback",
         "summary": "Delete detection feedback",
         "description": "Retract your own feedback. Idempotent — returns 200 whether or not a row existed. Only\nyour row is removed; a teammate's answer on the same detect is untouched. Works even on\na detect that later failed.\n",
         "tags": [
@@ -707,7 +757,7 @@
     },
     "/agents": {
       "get": {
-        "operationId": "list-detect-agents",
+        "operationId": "detectAgents_listDetectAgents",
         "summary": "List Detect Agents",
         "description": "Return all six managed Detect Agents available to the authenticated team.\nUse an agent's `uuid` to run an investigation or retrieve its run history.\nThis endpoint does not accept pagination or filtering parameters.\n",
         "tags": [
@@ -775,7 +825,7 @@
     },
     "/agents/{uuid}/run": {
       "post": {
-        "operationId": "run-detect-agent-investigation",
+        "operationId": "detectAgents_runDetectAgentInvestigation",
         "summary": "Run investigation",
         "description": "Run a managed Detect Agent against uploaded media or a public URL.\nThe response is a live Server-Sent Events stream. The first `run_started`\nevent contains the persisted run identifier.\n",
         "tags": [
@@ -920,7 +970,7 @@
     },
     "/agents/{uuid}/runs": {
       "get": {
-        "operationId": "list-detect-agent-investigation-runs",
+        "operationId": "detectAgents_listDetectAgentInvestigationRuns",
         "summary": "List investigation runs",
         "description": "Return up to 100 of a Detect Agent's most recent investigation runs in\nnewest-first order. An agent that the team has never run returns an empty list.\n",
         "tags": [
@@ -1007,7 +1057,7 @@
     },
     "/agents/{uuid}/runs/{run_id}": {
       "get": {
-        "operationId": "get-detect-agent-investigation-run",
+        "operationId": "detectAgents_getDetectAgentInvestigationRun",
         "summary": "Get investigation run",
         "description": "Retrieve a persisted investigation run, including its replay transcript\nand the exact configuration and memory snapshots used by the investigation.\n",
         "tags": [
@@ -1104,7 +1154,7 @@
     },
     "/intelligence": {
       "post": {
-        "operationId": "run-intelligence",
+        "operationId": "intelligence_runIntelligence",
         "summary": "Run intelligence",
         "description": "Analyze audio, image, or video for comprehensive insights. Optionally reference an existing detect to associate.",
         "tags": [
@@ -1176,7 +1226,7 @@
     },
     "/intelligences": {
       "get": {
-        "operationId": "list-intelligences",
+        "operationId": "intelligence_listIntelligences",
         "summary": "List intelligences",
         "description": "Retrieve a paginated list of all intelligence reports for the authenticated user's team",
         "tags": [
@@ -1236,7 +1286,7 @@
     },
     "/intelligences/{uuid}": {
       "get": {
-        "operationId": "get-intelligence",
+        "operationId": "intelligence_getIntelligence",
         "summary": "Get intelligence",
         "description": "Retrieve a single intelligence report by its UUID",
         "tags": [
@@ -1293,7 +1343,7 @@
     },
     "/detects/{uuid}/intelligence": {
       "post": {
-        "operationId": "ask-detect-intelligence-question",
+        "operationId": "detectIntelligence_askDetectIntelligenceQuestion",
         "summary": "Ask a question about a detection",
         "description": "Submit a natural-language question about a completed detection report. Returns 202 Accepted while the answer is generated in the background.",
         "tags": [
@@ -1388,7 +1438,7 @@
     },
     "/detects/{uuid}/intelligence/{question_uuid}": {
       "get": {
-        "operationId": "get-detect-intelligence-question",
+        "operationId": "detectIntelligence_getDetectIntelligenceQuestion",
         "summary": "Get answer to a detection question",
         "description": "Retrieve the status and answer for a previously submitted question. Poll until status is completed or failed.",
         "tags": [
@@ -1454,7 +1504,7 @@
     },
     "/audio_source_tracings": {
       "get": {
-        "operationId": "list-audio-source-tracings",
+        "operationId": "audioSourceTracing_listAudioSourceTracings",
         "summary": "List audio source tracings",
         "description": "Retrieve a paginated list of all source tracing reports for the authenticated user's team",
         "tags": [
@@ -1514,7 +1564,7 @@
     },
     "/audio_source_tracings/{uuid}": {
       "get": {
-        "operationId": "get-audio-source-tracing",
+        "operationId": "audioSourceTracing_getAudioSourceTracing",
         "summary": "Get audio source tracing",
         "description": "Retrieve a single source tracing report by its UUID",
         "tags": [
@@ -1571,7 +1621,7 @@
     },
     "/identity": {
       "get": {
-        "operationId": "list-identities",
+        "operationId": "identity_listIdentities",
         "summary": "List identities",
         "description": "List the team's identities, newest first",
         "tags": [
@@ -1631,7 +1681,7 @@
         }
       },
       "post": {
-        "operationId": "create-identity",
+        "operationId": "identity_createIdentity",
         "summary": "Create identity",
         "description": "Create a new identity profile. Two request forms are supported: the simple audio-only form (flat `name` + one audio source; creates a team-visible person identity and enrolls the voice immediately) and the multimodal form (a nested `identity` object with full control over type and visibility).\n",
         "tags": [
@@ -1688,7 +1738,7 @@
     },
     "/identity/{uuid}": {
       "delete": {
-        "operationId": "delete-identity",
+        "operationId": "identity_deleteIdentity",
         "summary": "Delete identity",
         "description": "Delete an identity and withdraw its enrollment from matching",
         "tags": [
@@ -1744,7 +1794,7 @@
     },
     "/identity/{uuid}/attachments": {
       "post": {
-        "operationId": "create-identity-attachment",
+        "operationId": "identity_createIdentityAttachment",
         "summary": "Add reference media",
         "description": "Attach a reference media file (voice sample, face photo, or reference video) to an identity. The modality's embedding recomputes asynchronously; the media becomes searchable once its embedding status is ready.\n",
         "tags": [
@@ -1843,7 +1893,7 @@
     },
     "/identity/{uuid}/attachments/{attachment_id}": {
       "delete": {
-        "operationId": "delete-identity-attachment",
+        "operationId": "identity_deleteIdentityAttachment",
         "summary": "Remove reference media",
         "description": "Detach a reference media file from an identity. The affected modality's embedding recomputes without the removed file.\n",
         "tags": [
@@ -1908,7 +1958,7 @@
     },
     "/identity/search": {
       "post": {
-        "operationId": "search-identities",
+        "operationId": "identity_searchIdentities",
         "summary": "Search identities",
         "description": "Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.\n",
         "tags": [
@@ -1996,7 +2046,7 @@
     },
     "/watermark/apply": {
       "post": {
-        "operationId": "apply-watermark",
+        "operationId": "watermark_applyWatermark",
         "summary": "Apply watermark",
         "description": "Apply a Perth v2 watermark to an audio, image, or video file. The media type is automatically detected from the file content. Processing is asynchronous unless the `Prefer: wait` header is supplied.",
         "tags": [
@@ -2052,7 +2102,7 @@
     },
     "/watermark/apply/{uuid}/result": {
       "get": {
-        "operationId": "get-watermark-apply-result",
+        "operationId": "watermark_getWatermarkApplyResult",
         "summary": "Get watermark apply result",
         "description": "Retrieve the result of a watermark apply job.",
         "tags": [
@@ -2098,7 +2148,7 @@
     },
     "/watermark/detect": {
       "post": {
-        "operationId": "detect-watermark",
+        "operationId": "watermark_detectWatermark",
         "summary": "Detect watermark",
         "description": "Detect a watermark in an audio, image, or video file. Audio runs Perth v1 and Perth v2 concurrently; image/video is publicly reported as Perth v2. Processing is asynchronous unless the `Prefer: wait` header is supplied.",
         "tags": [
@@ -2154,7 +2204,7 @@
     },
     "/watermark/detect/{uuid}/result": {
       "get": {
-        "operationId": "get-watermark-detection-result",
+        "operationId": "watermark_getWatermarkDetectionResult",
         "summary": "Get watermark detection result",
         "description": "Retrieve the result of a watermark detection.",
         "tags": [
@@ -2200,7 +2250,7 @@
     },
     "/signal": {
       "get": {
-        "operationId": "list-signal-submissions",
+        "operationId": "signal_listSignalSubmissions",
         "summary": "List submissions",
         "description": "Retrieve past Signal submissions for your team, newest first.",
         "tags": [
@@ -2262,7 +2312,7 @@
         }
       },
       "post": {
-        "operationId": "create-signal-submission",
+        "operationId": "signal_createSignalSubmission",
         "summary": "Score content",
         "description": "Score a piece of content against the fraud and scam categories available to your team\nand return a verdict with the best-matching categories.\n\nSupply exactly one of:\n\n- **Text** — `application/json` with a `text` field.\n- **File** — `multipart/form-data` with the media attached as `file`. Audio, image, and\n  video are supported, up to 15 MB. The media type is detected from the file's MIME type\n  unless `media_type` is supplied.\n",
         "tags": [
@@ -2348,7 +2398,7 @@
     },
     "/signal/{id}": {
       "delete": {
-        "operationId": "delete-signal-submission",
+        "operationId": "signal_deleteSignalSubmission",
         "summary": "Delete submission",
         "description": "Permanently delete a Signal submission belonging to your team.",
         "tags": [
@@ -2404,7 +2454,7 @@
     },
     "/signal/custom_categories": {
       "get": {
-        "operationId": "list-signal-custom-categories",
+        "operationId": "signal_listSignalCustomCategories",
         "summary": "List custom categories",
         "description": "Retrieve the team's Signal settings, the built-in categories, the team's custom categories with their example phrases, and calibration status.",
         "tags": [
@@ -2445,7 +2495,7 @@
         }
       },
       "post": {
-        "operationId": "create-signal-custom-category",
+        "operationId": "signal_createSignalCustomCategory",
         "summary": "Create custom category",
         "description": "Create a custom fraud category from example phrases. Categories embed asynchronously:\na new category starts at `pending`, moves to `embedding`, and becomes usable for\nscoring once its status is `ready`.\n",
         "tags": [
@@ -2502,7 +2552,7 @@
     },
     "/signal/custom_categories/{id}": {
       "get": {
-        "operationId": "get-signal-custom-category",
+        "operationId": "signal_getSignalCustomCategory",
         "summary": "Get custom category",
         "description": "Retrieve a single custom category with its example phrases.",
         "tags": [
@@ -2551,7 +2601,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-signal-custom-category",
+        "operationId": "signal_deleteSignalCustomCategory",
         "summary": "Delete custom category",
         "description": "Delete a custom category and its example phrases.",
         "tags": [
@@ -2600,7 +2650,7 @@
         }
       },
       "patch": {
-        "operationId": "update-signal-custom-category",
+        "operationId": "signal_updateSignalCustomCategory",
         "summary": "Update custom category",
         "description": "Update a custom category. Supplying `scenarios` replaces the existing example phrases and re-triggers embedding.",
         "tags": [
@@ -2675,7 +2725,7 @@
     },
     "/signal/settings": {
       "patch": {
-        "operationId": "update-signal-settings",
+        "operationId": "signal_updateSignalSettings",
         "summary": "Update team settings",
         "description": "Update team-level Signal preferences.",
         "tags": [
@@ -2732,7 +2782,7 @@
     },
     "/secure_uploads": {
       "post": {
-        "operationId": "create-secure-upload",
+        "operationId": "secureUploads_createSecureUpload",
         "summary": "Upload media securely",
         "description": "Upload a media file and receive a short-lived token that can be passed to\ndownstream endpoints (such as `/detect` and `/intelligence`) in place of a\npublic URL. The returned token is a JWT that expires 1 hour after issuance.\n\nKeeping uploads private avoids exposing source media on the open internet and\nmeans you do not need to host files yourself for jobs that only need the API\nto read them once.\n",
         "tags": [
@@ -2809,7 +2859,7 @@
     },
     "/synthesize": {
       "post": {
-        "operationId": "synthesize",
+        "operationId": "textToSpeech_synthesize",
         "summary": "Synchronous text-to-speech synthesis",
         "description": "Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.",
         "tags": [
@@ -2920,7 +2970,7 @@
     },
     "/stream": {
       "post": {
-        "operationId": "stream-synthesize",
+        "operationId": "textToSpeech_streamSynthesize",
         "summary": "Streaming text-to-speech synthesis (HTTP)",
         "description": "Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.",
         "tags": [
@@ -3014,7 +3064,7 @@
     },
     "/speech-to-text": {
       "get": {
-        "operationId": "list-transcripts",
+        "operationId": "speechToText_listTranscripts",
         "summary": "List transcripts",
         "description": "Retrieve paginated list of transcript jobs",
         "tags": [
@@ -3066,7 +3116,7 @@
         }
       },
       "post": {
-        "operationId": "create-transcript",
+        "operationId": "speechToText_createTranscript",
         "summary": "Create transcript job",
         "description": "Submit audio or video for transcription",
         "tags": [
@@ -3154,7 +3204,7 @@
     },
     "/speech-to-text/{uuid}": {
       "get": {
-        "operationId": "get-transcript",
+        "operationId": "speechToText_getTranscript",
         "summary": "Get transcript",
         "description": "Retrieve transcript status, text, and timestamps",
         "tags": [
@@ -3201,7 +3251,7 @@
     },
     "/speech-to-text/{uuid}/ask": {
       "post": {
-        "operationId": "ask-transcript-question",
+        "operationId": "speechToText_askTranscriptQuestion",
         "summary": "Ask intelligence question",
         "description": "Submit a question about a completed transcript",
         "tags": [
@@ -3276,7 +3326,7 @@
     },
     "/speech-to-text/{uuid}/questions": {
       "get": {
-        "operationId": "list-transcript-questions",
+        "operationId": "speechToText_listTranscriptQuestions",
         "summary": "List intelligence questions",
         "description": "List all questions asked about a transcript",
         "tags": [
@@ -3343,7 +3393,7 @@
     },
     "/speech-to-text/{uuid}/questions/{question_uuid}": {
       "get": {
-        "operationId": "get-transcript-question",
+        "operationId": "speechToText_getTranscriptQuestion",
         "summary": "Get intelligence question status",
         "description": "Check the status of a specific question",
         "tags": [
@@ -3399,7 +3449,7 @@
     },
     "/audio_enhancements": {
       "get": {
-        "operationId": "list-audio-enhancements",
+        "operationId": "audioEnhancement_listAudioEnhancements",
         "summary": "List audio enhancements",
         "description": "Returns a paginated list of all audio enhancements for your team, ordered by most recent first.",
         "tags": [
@@ -3462,7 +3512,7 @@
         }
       },
       "post": {
-        "operationId": "create-audio-enhancement",
+        "operationId": "audioEnhancement_createAudioEnhancement",
         "summary": "Create audio enhancement",
         "description": "Submit an audio file for enhancement. Processing happens asynchronously in the background.\n",
         "tags": [
@@ -3554,7 +3604,7 @@
     },
     "/audio_enhancements/{enhancement_uuid}": {
       "get": {
-        "operationId": "get-audio-enhancement",
+        "operationId": "audioEnhancement_getAudioEnhancement",
         "summary": "Get audio enhancement",
         "description": "Poll this endpoint to check the status of an enhancement job and retrieve the download URL when complete.",
         "tags": [
@@ -3611,7 +3661,7 @@
     },
     "/voices": {
       "get": {
-        "operationId": "list-voices",
+        "operationId": "voices_listVoices",
         "summary": "List voices",
         "description": "Retrieve voice metadata",
         "tags": [
@@ -3672,7 +3722,7 @@
         }
       },
       "post": {
-        "operationId": "create-voice",
+        "operationId": "voices_createVoice",
         "summary": "Create voice",
         "description": "Create a new voice",
         "tags": [
@@ -3739,7 +3789,7 @@
     },
     "/voices/{voice_uuid}": {
       "get": {
-        "operationId": "get-voice",
+        "operationId": "voices_getVoice",
         "summary": "Get voice",
         "description": "Get voice details",
         "tags": [
@@ -3778,7 +3828,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-voice",
+        "operationId": "voices_deleteVoice",
         "summary": "Delete voice",
         "description": "Delete a voice",
         "tags": [
@@ -3824,7 +3874,7 @@
     },
     "/voices/{voice_uuid}/build": {
       "post": {
-        "operationId": "build-voice",
+        "operationId": "voices_buildVoice",
         "summary": "Build voice",
         "description": "Start voice training",
         "tags": [
@@ -3885,7 +3935,7 @@
     },
     "/voice-design": {
       "post": {
-        "operationId": "generate-voice-design",
+        "operationId": "voiceDesign_generateVoiceDesign",
         "summary": "Generate voice candidates",
         "description": "Generate three voice candidates from a text prompt",
         "tags": [
@@ -3941,7 +3991,7 @@
     },
     "/voice-design/create": {
       "post": {
-        "operationId": "create-voice-from-candidate",
+        "operationId": "voiceDesign_createVoiceFromCandidate",
         "summary": "Create voice from candidate",
         "description": "Create a voice from a voice design candidate",
         "tags": [
@@ -4004,7 +4054,7 @@
     },
     "/voices/{voice_uuid}/recordings": {
       "get": {
-        "operationId": "list-recordings",
+        "operationId": "recordings_listRecordings",
         "summary": "List recordings",
         "description": "List all recordings for a voice",
         "tags": [
@@ -4062,7 +4112,7 @@
         }
       },
       "post": {
-        "operationId": "create-recording",
+        "operationId": "recordings_createRecording",
         "summary": "Create recording",
         "description": "Upload a new recording for voice training",
         "tags": [
@@ -4151,7 +4201,7 @@
     },
     "/voices/{voice_uuid}/recordings/{recording_id}": {
       "get": {
-        "operationId": "get-recording",
+        "operationId": "recordings_getRecording",
         "summary": "Get recording",
         "description": "Get recording details",
         "tags": [
@@ -4198,7 +4248,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-recording",
+        "operationId": "recordings_deleteRecording",
         "summary": "Delete recording",
         "description": "Delete a recording",
         "tags": [
@@ -4245,7 +4295,7 @@
         }
       },
       "patch": {
-        "operationId": "update-recording",
+        "operationId": "recordings_updateRecording",
         "summary": "Update recording",
         "description": "Update a recording",
         "tags": [
@@ -4322,7 +4372,7 @@
     },
     "/term_substitutions": {
       "get": {
-        "operationId": "list-term-substitutions",
+        "operationId": "termSubstitutions_listTermSubstitutions",
         "summary": "List term substitutions",
         "description": "List all term substitutions",
         "tags": [
@@ -4372,7 +4422,7 @@
         }
       },
       "post": {
-        "operationId": "create-term-substitution",
+        "operationId": "termSubstitutions_createTermSubstitution",
         "summary": "Create term substitution",
         "description": "Create a new pronunciation substitution",
         "tags": [
@@ -4433,7 +4483,7 @@
     },
     "/term_substitutions/{id}": {
       "get": {
-        "operationId": "get-term-substitution",
+        "operationId": "termSubstitutions_getTermSubstitution",
         "summary": "Get term substitution",
         "description": "Get term substitution details",
         "tags": [
@@ -4472,7 +4522,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-term-substitution",
+        "operationId": "termSubstitutions_deleteTermSubstitution",
         "summary": "Delete term substitution",
         "description": "Delete a term substitution",
         "tags": [
@@ -4518,7 +4568,7 @@
     },
     "/pronunciations": {
       "get": {
-        "operationId": "list-pronunciations",
+        "operationId": "customPronunciations_listPronunciations",
         "summary": "List custom pronunciations",
         "description": "Retrieve all custom pronunciations for your team, with optional filters.",
         "tags": [
@@ -4585,7 +4635,7 @@
         }
       },
       "post": {
-        "operationId": "create-pronunciation",
+        "operationId": "customPronunciations_createPronunciation",
         "summary": "Create custom pronunciation",
         "description": "Upload a single pronunciation with a reference audio file.",
         "tags": [
@@ -4657,7 +4707,7 @@
     },
     "/pronunciations/bulk": {
       "post": {
-        "operationId": "bulk-create-pronunciations",
+        "operationId": "customPronunciations_bulkCreatePronunciations",
         "summary": "Bulk create pronunciations from ZIP",
         "description": "Upload multiple pronunciations at once. Each audio file in the ZIP becomes a pronunciation — the filename (without extension) is used as the word.",
         "tags": [
@@ -4714,7 +4764,7 @@
     },
     "/pronunciations/{uuid}": {
       "get": {
-        "operationId": "get-pronunciation",
+        "operationId": "customPronunciations_getPronunciation",
         "summary": "Get custom pronunciation",
         "description": "Retrieve a single custom pronunciation by UUID",
         "tags": [
@@ -4764,7 +4814,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-pronunciation",
+        "operationId": "customPronunciations_deletePronunciation",
         "summary": "Delete custom pronunciation",
         "description": "Permanently remove a custom pronunciation. Takes effect immediately.",
         "tags": [
@@ -4804,7 +4854,7 @@
         }
       },
       "patch": {
-        "operationId": "update-pronunciation",
+        "operationId": "customPronunciations_updatePronunciation",
         "summary": "Toggle pronunciation active status",
         "description": "Enable or disable a pronunciation without deleting it. Inactive pronunciations are not used during synthesis.",
         "tags": [
@@ -4869,7 +4919,7 @@
     },
     "/voice_settings_presets": {
       "get": {
-        "operationId": "list-voice-settings-presets",
+        "operationId": "voiceSettingsPresets_listVoiceSettingsPresets",
         "summary": "List voice settings presets",
         "description": "List all voice settings presets",
         "tags": [
@@ -4900,7 +4950,7 @@
         }
       },
       "post": {
-        "operationId": "create-voice-settings-preset",
+        "operationId": "voiceSettingsPresets_createVoiceSettingsPreset",
         "summary": "Create voice settings preset",
         "description": "Create a new voice settings preset (max 5 per user)",
         "tags": [
@@ -5000,7 +5050,7 @@
     },
     "/voice_settings_presets/{uuid}": {
       "get": {
-        "operationId": "get-voice-settings-preset",
+        "operationId": "voiceSettingsPresets_getVoiceSettingsPreset",
         "summary": "Get voice settings preset",
         "description": "Get preset details",
         "tags": [
@@ -5039,7 +5089,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-voice-settings-preset",
+        "operationId": "voiceSettingsPresets_deleteVoiceSettingsPreset",
         "summary": "Delete voice settings preset",
         "description": "Delete a preset",
         "tags": [
@@ -5078,7 +5128,7 @@
         }
       },
       "patch": {
-        "operationId": "update-voice-settings-preset",
+        "operationId": "voiceSettingsPresets_updateVoiceSettingsPreset",
         "summary": "Update voice settings preset",
         "description": "Update a preset",
         "tags": [
@@ -5160,7 +5210,7 @@
     },
     "/projects": {
       "get": {
-        "operationId": "list-projects",
+        "operationId": "projects_listProjects",
         "summary": "List projects",
         "description": "List all projects",
         "tags": [
@@ -5210,7 +5260,7 @@
         }
       },
       "post": {
-        "operationId": "create-project",
+        "operationId": "projects_createProject",
         "summary": "Create project",
         "description": "Create a new project",
         "tags": [
@@ -5277,7 +5327,7 @@
     },
     "/projects/{project_uuid}": {
       "get": {
-        "operationId": "get-project",
+        "operationId": "projects_getProject",
         "summary": "Get project",
         "description": "Get project details",
         "tags": [
@@ -5316,7 +5366,7 @@
         }
       },
       "put": {
-        "operationId": "update-project",
+        "operationId": "projects_updateProject",
         "summary": "Update project",
         "description": "Update a project",
         "tags": [
@@ -5378,7 +5428,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-project",
+        "operationId": "projects_deleteProject",
         "summary": "Delete project",
         "description": "Delete a project",
         "tags": [
@@ -5424,7 +5474,7 @@
     },
     "/projects/{project_uuid}/clips": {
       "get": {
-        "operationId": "list-clips",
+        "operationId": "clips_listClips",
         "summary": "List clips",
         "description": "List clips in a project",
         "tags": [
@@ -5489,7 +5539,7 @@
     },
     "/projects/{project_uuid}/clips/{clip_uuid}": {
       "get": {
-        "operationId": "get-clip",
+        "operationId": "clips_getClip",
         "summary": "Get clip",
         "description": "Get clip details",
         "tags": [
@@ -5536,7 +5586,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-clip",
+        "operationId": "clips_deleteClip",
         "summary": "Delete clip",
         "description": "Delete a clip",
         "tags": [
@@ -5583,7 +5633,7 @@
         }
       },
       "patch": {
-        "operationId": "update-clip",
+        "operationId": "clips_updateClip",
         "summary": "Update clip",
         "description": "Update a clip",
         "tags": [
@@ -5657,7 +5707,7 @@
     },
     "/duet_voices": {
       "get": {
-        "operationId": "list-duet-voices",
+        "operationId": "duets_listDuetVoices",
         "summary": "List duet voices",
         "description": "Returns default and custom duet voices",
         "tags": [
@@ -5688,7 +5738,7 @@
         }
       },
       "post": {
-        "operationId": "create-duet-voice",
+        "operationId": "duets_createDuetVoice",
         "summary": "Create custom duet voice",
         "description": "Create a custom voice for duet generation",
         "tags": [
@@ -5754,7 +5804,7 @@
     },
     "/duet_voices/{id}": {
       "put": {
-        "operationId": "update-duet-voice",
+        "operationId": "duets_updateDuetVoice",
         "summary": "Update duet voice",
         "description": "Update a custom duet voice (default voices cannot be modified)",
         "tags": [
@@ -5810,7 +5860,7 @@
         }
       },
       "delete": {
-        "operationId": "delete-duet-voice",
+        "operationId": "duets_deleteDuetVoice",
         "summary": "Delete duet voice",
         "description": "Delete a custom duet voice (default voices cannot be deleted)",
         "tags": [
@@ -5856,7 +5906,7 @@
     },
     "/duet_voice_pairs": {
       "get": {
-        "operationId": "list-duet-voice-pairs",
+        "operationId": "duets_listDuetVoicePairs",
         "summary": "List duet voice pairs",
         "description": "List all voice pairs for duet generation",
         "tags": [
@@ -5887,7 +5937,7 @@
         }
       },
       "post": {
-        "operationId": "create-duet-voice-pair",
+        "operationId": "duets_createDuetVoicePair",
         "summary": "Create duet voice pair",
         "description": "Create a voice pair for duet generation",
         "tags": [
@@ -5952,7 +6002,7 @@
     },
     "/duet": {
       "post": {
-        "operationId": "generate-duet",
+        "operationId": "duets_generateDuet",
         "summary": "Generate duet",
         "description": "Generate conversational audio with two speakers",
         "tags": [
@@ -6024,7 +6074,7 @@
     },
     "/account": {
       "get": {
-        "operationId": "get-account",
+        "operationId": "account_getAccount",
         "summary": "Get account",
         "description": "Get account information",
         "tags": [
@@ -6062,7 +6112,7 @@
     },
     "/account/teams": {
       "get": {
-        "operationId": "get-teams",
+        "operationId": "account_getTeams",
         "summary": "Get teams",
         "description": "Get team information",
         "tags": [
@@ -6100,7 +6150,7 @@
     },
     "/account/teams/{team_uuid}": {
       "get": {
-        "operationId": "get-team",
+        "operationId": "account_getTeam",
         "summary": "Get team",
         "description": "Get specific team information",
         "tags": [
@@ -6147,7 +6197,7 @@
     },
     "/plans": {
       "get": {
-        "operationId": "list-billing-plans",
+        "operationId": "billingPlans_listBillingPlans",
         "summary": "List billing plans",
         "description": "Returns all active self-serve plans, their products, prices, and plan-specific quantity rules. This endpoint is public.",
         "tags": [
@@ -6184,7 +6234,7 @@
     },
     "/plans/{id}": {
       "get": {
-        "operationId": "get-billing-plan",
+        "operationId": "billingPlans_getBillingPlan",
         "summary": "Get a billing plan",
         "description": "Returns an active billing plan by slug, including its products, prices, and quantity rules. This endpoint is public.",
         "tags": [
@@ -6242,7 +6292,7 @@
     },
     "/subscription": {
       "get": {
-        "operationId": "get-billing-subscription",
+        "operationId": "billingSubscriptions_getBillingSubscription",
         "summary": "Get the current subscription",
         "description": "Returns the current team's active, past-due, or delinquent subscription. Returns a null subscription when no customer-visible subscription exists.",
         "tags": [
@@ -6310,7 +6360,7 @@
     },
     "/subscription/products": {
       "patch": {
-        "operationId": "update-billing-subscription-products",
+        "operationId": "billingSubscriptions_updateBillingSubscriptionProducts",
         "summary": "Update subscription product quantities",
         "description": "Updates one or more adjustable subscription products atomically. Each `new_quantity` is the desired absolute total, not an increment. A product is adjustable when its category is `subscription` and its `plan_product.allow_additional_usage` value is true. Quantities must remain within the plan's minimum and maximum and cannot be reduced below `consumed_quantity`.",
         "tags": [
@@ -6427,7 +6477,7 @@
     },
     "/subscription/confirm_payment": {
       "post": {
-        "operationId": "confirm-billing-subscription-payment",
+        "operationId": "billingSubscriptions_confirmBillingSubscriptionPayment",
         "summary": "Confirm a subscription payment",
         "description": "Synchronizes the subscription after the customer completes the additional payment authentication requested by a quantity or plan change.",
         "tags": [
@@ -6534,7 +6584,7 @@
     },
     "/subscription/change_plan": {
       "patch": {
-        "operationId": "change-billing-plan",
+        "operationId": "billingSubscriptions_changeBillingPlan",
         "summary": "Change the current subscription plan",
         "description": "Changes a self-serve subscription to another active plan with proration. Optional product quantities are absolute quantities on the destination plan.",
         "tags": [
@@ -6651,7 +6701,7 @@
     },
     "/wallet": {
       "get": {
-        "operationId": "get-billing-wallet",
+        "operationId": "billingWallet_getBillingWallet",
         "summary": "Get the billing wallet",
         "description": "Returns the current team's cash, promotional, total, and lifetime wallet balances.",
         "tags": [
@@ -6719,7 +6769,7 @@
     },
     "/wallet/transactions": {
       "get": {
-        "operationId": "list-billing-wallet-transactions",
+        "operationId": "billingWallet_listBillingWalletTransactions",
         "summary": "List wallet transactions",
         "description": "Returns wallet transactions newest first. Use page and per_page for paginated results, or limit for an unpaginated recent subset.",
         "tags": [
@@ -6830,7 +6880,7 @@
     },
     "/wallet/transactions/export.csv": {
       "get": {
-        "operationId": "export-billing-wallet-transactions",
+        "operationId": "billingWallet_exportBillingWalletTransactions",
         "summary": "Export wallet transactions",
         "description": "Downloads the current team's complete wallet transaction history as a CSV file, newest first.",
         "tags": [
@@ -6899,7 +6949,7 @@
     },
     "/wallet/auto_reload": {
       "get": {
-        "operationId": "get-billing-auto-reload",
+        "operationId": "billingWallet_getBillingAutoReload",
         "summary": "Get auto-reload settings",
         "description": "Returns the current team's auto-reload configuration, whether a payment method is available, and the supported reload range.",
         "tags": [
@@ -6960,7 +7010,7 @@
         }
       },
       "put": {
-        "operationId": "update-billing-auto-reload",
+        "operationId": "billingWallet_updateBillingAutoReload",
         "summary": "Update auto-reload settings",
         "description": "Enables, disables, or changes wallet auto-reload. Amounts are expressed in cents and must comply with the limits returned by the GET operation.",
         "tags": [
@@ -8585,6 +8635,18 @@
           }
         },
         "title": "Deepfake Detection_getDetection_Response_200"
+      },
+      "Deepfake Detection_deleteDetection_Response_200": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "title": "Deepfake Detection_deleteDetection_Response_200"
       },
       "DetectBatchStatus": {
         "type": "string",
