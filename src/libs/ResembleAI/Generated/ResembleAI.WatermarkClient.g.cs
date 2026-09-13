@@ -37,7 +37,7 @@ namespace ResembleAI
 
         internal global::ResembleAI.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::ResembleAI.AutoSDKServerConfiguration();
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ResembleAI.SourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::ResembleAI.WatermarkSourceGenerationContext.Default);
 
         /// <summary>
         ///
