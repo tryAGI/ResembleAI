@@ -35,15 +35,6 @@
               "maximum": 1000,
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -52,12 +43,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_listDetections_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_listDetections_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "deepfakeDetection_createDetection",
@@ -66,24 +62,13 @@
         "tags": [
           "deepfakeDetection"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Detection job created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_createDetection_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_createDetection_Response_200"
                 }
               }
             }
@@ -221,7 +206,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -256,15 +246,6 @@
               "type": "boolean",
               "default": false
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -273,7 +254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_getDetection_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_getDetection_Response_200"
                 }
               }
             }
@@ -288,7 +269,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "deepfakeDetection_deleteDetection",
@@ -306,15 +292,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -323,7 +300,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_deleteDetection_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_deleteDetection_Response_200"
                 }
               }
             }
@@ -338,7 +315,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -354,24 +336,13 @@
         "tags": [
           "deepfakeDetection"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "202": {
             "description": "Batch accepted",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_createDetectBatch_Response_202"
+                  "$ref": "#/components/schemas/Deepfake_Detection_createDetectBatch_Response_202"
                 }
               }
             }
@@ -495,7 +466,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -520,15 +496,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -537,7 +504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_getDetectBatch_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_getDetectBatch_Response_200"
                 }
               }
             }
@@ -552,7 +519,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -577,15 +549,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -594,7 +557,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_getDetectFeedback_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_getDetectFeedback_Response_200"
                 }
               }
             }
@@ -609,7 +572,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "deepfakeDetection_createDetectFeedback",
@@ -627,15 +595,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -644,7 +603,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_createDetectFeedback_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_createDetectFeedback_Response_200"
                 }
               }
             }
@@ -697,7 +656,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "deepfakeDetection_deleteDetectFeedback",
@@ -715,15 +679,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -732,7 +687,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Deepfake Detection_deleteDetectFeedback_Response_200"
+                  "$ref": "#/components/schemas/Deepfake_Detection_deleteDetectFeedback_Response_200"
                 }
               }
             }
@@ -747,7 +702,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -763,24 +723,13 @@
         "tags": [
           "detectAgents"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "All six Detect Agents",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Detect Agents_listDetectAgents_Response_200"
+                  "$ref": "#/components/schemas/Detect_Agents_listDetectAgents_Response_200"
                 }
               }
             }
@@ -815,7 +764,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -836,15 +790,6 @@
             "name": "uuid",
             "in": "path",
             "description": "Stable Detect Agent identifier returned by `GET /agents`.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -960,7 +905,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -985,15 +935,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1002,7 +943,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Detect Agents_listDetectAgentInvestigationRuns_Response_200"
+                  "$ref": "#/components/schemas/Detect_Agents_listDetectAgentInvestigationRuns_Response_200"
                 }
               }
             }
@@ -1047,7 +988,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1082,15 +1028,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1099,7 +1036,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Detect Agents_getDetectAgentInvestigationRun_Response_200"
+                  "$ref": "#/components/schemas/Detect_Agents_getDetectAgentInvestigationRun_Response_200"
                 }
               }
             }
@@ -1144,7 +1081,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1159,17 +1101,6 @@
         "description": "Analyze audio, image, or video for comprehensive insights. Optionally reference an existing detect to associate.",
         "tags": [
           "intelligence"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -1216,7 +1147,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1254,15 +1190,6 @@
               "maximum": 1000,
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1276,7 +1203,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1297,15 +1229,6 @@
             "name": "uuid",
             "in": "path",
             "description": "The UUID of the intelligence report",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1333,7 +1256,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1358,15 +1286,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1375,7 +1294,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Detect Intelligence_askDetectIntelligenceQuestion_Response_202"
+                  "$ref": "#/components/schemas/Detect_Intelligence_askDetectIntelligenceQuestion_Response_202"
                 }
               }
             }
@@ -1428,7 +1347,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1462,15 +1386,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1479,7 +1394,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Detect Intelligence_getDetectIntelligenceQuestion_Response_200"
+                  "$ref": "#/components/schemas/Detect_Intelligence_getDetectIntelligenceQuestion_Response_200"
                 }
               }
             }
@@ -1494,7 +1409,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1532,15 +1452,6 @@
               "maximum": 1000,
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1549,12 +1460,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Audio Source Tracing_listAudioSourceTracings_Response_200"
+                  "$ref": "#/components/schemas/Audio_Source_Tracing_listAudioSourceTracings_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1579,15 +1495,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1596,7 +1503,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Audio Source Tracing_getAudioSourceTracing_Response_200"
+                  "$ref": "#/components/schemas/Audio_Source_Tracing_getAudioSourceTracing_Response_200"
                 }
               }
             }
@@ -1611,7 +1518,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1656,15 +1568,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1678,7 +1581,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "identity_createIdentity",
@@ -1686,17 +1594,6 @@
         "description": "Create a new identity profile. Two request forms are supported: the simple audio-only form (flat `name` + one audio source; creates a team-visible person identity and enrolls the voice immediately) and the multimodal form (a nested `identity` object with full control over type and visibility).\n",
         "tags": [
           "identity"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -1728,7 +1625,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1748,15 +1650,6 @@
           {
             "name": "uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1784,7 +1677,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1804,15 +1702,6 @@
           {
             "name": "uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -1883,7 +1772,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1916,15 +1810,6 @@
             "schema": {
               "type": "integer"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1948,7 +1833,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -1963,17 +1853,6 @@
         "description": "Search the team's identities (plus global identities) for matches against a media sample. Supports audio (voice matching) and image (face/visual matching); video is not yet supported for synchronous search.\n",
         "tags": [
           "identity"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -2036,7 +1915,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2053,15 +1937,6 @@
           "watermark"
         ],
         "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "Prefer",
             "in": "header",
@@ -2092,7 +1967,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2116,15 +1996,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2138,7 +2009,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2155,15 +2031,6 @@
           "watermark"
         ],
         "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "Prefer",
             "in": "header",
@@ -2194,7 +2061,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2218,15 +2090,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2240,7 +2103,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2277,15 +2145,6 @@
               "maximum": 100,
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2309,7 +2168,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "signal_createSignalSubmission",
@@ -2317,17 +2181,6 @@
         "description": "Score a piece of content against the fraud and scam categories available to your team\nand return a verdict with the best-matching categories.\n\nSupply exactly one of:\n\n- **Text** — `application/json` with a `text` field.\n- **File** — `multipart/form-data` with the media attached as `file`. Audio, image, and\n  video are supported, up to 15 MB. The media type is detected from the file's MIME type\n  unless `media_type` is supplied.\n",
         "tags": [
           "signal"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -2388,7 +2241,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2411,15 +2269,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -2444,7 +2293,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2459,17 +2313,6 @@
         "description": "Retrieve the team's Signal settings, the built-in categories, the team's custom categories with their example phrases, and calibration status.",
         "tags": [
           "signal"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -2492,7 +2335,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "signal_createSignalCustomCategory",
@@ -2500,17 +2348,6 @@
         "description": "Create a custom fraud category from example phrases. Categories embed asynchronously:\na new category starts at `pending`, moves to `embedding`, and becomes usable for\nscoring once its status is `ready`.\n",
         "tags": [
           "signal"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -2542,7 +2379,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2565,15 +2407,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -2598,7 +2431,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "signal_deleteSignalCustomCategory",
@@ -2614,15 +2452,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -2647,7 +2476,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "patch": {
         "operationId": "signal_updateSignalCustomCategory",
@@ -2663,15 +2497,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -2715,7 +2540,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2730,17 +2560,6 @@
         "description": "Update team-level Signal preferences.",
         "tags": [
           "signal"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -2772,7 +2591,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2788,24 +2612,13 @@
         "tags": [
           "secureUploads"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Upload accepted",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Secure Uploads_createSecureUpload_Response_200"
+                  "$ref": "#/components/schemas/Secure_Uploads_createSecureUpload_Response_200"
                 }
               }
             }
@@ -2849,7 +2662,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2864,17 +2682,6 @@
         "description": "Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.",
         "tags": [
           "textToSpeech"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -2960,7 +2767,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -2975,17 +2787,6 @@
         "description": "Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.",
         "tags": [
           "textToSpeech"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -3054,7 +2855,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3091,15 +2897,6 @@
               "maximum": 50,
               "default": 25
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3113,7 +2910,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "speechToText_createTranscript",
@@ -3121,17 +2923,6 @@
         "description": "Submit audio or video for transcription",
         "tags": [
           "speechToText"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -3194,7 +2985,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3219,15 +3015,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3241,7 +3028,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3265,15 +3057,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -3316,7 +3099,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3361,15 +3149,6 @@
               "maximum": 50,
               "default": 25
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3383,7 +3162,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3417,15 +3201,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3439,7 +3214,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3477,15 +3257,6 @@
               "maximum": 1000,
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3494,7 +3265,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Audio Enhancement_listAudioEnhancements_Response_200"
+                  "$ref": "#/components/schemas/Audio_Enhancement_listAudioEnhancements_Response_200"
                 }
               }
             }
@@ -3509,7 +3280,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "audioEnhancement_createAudioEnhancement",
@@ -3518,24 +3294,13 @@
         "tags": [
           "audioEnhancement"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "202": {
             "description": "Enhancement job created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Audio Enhancement_createAudioEnhancement_Response_202"
+                  "$ref": "#/components/schemas/Audio_Enhancement_createAudioEnhancement_Response_202"
                 }
               }
             }
@@ -3594,7 +3359,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3619,15 +3389,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3636,7 +3397,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Audio Enhancement_getAudioEnhancement_Response_200"
+                  "$ref": "#/components/schemas/Audio_Enhancement_getAudioEnhancement_Response_200"
                 }
               }
             }
@@ -3651,7 +3412,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3697,15 +3463,6 @@
               "type": "boolean",
               "default": false
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3719,7 +3476,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "voices_createVoice",
@@ -3727,17 +3489,6 @@
         "description": "Create a new voice",
         "tags": [
           "voices"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -3779,7 +3530,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3803,15 +3559,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -3825,7 +3572,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "voices_deleteVoice",
@@ -3838,15 +3590,6 @@
           {
             "name": "voice_uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3864,7 +3607,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3884,15 +3632,6 @@
           {
             "name": "voice_uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -3925,7 +3664,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3941,24 +3685,13 @@
         "tags": [
           "voiceDesign"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Voice candidates generated",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Design_generateVoiceDesign_Response_200"
+                  "$ref": "#/components/schemas/Voice_Design_generateVoiceDesign_Response_200"
                 }
               }
             }
@@ -3981,7 +3714,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -3997,24 +3735,13 @@
         "tags": [
           "voiceDesign"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Voice created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Design_createVoiceFromCandidate_Response_200"
+                  "$ref": "#/components/schemas/Voice_Design_createVoiceFromCandidate_Response_200"
                 }
               }
             }
@@ -4044,7 +3771,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4087,15 +3819,6 @@
               "type": "integer",
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4109,7 +3832,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "recordings_createRecording",
@@ -4122,15 +3850,6 @@
           {
             "name": "voice_uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4191,7 +3910,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4223,15 +3947,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4245,7 +3960,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "recordings_deleteRecording",
@@ -4270,15 +3990,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4292,7 +4003,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "patch": {
         "operationId": "recordings_updateRecording",
@@ -4313,15 +4029,6 @@
           {
             "name": "recording_id",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -4362,7 +4069,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4397,15 +4109,6 @@
               "type": "integer",
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4414,12 +4117,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Term Substitutions_listTermSubstitutions_Response_200"
+                  "$ref": "#/components/schemas/Term_Substitutions_listTermSubstitutions_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "termSubstitutions_createTermSubstitution",
@@ -4428,24 +4136,13 @@
         "tags": [
           "termSubstitutions"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Term substitution created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Term Substitutions_createTermSubstitution_Response_200"
+                  "$ref": "#/components/schemas/Term_Substitutions_createTermSubstitution_Response_200"
                 }
               }
             }
@@ -4473,7 +4170,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4497,15 +4199,6 @@
             "schema": {
               "type": "integer"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4514,12 +4207,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Term Substitutions_getTermSubstitution_Response_200"
+                  "$ref": "#/components/schemas/Term_Substitutions_getTermSubstitution_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "termSubstitutions_deleteTermSubstitution",
@@ -4536,15 +4234,6 @@
             "schema": {
               "type": "integer"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4553,12 +4242,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Term Substitutions_deleteTermSubstitution_Response_200"
+                  "$ref": "#/components/schemas/Term_Substitutions_deleteTermSubstitution_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4610,15 +4304,6 @@
             "schema": {
               "type": "boolean"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4627,12 +4312,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Custom Pronunciations_listPronunciations_Response_200"
+                  "$ref": "#/components/schemas/Custom_Pronunciations_listPronunciations_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "customPronunciations_createPronunciation",
@@ -4641,24 +4331,13 @@
         "tags": [
           "customPronunciations"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "201": {
             "description": "Pronunciation created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Custom Pronunciations_createPronunciation_Response_201"
+                  "$ref": "#/components/schemas/Custom_Pronunciations_createPronunciation_Response_201"
                 }
               }
             }
@@ -4697,7 +4376,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4713,24 +4397,13 @@
         "tags": [
           "customPronunciations"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "201": {
             "description": "Bulk creation result",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Custom Pronunciations_bulkCreatePronunciations_Response_201"
+                  "$ref": "#/components/schemas/Custom_Pronunciations_bulkCreatePronunciations_Response_201"
                 }
               }
             }
@@ -4754,7 +4427,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4779,15 +4457,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4796,7 +4465,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Custom Pronunciations_getPronunciation_Response_200"
+                  "$ref": "#/components/schemas/Custom_Pronunciations_getPronunciation_Response_200"
                 }
               }
             }
@@ -4811,7 +4480,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "customPronunciations_deletePronunciation",
@@ -4829,15 +4503,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4846,12 +4511,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Custom Pronunciations_deletePronunciation_Response_200"
+                  "$ref": "#/components/schemas/Custom_Pronunciations_deletePronunciation_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "patch": {
         "operationId": "customPronunciations_updatePronunciation",
@@ -4869,15 +4539,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -4886,7 +4547,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Custom Pronunciations_updatePronunciation_Response_200"
+                  "$ref": "#/components/schemas/Custom_Pronunciations_updatePronunciation_Response_200"
                 }
               }
             }
@@ -4909,7 +4570,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -4925,29 +4591,23 @@
         "tags": [
           "voiceSettingsPresets"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "List of presets",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Settings Presets_listVoiceSettingsPresets_Response_200"
+                  "$ref": "#/components/schemas/Voice_Settings_Presets_listVoiceSettingsPresets_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "voiceSettingsPresets_createVoiceSettingsPreset",
@@ -4956,24 +4616,13 @@
         "tags": [
           "voiceSettingsPresets"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "201": {
             "description": "Preset created",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Settings Presets_createVoiceSettingsPreset_Response_201"
+                  "$ref": "#/components/schemas/Voice_Settings_Presets_createVoiceSettingsPreset_Response_201"
                 }
               }
             }
@@ -5040,7 +4689,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5064,15 +4718,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5081,12 +4726,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Settings Presets_getVoiceSettingsPreset_Response_200"
+                  "$ref": "#/components/schemas/Voice_Settings_Presets_getVoiceSettingsPreset_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "voiceSettingsPresets_deleteVoiceSettingsPreset",
@@ -5103,15 +4753,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5120,12 +4761,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Settings Presets_deleteVoiceSettingsPreset_Response_200"
+                  "$ref": "#/components/schemas/Voice_Settings_Presets_deleteVoiceSettingsPreset_Response_200"
                 }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "patch": {
         "operationId": "voiceSettingsPresets_updateVoiceSettingsPreset",
@@ -5142,15 +4788,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5159,7 +4796,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Voice Settings Presets_updateVoiceSettingsPreset_Response_200"
+                  "$ref": "#/components/schemas/Voice_Settings_Presets_updateVoiceSettingsPreset_Response_200"
                 }
               }
             }
@@ -5200,7 +4837,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5235,15 +4877,6 @@
               "type": "integer",
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5257,7 +4890,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "projects_createProject",
@@ -5265,17 +4903,6 @@
         "description": "Create a new project",
         "tags": [
           "projects"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -5317,7 +4944,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5341,15 +4973,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5363,7 +4986,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "put": {
         "operationId": "projects_updateProject",
@@ -5376,15 +5004,6 @@
           {
             "name": "project_uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5425,7 +5044,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "projects_deleteProject",
@@ -5438,15 +5062,6 @@
           {
             "name": "project_uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5464,7 +5079,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5507,15 +5127,6 @@
               "type": "integer",
               "default": 10
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5529,7 +5140,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5561,15 +5177,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5583,7 +5190,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "clips_deleteClip",
@@ -5608,15 +5220,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5630,7 +5233,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "patch": {
         "operationId": "clips_updateClip",
@@ -5651,15 +5259,6 @@
           {
             "name": "clip_uuid",
             "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
             "required": true,
             "schema": {
               "type": "string"
@@ -5697,7 +5296,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5713,17 +5317,6 @@
         "tags": [
           "duets"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "List of duet voices",
@@ -5735,7 +5328,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "duets_createDuetVoice",
@@ -5743,17 +5341,6 @@
         "description": "Create a custom voice for duet generation",
         "tags": [
           "duets"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -5794,7 +5381,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5817,15 +5409,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -5857,7 +5440,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "delete": {
         "operationId": "duets_deleteDuetVoice",
@@ -5874,15 +5462,6 @@
             "schema": {
               "type": "integer"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -5896,7 +5475,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -5912,17 +5496,6 @@
         "tags": [
           "duets"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "List of voice pairs",
@@ -5934,7 +5507,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "post": {
         "operationId": "duets_createDuetVoicePair",
@@ -5942,17 +5520,6 @@
         "description": "Create a voice pair for duet generation",
         "tags": [
           "duets"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -5992,7 +5559,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6007,17 +5579,6 @@
         "description": "Generate conversational audio with two speakers",
         "tags": [
           "duets"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -6064,7 +5625,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6080,17 +5646,6 @@
         "tags": [
           "account"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Account details",
@@ -6102,7 +5657,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6118,17 +5678,6 @@
         "tags": [
           "account"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Team information",
@@ -6140,7 +5689,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6165,15 +5719,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -6187,7 +5732,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6298,17 +5848,6 @@
         "tags": [
           "billingSubscriptions"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Current subscription or null.",
@@ -6350,7 +5889,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6365,17 +5909,6 @@
         "description": "Updates one or more adjustable subscription products atomically. Each `new_quantity` is the desired absolute total, not an increment. A product is adjustable when its category is `subscription` and its `plan_product.allow_additional_usage` value is true. Quantities must remain within the plan's minimum and maximum and cannot be reduced below `consumed_quantity`.",
         "tags": [
           "billingSubscriptions"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -6467,7 +6000,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6482,17 +6020,6 @@
         "description": "Synchronizes the subscription after the customer completes the additional payment authentication requested by a quantity or plan change.",
         "tags": [
           "billingSubscriptions"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -6574,7 +6101,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6589,17 +6121,6 @@
         "description": "Changes a self-serve subscription to another active plan with proration. Optional product quantities are absolute quantities on the destination plan.",
         "tags": [
           "billingSubscriptions"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -6691,7 +6212,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6706,17 +6232,6 @@
         "description": "Returns the current team's cash, promotional, total, and lifetime wallet balances.",
         "tags": [
           "billingWallet"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -6759,7 +6274,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6807,15 +6327,6 @@
               "minimum": 1,
               "maximum": 100,
               "default": 10
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -6870,7 +6381,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6885,17 +6401,6 @@
         "description": "Downloads the current team's complete wallet transaction history as a CSV file, newest first.",
         "tags": [
           "billingWallet"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -6939,7 +6444,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -6954,17 +6464,6 @@
         "description": "Returns the current team's auto-reload configuration, whether a payment method is available, and the supported reload range.",
         "tags": [
           "billingWallet"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -7007,7 +6506,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "put": {
         "operationId": "billingWallet_updateBillingAutoReload",
@@ -7016,24 +6520,13 @@
         "tags": [
           "billingWallet"
         ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "API key from https://app.resemble.ai/hub/api",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Updated auto-reload configuration.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Billing Wallet_updateBillingAutoReload_Response_200"
+                  "$ref": "#/components/schemas/Billing_Wallet_updateBillingAutoReload_Response_200"
                 }
               }
             }
@@ -7097,7 +6590,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
       },
       "servers": [
         {
@@ -7106,6 +6604,83 @@
       ]
     }
   },
+  "tags": [
+    {
+      "name": "deepfakeDetection"
+    },
+    {
+      "name": "detectAgents"
+    },
+    {
+      "name": "intelligence"
+    },
+    {
+      "name": "detectIntelligence"
+    },
+    {
+      "name": "audioSourceTracing"
+    },
+    {
+      "name": "identity"
+    },
+    {
+      "name": "watermark"
+    },
+    {
+      "name": "signal"
+    },
+    {
+      "name": "secureUploads"
+    },
+    {
+      "name": "textToSpeech"
+    },
+    {
+      "name": "speechToText"
+    },
+    {
+      "name": "audioEnhancement"
+    },
+    {
+      "name": "voices"
+    },
+    {
+      "name": "voiceDesign"
+    },
+    {
+      "name": "recordings"
+    },
+    {
+      "name": "termSubstitutions"
+    },
+    {
+      "name": "customPronunciations"
+    },
+    {
+      "name": "voiceSettingsPresets"
+    },
+    {
+      "name": "projects"
+    },
+    {
+      "name": "clips"
+    },
+    {
+      "name": "duets"
+    },
+    {
+      "name": "account"
+    },
+    {
+      "name": "billingPlans"
+    },
+    {
+      "name": "billingSubscriptions"
+    },
+    {
+      "name": "billingWallet"
+    }
+  ],
   "servers": [
     {
       "url": "https://app.resemble.ai/api/v2",
@@ -7883,7 +7458,7 @@
         },
         "title": "DetectGetResponsesContentApplicationJsonSchemaItemsItems"
       },
-      "Deepfake Detection_listDetections_Response_200": {
+      "Deepfake_Detection_listDetections_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8190,7 +7765,7 @@
         },
         "title": "DetectPostResponsesContentApplicationJsonSchemaItem"
       },
-      "Deepfake Detection_createDetection_Response_200": {
+      "Deepfake_Detection_createDetection_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8624,7 +8199,7 @@
         },
         "title": "DetectUuidGetResponsesContentApplicationJsonSchemaItem"
       },
-      "Deepfake Detection_getDetection_Response_200": {
+      "Deepfake_Detection_getDetection_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8636,7 +8211,7 @@
         },
         "title": "Deepfake Detection_getDetection_Response_200"
       },
-      "Deepfake Detection_deleteDetection_Response_200": {
+      "Deepfake_Detection_deleteDetection_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8697,7 +8272,7 @@
         "description": "Aggregate state for a batch detection job. Returned by `POST /detect/batch` and `GET /detect/batch/{uuid}`.",
         "title": "DetectBatch"
       },
-      "Deepfake Detection_createDetectBatch_Response_202": {
+      "Deepfake_Detection_createDetectBatch_Response_202": {
         "type": "object",
         "properties": {
           "success": {
@@ -8709,7 +8284,7 @@
         },
         "title": "Deepfake Detection_createDetectBatch_Response_202"
       },
-      "Deepfake Detection_getDetectBatch_Response_200": {
+      "Deepfake_Detection_getDetectBatch_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8829,7 +8404,7 @@
         "description": "A reviewer's answer about a detection verdict, stored with a snapshot of what the\nmodel said at the time the answer was submitted. Returned by\n`POST /detect/{uuid}/feedback` and `GET /detect/{uuid}/feedback`.\n",
         "title": "DetectFeedback"
       },
-      "Deepfake Detection_getDetectFeedback_Response_200": {
+      "Deepfake_Detection_getDetectFeedback_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8854,7 +8429,7 @@
         "description": "What the verdict should have been.\n  - `correct` — the verdict was right.\n  - `should_be_ai_generated` — we said authentic; it is AI-generated.\n  - `should_be_authentic` — we said AI-generated; it is genuine and unaltered.\n  - `should_be_non_ai` — no model generated it, but it may still be edited, spliced, or a human impersonation.\n  - `should_be_neutral` — neither call is right; the media is genuinely ambiguous.\n  - `skipped` — the verdict was wrong, but the reviewer didn't say how.\n",
         "title": "DetectUuidFeedbackPostRequestBodyContentApplicationJsonSchemaType"
       },
-      "Deepfake Detection_createDetectFeedback_Response_200": {
+      "Deepfake_Detection_createDetectFeedback_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8866,7 +8441,7 @@
         },
         "title": "Deepfake Detection_createDetectFeedback_Response_200"
       },
-      "Deepfake Detection_deleteDetectFeedback_Response_200": {
+      "Deepfake_Detection_deleteDetectFeedback_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -8999,7 +8574,7 @@
         "description": "A Resemble-managed Detect Agent available to the authenticated team.",
         "title": "DetectAgent"
       },
-      "Detect Agents_listDetectAgents_Response_200": {
+      "Detect_Agents_listDetectAgents_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -9158,7 +8733,7 @@
         ],
         "title": "DetectAgentRunSummary"
       },
-      "Detect Agents_listDetectAgentInvestigationRuns_Response_200": {
+      "Detect_Agents_listDetectAgentInvestigationRuns_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -9265,7 +8840,7 @@
         ],
         "title": "DetectAgentRun"
       },
-      "Detect Agents_getDetectAgentInvestigationRun_Response_200": {
+      "Detect_Agents_getDetectAgentInvestigationRun_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -9764,7 +9339,7 @@
         },
         "title": "DetectsUuidIntelligencePostResponsesContentApplicationJsonSchemaItem"
       },
-      "Detect Intelligence_askDetectIntelligenceQuestion_Response_202": {
+      "Detect_Intelligence_askDetectIntelligenceQuestion_Response_202": {
         "type": "object",
         "properties": {
           "success": {
@@ -9831,7 +9406,7 @@
         },
         "title": "DetectsUuidIntelligenceQuestionUuidGetResponsesContentApplicationJsonSchemaItem"
       },
-      "Detect Intelligence_getDetectIntelligenceQuestion_Response_200": {
+      "Detect_Intelligence_getDetectIntelligenceQuestion_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -9879,7 +9454,7 @@
         },
         "title": "AudioSourceTracingsGetResponsesContentApplicationJsonSchemaItemsItems"
       },
-      "Audio Source Tracing_listAudioSourceTracings_Response_200": {
+      "Audio_Source_Tracing_listAudioSourceTracings_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -9942,7 +9517,7 @@
         },
         "title": "AudioSourceTracingsUuidGetResponsesContentApplicationJsonSchemaItem"
       },
-      "Audio Source Tracing_getAudioSourceTracing_Response_200": {
+      "Audio_Source_Tracing_getAudioSourceTracing_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -11273,7 +10848,7 @@
         ],
         "title": "SignalSettingsResponse"
       },
-      "Secure Uploads_createSecureUpload_Response_200": {
+      "Secure_Uploads_createSecureUpload_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -11813,7 +11388,7 @@
         },
         "title": "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems"
       },
-      "Audio Enhancement_listAudioEnhancements_Response_200": {
+      "Audio_Enhancement_listAudioEnhancements_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -11859,7 +11434,7 @@
         ],
         "title": "AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus"
       },
-      "Audio Enhancement_createAudioEnhancement_Response_202": {
+      "Audio_Enhancement_createAudioEnhancement_Response_202": {
         "type": "object",
         "properties": {
           "success": {
@@ -11908,7 +11483,7 @@
         ],
         "title": "AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus"
       },
-      "Audio Enhancement_getAudioEnhancement_Response_200": {
+      "Audio_Enhancement_getAudioEnhancement_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12311,7 +11886,7 @@
         },
         "title": "VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems"
       },
-      "Voice Design_generateVoiceDesign_Response_200": {
+      "Voice_Design_generateVoiceDesign_Response_200": {
         "type": "object",
         "properties": {
           "voice_candidates": {
@@ -12323,7 +11898,7 @@
         },
         "title": "Voice Design_generateVoiceDesign_Response_200"
       },
-      "Voice Design_createVoiceFromCandidate_Response_200": {
+      "Voice_Design_createVoiceFromCandidate_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12420,7 +11995,7 @@
         "properties": {},
         "title": "TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems"
       },
-      "Term Substitutions_listTermSubstitutions_Response_200": {
+      "Term_Substitutions_listTermSubstitutions_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12440,7 +12015,7 @@
         "properties": {},
         "title": "TermSubstitutionsPostResponsesContentApplicationJsonSchemaItem"
       },
-      "Term Substitutions_createTermSubstitution_Response_200": {
+      "Term_Substitutions_createTermSubstitution_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12457,7 +12032,7 @@
         "properties": {},
         "title": "TermSubstitutionsIdGetResponsesContentApplicationJsonSchemaItem"
       },
-      "Term Substitutions_getTermSubstitution_Response_200": {
+      "Term_Substitutions_getTermSubstitution_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12469,7 +12044,7 @@
         },
         "title": "Term Substitutions_getTermSubstitution_Response_200"
       },
-      "Term Substitutions_deleteTermSubstitution_Response_200": {
+      "Term_Substitutions_deleteTermSubstitution_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12533,7 +12108,7 @@
         },
         "title": "CustomPronunciation"
       },
-      "Custom Pronunciations_listPronunciations_Response_200": {
+      "Custom_Pronunciations_listPronunciations_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12548,7 +12123,7 @@
         },
         "title": "Custom Pronunciations_listPronunciations_Response_200"
       },
-      "Custom Pronunciations_createPronunciation_Response_201": {
+      "Custom_Pronunciations_createPronunciation_Response_201": {
         "type": "object",
         "properties": {
           "success": {
@@ -12565,7 +12140,7 @@
         "properties": {},
         "title": "PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems"
       },
-      "Custom Pronunciations_bulkCreatePronunciations_Response_201": {
+      "Custom_Pronunciations_bulkCreatePronunciations_Response_201": {
         "type": "object",
         "properties": {
           "success": {
@@ -12594,7 +12169,7 @@
         },
         "title": "Custom Pronunciations_bulkCreatePronunciations_Response_201"
       },
-      "Custom Pronunciations_getPronunciation_Response_200": {
+      "Custom_Pronunciations_getPronunciation_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12606,7 +12181,7 @@
         },
         "title": "Custom Pronunciations_getPronunciation_Response_200"
       },
-      "Custom Pronunciations_deletePronunciation_Response_200": {
+      "Custom_Pronunciations_deletePronunciation_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12615,7 +12190,7 @@
         },
         "title": "Custom Pronunciations_deletePronunciation_Response_200"
       },
-      "Custom Pronunciations_updatePronunciation_Response_200": {
+      "Custom_Pronunciations_updatePronunciation_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12632,7 +12207,7 @@
         "properties": {},
         "title": "VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems"
       },
-      "Voice Settings Presets_listVoiceSettingsPresets_Response_200": {
+      "Voice_Settings_Presets_listVoiceSettingsPresets_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12652,7 +12227,7 @@
         "properties": {},
         "title": "VoiceSettingsPresetsPostResponsesContentApplicationJsonSchemaData"
       },
-      "Voice Settings Presets_createVoiceSettingsPreset_Response_201": {
+      "Voice_Settings_Presets_createVoiceSettingsPreset_Response_201": {
         "type": "object",
         "properties": {
           "success": {
@@ -12672,7 +12247,7 @@
         "properties": {},
         "title": "VoiceSettingsPresetsUuidGetResponsesContentApplicationJsonSchemaData"
       },
-      "Voice Settings Presets_getVoiceSettingsPreset_Response_200": {
+      "Voice_Settings_Presets_getVoiceSettingsPreset_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12684,7 +12259,7 @@
         },
         "title": "Voice Settings Presets_getVoiceSettingsPreset_Response_200"
       },
-      "Voice Settings Presets_deleteVoiceSettingsPreset_Response_200": {
+      "Voice_Settings_Presets_deleteVoiceSettingsPreset_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -12698,7 +12273,7 @@
         "properties": {},
         "title": "VoiceSettingsPresetsUuidPatchResponsesContentApplicationJsonSchemaData"
       },
-      "Voice Settings Presets_updateVoiceSettingsPreset_Response_200": {
+      "Voice_Settings_Presets_updateVoiceSettingsPreset_Response_200": {
         "type": "object",
         "properties": {
           "success": {
@@ -14165,7 +13740,7 @@
         ],
         "title": "BillingUpdateAutoReloadRequest"
       },
-      "Billing Wallet_updateBillingAutoReload_Response_200": {
+      "Billing_Wallet_updateBillingAutoReload_Response_200": {
         "type": "object",
         "properties": {
           "auto_reload": {
