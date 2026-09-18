@@ -168,6 +168,11 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
+        public TextDetectionClient TextDetection { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public TextToSpeechClient TextToSpeech { get; }
 
         /// <summary>

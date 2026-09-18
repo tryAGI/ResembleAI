@@ -217,6 +217,15 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemMetrics), TypeInfoPropertyName = "WatermarkDetectItemMetrics2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectItemStatus), TypeInfoPropertyName = "TextDetectItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectItemPrediction), TypeInfoPropertyName = "TextDetectItemPrediction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::ResembleAI.TextDetectItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectPostParametersPrefer), TypeInfoPropertyName = "TextDetectPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectRequestThinking), TypeInfoPropertyName = "TextDetectRequestThinking2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionInputModality), TypeInfoPropertyName = "SignalSubmissionInputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionVerdict), TypeInfoPropertyName = "SignalSubmissionVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalCategoryScore))]
@@ -505,15 +514,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultStatus?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectWatermarkAnalysisMetrics?), TypeInfoPropertyName = "NullableDetectWatermarkAnalysisMetrics2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectC2PaManifestValidationState?), TypeInfoPropertyName = "NullableDetectC2PaManifestValidationState2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableDetectPostRequestBodyContentMultipartFormDataSchemaModality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemModality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -526,6 +526,15 @@ namespace ResembleAI
         Converters = new global::System.Type[]
         {
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectC2PaManifestValidationState?), TypeInfoPropertyName = "NullableDetectC2PaManifestValidationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableDetectPostRequestBodyContentMultipartFormDataSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1LivenessAssessment2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectUuidGetResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectUuidGetResponsesContentApplicationJsonSchemaItemStatus2")]
@@ -576,6 +585,10 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemStatus?), TypeInfoPropertyName = "NullableWatermarkDetectItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemModelVersion?), TypeInfoPropertyName = "NullableWatermarkDetectItemModelVersion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkDetectItemMetrics?), TypeInfoPropertyName = "NullableWatermarkDetectItemMetrics2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectItemStatus?), TypeInfoPropertyName = "NullableTextDetectItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectItemPrediction?), TypeInfoPropertyName = "NullableTextDetectItemPrediction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectPostParametersPrefer?), TypeInfoPropertyName = "NullableTextDetectPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectRequestThinking?), TypeInfoPropertyName = "NullableTextDetectRequestThinking2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionInputModality?), TypeInfoPropertyName = "NullableSignalSubmissionInputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionVerdict?), TypeInfoPropertyName = "NullableSignalSubmissionVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalScoreItemInputModality?), TypeInfoPropertyName = "NullableSignalScoreItemInputModality2")]
@@ -625,6 +638,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityAttachment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityEmbeddingsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityProjectsItems>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.TextDetectItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalCategoryScore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalTopMatch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalSubmission>))]
@@ -980,6 +994,22 @@ namespace ResembleAI
                     || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion)
 
                     || typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion?)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectItemPrediction)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectItemPrediction?)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectPostParametersPrefer)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectPostParametersPrefer?)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking)
+
+                    || typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking?)
 
                     || typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality)
 
@@ -1720,6 +1750,46 @@ namespace ResembleAI
                 if (typeToConvert == typeof(global::ResembleAI.WatermarkDetectItemModelVersion?))
                 {
                     return new global::ResembleAI.JsonConverters.WatermarkDetectItemModelVersionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectItemPrediction))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectItemPredictionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectItemPrediction?))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectItemPredictionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectPostParametersPrefer))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectPostParametersPreferJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectPostParametersPrefer?))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectPostParametersPreferNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectRequestThinkingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking?))
+                {
+                    return new global::ResembleAI.JsonConverters.TextDetectRequestThinkingNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality))

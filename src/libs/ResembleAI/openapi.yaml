@@ -2116,6 +2116,210 @@
         }
       ]
     },
+    "/text_detect": {
+      "get": {
+        "operationId": "textDetection_listTextDetections",
+        "summary": "List text detections",
+        "description": "Retrieve a paginated list of text detections for the authenticated user's team, newest first.",
+        "tags": [
+          "textDetection"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number (must be >= 1)",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of items per page (10-1000)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of text detections",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TextDetectListResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "operationId": "textDetection_createTextDetection",
+        "summary": "Detect AI-generated text",
+        "description": "Submit a passage of text and classify it as AI-generated or human-written.\n\nProcessing is asynchronous by default: the response returns immediately with `status: processing`,\nand you can poll `GET /text_detect/{uuid}` or supply a `callback_url` to be notified. Send the\n`Prefer: wait` header to block until the verdict is available and receive the completed item in the\nsame response. Allow a generous client timeout when waiting, since the first request after a period\nof inactivity can take several minutes while the model warms up.\n\nRequests are rejected with a 400 when `text` is missing, exceeds 100,000 characters, or contains\nfewer than 25 words. Each successfully scored request bills one Text Detection unit; abstained\n(`uncertain`) results are not billed.\n",
+        "tags": [
+          "textDetection"
+        ],
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "When set to \"wait\", the API processes synchronously and returns the completed result.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/TextDetectPostParametersPrefer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Text detection created (or completed when `Prefer: wait` was sent)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TextDetectResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request: missing text, text over 100,000 characters, fewer than 25 words, invalid `thinking` or `threshold`, or malformed `callback_url`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TextDetectRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
+    "/text_detect/{uuid}": {
+      "get": {
+        "operationId": "textDetection_getTextDetection",
+        "summary": "Get text detection",
+        "description": "Retrieve a text detection by UUID. Poll this endpoint until `status` is `completed` or `failed`.",
+        "tags": [
+          "textDetection"
+        ],
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "description": "UUID of the text detection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Text detection result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TextDetectResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The detection belongs to another team",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
     "/signal": {
       "get": {
         "operationId": "signal_listSignalSubmissions",
@@ -6627,6 +6831,9 @@
       "name": "watermark"
     },
     {
+      "name": "textDetection"
+    },
+    {
       "name": "signal"
     },
     {
@@ -10260,6 +10467,177 @@
           "item"
         ],
         "title": "WatermarkDetectResponse"
+      },
+      "TextDetectItemStatus": {
+        "type": "string",
+        "enum": [
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "description": "`processing` until inference returns, `completed` once `prediction` and `confidence` are populated, or `failed` if the analysis errored.",
+        "title": "TextDetectItemStatus"
+      },
+      "TextDetectItemPrediction": {
+        "type": "string",
+        "enum": [
+          "ai",
+          "human",
+          "uncertain"
+        ],
+        "description": "Verdict for the passage. `uncertain` means the detector abstained rather than guessing (for example, too few words after normalization); abstained requests are not billed. Null while processing.",
+        "title": "TextDetectItemPrediction"
+      },
+      "TextDetectItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TextDetectItemStatus",
+            "description": "`processing` until inference returns, `completed` once `prediction` and `confidence` are populated, or `failed` if the analysis errored."
+          },
+          "prediction": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/TextDetectItemPrediction"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Verdict for the passage. `uncertain` means the detector abstained rather than guessing (for example, too few words after normalization); abstained requests are not billed. Null while processing."
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Confidence in the reported `prediction`, from 0 to 1. Null while processing."
+          },
+          "text_content": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The submitted text."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "uuid",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "TextDetectItem"
+      },
+      "TextDetectListResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "page": {
+            "type": "integer"
+          },
+          "num_pages": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TextDetectItem"
+            }
+          }
+        },
+        "required": [
+          "success",
+          "page",
+          "num_pages",
+          "page_size",
+          "total_count",
+          "items"
+        ],
+        "title": "TextDetectListResponse"
+      },
+      "TextDetectPostParametersPrefer": {
+        "type": "string",
+        "enum": [
+          "wait"
+        ],
+        "title": "TextDetectPostParametersPrefer"
+      },
+      "TextDetectRequestThinking": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "default": "low",
+        "description": "How much reasoning effort the detector spends on the passage. Higher levels can improve accuracy on ambiguous text at the cost of latency.",
+        "title": "TextDetectRequestThinking"
+      },
+      "TextDetectRequest": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100000,
+            "description": "The text to analyze. Must contain at least 25 words (whitespace-delimited) and at most 100,000 characters. Shorter passages are rejected with a 400 because no threshold reliably separates casual human writing from AI-generated text below that length."
+          },
+          "thinking": {
+            "$ref": "#/components/schemas/TextDetectRequestThinking",
+            "description": "How much reasoning effort the detector spends on the passage. Higher levels can improve accuracy on ambiguous text at the cost of latency."
+          },
+          "threshold": {
+            "type": "number",
+            "format": "double",
+            "description": "Probability cutoff used to turn the AI-likelihood score into the `ai` or `human` prediction. Scores at or above the threshold are reported as `ai`."
+          },
+          "callback_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "POST destination for the result once processing finishes. The body matches the response of `GET /text_detect/{uuid}` with an additional top-level `error` field when analysis failed."
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "title": "TextDetectRequest"
+      },
+      "TextDetectResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/TextDetectItem"
+          }
+        },
+        "required": [
+          "success",
+          "item"
+        ],
+        "title": "TextDetectResponse"
       },
       "SignalSubmissionInputModality": {
         "type": "string",
