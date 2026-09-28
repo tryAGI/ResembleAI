@@ -132,13 +132,13 @@ namespace ResembleAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.DetectIntelligenceResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.DetectIntelligenceResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.DetectIntelligenceResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectIntelligenceResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDetectIntelligenceResult(), typeInfo);
             }
             else if (value.IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1(), typeInfo);
             }
         }
     }

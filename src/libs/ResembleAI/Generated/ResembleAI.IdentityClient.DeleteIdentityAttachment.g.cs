@@ -165,8 +165,8 @@ namespace ResembleAI
                 PrepareDeleteIdentityAttachmentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid!,
-                    attachmentId: attachmentId!);
+                    uuid: uuid,
+                    attachmentId: attachmentId);
 
                 return __httpRequest;
             }
@@ -188,7 +188,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/identity/{uuid}/attachments/{attachmentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/identity/{uuid}/attachments/{attachmentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/identity/{uuid}/attachments/{attachmentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/identity/{uuid}/attachments/{attachmentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/identity/{uuid}/attachments/{attachmentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

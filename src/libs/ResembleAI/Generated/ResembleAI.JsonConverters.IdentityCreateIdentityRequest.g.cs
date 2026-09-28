@@ -142,13 +142,13 @@ namespace ResembleAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.IdentityCreateIdentityRequest0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.IdentityCreateIdentityRequest0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.IdentityCreateIdentityRequest0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IdentityCreateIdentityRequest0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIdentityCreateIdentityRequest0(), typeInfo);
             }
             else if (value.IsIdentityCreateIdentityRequest1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.IdentityCreateIdentityRequest1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.IdentityCreateIdentityRequest1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.IdentityCreateIdentityRequest1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IdentityCreateIdentityRequest1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIdentityCreateIdentityRequest1(), typeInfo);
             }
         }
     }

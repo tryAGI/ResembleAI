@@ -42,8 +42,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public string PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1() => IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1
-            ? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!
+        public string PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1() => DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1() => IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1
-            ? DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!
+        public global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 PickDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1() => DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 && detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 != null)
+            if (DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 is { } __value0 && detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 != null)
             {
-                return detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!);
+                return detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1(__value0);
             }
-            else if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 && detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 != null)
+            else if (DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 is { } __value1 && detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 != null)
             {
-                return detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!);
+                return detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1)
+            if (DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 is { } __value0)
             {
-                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.Invoke(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!);
+                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.Invoke(__value0);
             }
-            else if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1)
+            else if (DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 is { } __value1)
             {
-                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.Invoke(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!);
+                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1)
+            if (DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1 is { } __value0)
             {
-                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.Invoke(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1!);
+                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionVariant1?.Invoke(__value0);
             }
-            else if (IsDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1)
+            else if (DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1 is { } __value1)
             {
-                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.Invoke(DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1!);
+                detectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescription1?.Invoke(__value1);
             }
         }
 

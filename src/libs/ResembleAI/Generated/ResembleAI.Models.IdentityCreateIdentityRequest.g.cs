@@ -42,8 +42,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.IdentityCreateIdentityRequest0 PickIdentityCreateIdentityRequest0() => IsIdentityCreateIdentityRequest0
-            ? IdentityCreateIdentityRequest0!
+        public global::ResembleAI.IdentityCreateIdentityRequest0 PickIdentityCreateIdentityRequest0() => IdentityCreateIdentityRequest0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IdentityCreateIdentityRequest0' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.IdentityCreateIdentityRequest1 PickIdentityCreateIdentityRequest1() => IsIdentityCreateIdentityRequest1
-            ? IdentityCreateIdentityRequest1!
+        public global::ResembleAI.IdentityCreateIdentityRequest1 PickIdentityCreateIdentityRequest1() => IdentityCreateIdentityRequest1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IdentityCreateIdentityRequest1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsIdentityCreateIdentityRequest0 && identityCreateIdentityRequest0 != null)
+            if (IdentityCreateIdentityRequest0 is { } __value0 && identityCreateIdentityRequest0 != null)
             {
-                return identityCreateIdentityRequest0(IdentityCreateIdentityRequest0!);
+                return identityCreateIdentityRequest0(__value0);
             }
-            else if (IsIdentityCreateIdentityRequest1 && identityCreateIdentityRequest1 != null)
+            else if (IdentityCreateIdentityRequest1 is { } __value1 && identityCreateIdentityRequest1 != null)
             {
-                return identityCreateIdentityRequest1(IdentityCreateIdentityRequest1!);
+                return identityCreateIdentityRequest1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsIdentityCreateIdentityRequest0)
+            if (IdentityCreateIdentityRequest0 is { } __value0)
             {
-                identityCreateIdentityRequest0?.Invoke(IdentityCreateIdentityRequest0!);
+                identityCreateIdentityRequest0?.Invoke(__value0);
             }
-            else if (IsIdentityCreateIdentityRequest1)
+            else if (IdentityCreateIdentityRequest1 is { } __value1)
             {
-                identityCreateIdentityRequest1?.Invoke(IdentityCreateIdentityRequest1!);
+                identityCreateIdentityRequest1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsIdentityCreateIdentityRequest0)
+            if (IdentityCreateIdentityRequest0 is { } __value0)
             {
-                identityCreateIdentityRequest0?.Invoke(IdentityCreateIdentityRequest0!);
+                identityCreateIdentityRequest0?.Invoke(__value0);
             }
-            else if (IsIdentityCreateIdentityRequest1)
+            else if (IdentityCreateIdentityRequest1 is { } __value1)
             {
-                identityCreateIdentityRequest1?.Invoke(IdentityCreateIdentityRequest1!);
+                identityCreateIdentityRequest1?.Invoke(__value1);
             }
         }
 

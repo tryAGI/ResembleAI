@@ -42,8 +42,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.DetectIntelligenceResult PickDetectIntelligenceResult() => IsDetectIntelligenceResult
-            ? DetectIntelligenceResult!
+        public global::ResembleAI.DetectIntelligenceResult PickDetectIntelligenceResult() => DetectIntelligenceResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectIntelligenceResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult> PickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1() => IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1
-            ? DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1!
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectIntelligenceResult> PickDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1() => DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectIntelligenceResult && detectIntelligenceResult != null)
+            if (DetectIntelligenceResult is { } __value0 && detectIntelligenceResult != null)
             {
-                return detectIntelligenceResult(DetectIntelligenceResult!);
+                return detectIntelligenceResult(__value0);
             }
-            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 != null)
+            else if (DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 is { } __value1 && detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 != null)
             {
-                return detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1!);
+                return detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectIntelligenceResult)
+            if (DetectIntelligenceResult is { } __value0)
             {
-                detectIntelligenceResult?.Invoke(DetectIntelligenceResult!);
+                detectIntelligenceResult?.Invoke(__value0);
             }
-            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1)
+            else if (DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 is { } __value1)
             {
-                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1?.Invoke(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1!);
+                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectIntelligenceResult)
+            if (DetectIntelligenceResult is { } __value0)
             {
-                detectIntelligenceResult?.Invoke(DetectIntelligenceResult!);
+                detectIntelligenceResult?.Invoke(__value0);
             }
-            else if (IsDetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1)
+            else if (DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1 is { } __value1)
             {
-                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1?.Invoke(DetectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1!);
+                detectUuidGetResponsesContentApplicationJsonSchemaItemIntelligence1?.Invoke(__value1);
             }
         }
 
