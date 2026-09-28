@@ -142,7 +142,7 @@ namespace ResembleAI
                                 servers: s_ListTranscriptQuestionsServers,
                                 defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             __pathBuilder
-                                .AddRequiredParameter("page", page.ToString()!)
+                                .AddRequiredParameter("page", page.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("per_page", perPage?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -185,8 +185,8 @@ namespace ResembleAI
                 PrepareListTranscriptQuestionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uuid: uuid!,
-                    page: page!,
+                    uuid: uuid,
+                    page: page,
                     perPage: perPage);
 
                 return __httpRequest;
@@ -209,7 +209,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/speech-to-text/{uuid}/questions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/speech-to-text/{uuid}/questions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/speech-to-text/{uuid}/questions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/speech-to-text/{uuid}/questions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -354,7 +354,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/speech-to-text/{uuid}/questions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

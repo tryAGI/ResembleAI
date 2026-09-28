@@ -142,7 +142,7 @@ namespace ResembleAI
                                 servers: s_ListClipsServers,
                                 defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             __pathBuilder
-                                .AddRequiredParameter("page", page.ToString()!)
+                                .AddRequiredParameter("page", page.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -185,8 +185,8 @@ namespace ResembleAI
                 PrepareListClipsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectUuid: projectUuid!,
-                    page: page!,
+                    projectUuid: projectUuid,
+                    page: page,
                     pageSize: pageSize);
 
                 return __httpRequest;
@@ -209,7 +209,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/projects/{projectUuid}/clips\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/projects/{projectUuid}/clips\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/projects/{projectUuid}/clips\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/projects/{projectUuid}/clips\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -354,7 +354,7 @@ namespace ResembleAI
                                 pathTemplate: "$\"/projects/{projectUuid}/clips\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

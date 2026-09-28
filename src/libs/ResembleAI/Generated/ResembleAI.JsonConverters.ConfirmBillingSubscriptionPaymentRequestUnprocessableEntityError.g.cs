@@ -128,13 +128,13 @@ namespace ResembleAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.BillingError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.BillingError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBillingError(), typeInfo);
             }
             else if (value.IsBillingValidationErrors)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.BillingValidationErrors), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.BillingValidationErrors?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.BillingValidationErrors).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingValidationErrors!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBillingValidationErrors(), typeInfo);
             }
         }
     }

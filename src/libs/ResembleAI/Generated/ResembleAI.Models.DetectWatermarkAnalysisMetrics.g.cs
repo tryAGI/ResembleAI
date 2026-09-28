@@ -42,8 +42,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.WatermarkAudioDetectionMetrics PickWatermarkAudioDetectionMetrics() => IsWatermarkAudioDetectionMetrics
-            ? WatermarkAudioDetectionMetrics!
+        public global::ResembleAI.WatermarkAudioDetectionMetrics PickWatermarkAudioDetectionMetrics() => WatermarkAudioDetectionMetrics is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WatermarkAudioDetectionMetrics' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.WatermarkVisionDetectionMetrics PickWatermarkVisionDetectionMetrics() => IsWatermarkVisionDetectionMetrics
-            ? WatermarkVisionDetectionMetrics!
+        public global::ResembleAI.WatermarkVisionDetectionMetrics PickWatermarkVisionDetectionMetrics() => WatermarkVisionDetectionMetrics is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WatermarkVisionDetectionMetrics' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsWatermarkAudioDetectionMetrics && watermarkAudioDetectionMetrics != null)
+            if (WatermarkAudioDetectionMetrics is { } __value0 && watermarkAudioDetectionMetrics != null)
             {
-                return watermarkAudioDetectionMetrics(WatermarkAudioDetectionMetrics!);
+                return watermarkAudioDetectionMetrics(__value0);
             }
-            else if (IsWatermarkVisionDetectionMetrics && watermarkVisionDetectionMetrics != null)
+            else if (WatermarkVisionDetectionMetrics is { } __value1 && watermarkVisionDetectionMetrics != null)
             {
-                return watermarkVisionDetectionMetrics(WatermarkVisionDetectionMetrics!);
+                return watermarkVisionDetectionMetrics(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsWatermarkAudioDetectionMetrics)
+            if (WatermarkAudioDetectionMetrics is { } __value0)
             {
-                watermarkAudioDetectionMetrics?.Invoke(WatermarkAudioDetectionMetrics!);
+                watermarkAudioDetectionMetrics?.Invoke(__value0);
             }
-            else if (IsWatermarkVisionDetectionMetrics)
+            else if (WatermarkVisionDetectionMetrics is { } __value1)
             {
-                watermarkVisionDetectionMetrics?.Invoke(WatermarkVisionDetectionMetrics!);
+                watermarkVisionDetectionMetrics?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsWatermarkAudioDetectionMetrics)
+            if (WatermarkAudioDetectionMetrics is { } __value0)
             {
-                watermarkAudioDetectionMetrics?.Invoke(WatermarkAudioDetectionMetrics!);
+                watermarkAudioDetectionMetrics?.Invoke(__value0);
             }
-            else if (IsWatermarkVisionDetectionMetrics)
+            else if (WatermarkVisionDetectionMetrics is { } __value1)
             {
-                watermarkVisionDetectionMetrics?.Invoke(WatermarkVisionDetectionMetrics!);
+                watermarkVisionDetectionMetrics?.Invoke(__value1);
             }
         }
 

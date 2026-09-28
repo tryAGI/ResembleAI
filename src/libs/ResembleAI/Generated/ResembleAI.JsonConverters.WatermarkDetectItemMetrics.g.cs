@@ -140,13 +140,13 @@ namespace ResembleAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.WatermarkAudioDetectionMetrics), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.WatermarkAudioDetectionMetrics?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.WatermarkAudioDetectionMetrics).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WatermarkAudioDetectionMetrics!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWatermarkAudioDetectionMetrics(), typeInfo);
             }
             else if (value.IsWatermarkVisionDetectionMetrics)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.WatermarkVisionDetectionMetrics), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.WatermarkVisionDetectionMetrics?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.WatermarkVisionDetectionMetrics).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WatermarkVisionDetectionMetrics!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWatermarkVisionDetectionMetrics(), typeInfo);
             }
         }
     }

@@ -42,8 +42,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public string PickDetectIntelligenceResultDescriptionVariant1() => IsDetectIntelligenceResultDescriptionVariant1
-            ? DetectIntelligenceResultDescriptionVariant1!
+        public string PickDetectIntelligenceResultDescriptionVariant1() => DetectIntelligenceResultDescriptionVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectIntelligenceResultDescriptionVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.DetectIntelligenceResultDescription1 PickDetectIntelligenceResultDescription1() => IsDetectIntelligenceResultDescription1
-            ? DetectIntelligenceResultDescription1!
+        public global::ResembleAI.DetectIntelligenceResultDescription1 PickDetectIntelligenceResultDescription1() => DetectIntelligenceResultDescription1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetectIntelligenceResultDescription1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectIntelligenceResultDescriptionVariant1 && detectIntelligenceResultDescriptionVariant1 != null)
+            if (DetectIntelligenceResultDescriptionVariant1 is { } __value0 && detectIntelligenceResultDescriptionVariant1 != null)
             {
-                return detectIntelligenceResultDescriptionVariant1(DetectIntelligenceResultDescriptionVariant1!);
+                return detectIntelligenceResultDescriptionVariant1(__value0);
             }
-            else if (IsDetectIntelligenceResultDescription1 && detectIntelligenceResultDescription1 != null)
+            else if (DetectIntelligenceResultDescription1 is { } __value1 && detectIntelligenceResultDescription1 != null)
             {
-                return detectIntelligenceResultDescription1(DetectIntelligenceResultDescription1!);
+                return detectIntelligenceResultDescription1(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectIntelligenceResultDescriptionVariant1)
+            if (DetectIntelligenceResultDescriptionVariant1 is { } __value0)
             {
-                detectIntelligenceResultDescriptionVariant1?.Invoke(DetectIntelligenceResultDescriptionVariant1!);
+                detectIntelligenceResultDescriptionVariant1?.Invoke(__value0);
             }
-            else if (IsDetectIntelligenceResultDescription1)
+            else if (DetectIntelligenceResultDescription1 is { } __value1)
             {
-                detectIntelligenceResultDescription1?.Invoke(DetectIntelligenceResultDescription1!);
+                detectIntelligenceResultDescription1?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsDetectIntelligenceResultDescriptionVariant1)
+            if (DetectIntelligenceResultDescriptionVariant1 is { } __value0)
             {
-                detectIntelligenceResultDescriptionVariant1?.Invoke(DetectIntelligenceResultDescriptionVariant1!);
+                detectIntelligenceResultDescriptionVariant1?.Invoke(__value0);
             }
-            else if (IsDetectIntelligenceResultDescription1)
+            else if (DetectIntelligenceResultDescription1 is { } __value1)
             {
-                detectIntelligenceResultDescription1?.Invoke(DetectIntelligenceResultDescription1!);
+                detectIntelligenceResultDescription1?.Invoke(__value1);
             }
         }
 

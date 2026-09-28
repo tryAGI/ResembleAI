@@ -146,7 +146,7 @@ namespace ResembleAI
                                 servers: s_ListVoicesServers,
                                 defaultBaseUrl: "https://app.resemble.ai/api/v2"));
                             __pathBuilder
-                                .AddRequiredParameter("page", page.ToString()!)
+                                .AddRequiredParameter("page", page.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("advanced", advanced?.ToString().ToLowerInvariant())
                                 ;
@@ -190,7 +190,7 @@ namespace ResembleAI
                 PrepareListVoicesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    page: page!,
+                    page: page,
                     pageSize: pageSize,
                     advanced: advanced);
 
@@ -214,7 +214,7 @@ namespace ResembleAI
                                 pathTemplate: "\"/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace ResembleAI
                                 pathTemplate: "\"/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -289,7 +289,7 @@ namespace ResembleAI
                                 pathTemplate: "\"/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace ResembleAI
                                 pathTemplate: "\"/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -359,7 +359,7 @@ namespace ResembleAI
                                 pathTemplate: "\"/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

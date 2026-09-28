@@ -42,8 +42,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.BillingError PickBillingError() => IsBillingError
-            ? BillingError!
+        public global::ResembleAI.BillingError PickBillingError() => BillingError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public global::ResembleAI.BillingValidationErrors PickBillingValidationErrors() => IsBillingValidationErrors
-            ? BillingValidationErrors!
+        public global::ResembleAI.BillingValidationErrors PickBillingValidationErrors() => BillingValidationErrors is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingValidationErrors' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsBillingError && billingError != null)
+            if (BillingError is { } __value0 && billingError != null)
             {
-                return billingError(BillingError!);
+                return billingError(__value0);
             }
-            else if (IsBillingValidationErrors && billingValidationErrors != null)
+            else if (BillingValidationErrors is { } __value1 && billingValidationErrors != null)
             {
-                return billingValidationErrors(BillingValidationErrors!);
+                return billingValidationErrors(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsBillingError)
+            if (BillingError is { } __value0)
             {
-                billingError?.Invoke(BillingError!);
+                billingError?.Invoke(__value0);
             }
-            else if (IsBillingValidationErrors)
+            else if (BillingValidationErrors is { } __value1)
             {
-                billingValidationErrors?.Invoke(BillingValidationErrors!);
+                billingValidationErrors?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace ResembleAI
                 Validate();
             }
 
-            if (IsBillingError)
+            if (BillingError is { } __value0)
             {
-                billingError?.Invoke(BillingError!);
+                billingError?.Invoke(__value0);
             }
-            else if (IsBillingValidationErrors)
+            else if (BillingValidationErrors is { } __value1)
             {
-                billingValidationErrors?.Invoke(BillingValidationErrors!);
+                billingValidationErrors?.Invoke(__value1);
             }
         }
 

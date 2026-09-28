@@ -156,13 +156,13 @@ namespace ResembleAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectIntelligenceResultDescriptionVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDetectIntelligenceResultDescriptionVariant1(), typeInfo);
             }
             else if (value.IsDetectIntelligenceResultDescription1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::ResembleAI.DetectIntelligenceResultDescription1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::ResembleAI.DetectIntelligenceResultDescription1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::ResembleAI.DetectIntelligenceResultDescription1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DetectIntelligenceResultDescription1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDetectIntelligenceResultDescription1(), typeInfo);
             }
         }
     }
