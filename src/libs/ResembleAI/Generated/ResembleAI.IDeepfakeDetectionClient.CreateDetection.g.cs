@@ -14,7 +14,7 @@ namespace ResembleAI
         /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
         /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
         /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
-        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// detection charge, applies a 200 MB source limit for audio, image, and video, and causes<br/>
         /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
         /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
@@ -37,7 +37,7 @@ namespace ResembleAI
         /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
         /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
         /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
-        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// detection charge, applies a 200 MB source limit for audio, image, and video, and causes<br/>
         /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
         /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
@@ -60,7 +60,7 @@ namespace ResembleAI
         /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
         /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
         /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
-        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// detection charge, applies a 200 MB source limit for audio, image, and video, and causes<br/>
         /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
         /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
@@ -109,7 +109,7 @@ namespace ResembleAI
         /// Default Value: false
         /// </param>
         /// <param name="detectWatermark">
-        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies a source limit of 200 MB for audio, image, and video.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="inferFromIntelligence">
@@ -172,7 +172,7 @@ namespace ResembleAI
         /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
         /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
         /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
-        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// detection charge, applies a 200 MB source limit for audio, image, and video, and causes<br/>
         /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
         /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
@@ -221,7 +221,7 @@ namespace ResembleAI
         /// Default Value: false
         /// </param>
         /// <param name="detectWatermark">
-        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies a source limit of 200 MB for audio, image, and video.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="inferFromIntelligence">
@@ -283,7 +283,7 @@ namespace ResembleAI
         /// Exactly one of `file`, `url`, or `media_token` must be provided per request.<br/>
         /// Set `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake<br/>
         /// analysis. This option supports single audio, image, and video requests only. It adds one Watermark<br/>
-        /// detection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes<br/>
+        /// detection charge, applies a 200 MB source limit for audio, image, and video, and causes<br/>
         /// `Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark<br/>
         /// failure is returned in the nested `watermark` object and does not change the deepfake verdict.
         /// </summary>
@@ -332,7 +332,7 @@ namespace ResembleAI
         /// Default Value: false
         /// </param>
         /// <param name="detectWatermark">
-        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies a source limit of 200 MB for audio, image, and video.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="inferFromIntelligence">

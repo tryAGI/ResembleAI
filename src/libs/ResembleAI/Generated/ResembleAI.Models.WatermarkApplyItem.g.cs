@@ -53,7 +53,7 @@ namespace ResembleAI
         public required string SourceMediaUrl { get; set; }
 
         /// <summary>
-        /// Signed output URL when processing is complete.
+        /// Signed output URL when processing is complete. The file is WAV, PNG, or MP4 unless the request set `output_format` to `source`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("watermarked_media")]
         public string? WatermarkedMedia { get; set; }
@@ -98,7 +98,7 @@ namespace ResembleAI
         /// <param name="operationType"></param>
         /// <param name="modelVersion"></param>
         /// <param name="watermarkedMedia">
-        /// Signed output URL when processing is complete.
+        /// Signed output URL when processing is complete. The file is WAV, PNG, or MP4 unless the request set `output_format` to `source`.
         /// </param>
         /// <param name="metrics">
         /// Apply metadata for image/video. Audio apply metrics are null.

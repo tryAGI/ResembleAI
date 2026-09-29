@@ -58,7 +58,7 @@
       "post": {
         "operationId": "deepfakeDetection_createDetection",
         "summary": "Create deepfake detection",
-        "description": "Analyze audio, image, and video for deepfake detection.\n\nSupply media via one of three intake methods:\n\n- **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.\n- **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.\n- **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request.\n\nSet `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake\nanalysis. This option supports single audio, image, and video requests only. It adds one Watermark\ndetection charge, uses stricter source limits (25 MB for audio/image and 100 MB for video), and causes\n`Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark\nfailure is returned in the nested `watermark` object and does not change the deepfake verdict.\n",
+        "description": "Analyze audio, image, and video for deepfake detection.\n\nSupply media via one of three intake methods:\n\n- **Direct file upload** — `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller and use one of the supported audio/video/image extensions. For larger files, use the secure upload flow.\n- **Public URL** — `application/json` with a `url` field. The API fetches the URL itself.\n- **Secure upload token** — `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request.\n\nSet `detect_watermark=true` to run Resemble watermark detection and SynthID alongside the deepfake\nanalysis. This option supports single audio, image, and video requests only. It adds one Watermark\ndetection charge, applies a 200 MB source limit for audio, image, and video, and causes\n`Prefer: wait` and callbacks to wait for the watermark analysis to reach a terminal state. A watermark\nfailure is returned in the nested `watermark` object and does not change the deepfake verdict.\n",
         "tags": [
           "deepfakeDetection"
         ],
@@ -167,7 +167,7 @@
                   "detect_watermark": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video."
+                    "description": "Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies a source limit of 200 MB for audio, image, and video."
                   },
                   "infer_from_intelligence": {
                     "type": "boolean",
@@ -3881,113 +3881,6 @@
         }
       ]
     },
-    "/voice-design": {
-      "post": {
-        "operationId": "voiceDesign_generateVoiceDesign",
-        "summary": "Generate voice candidates",
-        "description": "Generate three voice candidates from a text prompt",
-        "tags": [
-          "voiceDesign"
-        ],
-        "responses": {
-          "200": {
-            "description": "Voice candidates generated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Design_generateVoiceDesign_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "user_prompt": {
-                    "type": "string",
-                    "description": "Description of desired voice"
-                  }
-                },
-                "required": [
-                  "user_prompt"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voice-design/create": {
-      "post": {
-        "operationId": "voiceDesign_createVoiceFromCandidate",
-        "summary": "Create voice from candidate",
-        "description": "Create a voice from a voice design candidate",
-        "tags": [
-          "voiceDesign"
-        ],
-        "responses": {
-          "200": {
-            "description": "Voice created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Design_createVoiceFromCandidate_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "uuid": {
-                    "type": "string"
-                  },
-                  "voice_sample_index": {
-                    "type": "integer"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "uuid",
-                  "voice_sample_index",
-                  "name"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
     "/voices/{voice_uuid}/recordings": {
       "get": {
         "operationId": "recordings_listRecordings",
@@ -6850,9 +6743,6 @@
     },
     {
       "name": "voices"
-    },
-    {
-      "name": "voiceDesign"
     },
     {
       "name": "recordings"
@@ -10164,6 +10054,16 @@
         ],
         "title": "WatermarkApplyPostParametersPrefer"
       },
+      "WatermarkApplyRequestOutputFormat": {
+        "type": "string",
+        "enum": [
+          "default",
+          "source"
+        ],
+        "default": "default",
+        "description": "`default` returns WAV (audio), PNG (image), or MP4 (video). `source` returns the source's format (for example JPEG, AVIF, M4A, or MOV) when it can be reproduced, otherwise the default.",
+        "title": "WatermarkApplyRequestOutputFormat"
+      },
       "WatermarkApplyRequest": {
         "type": "object",
         "properties": {
@@ -10171,6 +10071,10 @@
             "type": "string",
             "format": "uri",
             "description": "Public HTTPS URL to the audio, image, or video source."
+          },
+          "output_format": {
+            "$ref": "#/components/schemas/WatermarkApplyRequestOutputFormat",
+            "description": "`default` returns WAV (audio), PNG (image), or MP4 (video). `source` returns the source's format (for example JPEG, AVIF, M4A, or MOV) when it can be reproduced, otherwise the default."
           },
           "strength": {
             "type": "number",
@@ -10275,7 +10179,7 @@
               "null"
             ],
             "format": "uri",
-            "description": "Signed output URL when processing is complete."
+            "description": "Signed output URL when processing is complete. The file is WAV, PNG, or MP4 unless the request set `output_format` to `source`."
           },
           "metrics": {
             "$ref": "#/components/schemas/WatermarkApplyMetrics"
@@ -12247,46 +12151,6 @@
           }
         },
         "title": "Voices_buildVoice_Response_200"
-      },
-      "VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems": {
-        "type": "object",
-        "properties": {
-          "audio_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "voice_sample_index": {
-            "type": "integer"
-          },
-          "uuid": {
-            "type": "string"
-          }
-        },
-        "title": "VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems"
-      },
-      "Voice_Design_generateVoiceDesign_Response_200": {
-        "type": "object",
-        "properties": {
-          "voice_candidates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VoiceDesignPostResponsesContentApplicationJsonSchemaVoiceCandidatesItems"
-            }
-          }
-        },
-        "title": "Voice Design_generateVoiceDesign_Response_200"
-      },
-      "Voice_Design_createVoiceFromCandidate_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "voice_uuid": {
-            "type": "string"
-          }
-        },
-        "title": "Voice Design_createVoiceFromCandidate_Response_200"
       },
       "VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems": {
         "type": "object",

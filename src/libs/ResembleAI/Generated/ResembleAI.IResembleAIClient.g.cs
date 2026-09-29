@@ -178,11 +178,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public VoiceDesignClient VoiceDesign { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public VoiceSettingsPresetsClient VoiceSettingsPresets { get; }
 
         /// <summary>

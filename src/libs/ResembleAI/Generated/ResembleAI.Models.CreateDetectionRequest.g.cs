@@ -92,7 +92,7 @@ namespace ResembleAI
         public bool? Intelligence { get; set; }
 
         /// <summary>
-        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies a source limit of 200 MB for audio, image, and video.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detect_watermark")]
@@ -194,7 +194,7 @@ namespace ResembleAI
         /// Default Value: false
         /// </param>
         /// <param name="detectWatermark">
-        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies source limits of 25 MB for audio/image and 100 MB for video.<br/>
+        /// Run Resemble watermark detection and SynthID. Supported for single audio, image, and video requests. Adds the Watermark detection charge and applies a source limit of 200 MB for audio, image, and video.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="inferFromIntelligence">

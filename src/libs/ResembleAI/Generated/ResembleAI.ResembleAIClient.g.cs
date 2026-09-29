@@ -272,16 +272,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public VoiceDesignClient VoiceDesign => new VoiceDesignClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public VoiceSettingsPresetsClient VoiceSettingsPresets => new VoiceSettingsPresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,

@@ -38,6 +38,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer), TypeInfoPropertyName = "WatermarkApplyPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyRequestOutputFormat), TypeInfoPropertyName = "WatermarkApplyRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemMediaType), TypeInfoPropertyName = "WatermarkApplyItemMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemOperationType), TypeInfoPropertyName = "WatermarkApplyItemOperationType2")]
@@ -69,6 +70,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?), TypeInfoPropertyName = "NullableWatermarkApplyPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyRequestOutputFormat?), TypeInfoPropertyName = "NullableWatermarkApplyRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemMediaType?), TypeInfoPropertyName = "NullableWatermarkApplyItemMediaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemOperationType?), TypeInfoPropertyName = "NullableWatermarkApplyItemOperationType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkApplyItemStatus?), TypeInfoPropertyName = "NullableWatermarkApplyItemStatus2")]
@@ -192,6 +194,10 @@ namespace ResembleAI
                     || typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer)
 
                     || typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyRequestOutputFormat)
+
+                    || typeToConvert == typeof(global::ResembleAI.WatermarkApplyRequestOutputFormat?)
 
                     || typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemMediaType)
 
@@ -332,6 +338,16 @@ namespace ResembleAI
                 if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyPostParametersPrefer?))
                 {
                     return new global::ResembleAI.JsonConverters.WatermarkApplyPostParametersPreferNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyRequestOutputFormat))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyRequestOutputFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyRequestOutputFormat?))
+                {
+                    return new global::ResembleAI.JsonConverters.WatermarkApplyRequestOutputFormatNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ResembleAI.WatermarkApplyItemMediaType))
