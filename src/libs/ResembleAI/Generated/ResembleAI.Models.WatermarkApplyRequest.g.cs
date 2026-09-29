@@ -16,6 +16,14 @@ namespace ResembleAI
         public required string Url { get; set; }
 
         /// <summary>
+        /// `default` returns WAV (audio), PNG (image), or MP4 (video). `source` returns the source's format (for example JPEG, AVIF, M4A, or MOV) when it can be reproduced, otherwise the default.<br/>
+        /// Default Value: default
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::ResembleAI.JsonConverters.WatermarkApplyRequestOutputFormatJsonConverter))]
+        public global::ResembleAI.WatermarkApplyRequestOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
         /// Watermark strength for image/video. Ignored for audio.<br/>
         /// Default Value: 0.2F
         /// </summary>
@@ -41,6 +49,10 @@ namespace ResembleAI
         /// <param name="url">
         /// Public HTTPS URL to the audio, image, or video source.
         /// </param>
+        /// <param name="outputFormat">
+        /// `default` returns WAV (audio), PNG (image), or MP4 (video). `source` returns the source's format (for example JPEG, AVIF, M4A, or MOV) when it can be reproduced, otherwise the default.<br/>
+        /// Default Value: default
+        /// </param>
         /// <param name="strength">
         /// Watermark strength for image/video. Ignored for audio.<br/>
         /// Default Value: 0.2F
@@ -54,10 +66,12 @@ namespace ResembleAI
 #endif
         public WatermarkApplyRequest(
             string url,
+            global::ResembleAI.WatermarkApplyRequestOutputFormat? outputFormat,
             double? strength,
             string? customMessage)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.OutputFormat = outputFormat;
             this.Strength = strength;
             this.CustomMessage = customMessage;
         }

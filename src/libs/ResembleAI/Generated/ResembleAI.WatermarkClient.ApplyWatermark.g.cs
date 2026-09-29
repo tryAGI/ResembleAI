@@ -466,6 +466,10 @@ namespace ResembleAI
         /// <param name="url">
         /// Public HTTPS URL to the audio, image, or video source.
         /// </param>
+        /// <param name="outputFormat">
+        /// `default` returns WAV (audio), PNG (image), or MP4 (video). `source` returns the source's format (for example JPEG, AVIF, M4A, or MOV) when it can be reproduced, otherwise the default.<br/>
+        /// Default Value: default
+        /// </param>
         /// <param name="strength">
         /// Watermark strength for image/video. Ignored for audio.<br/>
         /// Default Value: 0.2F
@@ -480,6 +484,7 @@ namespace ResembleAI
         public async global::System.Threading.Tasks.Task<global::ResembleAI.WatermarkApplyResponse> ApplyWatermarkAsync(
             string url,
             global::ResembleAI.WatermarkApplyPostParametersPrefer? prefer = default,
+            global::ResembleAI.WatermarkApplyRequestOutputFormat? outputFormat = default,
             double? strength = default,
             string? customMessage = default,
             global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
@@ -488,6 +493,7 @@ namespace ResembleAI
             var __request = new global::ResembleAI.WatermarkApplyRequest
             {
                 Url = url,
+                OutputFormat = outputFormat,
                 Strength = strength,
                 CustomMessage = customMessage,
             };
