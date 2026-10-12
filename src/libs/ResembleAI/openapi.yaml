@@ -2320,6 +2320,162 @@
         }
       ]
     },
+    "/detect/music": {
+      "post": {
+        "operationId": "musicDetection_createMusicDetection",
+        "summary": "Detect AI-generated music",
+        "description": "Analyze a song or music track and classify it as AI-generated or human-produced.\n\nSupply audio via one of three intake methods:\n\n- **Direct file upload**: `multipart/form-data` with the file attached as `file`. Files must be 150 MB or smaller.\n- **Public URL**: `application/json` with a `url` field. Resemble downloads and stores the file before analysis.\n- **Secure upload token**: `application/json` with a `media_token` field obtained from `POST /secure_uploads`.\n\nExactly one of `file`, `url`, or `media_token` must be provided per request. Only audio files are\naccepted.\n\nProcessing is asynchronous by default: the response returns immediately with `status: processing`.\nMusic detections are standard detections, so you can poll\n[`GET /detect/{uuid}`](/api-reference/deepfake-detection/get-detection) or supply a `callback_url` to\nbe notified. Send the `Prefer: wait` header to block until the verdict is available and receive the\ncompleted item in the same response. Allow a generous client timeout when waiting, since the first\nrequest after a period of inactivity can take several minutes while the model warms up.\n\nEach successful analysis is billed as audio Deepfake Detection usage. Failed analyses are not billed.\n",
+        "tags": [
+          "musicDetection"
+        ],
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "When set to \"wait\", the API processes synchronously and returns the completed result.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/DetectMusicPostParametersPrefer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Music detection created (or completed when `Prefer: wait` was sent)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicDetectResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request: no `file`, `url`, or `media_token`; a non-audio file; a file over 150 MB; an invalid or expired `media_token`; a URL that resolves to a private address; or a malformed `callback_url`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Insufficient balance for the detection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Audio Deepfake Detection is not included in your subscription.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid `start_region`/`end_region`, or (with `Prefer: wait`) the audio could not be decoded. The failed item is returned in `item` with `status: failed`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicDetectResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "With `Prefer: wait`, the detection model returned an error. The failed item is returned in `item`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicDetectResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "With `Prefer: wait`, the detection model timed out. The failed item is returned in `item`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicDetectResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The audio file to analyze. Must be 150 MB or smaller."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Display name for the detection. Defaults to the source filename."
+                  },
+                  "callback_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "POST destination for the result once processing finishes. The body matches the response of `GET /detect/{uuid}`."
+                  },
+                  "visualize": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Return a base64-encoded heatmap image in `metrics.image`."
+                  },
+                  "start_region": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Start of the segment to analyze, in seconds."
+                  },
+                  "end_region": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "End of the segment to analyze, in seconds."
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://app.resemble.ai/api/v2"
+        }
+      ]
+    },
     "/signal": {
       "get": {
         "operationId": "signal_listSignalSubmissions",
@@ -6727,6 +6883,9 @@
       "name": "textDetection"
     },
     {
+      "name": "musicDetection"
+    },
+    {
       "name": "signal"
     },
     {
@@ -10542,6 +10701,182 @@
           "item"
         ],
         "title": "TextDetectResponse"
+      },
+      "DetectMusicPostParametersPrefer": {
+        "type": "string",
+        "enum": [
+          "wait"
+        ],
+        "title": "DetectMusicPostParametersPrefer"
+      },
+      "MusicDetectItemStatus": {
+        "type": "string",
+        "enum": [
+          "processing",
+          "completed",
+          "failed"
+        ],
+        "description": "`processing` until inference returns, `completed` once `metrics` is populated, or `failed` if the analysis errored. Failed analyses are not billed.",
+        "title": "MusicDetectItemStatus"
+      },
+      "MusicDetectItemMediaType": {
+        "type": "string",
+        "enum": [
+          "audio"
+        ],
+        "title": "MusicDetectItemMediaType"
+      },
+      "MusicDetectMetricsLabel": {
+        "type": "string",
+        "enum": [
+          "fake",
+          "real"
+        ],
+        "description": "`fake` when the track is classified as AI-generated music, `real` when it is classified as human-produced.",
+        "title": "MusicDetectMetricsLabel"
+      },
+      "MusicDetectMetrics": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "$ref": "#/components/schemas/MusicDetectMetricsLabel",
+            "description": "`fake` when the track is classified as AI-generated music, `real` when it is classified as human-produced."
+          },
+          "aggregated_score": {
+            "type": "number",
+            "format": "double",
+            "description": "Overall likelihood that the track is AI-generated, from 0 to 1."
+          },
+          "score": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "description": "Per-window likelihood that the audio is AI-generated, from 0 to 1. A window that could not be scored (for example, silence) is `null`."
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "description": "Duration of the analyzed audio in seconds."
+          },
+          "consistency": {
+            "type": "number",
+            "format": "double",
+            "description": "How consistent the per-window scores are across the track, from 0 to 100."
+          },
+          "image": {
+            "type": "string",
+            "description": "Base64-encoded heatmap image. Present only when `visualize` was `true`."
+          }
+        },
+        "description": "Music detection verdict. Empty while the detection is processing or when it failed.",
+        "title": "MusicDetectMetrics"
+      },
+      "MusicDetectItemExtraParamsDetector": {
+        "type": "string",
+        "enum": [
+          "music"
+        ],
+        "title": "MusicDetectItemExtraParamsDetector"
+      },
+      "MusicDetectItemExtraParams": {
+        "type": "object",
+        "properties": {
+          "detector": {
+            "$ref": "#/components/schemas/MusicDetectItemExtraParamsDetector"
+          }
+        },
+        "description": "Request metadata. Music detections always include `detector` set to `music`.",
+        "title": "MusicDetectItemExtraParams"
+      },
+      "MusicDetectItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Display name for the detection."
+          },
+          "status": {
+            "$ref": "#/components/schemas/MusicDetectItemStatus",
+            "description": "`processing` until inference returns, `completed` once `metrics` is populated, or `failed` if the analysis errored. Failed analyses are not billed."
+          },
+          "media_type": {
+            "$ref": "#/components/schemas/MusicDetectItemMediaType"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/MusicDetectMetrics"
+          },
+          "duration": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Duration of the submitted audio in seconds."
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "URL to the stored audio file."
+          },
+          "filename": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Original filename."
+          },
+          "error_message": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Reason the analysis failed. Null unless `status` is `failed`."
+          },
+          "extra_params": {
+            "$ref": "#/components/schemas/MusicDetectItemExtraParams",
+            "description": "Request metadata. Music detections always include `detector` set to `music`."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "uuid",
+          "status",
+          "media_type"
+        ],
+        "title": "MusicDetectItem"
+      },
+      "MusicDetectResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "item": {
+            "$ref": "#/components/schemas/MusicDetectItem"
+          }
+        },
+        "required": [
+          "success",
+          "item"
+        ],
+        "title": "MusicDetectResponse"
       },
       "SignalSubmissionInputModality": {
         "type": "string",

@@ -138,6 +138,11 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
+        public MusicDetectionClient MusicDetection { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public ProjectsClient Projects { get; }
 
         /// <summary>

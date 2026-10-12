@@ -222,6 +222,16 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectRequestThinking), TypeInfoPropertyName = "TextDetectRequestThinking2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectMusicPostParametersPrefer), TypeInfoPropertyName = "DetectMusicPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemStatus), TypeInfoPropertyName = "MusicDetectItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemMediaType), TypeInfoPropertyName = "MusicDetectItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectMetricsLabel), TypeInfoPropertyName = "MusicDetectMetricsLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectMetrics))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemExtraParamsDetector), TypeInfoPropertyName = "MusicDetectItemExtraParamsDetector2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemExtraParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionInputModality), TypeInfoPropertyName = "SignalSubmissionInputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionVerdict), TypeInfoPropertyName = "SignalSubmissionVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalCategoryScore))]
@@ -263,7 +273,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate), TypeInfoPropertyName = "SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AudioTimestamps))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextToSpeechSynthesizeResponse200))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.StreamPostRequestBodyContentApplicationJsonSchemaPrecision), TypeInfoPropertyName = "StreamPostRequestBodyContentApplicationJsonSchemaPrecision2")]
@@ -463,6 +472,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.AskDetectIntelligenceQuestionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateIdentityAttachmentRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SearchIdentitiesRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateMusicDetectionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateSignalSubmissionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.CreateSecureUploadRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SynthesizeRequest))]
@@ -499,16 +509,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsOverallStatus?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsOverallStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsDetectedModelVersionsItems2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultModelVersion2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultStatus?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsVerdict2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectWatermarkAnalysisMetrics?), TypeInfoPropertyName = "NullableDetectWatermarkAnalysisMetrics2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectC2PaManifestValidationState?), TypeInfoPropertyName = "NullableDetectC2PaManifestValidationState2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableDetectPostRequestBodyContentMultipartFormDataSchemaModality2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemStatus2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -519,6 +519,16 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
     )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsDetectedModelVersionsItems?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsDetectedModelVersionsItems2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultModelVersion?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultModelVersion2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionModelResultStatus?), TypeInfoPropertyName = "NullableWatermarkVisionModelResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.WatermarkVisionDetectionMetricsVerdict?), TypeInfoPropertyName = "NullableWatermarkVisionDetectionMetricsVerdict2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectWatermarkAnalysisMetrics?), TypeInfoPropertyName = "NullableDetectWatermarkAnalysisMetrics2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectC2PaManifestValidationState?), TypeInfoPropertyName = "NullableDetectC2PaManifestValidationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostRequestBodyContentMultipartFormDataSchemaModality?), TypeInfoPropertyName = "NullableDetectPostRequestBodyContentMultipartFormDataSchemaModality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemModality?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType?), TypeInfoPropertyName = "NullableDetectPostResponsesContentApplicationJsonSchemaItemIntelligenceDescriptionOneOf1FraudType2")]
@@ -578,6 +588,11 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectItemPrediction?), TypeInfoPropertyName = "NullableTextDetectItemPrediction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectPostParametersPrefer?), TypeInfoPropertyName = "NullableTextDetectPostParametersPrefer2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.TextDetectRequestThinking?), TypeInfoPropertyName = "NullableTextDetectRequestThinking2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.DetectMusicPostParametersPrefer?), TypeInfoPropertyName = "NullableDetectMusicPostParametersPrefer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemStatus?), TypeInfoPropertyName = "NullableMusicDetectItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemMediaType?), TypeInfoPropertyName = "NullableMusicDetectItemMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectMetricsLabel?), TypeInfoPropertyName = "NullableMusicDetectMetricsLabel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.MusicDetectItemExtraParamsDetector?), TypeInfoPropertyName = "NullableMusicDetectItemExtraParamsDetector2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionInputModality?), TypeInfoPropertyName = "NullableSignalSubmissionInputModality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalSubmissionVerdict?), TypeInfoPropertyName = "NullableSignalSubmissionVerdict2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::ResembleAI.SignalScoreItemInputModality?), TypeInfoPropertyName = "NullableSignalScoreItemInputModality2")]
@@ -628,6 +643,7 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityEmbeddingsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.IdentityProjectsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.TextDetectItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalCategoryScore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalTopMatch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalSubmission>))]
@@ -637,7 +653,6 @@ namespace ResembleAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalBuiltInCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SignalCustomCategory>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SpeechToTextGetResponsesContentApplicationJsonSchemaItemsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemWordsItems>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::ResembleAI.SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaItemsItems>))]
@@ -1005,6 +1020,26 @@ namespace ResembleAI
                     || typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking)
 
                     || typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking?)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectMusicPostParametersPrefer)
+
+                    || typeToConvert == typeof(global::ResembleAI.DetectMusicPostParametersPrefer?)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectItemStatus)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectItemStatus?)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectItemMediaType)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectItemMediaType?)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectMetricsLabel)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectMetricsLabel?)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectItemExtraParamsDetector)
+
+                    || typeToConvert == typeof(global::ResembleAI.MusicDetectItemExtraParamsDetector?)
 
                     || typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality)
 
@@ -1795,6 +1830,56 @@ namespace ResembleAI
                 if (typeToConvert == typeof(global::ResembleAI.TextDetectRequestThinking?))
                 {
                     return new global::ResembleAI.JsonConverters.TextDetectRequestThinkingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectMusicPostParametersPrefer))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectMusicPostParametersPreferJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.DetectMusicPostParametersPrefer?))
+                {
+                    return new global::ResembleAI.JsonConverters.DetectMusicPostParametersPreferNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectItemStatus))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectItemStatus?))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectItemMediaType))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectItemMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectItemMediaType?))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectItemMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectMetricsLabel))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectMetricsLabelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectMetricsLabel?))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectMetricsLabelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectItemExtraParamsDetector))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectItemExtraParamsDetectorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::ResembleAI.MusicDetectItemExtraParamsDetector?))
+                {
+                    return new global::ResembleAI.JsonConverters.MusicDetectItemExtraParamsDetectorNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::ResembleAI.SignalSubmissionInputModality))
