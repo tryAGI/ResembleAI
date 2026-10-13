@@ -80,8 +80,8 @@ namespace ResembleAI
         /// Generate visualization artifacts
         /// </param>
         /// <param name="frameLength">
-        /// Window size in seconds (audio/video)<br/>
-        /// Default Value: 2
+        /// Window size in seconds (audio/video). We recommend 4 for audio.<br/>
+        /// Default Value: 4
         /// </param>
         /// <param name="startRegion">
         /// Start of segment to analyze (seconds)
@@ -192,8 +192,8 @@ namespace ResembleAI
         /// Generate visualization artifacts
         /// </param>
         /// <param name="frameLength">
-        /// Window size in seconds (audio/video)<br/>
-        /// Default Value: 2
+        /// Window size in seconds (audio/video). We recommend 4 for audio.<br/>
+        /// Default Value: 4
         /// </param>
         /// <param name="startRegion">
         /// Start of segment to analyze (seconds)
@@ -303,8 +303,8 @@ namespace ResembleAI
         /// Generate visualization artifacts
         /// </param>
         /// <param name="frameLength">
-        /// Window size in seconds (audio/video)<br/>
-        /// Default Value: 2
+        /// Window size in seconds (audio/video). We recommend 4 for audio.<br/>
+        /// Default Value: 4
         /// </param>
         /// <param name="startRegion">
         /// Start of segment to analyze (seconds)
