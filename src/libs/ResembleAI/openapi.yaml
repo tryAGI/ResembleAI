@@ -132,8 +132,8 @@
                     "type": "integer",
                     "minimum": 1,
                     "maximum": 4,
-                    "default": 2,
-                    "description": "Window size in seconds (audio/video)"
+                    "default": 4,
+                    "description": "Window size in seconds (audio/video). We recommend 4 for audio."
                   },
                   "start_region": {
                     "type": "number",
