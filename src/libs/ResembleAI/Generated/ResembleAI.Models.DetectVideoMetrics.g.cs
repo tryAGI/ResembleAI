@@ -36,7 +36,7 @@ namespace ResembleAI
         public string? Treeview { get; set; }
 
         /// <summary>
-        /// Hierarchical detection results across frames
+        /// Video-level detection result (one `VideoResult`)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("children")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,7 +61,7 @@ namespace ResembleAI
         /// Overall certainty score
         /// </param>
         /// <param name="children">
-        /// Hierarchical detection results across frames
+        /// Video-level detection result (one `VideoResult`)
         /// </param>
         /// <param name="treeview">
         /// Optional tree visualization data

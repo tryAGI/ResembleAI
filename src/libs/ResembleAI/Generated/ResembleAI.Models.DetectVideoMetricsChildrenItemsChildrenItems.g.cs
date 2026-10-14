@@ -44,14 +44,34 @@ namespace ResembleAI
         public required string Certainty__ { get; set; }
 
         /// <summary>
-        /// Timestamp in seconds
+        /// Zero-based position of the chunk in the video
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunk_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Timestamp { get; set; }
+        public required int ChunkIndex { get; set; }
 
         /// <summary>
-        /// Segment-level detection results
+        /// Chunk start in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double StartTime { get; set; }
+
+        /// <summary>
+        /// Chunk end in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double EndTime { get; set; }
+
+        /// <summary>
+        /// How the video, or one chunk of it, was most likely made. Present only on results scored fake (score of 0.5 or higher) and omitted on real results. A probability distribution over every attack type, sorted from most to least likely; the `prob` values sum to 1 and the first entry is the most likely attack. Codes: S0, S1, S2 (generated), V1, V2, V3 (video-to-video), L1-L6 (local edits), F1-F6 (face), X0 (method unknown). Group codes (S0, V3, F6, X0) are never returned as the first entry. New codes may be added in future releases; if you receive a code you don't recognize, show its `name` instead of treating it as an error.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attack")]
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoAttackTypeItems>? Attack { get; set; }
+
+        /// <summary>
+        /// Frame-level detection results
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("children")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -71,11 +91,20 @@ namespace ResembleAI
         /// <param name="score"></param>
         /// <param name="certainty"></param>
         /// <param name="certainty__"></param>
-        /// <param name="timestamp">
-        /// Timestamp in seconds
+        /// <param name="chunkIndex">
+        /// Zero-based position of the chunk in the video
+        /// </param>
+        /// <param name="startTime">
+        /// Chunk start in seconds
+        /// </param>
+        /// <param name="endTime">
+        /// Chunk end in seconds
         /// </param>
         /// <param name="children">
-        /// Segment-level detection results
+        /// Frame-level detection results
+        /// </param>
+        /// <param name="attack">
+        /// How the video, or one chunk of it, was most likely made. Present only on results scored fake (score of 0.5 or higher) and omitted on real results. A probability distribution over every attack type, sorted from most to least likely; the `prob` values sum to 1 and the first entry is the most likely attack. Codes: S0, S1, S2 (generated), V1, V2, V3 (video-to-video), L1-L6 (local edits), F1-F6 (face), X0 (method unknown). Group codes (S0, V3, F6, X0) are never returned as the first entry. New codes may be added in future releases; if you receive a code you don't recognize, show its `name` instead of treating it as an error.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -86,15 +115,21 @@ namespace ResembleAI
             double score,
             double certainty,
             string certainty__,
-            double timestamp,
-            global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems> children)
+            int chunkIndex,
+            double startTime,
+            double endTime,
+            global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems> children,
+            global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoAttackTypeItems>? attack)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.Score = score;
             this.Certainty = certainty;
             this.Certainty__ = certainty__ ?? throw new global::System.ArgumentNullException(nameof(certainty__));
-            this.Timestamp = timestamp;
+            this.ChunkIndex = chunkIndex;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Attack = attack;
             this.Children = children ?? throw new global::System.ArgumentNullException(nameof(children));
         }
 

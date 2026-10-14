@@ -3035,2862 +3035,6 @@
         }
       ]
     },
-    "/synthesize": {
-      "post": {
-        "operationId": "textToSpeech_synthesize",
-        "summary": "Synchronous text-to-speech synthesis",
-        "description": "Generate speech synchronously from text or SSML. Returns complete audio as base64. The model associated with the voice is selected automatically.",
-        "tags": [
-          "textToSpeech"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful synthesis",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Text-to-Speech_synthesize_Response_200"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voice_uuid": {
-                    "type": "string",
-                    "description": "Voice UUID to use for synthesis"
-                  },
-                  "project_uuid": {
-                    "type": "string",
-                    "description": "Optional project UUID to store the clip"
-                  },
-                  "title": {
-                    "type": "string",
-                    "description": "Optional title for the generated clip"
-                  },
-                  "data": {
-                    "type": "string",
-                    "description": "Text or SSML to synthesize (max 3,000 characters)"
-                  },
-                  "precision": {
-                    "$ref": "#/components/schemas/SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision",
-                    "description": "Audio precision for WAV output"
-                  },
-                  "output_format": {
-                    "$ref": "#/components/schemas/SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat",
-                    "description": "Audio output format"
-                  },
-                  "sample_rate": {
-                    "$ref": "#/components/schemas/SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate",
-                    "description": "Audio sample rate in Hz"
-                  },
-                  "use_hd": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Enable HD synthesis with small latency trade-off"
-                  },
-                  "apply_custom_pronunciations": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "When true, automatically applies your team's custom pronunciations to matching words in the input text. Defaults to false."
-                  }
-                },
-                "required": [
-                  "voice_uuid",
-                  "data"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://f.cluster.resemble.ai"
-        }
-      ]
-    },
-    "/stream": {
-      "post": {
-        "operationId": "textToSpeech_streamSynthesize",
-        "summary": "Streaming text-to-speech synthesis (HTTP)",
-        "description": "Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.",
-        "tags": [
-          "textToSpeech"
-        ],
-        "responses": {
-          "200": {
-            "description": "Streaming audio response (chunked WAV)",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voice_uuid": {
-                    "type": "string",
-                    "description": "Voice UUID to use for synthesis"
-                  },
-                  "data": {
-                    "type": "string",
-                    "description": "Text or SSML to synthesize (max 2000 characters)"
-                  },
-                  "project_uuid": {
-                    "type": "string",
-                    "description": "Optional project UUID to store the clip"
-                  },
-                  "precision": {
-                    "$ref": "#/components/schemas/StreamPostRequestBodyContentApplicationJsonSchemaPrecision",
-                    "description": "Audio precision"
-                  },
-                  "sample_rate": {
-                    "$ref": "#/components/schemas/StreamPostRequestBodyContentApplicationJsonSchemaSampleRate",
-                    "description": "Audio sample rate in Hz"
-                  },
-                  "use_hd": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Enable HD synthesis with small latency trade-off"
-                  },
-                  "apply_custom_pronunciations": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "When true, automatically applies your team's custom pronunciations to matching words in the input text. Defaults to false."
-                  }
-                },
-                "required": [
-                  "voice_uuid",
-                  "data"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://f.cluster.resemble.ai"
-        }
-      ]
-    },
-    "/speech-to-text": {
-      "get": {
-        "operationId": "speechToText_listTranscripts",
-        "summary": "List transcripts",
-        "description": "Retrieve paginated list of transcript jobs",
-        "tags": [
-          "speechToText"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "per_page",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 50,
-              "default": 25
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of transcripts",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Speech-to-Text_listTranscripts_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "speechToText_createTranscript",
-        "summary": "Create transcript job",
-        "description": "Submit audio or video for transcription",
-        "tags": [
-          "speechToText"
-        ],
-        "responses": {
-          "200": {
-            "description": "Transcript job created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Speech-to-Text_createTranscript_Response_200"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request (missing input, invalid callback_url, or zero retention requested without a callback_url)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "402": {
-            "description": "Zero retention is not included in the team's plan or subscription",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "file": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "Audio or video file (max 500 MB, 20 minutes)"
-                  },
-                  "query": {
-                    "type": "string",
-                    "description": "Optional intelligence question to evaluate after transcription"
-                  },
-                  "callback_url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Public HTTPS URL that receives a POST with the result when processing finishes. Private, loopback, link-local, and non-HTTPS URLs are rejected. Required when zero_retention_mode is true."
-                  },
-                  "zero_retention_mode": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Enable zero retention. The uploaded media and any temporary processing copies are permanently deleted after transcription, and the transcript content is purged after one delivery to callback_url (which is mandatory in this mode). privacy_mode is accepted as an alias. Plan feature — requests are rejected with 402 if not included in your plan."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/speech-to-text/{uuid}": {
-      "get": {
-        "operationId": "speechToText_getTranscript",
-        "summary": "Get transcript",
-        "description": "Retrieve transcript status, text, and timestamps",
-        "tags": [
-          "speechToText"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Transcript details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Speech-to-Text_getTranscript_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/speech-to-text/{uuid}/ask": {
-      "post": {
-        "operationId": "speechToText_askTranscriptQuestion",
-        "summary": "Ask intelligence question",
-        "description": "Submit a question about a completed transcript",
-        "tags": [
-          "speechToText"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Question submitted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Speech-to-Text_askTranscriptQuestion_Response_200"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Missing query, transcript not yet processed, or the transcript was created with zero retention and its content has been purged",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "query": {
-                    "type": "string",
-                    "description": "Question to ask about the transcript"
-                  }
-                },
-                "required": [
-                  "query"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/speech-to-text/{uuid}/questions": {
-      "get": {
-        "operationId": "speechToText_listTranscriptQuestions",
-        "summary": "List intelligence questions",
-        "description": "List all questions asked about a transcript",
-        "tags": [
-          "speechToText"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "per_page",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "maximum": 50,
-              "default": 25
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of questions",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Speech-to-Text_listTranscriptQuestions_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/speech-to-text/{uuid}/questions/{question_uuid}": {
-      "get": {
-        "operationId": "speechToText_getTranscriptQuestion",
-        "summary": "Get intelligence question status",
-        "description": "Check the status of a specific question",
-        "tags": [
-          "speechToText"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "question_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Question details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Speech-to-Text_getTranscriptQuestion_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/audio_enhancements": {
-      "get": {
-        "operationId": "audioEnhancement_listAudioEnhancements",
-        "summary": "List audio enhancements",
-        "description": "Returns a paginated list of all audio enhancements for your team, ordered by most recent first.",
-        "tags": [
-          "audioEnhancement"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "description": "Page number (starting from 1).",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "description": "Items per page (10 to 1000). Default 10.",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 10,
-              "maximum": 1000,
-              "default": 10
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of enhancements",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Audio_Enhancement_listAudioEnhancements_Response_200"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListAudioEnhancementsRequestBadRequestError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "audioEnhancement_createAudioEnhancement",
-        "summary": "Create audio enhancement",
-        "description": "Submit an audio file for enhancement. Processing happens asynchronously in the background.\n",
-        "tags": [
-          "audioEnhancement"
-        ],
-        "responses": {
-          "202": {
-            "description": "Enhancement job created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Audio_Enhancement_createAudioEnhancement_Response_202"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateAudioEnhancementRequestBadRequestError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateAudioEnhancementRequestForbiddenError"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "audio_file": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "Audio file to enhance (WAV, MP3, M4A, MP4, OGG, AAC, FLAC). Max 150 MB."
-                  },
-                  "remove_noise": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Remove background noise."
-                  },
-                  "normalize": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Normalize audio levels."
-                  },
-                  "studio_sound": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Apply studio-quality enhancement."
-                  }
-                },
-                "required": [
-                  "audio_file"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/audio_enhancements/{enhancement_uuid}": {
-      "get": {
-        "operationId": "audioEnhancement_getAudioEnhancement",
-        "summary": "Get audio enhancement",
-        "description": "Poll this endpoint to check the status of an enhancement job and retrieve the download URL when complete.",
-        "tags": [
-          "audioEnhancement"
-        ],
-        "parameters": [
-          {
-            "name": "enhancement_uuid",
-            "in": "path",
-            "description": "The UUID returned from the create endpoint.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Enhancement details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Audio_Enhancement_getAudioEnhancement_Response_200"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetAudioEnhancementRequestNotFoundError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voices": {
-      "get": {
-        "operationId": "voices_listVoices",
-        "summary": "List voices",
-        "description": "Retrieve voice metadata",
-        "tags": [
-          "voices"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 10,
-              "maximum": 1000,
-              "default": 10
-            }
-          },
-          {
-            "name": "advanced",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of voices",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voices_listVoices_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "voices_createVoice",
-        "summary": "Create voice",
-        "description": "Create a new voice",
-        "tags": [
-          "voices"
-        ],
-        "responses": {
-          "200": {
-            "description": "Voice created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voices_createVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "dataset_url": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "callback_uri": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "language": {
-                    "type": "string",
-                    "default": "en-US"
-                  }
-                },
-                "required": [
-                  "name"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voices/{voice_uuid}": {
-      "get": {
-        "operationId": "voices_getVoice",
-        "summary": "Get voice",
-        "description": "Get voice details",
-        "tags": [
-          "voices"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Voice details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voices_getVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "voices_deleteVoice",
-        "summary": "Delete voice",
-        "description": "Delete a voice",
-        "tags": [
-          "voices"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Voice deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voices_deleteVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voices/{voice_uuid}/build": {
-      "post": {
-        "operationId": "voices_buildVoice",
-        "summary": "Build voice",
-        "description": "Start voice training",
-        "tags": [
-          "voices"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Build started",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voices_buildVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "fill": {
-                    "type": "boolean",
-                    "default": false
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voices/{voice_uuid}/recordings": {
-      "get": {
-        "operationId": "recordings_listRecordings",
-        "summary": "List recordings",
-        "description": "List all recordings for a voice",
-        "tags": [
-          "recordings"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "default": 10
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of recordings",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recordings_listRecordings_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "recordings_createRecording",
-        "summary": "Create recording",
-        "description": "Upload a new recording for voice training",
-        "tags": [
-          "recordings"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Recording created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recordings_createRecording_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "file": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "Audio file (WAV recommended, 1-12 seconds)"
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "Display name"
-                  },
-                  "text": {
-                    "type": "string",
-                    "description": "Transcript of the clip"
-                  },
-                  "emotion": {
-                    "type": "string",
-                    "description": "Emotion label"
-                  },
-                  "is_active": {
-                    "type": "boolean",
-                    "description": "Include in training"
-                  },
-                  "fill": {
-                    "type": "boolean",
-                    "description": "Include for Resemble Fill"
-                  }
-                },
-                "required": [
-                  "file",
-                  "name",
-                  "text",
-                  "emotion",
-                  "is_active"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voices/{voice_uuid}/recordings/{recording_id}": {
-      "get": {
-        "operationId": "recordings_getRecording",
-        "summary": "Get recording",
-        "description": "Get recording details",
-        "tags": [
-          "recordings"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "recording_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Recording details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recordings_getRecording_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "recordings_deleteRecording",
-        "summary": "Delete recording",
-        "description": "Delete a recording",
-        "tags": [
-          "recordings"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "recording_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Recording deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recordings_deleteRecording_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "patch": {
-        "operationId": "recordings_updateRecording",
-        "summary": "Update recording",
-        "description": "Update a recording",
-        "tags": [
-          "recordings"
-        ],
-        "parameters": [
-          {
-            "name": "voice_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "recording_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Recording updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recordings_updateRecording_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "text": {
-                    "type": "string"
-                  },
-                  "emotion": {
-                    "type": "string"
-                  },
-                  "is_active": {
-                    "type": "boolean"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/term_substitutions": {
-      "get": {
-        "operationId": "termSubstitutions_listTermSubstitutions",
-        "summary": "List term substitutions",
-        "description": "List all term substitutions",
-        "tags": [
-          "termSubstitutions"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "default": 10
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of term substitutions",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Term_Substitutions_listTermSubstitutions_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "termSubstitutions_createTermSubstitution",
-        "summary": "Create term substitution",
-        "description": "Create a new pronunciation substitution",
-        "tags": [
-          "termSubstitutions"
-        ],
-        "responses": {
-          "200": {
-            "description": "Term substitution created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Term_Substitutions_createTermSubstitution_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "original_text": {
-                    "type": "string",
-                    "description": "Original text to substitute"
-                  },
-                  "replacement_text": {
-                    "type": "string",
-                    "description": "Replacement pronunciation"
-                  }
-                },
-                "required": [
-                  "original_text",
-                  "replacement_text"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/term_substitutions/{id}": {
-      "get": {
-        "operationId": "termSubstitutions_getTermSubstitution",
-        "summary": "Get term substitution",
-        "description": "Get term substitution details",
-        "tags": [
-          "termSubstitutions"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Term substitution details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Term_Substitutions_getTermSubstitution_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "termSubstitutions_deleteTermSubstitution",
-        "summary": "Delete term substitution",
-        "description": "Delete a term substitution",
-        "tags": [
-          "termSubstitutions"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Term substitution deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Term_Substitutions_deleteTermSubstitution_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/pronunciations": {
-      "get": {
-        "operationId": "customPronunciations_listPronunciations",
-        "summary": "List custom pronunciations",
-        "description": "Retrieve all custom pronunciations for your team, with optional filters.",
-        "tags": [
-          "customPronunciations"
-        ],
-        "parameters": [
-          {
-            "name": "language",
-            "in": "query",
-            "description": "Filter by language (e.g., en-us)",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "domain",
-            "in": "query",
-            "description": "Filter by domain (e.g., medical)",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Filter by processing status",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/PronunciationsGetParametersStatus"
-            }
-          },
-          {
-            "name": "active",
-            "in": "query",
-            "description": "Filter by active state",
-            "required": false,
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of custom pronunciations",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Custom_Pronunciations_listPronunciations_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "customPronunciations_createPronunciation",
-        "summary": "Create custom pronunciation",
-        "description": "Upload a single pronunciation with a reference audio file.",
-        "tags": [
-          "customPronunciations"
-        ],
-        "responses": {
-          "201": {
-            "description": "Pronunciation created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Custom_Pronunciations_createPronunciation_Response_201"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation error (e.g., duplicate word)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "word": {
-                    "type": "string",
-                    "description": "The word or phrase (2-100 characters). Letters, accented characters, apostrophes, hyphens, and spaces only."
-                  },
-                  "audio": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "Reference audio file (wav, flac, mp3, m4a, ogg, webm, aac). Duration 200ms-10s. Max 10MB."
-                  }
-                },
-                "required": [
-                  "word",
-                  "audio"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/pronunciations/bulk": {
-      "post": {
-        "operationId": "customPronunciations_bulkCreatePronunciations",
-        "summary": "Bulk create pronunciations from ZIP",
-        "description": "Upload multiple pronunciations at once. Each audio file in the ZIP becomes a pronunciation — the filename (without extension) is used as the word.",
-        "tags": [
-          "customPronunciations"
-        ],
-        "responses": {
-          "201": {
-            "description": "Bulk creation result",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Custom_Pronunciations_bulkCreatePronunciations_Response_201"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "zip": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "ZIP file containing audio files. Max 50 files, max 100MB total."
-                  }
-                },
-                "required": [
-                  "zip"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/pronunciations/{uuid}": {
-      "get": {
-        "operationId": "customPronunciations_getPronunciation",
-        "summary": "Get custom pronunciation",
-        "description": "Retrieve a single custom pronunciation by UUID",
-        "tags": [
-          "customPronunciations"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Pronunciation details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Custom_Pronunciations_getPronunciation_Response_200"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "customPronunciations_deletePronunciation",
-        "summary": "Delete custom pronunciation",
-        "description": "Permanently remove a custom pronunciation. Takes effect immediately.",
-        "tags": [
-          "customPronunciations"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Pronunciation deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Custom_Pronunciations_deletePronunciation_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "patch": {
-        "operationId": "customPronunciations_updatePronunciation",
-        "summary": "Toggle pronunciation active status",
-        "description": "Enable or disable a pronunciation without deleting it. Inactive pronunciations are not used during synthesis.",
-        "tags": [
-          "customPronunciations"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Pronunciation updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Custom_Pronunciations_updatePronunciation_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "active": {
-                    "type": "boolean",
-                    "description": "Set to false to disable, true to re-enable"
-                  }
-                },
-                "required": [
-                  "active"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voice_settings_presets": {
-      "get": {
-        "operationId": "voiceSettingsPresets_listVoiceSettingsPresets",
-        "summary": "List voice settings presets",
-        "description": "List all voice settings presets",
-        "tags": [
-          "voiceSettingsPresets"
-        ],
-        "responses": {
-          "200": {
-            "description": "List of presets",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Settings_Presets_listVoiceSettingsPresets_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "voiceSettingsPresets_createVoiceSettingsPreset",
-        "summary": "Create voice settings preset",
-        "description": "Create a new voice settings preset (max 5 per user)",
-        "tags": [
-          "voiceSettingsPresets"
-        ],
-        "responses": {
-          "201": {
-            "description": "Preset created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Settings_Presets_createVoiceSettingsPreset_Response_201"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "maxLength": 30,
-                    "description": "Preset name (unique, max 30 characters)"
-                  },
-                  "pace": {
-                    "type": "number",
-                    "format": "double",
-                    "minimum": 0.2,
-                    "maximum": 2,
-                    "default": 1,
-                    "description": "Speech pace/speed"
-                  },
-                  "temperature": {
-                    "type": "number",
-                    "format": "double",
-                    "minimum": 0.1,
-                    "maximum": 5,
-                    "default": 0.8,
-                    "description": "Voice variation"
-                  },
-                  "pitch": {
-                    "type": "number",
-                    "format": "double",
-                    "minimum": -10,
-                    "maximum": 10,
-                    "default": 0,
-                    "description": "Voice pitch adjustment"
-                  },
-                  "useHd": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Use HD quality"
-                  },
-                  "exaggeration": {
-                    "type": "number",
-                    "format": "double",
-                    "minimum": 0,
-                    "maximum": 1,
-                    "default": 0.5,
-                    "description": "Emotional exaggeration"
-                  },
-                  "description": {
-                    "type": "string",
-                    "maxLength": 1000,
-                    "default": "",
-                    "description": "Voice style prompt"
-                  }
-                },
-                "required": [
-                  "name"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/voice_settings_presets/{uuid}": {
-      "get": {
-        "operationId": "voiceSettingsPresets_getVoiceSettingsPreset",
-        "summary": "Get voice settings preset",
-        "description": "Get preset details",
-        "tags": [
-          "voiceSettingsPresets"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Preset details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Settings_Presets_getVoiceSettingsPreset_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "voiceSettingsPresets_deleteVoiceSettingsPreset",
-        "summary": "Delete voice settings preset",
-        "description": "Delete a preset",
-        "tags": [
-          "voiceSettingsPresets"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Preset deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Settings_Presets_deleteVoiceSettingsPreset_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "patch": {
-        "operationId": "voiceSettingsPresets_updateVoiceSettingsPreset",
-        "summary": "Update voice settings preset",
-        "description": "Update a preset",
-        "tags": [
-          "voiceSettingsPresets"
-        ],
-        "parameters": [
-          {
-            "name": "uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Preset updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Voice_Settings_Presets_updateVoiceSettingsPreset_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "pace": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "temperature": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "pitch": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "useHd": {
-                    "type": "boolean"
-                  },
-                  "exaggeration": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/projects": {
-      "get": {
-        "operationId": "projects_listProjects",
-        "summary": "List projects",
-        "description": "List all projects",
-        "tags": [
-          "projects"
-        ],
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "default": 10
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of projects",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Projects_listProjects_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "projects_createProject",
-        "summary": "Create project",
-        "description": "Create a new project",
-        "tags": [
-          "projects"
-        ],
-        "responses": {
-          "200": {
-            "description": "Project created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Projects_createProject_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "is_collaborative": {
-                    "type": "boolean"
-                  },
-                  "is_archived": {
-                    "type": "boolean"
-                  }
-                },
-                "required": [
-                  "name",
-                  "description",
-                  "is_collaborative",
-                  "is_archived"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/projects/{project_uuid}": {
-      "get": {
-        "operationId": "projects_getProject",
-        "summary": "Get project",
-        "description": "Get project details",
-        "tags": [
-          "projects"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Project details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Projects_getProject_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "put": {
-        "operationId": "projects_updateProject",
-        "summary": "Update project",
-        "description": "Update a project",
-        "tags": [
-          "projects"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Project updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Projects_updateProject_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "is_collaborative": {
-                    "type": "boolean"
-                  },
-                  "is_archived": {
-                    "type": "boolean"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "projects_deleteProject",
-        "summary": "Delete project",
-        "description": "Delete a project",
-        "tags": [
-          "projects"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Project deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Projects_deleteProject_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/projects/{project_uuid}/clips": {
-      "get": {
-        "operationId": "clips_listClips",
-        "summary": "List clips",
-        "description": "List clips in a project",
-        "tags": [
-          "clips"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "default": 1
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "default": 10
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of clips",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Clips_listClips_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/projects/{project_uuid}/clips/{clip_uuid}": {
-      "get": {
-        "operationId": "clips_getClip",
-        "summary": "Get clip",
-        "description": "Get clip details",
-        "tags": [
-          "clips"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "clip_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Clip details",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Clips_getClip_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "clips_deleteClip",
-        "summary": "Delete clip",
-        "description": "Delete a clip",
-        "tags": [
-          "clips"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "clip_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Clip deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Clips_deleteClip_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "patch": {
-        "operationId": "clips_updateClip",
-        "summary": "Update clip",
-        "description": "Update a clip",
-        "tags": [
-          "clips"
-        ],
-        "parameters": [
-          {
-            "name": "project_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "clip_uuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Clip updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Clips_updateClip_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "title": {
-                    "type": "string"
-                  },
-                  "body": {
-                    "type": "string"
-                  },
-                  "is_archived": {
-                    "type": "boolean"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/duet_voices": {
-      "get": {
-        "operationId": "duets_listDuetVoices",
-        "summary": "List duet voices",
-        "description": "Returns default and custom duet voices",
-        "tags": [
-          "duets"
-        ],
-        "responses": {
-          "200": {
-            "description": "List of duet voices",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_listDuetVoices_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "duets_createDuetVoice",
-        "summary": "Create custom duet voice",
-        "description": "Create a custom voice for duet generation",
-        "tags": [
-          "duets"
-        ],
-        "responses": {
-          "200": {
-            "description": "Duet voice created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_createDuetVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Voice name"
-                  },
-                  "style_prompt": {
-                    "type": "string",
-                    "description": "Optional style prompt"
-                  },
-                  "audio": {
-                    "type": "string",
-                    "format": "binary",
-                    "description": "Audio file (MP3/WAV/M4A/OGG/AAC/FLAC max 10 MB)"
-                  }
-                },
-                "required": [
-                  "name",
-                  "audio"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/duet_voices/{id}": {
-      "put": {
-        "operationId": "duets_updateDuetVoice",
-        "summary": "Update duet voice",
-        "description": "Update a custom duet voice (default voices cannot be modified)",
-        "tags": [
-          "duets"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Duet voice updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_updateDuetVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "style_prompt": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "operationId": "duets_deleteDuetVoice",
-        "summary": "Delete duet voice",
-        "description": "Delete a custom duet voice (default voices cannot be deleted)",
-        "tags": [
-          "duets"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Duet voice deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_deleteDuetVoice_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/duet_voice_pairs": {
-      "get": {
-        "operationId": "duets_listDuetVoicePairs",
-        "summary": "List duet voice pairs",
-        "description": "List all voice pairs for duet generation",
-        "tags": [
-          "duets"
-        ],
-        "responses": {
-          "200": {
-            "description": "List of voice pairs",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_listDuetVoicePairs_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "post": {
-        "operationId": "duets_createDuetVoicePair",
-        "summary": "Create duet voice pair",
-        "description": "Create a voice pair for duet generation",
-        "tags": [
-          "duets"
-        ],
-        "responses": {
-          "200": {
-            "description": "Voice pair created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_createDuetVoicePair_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voice_1_id": {
-                    "type": "integer",
-                    "description": "ID of first voice"
-                  },
-                  "voice_2_id": {
-                    "type": "integer",
-                    "description": "ID of second voice"
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "Optional pair name"
-                  }
-                },
-                "required": [
-                  "voice_1_id",
-                  "voice_2_id"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
-    "/duet": {
-      "post": {
-        "operationId": "duets_generateDuet",
-        "summary": "Generate duet",
-        "description": "Generate conversational audio with two speakers",
-        "tags": [
-          "duets"
-        ],
-        "responses": {
-          "200": {
-            "description": "Duet generation job created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Duets_generateDuet_Response_200"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voice_pair_id": {
-                    "type": "integer",
-                    "description": "Voice pair ID to use"
-                  },
-                  "script": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/DuetPostRequestBodyContentApplicationJsonSchemaScriptItems"
-                    }
-                  },
-                  "title": {
-                    "type": "string",
-                    "description": "Optional title for the duet"
-                  },
-                  "callback_uri": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Webhook URL for completion notification"
-                  }
-                },
-                "required": [
-                  "voice_pair_id",
-                  "script"
-                ]
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ]
-      },
-      "servers": [
-        {
-          "url": "https://app.resemble.ai/api/v2"
-        }
-      ]
-    },
     "/account": {
       "get": {
         "operationId": "account_getAccount",
@@ -6892,39 +4036,6 @@
       "name": "secureUploads"
     },
     {
-      "name": "textToSpeech"
-    },
-    {
-      "name": "speechToText"
-    },
-    {
-      "name": "audioEnhancement"
-    },
-    {
-      "name": "voices"
-    },
-    {
-      "name": "recordings"
-    },
-    {
-      "name": "termSubstitutions"
-    },
-    {
-      "name": "customPronunciations"
-    },
-    {
-      "name": "voiceSettingsPresets"
-    },
-    {
-      "name": "projects"
-    },
-    {
-      "name": "clips"
-    },
-    {
-      "name": "duets"
-    },
-    {
       "name": "account"
     },
     {
@@ -6941,10 +4052,6 @@
     {
       "url": "https://app.resemble.ai/api/v2",
       "description": "production"
-    },
-    {
-      "url": "https://f.cluster.resemble.ai",
-      "description": "synthesis"
     },
     {
       "url": "https://app.resemble.ai/billing/api/v1",
@@ -7354,7 +4461,39 @@
         "description": "Image detection metrics (for image media type)",
         "title": "DetectImageMetrics"
       },
-      "DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems": {
+      "DetectVideoAttackTypeItems": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Attack type code"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable attack type name"
+          },
+          "prob": {
+            "type": "number",
+            "format": "double",
+            "description": "Probability of this attack type, given that the result is fake"
+          }
+        },
+        "required": [
+          "code",
+          "name",
+          "prob"
+        ],
+        "title": "DetectVideoAttackTypeItems"
+      },
+      "DetectVideoAttackType": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DetectVideoAttackTypeItems"
+        },
+        "description": "How the video, or one chunk of it, was most likely made. Present only on results scored fake (score of 0.5 or higher) and omitted on real results. A probability distribution over every attack type, sorted from most to least likely; the `prob` values sum to 1 and the first entry is the most likely attack. Codes: S0, S1, S2 (generated), V1, V2, V3 (video-to-video), L1-L6 (local edits), F1-F6 (face), X0 (method unknown). Group codes (S0, V3, F6, X0) are never returned as the first entry. New codes may be added in future releases; if you receive a code you don't recognize, show its `name` instead of treating it as an error.",
+        "title": "DetectVideoAttackType"
+      },
+      "DetectVideoMetricsChildrenItemsChildrenItemsChildrenItemsChildrenItems": {
         "type": "object",
         "properties": {
           "type": {
@@ -7382,9 +4521,9 @@
           "certainty",
           "certainty (%)"
         ],
-        "title": "DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems"
+        "title": "DetectVideoMetricsChildrenItemsChildrenItemsChildrenItemsChildrenItems"
       },
-      "DetectVideoMetricsChildrenItemsChildrenItems": {
+      "DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems": {
         "type": "object",
         "properties": {
           "type": {
@@ -7412,9 +4551,9 @@
           "children": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems"
+              "$ref": "#/components/schemas/DetectVideoMetricsChildrenItemsChildrenItemsChildrenItemsChildrenItems"
             },
-            "description": "Segment-level detection results"
+            "description": "Region-level detection results"
           }
         },
         "required": [
@@ -7423,7 +4562,64 @@
           "score",
           "certainty",
           "certainty (%)",
-          "timestamp",
+          "timestamp"
+        ],
+        "title": "DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems"
+      },
+      "DetectVideoMetricsChildrenItemsChildrenItems": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "conclusion": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "format": "double"
+          },
+          "certainty": {
+            "type": "number",
+            "format": "double"
+          },
+          "certainty (%)": {
+            "type": "string"
+          },
+          "chunk_index": {
+            "type": "integer",
+            "description": "Zero-based position of the chunk in the video"
+          },
+          "start_time": {
+            "type": "number",
+            "format": "double",
+            "description": "Chunk start in seconds"
+          },
+          "end_time": {
+            "type": "number",
+            "format": "double",
+            "description": "Chunk end in seconds"
+          },
+          "attack": {
+            "$ref": "#/components/schemas/DetectVideoAttackType"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetectVideoMetricsChildrenItemsChildrenItemsChildrenItems"
+            },
+            "description": "Frame-level detection results"
+          }
+        },
+        "required": [
+          "type",
+          "conclusion",
+          "score",
+          "certainty",
+          "certainty (%)",
+          "chunk_index",
+          "start_time",
+          "end_time",
           "children"
         ],
         "title": "DetectVideoMetricsChildrenItemsChildrenItems"
@@ -7448,12 +4644,15 @@
           "certainty (%)": {
             "type": "string"
           },
+          "attack": {
+            "$ref": "#/components/schemas/DetectVideoAttackType"
+          },
           "children": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DetectVideoMetricsChildrenItemsChildrenItems"
             },
-            "description": "Frame-level detection results"
+            "description": "Chunk-level detection results, one per analyzed window of the video"
           }
         },
         "required": [
@@ -7492,7 +4691,7 @@
             "items": {
               "$ref": "#/components/schemas/DetectVideoMetricsChildrenItems"
             },
-            "description": "Hierarchical detection results across frames"
+            "description": "Video-level detection result (one `VideoResult`)"
           }
         },
         "required": [
@@ -11478,1780 +8677,6 @@
         },
         "title": "Secure Uploads_createSecureUpload_Response_200"
       },
-      "SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision": {
-        "type": "string",
-        "enum": [
-          "MULAW",
-          "PCM_16",
-          "PCM_24",
-          "PCM_32"
-        ],
-        "default": "PCM_32",
-        "description": "Audio precision for WAV output",
-        "title": "SynthesizePostRequestBodyContentApplicationJsonSchemaPrecision"
-      },
-      "SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat": {
-        "type": "string",
-        "enum": [
-          "wav",
-          "mp3"
-        ],
-        "default": "wav",
-        "description": "Audio output format",
-        "title": "SynthesizePostRequestBodyContentApplicationJsonSchemaOutputFormat"
-      },
-      "SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate": {
-        "type": "string",
-        "enum": [
-          "8000",
-          "16000",
-          "22050",
-          "32000",
-          "44100",
-          "48000"
-        ],
-        "description": "Audio sample rate in Hz",
-        "title": "SynthesizePostRequestBodyContentApplicationJsonSchemaSampleRate"
-      },
-      "AudioTimestamps": {
-        "type": "object",
-        "properties": {
-          "graph_chars": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Grapheme characters"
-          },
-          "graph_times": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "format": "double"
-              }
-            },
-            "description": "Grapheme timestamps [start, end] in seconds"
-          },
-          "phon_chars": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Phoneme characters"
-          },
-          "phon_times": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "format": "double"
-              }
-            },
-            "description": "Phoneme timestamps [start, end] in seconds"
-          }
-        },
-        "title": "AudioTimestamps"
-      },
-      "Text-to-Speech_synthesize_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "audio_content": {
-            "type": "string",
-            "format": "byte",
-            "description": "Base64-encoded audio bytes"
-          },
-          "audio_timestamps": {
-            "$ref": "#/components/schemas/AudioTimestamps"
-          },
-          "duration": {
-            "type": "number",
-            "format": "double",
-            "description": "Audio duration in seconds"
-          },
-          "synth_duration": {
-            "type": "number",
-            "format": "double",
-            "description": "Raw synthesis time"
-          },
-          "output_format": {
-            "type": "string"
-          },
-          "sample_rate": {
-            "type": "integer"
-          },
-          "title": {
-            "type": "string"
-          },
-          "issues": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "title": "Text-to-Speech_synthesize_Response_200"
-      },
-      "StreamPostRequestBodyContentApplicationJsonSchemaPrecision": {
-        "type": "string",
-        "enum": [
-          "MULAW",
-          "PCM_16",
-          "PCM_24",
-          "PCM_32"
-        ],
-        "default": "PCM_32",
-        "description": "Audio precision",
-        "title": "StreamPostRequestBodyContentApplicationJsonSchemaPrecision"
-      },
-      "StreamPostRequestBodyContentApplicationJsonSchemaSampleRate": {
-        "type": "string",
-        "enum": [
-          "8000",
-          "16000",
-          "22050",
-          "32000",
-          "44100",
-          "48000"
-        ],
-        "description": "Audio sample rate in Hz",
-        "title": "StreamPostRequestBodyContentApplicationJsonSchemaSampleRate"
-      },
-      "SpeechToTextGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "status": {
-            "type": "string"
-          },
-          "duration_seconds": {
-            "type": "number",
-            "format": "double"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "SpeechToTextGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "SpeechToTextGetResponsesContentApplicationJsonSchemaMeta": {
-        "type": "object",
-        "properties": {
-          "page": {
-            "type": "integer"
-          },
-          "per_page": {
-            "type": "integer"
-          },
-          "total_pages": {
-            "type": "integer"
-          },
-          "total_items": {
-            "type": "integer"
-          }
-        },
-        "title": "SpeechToTextGetResponsesContentApplicationJsonSchemaMeta"
-      },
-      "Speech-to-Text_listTranscripts_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SpeechToTextGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          },
-          "meta": {
-            "$ref": "#/components/schemas/SpeechToTextGetResponsesContentApplicationJsonSchemaMeta"
-          }
-        },
-        "title": "Speech-to-Text_listTranscripts_Response_200"
-      },
-      "SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "processing",
-          "completed",
-          "failed"
-        ],
-        "title": "SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus"
-      },
-      "SpeechToTextPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SpeechToTextPostResponsesContentApplicationJsonSchemaItemStatus"
-          },
-          "privacy_mode": {
-            "type": "boolean",
-            "description": "Whether the transcript was created with zero retention"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "SpeechToTextPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Speech-to-Text_createTranscript_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/SpeechToTextPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Speech-to-Text_createTranscript_Response_200"
-      },
-      "SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "processing",
-          "completed",
-          "failed"
-        ],
-        "title": "SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus"
-      },
-      "SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemWordsItems": {
-        "type": "object",
-        "properties": {
-          "text": {
-            "type": "string"
-          },
-          "start_time": {
-            "type": "number",
-            "format": "double"
-          },
-          "end_time": {
-            "type": "number",
-            "format": "double"
-          },
-          "speaker_id": {
-            "type": "string"
-          }
-        },
-        "title": "SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemWordsItems"
-      },
-      "SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemStatus"
-          },
-          "text": {
-            "type": "string",
-            "description": "Absent for zero-retention transcripts after the content purge"
-          },
-          "words": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItemWordsItems"
-            }
-          },
-          "duration_seconds": {
-            "type": "number",
-            "format": "double"
-          },
-          "file_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "Absent once the media has been deleted (zero retention)"
-          },
-          "query": {
-            "type": "string"
-          },
-          "answer": {
-            "type": "string"
-          },
-          "privacy_mode": {
-            "type": "boolean",
-            "description": "Whether the transcript was created with zero retention"
-          },
-          "file_deleted_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the uploaded media was permanently deleted (zero retention)"
-          },
-          "content_deleted_at": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the transcript content was permanently purged (zero retention)"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Speech-to-Text_getTranscript_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/SpeechToTextUuidGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Speech-to-Text_getTranscript_Response_200"
-      },
-      "SpeechToTextUuidAskPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "transcript_uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "query": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "SpeechToTextUuidAskPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Speech-to-Text_askTranscriptQuestion_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/SpeechToTextUuidAskPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Speech-to-Text_askTranscriptQuestion_Response_200"
-      },
-      "SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "query": {
-            "type": "string"
-          },
-          "answer": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaMeta": {
-        "type": "object",
-        "properties": {},
-        "title": "SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaMeta"
-      },
-      "Speech-to-Text_listTranscriptQuestions_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          },
-          "meta": {
-            "$ref": "#/components/schemas/SpeechToTextUuidQuestionsGetResponsesContentApplicationJsonSchemaMeta"
-          }
-        },
-        "title": "Speech-to-Text_listTranscriptQuestions_Response_200"
-      },
-      "SpeechToTextUuidQuestionsQuestionUuidGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "transcript_uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "query": {
-            "type": "string"
-          },
-          "answer": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "SpeechToTextUuidQuestionsQuestionUuidGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Speech-to-Text_getTranscriptQuestion_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/SpeechToTextUuidQuestionsQuestionUuidGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Speech-to-Text_getTranscriptQuestion_Response_200"
-      },
-      "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "processing",
-          "completed",
-          "failed"
-        ],
-        "title": "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
-      },
-      "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItemsStatus"
-          },
-          "error_message": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "remove_noise": {
-            "type": "boolean",
-            "description": "Whether background noise removal was applied."
-          },
-          "normalize": {
-            "type": "boolean",
-            "description": "Whether loudness normalization was applied."
-          },
-          "studio_sound": {
-            "type": "boolean",
-            "description": "Whether studio-quality enhancement was applied."
-          },
-          "original_audio_url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "enhanced_audio_url": {
-            "type": "string",
-            "format": "uri"
-          }
-        },
-        "title": "AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Audio_Enhancement_listAudioEnhancements_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "page": {
-            "type": "integer"
-          },
-          "num_pages": {
-            "type": "integer"
-          },
-          "page_size": {
-            "type": "integer"
-          },
-          "total_count": {
-            "type": "integer"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AudioEnhancementsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Audio Enhancement_listAudioEnhancements_Response_200"
-      },
-      "ListAudioEnhancementsRequestBadRequestError": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "ListAudioEnhancementsRequestBadRequestError"
-      },
-      "AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus": {
-        "type": "string",
-        "enum": [
-          "pending"
-        ],
-        "title": "AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus"
-      },
-      "Audio_Enhancement_createAudioEnhancement_Response_202": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "uuid": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/AudioEnhancementsPostResponsesContentApplicationJsonSchemaStatus"
-          }
-        },
-        "title": "Audio Enhancement_createAudioEnhancement_Response_202"
-      },
-      "CreateAudioEnhancementRequestBadRequestError": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "CreateAudioEnhancementRequestBadRequestError"
-      },
-      "CreateAudioEnhancementRequestForbiddenError": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "CreateAudioEnhancementRequestForbiddenError"
-      },
-      "AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "processing",
-          "completed",
-          "failed"
-        ],
-        "title": "AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus"
-      },
-      "Audio_Enhancement_getAudioEnhancement_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "uuid": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/AudioEnhancementsEnhancementUuidGetResponsesContentApplicationJsonSchemaStatus"
-          },
-          "enhanced_audio_url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "uri",
-            "description": "Download URL. Only present when status is completed. This is a temporary signed URL."
-          },
-          "error_message": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Human-readable error. Only present when status is failed."
-          }
-        },
-        "title": "Audio Enhancement_getAudioEnhancement_Response_200"
-      },
-      "GetAudioEnhancementRequestNotFoundError": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "GetAudioEnhancementRequestNotFoundError"
-      },
-      "VoicesGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "default_language": {
-            "type": "string"
-          },
-          "voice_type": {
-            "type": "string"
-          },
-          "voice_status": {
-            "type": "string"
-          },
-          "supported_languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "component_status": {
-            "type": "object",
-            "properties": {
-              "text_to_speech": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusTextToSpeech"
-              },
-              "fill": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusFill"
-              },
-              "voice_conversion": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusVoiceConversion"
-              }
-            },
-            "title": "VoicesComponentStatus"
-          },
-          "api_support": {
-            "type": "object",
-            "properties": {
-              "sync": {
-                "type": "boolean"
-              },
-              "async": {
-                "type": "boolean"
-              },
-              "direct_synthesis": {
-                "type": "boolean"
-              },
-              "streaming": {
-                "type": "boolean"
-              }
-            },
-            "title": "VoicesApiSupport"
-          },
-          "source": {
-            "type": "string"
-          }
-        },
-        "title": "VoicesGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Voices_listVoices_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "page": {
-            "type": "integer"
-          },
-          "num_pages": {
-            "type": "integer"
-          },
-          "page_size": {
-            "type": "integer"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VoicesGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Voices_listVoices_Response_200"
-      },
-      "VoicesPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "default_language": {
-            "type": "string"
-          },
-          "voice_type": {
-            "type": "string"
-          },
-          "voice_status": {
-            "type": "string"
-          },
-          "supported_languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "component_status": {
-            "type": "object",
-            "properties": {
-              "text_to_speech": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusTextToSpeech"
-              },
-              "fill": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusFill"
-              },
-              "voice_conversion": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusVoiceConversion"
-              }
-            },
-            "title": "VoicesComponentStatus"
-          },
-          "api_support": {
-            "type": "object",
-            "properties": {
-              "sync": {
-                "type": "boolean"
-              },
-              "async": {
-                "type": "boolean"
-              },
-              "direct_synthesis": {
-                "type": "boolean"
-              },
-              "streaming": {
-                "type": "boolean"
-              }
-            },
-            "title": "VoicesApiSupport"
-          },
-          "source": {
-            "type": "string"
-          }
-        },
-        "title": "VoicesPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Voices_createVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/VoicesPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Voices_createVoice_Response_200"
-      },
-      "VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "default_language": {
-            "type": "string"
-          },
-          "voice_type": {
-            "type": "string"
-          },
-          "voice_status": {
-            "type": "string"
-          },
-          "supported_languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "component_status": {
-            "type": "object",
-            "properties": {
-              "text_to_speech": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusTextToSpeech"
-              },
-              "fill": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusFill"
-              },
-              "voice_conversion": {
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "title": "VoicesComponentStatusVoiceConversion"
-              }
-            },
-            "title": "VoicesComponentStatus"
-          },
-          "api_support": {
-            "type": "object",
-            "properties": {
-              "sync": {
-                "type": "boolean"
-              },
-              "async": {
-                "type": "boolean"
-              },
-              "direct_synthesis": {
-                "type": "boolean"
-              },
-              "streaming": {
-                "type": "boolean"
-              }
-            },
-            "title": "VoicesApiSupport"
-          },
-          "source": {
-            "type": "string"
-          }
-        },
-        "title": "VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Voices_getVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Voices_getVoice_Response_200"
-      },
-      "Voices_deleteVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Voices_deleteVoice_Response_200"
-      },
-      "Voices_buildVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "Voices_buildVoice_Response_200"
-      },
-      "VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Recordings_listRecordings_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VoicesVoiceUuidRecordingsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Recordings_listRecordings_Response_200"
-      },
-      "VoicesVoiceUuidRecordingsPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "VoicesVoiceUuidRecordingsPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Recordings_createRecording_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/VoicesVoiceUuidRecordingsPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Recordings_createRecording_Response_200"
-      },
-      "VoicesVoiceUuidRecordingsRecordingIdGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "VoicesVoiceUuidRecordingsRecordingIdGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Recordings_getRecording_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/VoicesVoiceUuidRecordingsRecordingIdGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Recordings_getRecording_Response_200"
-      },
-      "Recordings_deleteRecording_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Recordings_deleteRecording_Response_200"
-      },
-      "VoicesVoiceUuidRecordingsRecordingIdPatchResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "VoicesVoiceUuidRecordingsRecordingIdPatchResponsesContentApplicationJsonSchemaItem"
-      },
-      "Recordings_updateRecording_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/VoicesVoiceUuidRecordingsRecordingIdPatchResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Recordings_updateRecording_Response_200"
-      },
-      "TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Term_Substitutions_listTermSubstitutions_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TermSubstitutionsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Term Substitutions_listTermSubstitutions_Response_200"
-      },
-      "TermSubstitutionsPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "TermSubstitutionsPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Term_Substitutions_createTermSubstitution_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/TermSubstitutionsPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Term Substitutions_createTermSubstitution_Response_200"
-      },
-      "TermSubstitutionsIdGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "TermSubstitutionsIdGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Term_Substitutions_getTermSubstitution_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/TermSubstitutionsIdGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Term Substitutions_getTermSubstitution_Response_200"
-      },
-      "Term_Substitutions_deleteTermSubstitution_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Term Substitutions_deleteTermSubstitution_Response_200"
-      },
-      "PronunciationsGetParametersStatus": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "ready",
-          "failed"
-        ],
-        "title": "PronunciationsGetParametersStatus"
-      },
-      "CustomPronunciationStatus": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "ready",
-          "failed"
-        ],
-        "description": "Processing status. Only \"ready\" pronunciations are applied during synthesis.",
-        "title": "CustomPronunciationStatus"
-      },
-      "CustomPronunciation": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the pronunciation"
-          },
-          "word": {
-            "type": "string",
-            "description": "The word or phrase this pronunciation applies to"
-          },
-          "status": {
-            "$ref": "#/components/schemas/CustomPronunciationStatus",
-            "description": "Processing status. Only \"ready\" pronunciations are applied during synthesis."
-          },
-          "active": {
-            "type": "boolean",
-            "description": "Whether this pronunciation is active and will be applied during synthesis"
-          },
-          "audio_url": {
-            "type": "string",
-            "format": "uri",
-            "description": "URL to the uploaded reference audio"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "title": "CustomPronunciation"
-      },
-      "Custom_Pronunciations_listPronunciations_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomPronunciation"
-            }
-          }
-        },
-        "title": "Custom Pronunciations_listPronunciations_Response_200"
-      },
-      "Custom_Pronunciations_createPronunciation_Response_201": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/CustomPronunciation"
-          }
-        },
-        "title": "Custom Pronunciations_createPronunciation_Response_201"
-      },
-      "PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems"
-      },
-      "Custom_Pronunciations_bulkCreatePronunciations_Response_201": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "total_created": {
-            "type": "integer",
-            "description": "Number of pronunciations successfully created"
-          },
-          "total_errors": {
-            "type": "integer",
-            "description": "Number of files that failed validation"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomPronunciation"
-            }
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PronunciationsBulkPostResponsesContentApplicationJsonSchemaErrorsItems"
-            }
-          }
-        },
-        "title": "Custom Pronunciations_bulkCreatePronunciations_Response_201"
-      },
-      "Custom_Pronunciations_getPronunciation_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/CustomPronunciation"
-          }
-        },
-        "title": "Custom Pronunciations_getPronunciation_Response_200"
-      },
-      "Custom_Pronunciations_deletePronunciation_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Custom Pronunciations_deletePronunciation_Response_200"
-      },
-      "Custom_Pronunciations_updatePronunciation_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/CustomPronunciation"
-          }
-        },
-        "title": "Custom Pronunciations_updatePronunciation_Response_200"
-      },
-      "VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Voice_Settings_Presets_listVoiceSettingsPresets_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VoiceSettingsPresetsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Voice Settings Presets_listVoiceSettingsPresets_Response_200"
-      },
-      "VoiceSettingsPresetsPostResponsesContentApplicationJsonSchemaData": {
-        "type": "object",
-        "properties": {},
-        "title": "VoiceSettingsPresetsPostResponsesContentApplicationJsonSchemaData"
-      },
-      "Voice_Settings_Presets_createVoiceSettingsPreset_Response_201": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "data": {
-            "$ref": "#/components/schemas/VoiceSettingsPresetsPostResponsesContentApplicationJsonSchemaData"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "title": "Voice Settings Presets_createVoiceSettingsPreset_Response_201"
-      },
-      "VoiceSettingsPresetsUuidGetResponsesContentApplicationJsonSchemaData": {
-        "type": "object",
-        "properties": {},
-        "title": "VoiceSettingsPresetsUuidGetResponsesContentApplicationJsonSchemaData"
-      },
-      "Voice_Settings_Presets_getVoiceSettingsPreset_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "data": {
-            "$ref": "#/components/schemas/VoiceSettingsPresetsUuidGetResponsesContentApplicationJsonSchemaData"
-          }
-        },
-        "title": "Voice Settings Presets_getVoiceSettingsPreset_Response_200"
-      },
-      "Voice_Settings_Presets_deleteVoiceSettingsPreset_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Voice Settings Presets_deleteVoiceSettingsPreset_Response_200"
-      },
-      "VoiceSettingsPresetsUuidPatchResponsesContentApplicationJsonSchemaData": {
-        "type": "object",
-        "properties": {},
-        "title": "VoiceSettingsPresetsUuidPatchResponsesContentApplicationJsonSchemaData"
-      },
-      "Voice_Settings_Presets_updateVoiceSettingsPreset_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "data": {
-            "$ref": "#/components/schemas/VoiceSettingsPresetsUuidPatchResponsesContentApplicationJsonSchemaData"
-          }
-        },
-        "title": "Voice Settings Presets_updateVoiceSettingsPreset_Response_200"
-      },
-      "ProjectsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "is_collaborative": {
-            "type": "boolean"
-          },
-          "is_archived": {
-            "type": "boolean"
-          }
-        },
-        "title": "ProjectsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Projects_listProjects_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProjectsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Projects_listProjects_Response_200"
-      },
-      "ProjectsPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "is_collaborative": {
-            "type": "boolean"
-          },
-          "is_archived": {
-            "type": "boolean"
-          }
-        },
-        "title": "ProjectsPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Projects_createProject_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/ProjectsPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Projects_createProject_Response_200"
-      },
-      "ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "is_collaborative": {
-            "type": "boolean"
-          },
-          "is_archived": {
-            "type": "boolean"
-          }
-        },
-        "title": "ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Projects_getProject_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Projects_getProject_Response_200"
-      },
-      "ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "is_collaborative": {
-            "type": "boolean"
-          },
-          "is_archived": {
-            "type": "boolean"
-          }
-        },
-        "title": "ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem"
-      },
-      "Projects_updateProject_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Projects_updateProject_Response_200"
-      },
-      "Projects_deleteProject_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Projects_deleteProject_Response_200"
-      },
-      "ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Clips_listClips_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProjectsProjectUuidClipsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Clips_listClips_Response_200"
-      },
-      "ProjectsProjectUuidClipsClipUuidGetResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "ProjectsProjectUuidClipsClipUuidGetResponsesContentApplicationJsonSchemaItem"
-      },
-      "Clips_getClip_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/ProjectsProjectUuidClipsClipUuidGetResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Clips_getClip_Response_200"
-      },
-      "Clips_deleteClip_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Clips_deleteClip_Response_200"
-      },
-      "ProjectsProjectUuidClipsClipUuidPatchResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "ProjectsProjectUuidClipsClipUuidPatchResponsesContentApplicationJsonSchemaItem"
-      },
-      "Clips_updateClip_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/ProjectsProjectUuidClipsClipUuidPatchResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Clips_updateClip_Response_200"
-      },
-      "DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Duets_listDuetVoices_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DuetVoicesGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Duets_listDuetVoices_Response_200"
-      },
-      "DuetVoicesPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "DuetVoicesPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Duets_createDuetVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/DuetVoicesPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Duets_createDuetVoice_Response_200"
-      },
-      "DuetVoicesIdPutResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "DuetVoicesIdPutResponsesContentApplicationJsonSchemaItem"
-      },
-      "Duets_updateDuetVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/DuetVoicesIdPutResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Duets_updateDuetVoice_Response_200"
-      },
-      "Duets_deleteDuetVoice_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "title": "Duets_deleteDuetVoice_Response_200"
-      },
-      "DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems": {
-        "type": "object",
-        "properties": {},
-        "title": "DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems"
-      },
-      "Duets_listDuetVoicePairs_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DuetVoicePairsGetResponsesContentApplicationJsonSchemaItemsItems"
-            }
-          }
-        },
-        "title": "Duets_listDuetVoicePairs_Response_200"
-      },
-      "DuetVoicePairsPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {},
-        "title": "DuetVoicePairsPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Duets_createDuetVoicePair_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/DuetVoicePairsPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Duets_createDuetVoicePair_Response_200"
-      },
-      "DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker": {
-        "type": "string",
-        "enum": [
-          "0",
-          "1"
-        ],
-        "description": "Speaker index (0 or 1)",
-        "title": "DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker"
-      },
-      "DuetPostRequestBodyContentApplicationJsonSchemaScriptItems": {
-        "type": "object",
-        "properties": {
-          "speaker": {
-            "$ref": "#/components/schemas/DuetPostRequestBodyContentApplicationJsonSchemaScriptItemsSpeaker",
-            "description": "Speaker index (0 or 1)"
-          },
-          "text": {
-            "type": "string",
-            "description": "Text for this speaker"
-          }
-        },
-        "required": [
-          "speaker",
-          "text"
-        ],
-        "title": "DuetPostRequestBodyContentApplicationJsonSchemaScriptItems"
-      },
-      "DuetPostResponsesContentApplicationJsonSchemaItem": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          }
-        },
-        "title": "DuetPostResponsesContentApplicationJsonSchemaItem"
-      },
-      "Duets_generateDuet_Response_200": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "item": {
-            "$ref": "#/components/schemas/DuetPostResponsesContentApplicationJsonSchemaItem"
-          }
-        },
-        "title": "Duets_generateDuet_Response_200"
-      },
       "AccountGetResponsesContentApplicationJsonSchemaItem": {
         "type": "object",
         "properties": {
@@ -14358,6 +9783,398 @@
             "$ref": "#/components/schemas/AccountBillingUsageGetResponsesContentApplicationJsonSchemaItem"
           }
         }
+      },
+      "ProjectsGetResponsesContentApplicationJsonSchemaItemsItems": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
+        "title": "ProjectsGetResponsesContentApplicationJsonSchemaItemsItems"
+      },
+      "ProjectsPostResponsesContentApplicationJsonSchemaItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
+        "title": "ProjectsPostResponsesContentApplicationJsonSchemaItem"
+      },
+      "ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
+        "title": "ProjectsProjectUuidGetResponsesContentApplicationJsonSchemaItem"
+      },
+      "ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "is_collaborative": {
+            "type": "boolean"
+          },
+          "is_archived": {
+            "type": "boolean"
+          }
+        },
+        "title": "ProjectsProjectUuidPutResponsesContentApplicationJsonSchemaItem"
+      },
+      "VoicesGetResponsesContentApplicationJsonSchemaItemsItems": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "default_language": {
+            "type": "string"
+          },
+          "voice_type": {
+            "type": "string"
+          },
+          "voice_status": {
+            "type": "string"
+          },
+          "supported_languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "component_status": {
+            "type": "object",
+            "properties": {
+              "text_to_speech": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusTextToSpeech"
+              },
+              "fill": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusFill"
+              },
+              "voice_conversion": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusVoiceConversion"
+              }
+            },
+            "title": "VoicesComponentStatus"
+          },
+          "api_support": {
+            "type": "object",
+            "properties": {
+              "sync": {
+                "type": "boolean"
+              },
+              "async": {
+                "type": "boolean"
+              },
+              "direct_synthesis": {
+                "type": "boolean"
+              },
+              "streaming": {
+                "type": "boolean"
+              }
+            },
+            "title": "VoicesApiSupport"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "title": "VoicesGetResponsesContentApplicationJsonSchemaItemsItems"
+      },
+      "VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "default_language": {
+            "type": "string"
+          },
+          "voice_type": {
+            "type": "string"
+          },
+          "voice_status": {
+            "type": "string"
+          },
+          "supported_languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "component_status": {
+            "type": "object",
+            "properties": {
+              "text_to_speech": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusTextToSpeech"
+              },
+              "fill": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusFill"
+              },
+              "voice_conversion": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusVoiceConversion"
+              }
+            },
+            "title": "VoicesComponentStatus"
+          },
+          "api_support": {
+            "type": "object",
+            "properties": {
+              "sync": {
+                "type": "boolean"
+              },
+              "async": {
+                "type": "boolean"
+              },
+              "direct_synthesis": {
+                "type": "boolean"
+              },
+              "streaming": {
+                "type": "boolean"
+              }
+            },
+            "title": "VoicesApiSupport"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "title": "VoicesVoiceUuidGetResponsesContentApplicationJsonSchemaItem"
+      },
+      "VoicesPostResponsesContentApplicationJsonSchemaItem": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "default_language": {
+            "type": "string"
+          },
+          "voice_type": {
+            "type": "string"
+          },
+          "voice_status": {
+            "type": "string"
+          },
+          "supported_languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "component_status": {
+            "type": "object",
+            "properties": {
+              "text_to_speech": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusTextToSpeech"
+              },
+              "fill": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusFill"
+              },
+              "voice_conversion": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "title": "VoicesComponentStatusVoiceConversion"
+              }
+            },
+            "title": "VoicesComponentStatus"
+          },
+          "api_support": {
+            "type": "object",
+            "properties": {
+              "sync": {
+                "type": "boolean"
+              },
+              "async": {
+                "type": "boolean"
+              },
+              "direct_synthesis": {
+                "type": "boolean"
+              },
+              "streaming": {
+                "type": "boolean"
+              }
+            },
+            "title": "VoicesApiSupport"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "title": "VoicesPostResponsesContentApplicationJsonSchemaItem"
       }
     },
     "securitySchemes": {

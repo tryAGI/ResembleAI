@@ -62,16 +62,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public AudioEnhancementClient AudioEnhancement => new AudioEnhancementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public AudioSourceTracingClient AudioSourceTracing => new AudioSourceTracingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -112,26 +102,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public ClipsClient Clips => new ClipsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public CustomPronunciationsClient CustomPronunciations => new CustomPronunciationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public DeepfakeDetectionClient DeepfakeDetection => new DeepfakeDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -153,16 +123,6 @@ namespace ResembleAI
         ///
         /// </summary>
         public DetectIntelligenceClient DetectIntelligence => new DetectIntelligenceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public DuetsClient Duets => new DuetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
@@ -202,26 +162,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public RecordingsClient Recordings => new RecordingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public SecureUploadsClient SecureUploads => new SecureUploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -242,57 +182,7 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public SpeechToTextClient SpeechToText => new SpeechToTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public TermSubstitutionsClient TermSubstitutions => new TermSubstitutionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
         public TextDetectionClient TextDetection => new TextDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public VoiceSettingsPresetsClient VoiceSettingsPresets => new VoiceSettingsPresetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
@@ -316,11 +206,6 @@ namespace ResembleAI
                 name: "production",
                 url: "https://app.resemble.ai/api/v2",
                 description: "production"),
-            new global::ResembleAI.AutoSDKServer(
-                id: "https-f-cluster-resemble-ai",
-                name: "synthesis",
-                url: "https://f.cluster.resemble.ai/",
-                description: "synthesis"),
             new global::ResembleAI.AutoSDKServer(
                 id: "https-app-resemble-ai-billing-api-v1",
                 name: "billing",

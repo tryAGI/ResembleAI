@@ -73,11 +73,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public AudioEnhancementClient AudioEnhancement { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public AudioSourceTracingClient AudioSourceTracing { get; }
 
         /// <summary>
@@ -98,16 +93,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public ClipsClient Clips { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public CustomPronunciationsClient CustomPronunciations { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public DeepfakeDetectionClient DeepfakeDetection { get; }
 
         /// <summary>
@@ -119,11 +104,6 @@ namespace ResembleAI
         ///
         /// </summary>
         public DetectIntelligenceClient DetectIntelligence { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public DuetsClient Duets { get; }
 
         /// <summary>
         ///
@@ -143,16 +123,6 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public ProjectsClient Projects { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public RecordingsClient Recordings { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public SecureUploadsClient SecureUploads { get; }
 
         /// <summary>
@@ -163,32 +133,7 @@ namespace ResembleAI
         /// <summary>
         ///
         /// </summary>
-        public SpeechToTextClient SpeechToText { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public TermSubstitutionsClient TermSubstitutions { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public TextDetectionClient TextDetection { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public TextToSpeechClient TextToSpeech { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public VoiceSettingsPresetsClient VoiceSettingsPresets { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public VoicesClient Voices { get; }
 
         /// <summary>
         ///

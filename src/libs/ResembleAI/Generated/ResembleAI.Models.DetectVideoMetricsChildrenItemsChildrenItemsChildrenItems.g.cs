@@ -44,6 +44,19 @@ namespace ResembleAI
         public required string Certainty__ { get; set; }
 
         /// <summary>
+        /// Timestamp in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timestamp")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Timestamp { get; set; }
+
+        /// <summary>
+        /// Region-level detection results
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("children")]
+        public global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItemsChildrenItems>? Children { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,6 +70,12 @@ namespace ResembleAI
         /// <param name="score"></param>
         /// <param name="certainty"></param>
         /// <param name="certainty__"></param>
+        /// <param name="timestamp">
+        /// Timestamp in seconds
+        /// </param>
+        /// <param name="children">
+        /// Region-level detection results
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,13 +84,17 @@ namespace ResembleAI
             string conclusion,
             double score,
             double certainty,
-            string certainty__)
+            string certainty__,
+            double timestamp,
+            global::System.Collections.Generic.IList<global::ResembleAI.DetectVideoMetricsChildrenItemsChildrenItemsChildrenItemsChildrenItems>? children)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
             this.Score = score;
             this.Certainty = certainty;
             this.Certainty__ = certainty__ ?? throw new global::System.ArgumentNullException(nameof(certainty__));
+            this.Timestamp = timestamp;
+            this.Children = children;
         }
 
         /// <summary>
