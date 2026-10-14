@@ -24,11 +24,11 @@ trap cleanup EXIT
 install_autosdk_cli
 
 if fetch_spec -fsSL -o "$temp_spec" "$spec_url"; then
-  if ! jq -e '.paths | has("/synthesize") and has("/stream") and has("/voices")' "$temp_spec" >/dev/null; then
-    echo "Refusing spec update: required synthesis and voice endpoints disappeared from $spec_url." >&2
-    exit 1
+  if jq -e '.paths | has("/synthesize") and has("/stream") and has("/voices")' "$temp_spec" >/dev/null; then
+    mv "$temp_spec" openapi.yaml
+  else
+    echo "Warning: required synthesis and voice endpoints disappeared from $spec_url; reusing checked-in spec." >&2
   fi
-  mv "$temp_spec" openapi.yaml
 elif [[ ! -f openapi.yaml ]]; then
   echo "Failed to download $spec_url and no checked-in openapi.yaml exists." >&2
   exit 1
