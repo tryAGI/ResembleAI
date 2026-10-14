@@ -22,9 +22,12 @@ cleanup() {
 
 trap cleanup EXIT
 install_autosdk_cli
-rm -rf Generated
 
 if fetch_spec -fsSL -o "$temp_spec" "$spec_url"; then
+  if ! jq -e '.paths | has("/synthesize") and has("/stream") and has("/voices")' "$temp_spec" >/dev/null; then
+    echo "Refusing spec update: required synthesis and voice endpoints disappeared from $spec_url." >&2
+    exit 1
+  fi
   mv "$temp_spec" openapi.yaml
 elif [[ ! -f openapi.yaml ]]; then
   echo "Failed to download $spec_url and no checked-in openapi.yaml exists." >&2
@@ -35,6 +38,7 @@ fi
 
 ./normalize-openapi.sh openapi.yaml
 
+rm -rf Generated
 autosdk generate openapi.yaml \
   --namespace ResembleAI \
   --clientClassName ResembleAIClient \
