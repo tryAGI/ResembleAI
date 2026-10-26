@@ -35,6 +35,20 @@ namespace ResembleAI
         /// Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.
         /// </summary>
         /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::ResembleAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::ResembleAI.AutoSDKHttpResponse<global::System.IO.Stream>> StreamSynthesizeAsStreamAsResponseAsync(
+
+            global::ResembleAI.StreamSynthesizeRequest request,
+            global::ResembleAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Streaming text-to-speech synthesis (HTTP)<br/>
+        /// Stream audio as it's generated. Returns chunked WAV data for progressive playback. The model associated with the voice is selected automatically.
+        /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::ResembleAI.ApiException"></exception>
