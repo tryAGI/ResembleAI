@@ -349,13 +349,13 @@ namespace ResembleAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::ResembleAI.Error.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::ResembleAI.Error.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -366,7 +366,7 @@ namespace ResembleAI
 
                                 throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -386,13 +386,13 @@ namespace ResembleAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::ResembleAI.Error.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::ResembleAI.Error.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -403,7 +403,7 @@ namespace ResembleAI
 
                                 throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -423,13 +423,13 @@ namespace ResembleAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::ResembleAI.Error.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::ResembleAI.Error.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -440,7 +440,7 @@ namespace ResembleAI
 
                                 throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -460,13 +460,13 @@ namespace ResembleAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_502 = global::ResembleAI.Error.FromJson(__content_502, JsonSerializerContext);
+                                        __value_502 = __content_502 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_502, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_502 = global::ResembleAI.Error.FromJson(__content_502, JsonSerializerContext);
+                                        __value_502 = __content_502 is not { Length: > 0 } ? null : global::ResembleAI.Error.FromJson(__content_502, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -477,7 +477,7 @@ namespace ResembleAI
 
                                 throw global::ResembleAI.ApiException<global::ResembleAI.Error>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_502 is { Length: > 0 } ? __content_502 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_502,
                                     responseBody: __content_502,
                                     responseObject: __value_502,
@@ -520,7 +520,7 @@ namespace ResembleAI
                                 {
                                     throw global::ResembleAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -565,7 +565,7 @@ namespace ResembleAI
 
                                     throw global::ResembleAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
